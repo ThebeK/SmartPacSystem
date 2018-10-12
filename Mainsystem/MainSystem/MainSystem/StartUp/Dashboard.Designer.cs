@@ -53,6 +53,13 @@
             this.maintainClientToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintainProductTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.purchaseOrderReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creditReturnsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outstandingDeliveriesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAccessLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addAccessLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,13 +79,6 @@
             this.vehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintainVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.purchaseOrderReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creditReturnsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.outstandingDeliveriesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -369,6 +369,61 @@
             this.maintainProductTypeToolStripMenuItem.Text = "Maintain Products Type";
             this.maintainProductTypeToolStripMenuItem.Click += new System.EventHandler(this.maintainProductTypeToolStripMenuItem_Click);
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salesReportToolStripMenuItem,
+            this.employeeReportToolStripMenuItem,
+            this.productReportToolStripMenuItem,
+            this.purchaseOrderReportsToolStripMenuItem,
+            this.creditReturnsReportToolStripMenuItem,
+            this.outstandingDeliveriesReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold);
+            this.reportsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.reportsToolStripMenuItem.Image = global::MainSystem.Properties.Resources.Bar_Chart___01;
+            this.reportsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(191, 52);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportsToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
+            // salesReportToolStripMenuItem
+            // 
+            this.salesReportToolStripMenuItem.Name = "salesReportToolStripMenuItem";
+            this.salesReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
+            this.salesReportToolStripMenuItem.Text = "Sales Report";
+            // 
+            // employeeReportToolStripMenuItem
+            // 
+            this.employeeReportToolStripMenuItem.Name = "employeeReportToolStripMenuItem";
+            this.employeeReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
+            this.employeeReportToolStripMenuItem.Text = "Employees Report";
+            // 
+            // productReportToolStripMenuItem
+            // 
+            this.productReportToolStripMenuItem.Name = "productReportToolStripMenuItem";
+            this.productReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
+            this.productReportToolStripMenuItem.Text = "Products Report";
+            // 
+            // purchaseOrderReportsToolStripMenuItem
+            // 
+            this.purchaseOrderReportsToolStripMenuItem.Name = "purchaseOrderReportsToolStripMenuItem";
+            this.purchaseOrderReportsToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
+            this.purchaseOrderReportsToolStripMenuItem.Text = "Purchase Order Reports";
+            // 
+            // creditReturnsReportToolStripMenuItem
+            // 
+            this.creditReturnsReportToolStripMenuItem.Name = "creditReturnsReportToolStripMenuItem";
+            this.creditReturnsReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
+            this.creditReturnsReportToolStripMenuItem.Text = "Credit Returns Report";
+            // 
+            // outstandingDeliveriesReportToolStripMenuItem
+            // 
+            this.outstandingDeliveriesReportToolStripMenuItem.Name = "outstandingDeliveriesReportToolStripMenuItem";
+            this.outstandingDeliveriesReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
+            this.outstandingDeliveriesReportToolStripMenuItem.Text = "Outstanding Deliveries Report";
+            // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -564,61 +619,6 @@
             this.maintainVehicleToolStripMenuItem.Size = new System.Drawing.Size(304, 32);
             this.maintainVehicleToolStripMenuItem.Text = "Maintain Vehicles";
             // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salesReportToolStripMenuItem,
-            this.employeeReportToolStripMenuItem,
-            this.productReportToolStripMenuItem,
-            this.purchaseOrderReportsToolStripMenuItem,
-            this.creditReturnsReportToolStripMenuItem,
-            this.outstandingDeliveriesReportToolStripMenuItem});
-            this.reportsToolStripMenuItem.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold);
-            this.reportsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.reportsToolStripMenuItem.Image = global::MainSystem.Properties.Resources.Bar_Chart___01;
-            this.reportsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(191, 52);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            this.reportsToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportsToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            // 
-            // salesReportToolStripMenuItem
-            // 
-            this.salesReportToolStripMenuItem.Name = "salesReportToolStripMenuItem";
-            this.salesReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.salesReportToolStripMenuItem.Text = "Sales Report";
-            // 
-            // employeeReportToolStripMenuItem
-            // 
-            this.employeeReportToolStripMenuItem.Name = "employeeReportToolStripMenuItem";
-            this.employeeReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.employeeReportToolStripMenuItem.Text = "Employees Report";
-            // 
-            // productReportToolStripMenuItem
-            // 
-            this.productReportToolStripMenuItem.Name = "productReportToolStripMenuItem";
-            this.productReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.productReportToolStripMenuItem.Text = "Products Report";
-            // 
-            // purchaseOrderReportsToolStripMenuItem
-            // 
-            this.purchaseOrderReportsToolStripMenuItem.Name = "purchaseOrderReportsToolStripMenuItem";
-            this.purchaseOrderReportsToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.purchaseOrderReportsToolStripMenuItem.Text = "Purchase Order Reports";
-            // 
-            // creditReturnsReportToolStripMenuItem
-            // 
-            this.creditReturnsReportToolStripMenuItem.Name = "creditReturnsReportToolStripMenuItem";
-            this.creditReturnsReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.creditReturnsReportToolStripMenuItem.Text = "Credit Returns Report";
-            // 
-            // outstandingDeliveriesReportToolStripMenuItem
-            // 
-            this.outstandingDeliveriesReportToolStripMenuItem.Name = "outstandingDeliveriesReportToolStripMenuItem";
-            this.outstandingDeliveriesReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.outstandingDeliveriesReportToolStripMenuItem.Text = "Outstanding Deliveries Report";
-            // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold);
@@ -645,6 +645,7 @@
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutToolStripMenuItem1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
             // Form1
             // 

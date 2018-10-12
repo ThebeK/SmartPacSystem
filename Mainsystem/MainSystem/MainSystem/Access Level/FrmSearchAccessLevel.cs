@@ -96,7 +96,7 @@ namespace MainSystem.AccessLevel
 
             if (selectedOption == "Maintain Access Level")
             {
-                FrmMaintainAccessLevel ma = new FrmMaintainAccessLevel(val);
+                AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
                     ma.ShowDialog();
                
                 this.Dispose();
