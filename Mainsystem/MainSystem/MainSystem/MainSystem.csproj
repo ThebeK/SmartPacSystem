@@ -61,6 +61,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access Level\FrmAddAccessLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Access Level\FrmAddAccessLevel.Designer.cs">
+      <DependentUpon>FrmAddAccessLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Access Level\FrmMaintainAccessLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Access Level\FrmMaintainAccessLevel.Designer.cs">
+      <DependentUpon>FrmMaintainAccessLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Access Level\FrmSearchAccessLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Access Level\FrmSearchAccessLevel.Designer.cs">
+      <DependentUpon>FrmSearchAccessLevel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Access_Level.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -126,24 +144,6 @@
     </Compile>
     <Compile Include="Employee_Type.cs">
       <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Access Level\FrmAddAccessLevel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Access Level\FrmAddAccessLevel.Designer.cs">
-      <DependentUpon>FrmAddAccessLevel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Access Level\FrmMaintainAccessLevel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Access Level\FrmMaintainAccessLevel.Designer.cs">
-      <DependentUpon>FrmMaintainAccessLevel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Access Level\FrmSearchAccessLevel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Access Level\FrmSearchAccessLevel.Designer.cs">
-      <DependentUpon>FrmSearchAccessLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="GetAddress_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
@@ -261,39 +261,6 @@
     </Compile>
     <Compile Include="StartUp\FrmFirstTimeStartup.Designer.cs">
       <DependentUpon>FrmFirstTimeStartup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Supplier.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Supplier_Backorder.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Supplier_Order.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Supplier_Order_Line.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Supplier_Order_Status.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Title.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User_Role.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vehicle.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vehicle_Status.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Width.cs">
-      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Admin\FrmAddNotification.cs">
       <SubType>Form</SubType>
@@ -646,6 +613,27 @@
     <Compile Include="StartUp\frmHelp.Designer.cs">
       <DependentUpon>frmHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Backorder.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Title.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="User\FrmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -670,6 +658,12 @@
     <Compile Include="User\FrmSearchUser.Designer.cs">
       <DependentUpon>FrmSearchUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Role.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="Vehicle\FrmAddVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -687,6 +681,12 @@
     </Compile>
     <Compile Include="Vehicle\FrmSearchVehicle.Designer.cs">
       <DependentUpon>FrmSearchVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Width.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Access Level\FrmAddAccessLevel.resx">
       <DependentUpon>FrmAddAccessLevel.cs</DependentUpon>
@@ -905,13 +905,6 @@
     <EmbeddedResource Include="Vehicle\FrmSearchVehicle.resx">
       <DependentUpon>FrmSearchVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="SP.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SP.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="SP.edmx.diagram">
-      <DependentUpon>SP.edmx</DependentUpon>
-    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -923,11 +916,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="SP.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SP.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SP.edmx.diagram">
+      <DependentUpon>SP.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Bar Chart - 01.png" />
+    <Content Include="Images\Close.png" />
+    <Content Include="Images\Customer.png" />
     <Content Include="SP.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SP.edmx</DependentUpon>
@@ -938,9 +941,6 @@
       <DependentUpon>SP.edmx</DependentUpon>
       <LastGenOutput>SP.cs</LastGenOutput>
     </Content>
-    <Content Include="Images\Bar Chart - 01.png" />
-    <Content Include="Images\Close.png" />
-    <Content Include="Images\Customer.png" />
     <None Include="Images\Help.png" />
     <None Include="Images\Power.png" />
     <None Include="Images\Documents.png" />

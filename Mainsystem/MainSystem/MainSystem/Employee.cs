@@ -33,7 +33,7 @@ namespace MainSystem
         public string Employee_Tax_Number { get; set; }
         public Nullable<int> Employee_Type_ID { get; set; }
         public Nullable<int> Title_Id { get; set; }
-        public Nullable<int> Employee1 { get; set; }
+        public byte[] Employee_Image { get; set; }
         public string EMP_Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -22,6 +22,7 @@ namespace MainSystem
     
         public int City_Id { get; set; }
         public string City_Name { get; set; }
+        public Nullable<int> Province_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client> Clients { get; set; }
