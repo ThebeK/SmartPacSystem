@@ -11,12 +11,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace MainSystem.AccessLevel
 {
     public partial class FrmMaintainAccessLevel : Form
     {
         int AccessId;
         SPEntities db = new SPEntities();
+        
         public FrmMaintainAccessLevel(string val)
         {
             InitializeComponent();

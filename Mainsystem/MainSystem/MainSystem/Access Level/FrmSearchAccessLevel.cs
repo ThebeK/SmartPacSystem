@@ -24,6 +24,7 @@ namespace MainSystem.AccessLevel
             }
             InitializeComponent();
         }
+        SPEntities db = new SPEntities();
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -108,39 +109,39 @@ namespace MainSystem.AccessLevel
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            //if (txtSearchAccess.Text == "")
-            //{
+            if (txtSearchAccess.Text == "")
+            {
 
-            //    MessageBox.Show("Error: No search details entered");
+                MessageBox.Show("Error: No search details entered");
 
-            //}
-            //else if (txtSearchAccess.Text != "")
-            //{
+            }
+            else if (txtSearchAccess.Text != "")
+            {
 
-            //    List<AccessLevel> Accesssearch = db.AccessLevel.Where(o => o.Access_Level_Name.Contains(textBox1.Text)).ToList();
+                List<Access_Level> Accesssearch = db.Access_Level.Where(o => o.Access_Level_Name.Contains(txtSearchAccess.Text)).ToList();
 
-            //    if (Accesssearch.Count == 0)
-            //    {
-
-
-            //        MessageBox.Show("Error: No access level Found");
-
-            //    }
-
-            //    else
-            //    {
-            //        foreach (var a in Accesssearch)
-            //        {
-            //            dgvAccesSearch.DataSource = Accesssearch.Select(col => new { col.Access_Level_Id, col.Access_Level_Name }).ToList();
-            //            dgvAccesSearch.Columns[0].HeaderText = "Access Level ID";
-            //            dgvAccesSearch.Columns[0].Width = 100;
-            //            dgvAccesSearch.Columns[1].HeaderText = "Access_Level_Name";
-            //            dgvAccesSearch.Columns[1].Width = 150;
+                if (Accesssearch.Count == 0)
+                {
 
 
-            //        }
-            //    }
-            //}
+                    MessageBox.Show("Error: No access level Found");
+
+                }
+
+                else
+                {
+                    foreach (var a in Accesssearch)
+                    {
+                        dgvAccesSearch.DataSource = Accesssearch.Select(col => new { col.Access_Level_Id, col.Access_Level_Name }).ToList();
+                        dgvAccesSearch.Columns[0].HeaderText = "Access Level ID";
+                        dgvAccesSearch.Columns[0].Width = 100;
+                        dgvAccesSearch.Columns[1].HeaderText = "Access_Level_Name";
+                        dgvAccesSearch.Columns[1].Width = 150;
+
+
+                    }
+                }
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
