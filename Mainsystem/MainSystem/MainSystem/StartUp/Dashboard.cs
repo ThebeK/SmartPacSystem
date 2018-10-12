@@ -196,7 +196,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Products.FrmMaintainProduct qw = new Products.FrmMaintainProduct();
+            Products.FrmSearchProduct qw = new Products.FrmSearchProduct();
             qw.ShowDialog();
             this.Show();
             this.Activate();
