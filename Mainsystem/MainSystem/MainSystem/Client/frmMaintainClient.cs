@@ -19,6 +19,9 @@ namespace MainSystem
         {
             InitializeComponent();
         }
+        public SPEntities db = new SPEntities();
+        byte[] FileData;
+        string FName;
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -129,6 +132,15 @@ namespace MainSystem
             toolTip1.SetToolTip(this.btnDeleteClient, "Click to remove client");
             toolTip1.SetToolTip(this.btnUpdateClient, "Click to edit client");
             toolTip1.SetToolTip(this.btnDownload, "Click to obtain credit approval");
+
+            using (SPEntities db = new SPEntities())
+            {
+                provinceBindingSource.DataSource = db.Provinces.ToList();
+                cityBindingSource.DataSource = db.Cities.ToList();
+                clientAccountStatusBindingSource.DataSource = db.Client_Account_Status.ToList();
+                creditStatusBindingSource.DataSource = db.Credit_Status.ToList();
+            }
+
 
         }
     }

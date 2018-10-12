@@ -110,7 +110,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearchClient dd = new frmSearchClient();
+            frmSearchClient dd = new frmSearchClient("Maintain Clients");
             dd.ShowDialog();
         }
 
