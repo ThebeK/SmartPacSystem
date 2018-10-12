@@ -99,7 +99,7 @@ namespace MainSystem.AccessLevel
                 AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
                     ma.ShowDialog();
                
-                this.Dispose();
+                //this.Dispose();
                 
 
 
