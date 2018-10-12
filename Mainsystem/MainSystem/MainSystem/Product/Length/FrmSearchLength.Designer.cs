@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Length
+﻿namespace MainSystem.Products.Length
 {
     partial class FrmSearchLength
     {

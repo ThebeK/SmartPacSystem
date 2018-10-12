@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Brand
+﻿namespace MainSystem.Products.Brand
 {
     partial class FrmMaintainBrand
     {
@@ -52,7 +52,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 16);
             this.label1.TabIndex = 55;
-            this.label1.Text = "Product Brand Description";
+            this.label1.Text = "Products Brand Description";
             // 
             // btnUpdatePT
             // 
@@ -63,7 +63,7 @@
             this.btnUpdatePT.Name = "btnUpdatePT";
             this.btnUpdatePT.Size = new System.Drawing.Size(91, 61);
             this.btnUpdatePT.TabIndex = 57;
-            this.btnUpdatePT.Text = "Update Product Brand";
+            this.btnUpdatePT.Text = "Update Products Brand";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
             // 
             // btnDeletePT
@@ -75,7 +75,7 @@
             this.btnDeletePT.Name = "btnDeletePT";
             this.btnDeletePT.Size = new System.Drawing.Size(106, 61);
             this.btnDeletePT.TabIndex = 58;
-            this.btnDeletePT.Text = "Delete Product Brand";
+            this.btnDeletePT.Text = "Delete Products Brand";
             this.btnDeletePT.UseVisualStyleBackColor = false;
             // 
             // lblBrand

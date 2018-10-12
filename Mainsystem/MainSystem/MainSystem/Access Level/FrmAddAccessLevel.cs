@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Access_Level
+namespace MainSystem.AccessLevel
 {
     public partial class FrmAddAccessLevel : Form
     {

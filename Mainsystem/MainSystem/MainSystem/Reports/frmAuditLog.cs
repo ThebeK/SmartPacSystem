@@ -82,13 +82,13 @@ namespace MainSystem
         }
         private void btnAddProdType_Click(object sender, EventArgs e)
         {
-            User.FrmAddUser rr = new User.FrmAddUser();
+            Users.FrmAddUser rr = new Users.FrmAddUser();
             rr.ShowDialog();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            User.FrmSearchUser rr = new User.FrmSearchUser();
+            Users.FrmSearchUser rr = new Users.FrmSearchUser();
             rr.ShowDialog();
         }
 

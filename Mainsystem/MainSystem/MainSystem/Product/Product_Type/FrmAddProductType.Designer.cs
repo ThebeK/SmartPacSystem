@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product
+﻿namespace MainSystem.Products
 {
     partial class FrmAddProductType
     {
@@ -83,7 +83,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(266, 34);
             this.label3.TabIndex = 58;
-            this.label3.Text = "Add Product Type";
+            this.label3.Text = "Add Products Type";
             // 
             // lblProdDesc
             // 

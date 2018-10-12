@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHelp));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("User Login");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("User Logout");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Reset User Profile");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Register User Profile");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Search User Profile");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Maintain User Profile");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("User", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Users Login");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Users Logout");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Reset Users Profile");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Register Users Profile");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Search Users Profile");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Maintain Users Profile");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Users", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
             treeNode4,
             treeNode5,
             treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Create User Access Level");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Search User Access Level");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Maintain User Access Level");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Create Users Access Level");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Search Users Access Level");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Maintain Users Access Level");
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Access Level", new System.Windows.Forms.TreeNode[] {
             treeNode8,
             treeNode9,
@@ -72,13 +72,13 @@
             treeNode20,
             treeNode21,
             treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Add New Product");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Search Product");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Maintain Product");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Add New Product Type");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Search Product Type");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Maintain Product Type");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Product", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Add New Products");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Search Products");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Maintain Products");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Add New Products Type");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Search Products Type");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Maintain Products Type");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Products", new System.Windows.Forms.TreeNode[] {
             treeNode24,
             treeNode25,
             treeNode26,
@@ -94,15 +94,15 @@
             treeNode32,
             treeNode33,
             treeNode34});
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Add New Employee");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Search Employee");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Maintain Employee");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Add New Employee Type");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Search Employee Type");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Maintain Employee Type");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Add New Employees");
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Search Employees");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Maintain Employees");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Add New Employees Type");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Search Employees Type");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Maintain Employees Type");
             System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Sign In");
             System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Sign Out");
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Employee", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Employees", new System.Windows.Forms.TreeNode[] {
             treeNode36,
             treeNode37,
             treeNode38,
@@ -118,10 +118,10 @@
             treeNode45,
             treeNode46,
             treeNode47});
-            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Add Vehicle");
-            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Search Vehicle");
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Maintain Vehicle");
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Vehicle ", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Add Vehicles");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Search Vehicles");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Maintain Vehicles");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Vehicles ", new System.Windows.Forms.TreeNode[] {
             treeNode49,
             treeNode50,
             treeNode51});
@@ -139,12 +139,12 @@
             treeNode57,
             treeNode58});
             System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Generate Sales Report");
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Generate Product Report");
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Generate Products Report");
             System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Generate Credit Return Report ");
             System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Generate Outstanding Deliveries Report");
             System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Generate Purchase Order Report ");
             System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Generate Audit Log Report");
-            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Generate Employee Report");
+            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Generate Employees Report");
             System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Reports", new System.Windows.Forms.TreeNode[] {
             treeNode60,
             treeNode61,
@@ -189,25 +189,25 @@
             this.treeView1.Location = new System.Drawing.Point(12, 119);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Node1";
-            treeNode1.Text = "User Login";
+            treeNode1.Text = "Users Login";
             treeNode2.Name = "Node2";
-            treeNode2.Text = "User Logout";
+            treeNode2.Text = "Users Logout";
             treeNode3.Name = "Node3";
-            treeNode3.Text = "Reset User Profile";
+            treeNode3.Text = "Reset Users Profile";
             treeNode4.Name = "Node4";
-            treeNode4.Text = "Register User Profile";
+            treeNode4.Text = "Register Users Profile";
             treeNode5.Name = "Node5";
-            treeNode5.Text = "Search User Profile";
+            treeNode5.Text = "Search Users Profile";
             treeNode6.Name = "Node6";
-            treeNode6.Text = "Maintain User Profile";
-            treeNode7.Name = "User";
-            treeNode7.Text = "User";
+            treeNode6.Text = "Maintain Users Profile";
+            treeNode7.Name = "Users";
+            treeNode7.Text = "Users";
             treeNode8.Name = "Node8";
-            treeNode8.Text = "Create User Access Level";
+            treeNode8.Text = "Create Users Access Level";
             treeNode9.Name = "Node9";
-            treeNode9.Text = "Search User Access Level";
+            treeNode9.Text = "Search Users Access Level";
             treeNode10.Name = "Node10";
-            treeNode10.Text = "Maintain User Access Level";
+            treeNode10.Text = "Maintain Users Access Level";
             treeNode11.Name = "Node7";
             treeNode11.Text = "Access Level";
             treeNode12.Name = "Node12";
@@ -235,19 +235,19 @@
             treeNode23.Name = "Node11";
             treeNode23.Text = "Orders";
             treeNode24.Name = "Node24";
-            treeNode24.Text = "Add New Product";
+            treeNode24.Text = "Add New Products";
             treeNode25.Name = "Node25";
-            treeNode25.Text = "Search Product";
+            treeNode25.Text = "Search Products";
             treeNode26.Name = "Node26";
-            treeNode26.Text = "Maintain Product";
+            treeNode26.Text = "Maintain Products";
             treeNode27.Name = "Node27";
-            treeNode27.Text = "Add New Product Type";
+            treeNode27.Text = "Add New Products Type";
             treeNode28.Name = "Node28";
-            treeNode28.Text = "Search Product Type";
+            treeNode28.Text = "Search Products Type";
             treeNode29.Name = "Node29";
-            treeNode29.Text = "Maintain Product Type";
+            treeNode29.Text = "Maintain Products Type";
             treeNode30.Name = "Node23";
-            treeNode30.Text = "Product";
+            treeNode30.Text = "Products";
             treeNode31.Name = "Node31";
             treeNode31.Text = "Add New Client";
             treeNode32.Name = "Node32";
@@ -259,23 +259,23 @@
             treeNode35.Name = "Node30";
             treeNode35.Text = "Client";
             treeNode36.Name = "Node36";
-            treeNode36.Text = "Add New Employee";
+            treeNode36.Text = "Add New Employees";
             treeNode37.Name = "Node37";
-            treeNode37.Text = "Search Employee";
+            treeNode37.Text = "Search Employees";
             treeNode38.Name = "Node38";
-            treeNode38.Text = "Maintain Employee";
+            treeNode38.Text = "Maintain Employees";
             treeNode39.Name = "Node39";
-            treeNode39.Text = "Add New Employee Type";
+            treeNode39.Text = "Add New Employees Type";
             treeNode40.Name = "Node40";
-            treeNode40.Text = "Search Employee Type";
+            treeNode40.Text = "Search Employees Type";
             treeNode41.Name = "Node41";
-            treeNode41.Text = "Maintain Employee Type";
+            treeNode41.Text = "Maintain Employees Type";
             treeNode42.Name = "Node42";
             treeNode42.Text = "Sign In";
             treeNode43.Name = "Node43";
             treeNode43.Text = "Sign Out";
             treeNode44.Name = "Node35";
-            treeNode44.Text = "Employee";
+            treeNode44.Text = "Employees";
             treeNode45.Name = "Node45";
             treeNode45.Text = "Make Sale";
             treeNode46.Name = "Node46";
@@ -285,13 +285,13 @@
             treeNode48.Name = "Node44";
             treeNode48.Text = "Sale";
             treeNode49.Name = "Node49";
-            treeNode49.Text = "Add Vehicle";
+            treeNode49.Text = "Add Vehicles";
             treeNode50.Name = "Node50";
-            treeNode50.Text = "Search Vehicle";
+            treeNode50.Text = "Search Vehicles";
             treeNode51.Name = "Node51";
-            treeNode51.Text = "Maintain Vehicle";
+            treeNode51.Text = "Maintain Vehicles";
             treeNode52.Name = "Node48";
-            treeNode52.Text = "Vehicle ";
+            treeNode52.Text = "Vehicles ";
             treeNode53.Name = "Node53";
             treeNode53.Text = "Backup";
             treeNode54.Name = "Node54";
@@ -309,7 +309,7 @@
             treeNode60.Name = "Node60";
             treeNode60.Text = "Generate Sales Report";
             treeNode61.Name = "Node61";
-            treeNode61.Text = "Generate Product Report";
+            treeNode61.Text = "Generate Products Report";
             treeNode62.Name = "Node62";
             treeNode62.Text = "Generate Credit Return Report ";
             treeNode63.Name = "Node63";
@@ -319,7 +319,7 @@
             treeNode65.Name = "Node65";
             treeNode65.Text = "Generate Audit Log Report";
             treeNode66.Name = "Node66";
-            treeNode66.Text = "Generate Employee Report";
+            treeNode66.Text = "Generate Employees Report";
             treeNode67.Name = "Node59";
             treeNode67.Text = "Reports";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {

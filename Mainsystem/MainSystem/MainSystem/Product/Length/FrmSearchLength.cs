@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Product.Length
+namespace MainSystem.Products.Length
 {
     public partial class FrmSearchLength : Form
     {
@@ -87,7 +87,7 @@ namespace MainSystem.Product.Length
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-            Product.Length.FrmSearchLength tt = new Product.Length.FrmSearchLength();
+            Products.Length.FrmSearchLength tt = new Products.Length.FrmSearchLength();
             tt.ShowDialog();
             this.Show();
             this.Activate();

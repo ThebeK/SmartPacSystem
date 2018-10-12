@@ -13,11 +13,16 @@ namespace MainSystem
 {
     class clsGlobals
     {
+        public static User_Role LoggedinUser;
+        public static Active_User Userlogin;
+
+        public static User_Role Role;
+        public static Access_Level accessL;
         //public static User_Role LoggedinUser;
         //public static Active_User Userlogin;
 
         //public static User_Role Role;
-        //public static Access_Level accessL;
+        //public static AccessLevel accessL;
         public static bool CheckDatabaseExists()
         {
             string sqlCreateDBQuery;

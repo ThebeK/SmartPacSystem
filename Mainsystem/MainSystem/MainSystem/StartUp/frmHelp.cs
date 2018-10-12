@@ -80,32 +80,32 @@ namespace MainSystem.StartUp
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             string node = treeView1.SelectedNode.Text;
-            if (node == "User Login")
+            if (node == "Users Login")
             {
                 Process.Start(@".\" + "UserManual_compile.pdf");
             }
-            else if (node == "User Logout")
+            else if (node == "Users Logout")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Register User Profile")
+            else if (node == "Register Users Profile")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Reset User Profile")
+            else if (node == "Reset Users Profile")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Search User Profile")
+            else if (node == "Search Users Profile")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Maintain User Profile")
+            else if (node == "Maintain Users Profile")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Create User Access Level")
+            else if (node == "Create Users Access Level")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Search User Access Lever")
+            else if (node == "Search Users Access Lever")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Maintain User Access Level")
+            else if (node == "Maintain Users Access Level")
             { Process.Start(@".\" + "test.pdf"); }
 
             else if (node == "Capture New Purchase Order")
@@ -117,7 +117,7 @@ namespace MainSystem.StartUp
             else if (node == "Generate Supplier rder")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "User Logout")
+            else if (node == "Users Logout")
             { Process.Start(@".\" + "test.pdf"); }
 
             else if (node == "Search Supplier Order")
@@ -144,22 +144,22 @@ namespace MainSystem.StartUp
             else if (node == "Generate Credit Return")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Add New Product")
+            else if (node == "Add New Products")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Search Product")
+            else if (node == "Search Products")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Maintain Product")
+            else if (node == "Maintain Products")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Add New Product Type")
+            else if (node == "Add New Products Type")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Search Product Type")
+            else if (node == "Search Products Type")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Maintain Product Type")
+            else if (node == "Maintain Products Type")
             { Process.Start(@".\" + "test.pdf"); }
 
             else if (node == "Add New Client")
@@ -174,22 +174,22 @@ namespace MainSystem.StartUp
             else if (node == "Upload Credit Approval Form")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Add New Employee")
+            else if (node == "Add New Employees")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Search Employee")
+            else if (node == "Search Employees")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Maintain Employee")
+            else if (node == "Maintain Employees")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Add New Employee Type")
+            else if (node == "Add New Employees Type")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Search Employee Type")
+            else if (node == "Search Employees Type")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Maintain Employee Type")
+            else if (node == "Maintain Employees Type")
             { Process.Start(@".\" + "test.pdf"); }
 
             else if (node == "Sign In")
@@ -207,13 +207,13 @@ namespace MainSystem.StartUp
             else if (node == "Refund Sale")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Add New Vehicle")
+            else if (node == "Add New Vehicles")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Search Vehicle")
+            else if (node == "Search Vehicles")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Maintain Vehicle")
+            else if (node == "Maintain Vehicles")
             { Process.Start(@".\" + "test.pdf"); }
 
             else if (node == "Backup")
@@ -237,7 +237,7 @@ namespace MainSystem.StartUp
             else if (node == "Generate Sales Report")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Generate Product Report")
+            else if (node == "Generate Products Report")
             { Process.Start(@".\" + "test.pdf"); }
 
             else if (node == "Generate Credit Return Report")
@@ -252,7 +252,7 @@ namespace MainSystem.StartUp
             else if (node == "Generate Audit Log Report")
             { Process.Start(@".\" + "test.pdf"); }
 
-            else if (node == "Generate Employee Report")
+            else if (node == "Generate Employees Report")
             { Process.Start(@".\" + "test.pdf"); }
 
             else {

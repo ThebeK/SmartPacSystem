@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Pack_Size
+﻿namespace MainSystem.Products.Pack_Size
 {
     partial class FrmMaintainPackSize
     {
@@ -139,7 +139,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 16);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Product Pack Size ";
+            this.label1.Text = "Products Pack Size ";
             // 
             // FrmMaintainPackSize
             // 

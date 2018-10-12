@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Employee
+﻿namespace MainSystem.Employees
 {
     partial class FrmMaintainEmployeeType
     {
@@ -61,7 +61,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(333, 31);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Maintain Employee Type";
+            this.label3.Text = "Maintain Employees Type";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblDescription
@@ -85,7 +85,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(171, 32);
             this.btnUpdate.TabIndex = 26;
-            this.btnUpdate.Text = "Update Employee";
+            this.btnUpdate.Text = "Update Employees";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // label2
@@ -142,7 +142,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(171, 32);
             this.btnDelete.TabIndex = 28;
-            this.btnDelete.Text = "Delete Employee";
+            this.btnDelete.Text = "Delete Employees";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // FrmMaintainEmployeeType

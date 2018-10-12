@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Pack_Size
+﻿namespace MainSystem.Products.Pack_Size
 {
     partial class FrmSearchPackSize
     {
@@ -109,7 +109,7 @@
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(242, 16);
             this.lbl.TabIndex = 51;
-            this.lbl.Text = "Please Specify Product Pack Size";
+            this.lbl.Text = "Please Specify Products Pack Size";
             // 
             // btnSearch
             // 

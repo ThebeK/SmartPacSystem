@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Product.Length
+namespace MainSystem.Products.Length
 {
     public partial class FrmMaintainLength : Form
     {

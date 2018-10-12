@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Employee
+﻿namespace MainSystem.Employees
 {
     partial class FrmAddEmployeeType
     {
@@ -63,7 +63,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(274, 31);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Add Employee Type";
+            this.label3.Text = "Add Employees Type";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button5

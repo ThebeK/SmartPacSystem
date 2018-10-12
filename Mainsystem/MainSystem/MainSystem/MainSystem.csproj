@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +57,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access_Level.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Active_User.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit_Create_Delete.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit_Log.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit_Update.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Backorder_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Account_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Purchase_Order.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Purchase_Order_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company_Information.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Approval.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Return.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Return_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatch.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatch_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Email_Notice_Template.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Logsheet.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="Access Level\FrmAddAccessLevel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +140,150 @@
     </Compile>
     <Compile Include="Access Level\FrmSearchAccessLevel.Designer.cs">
       <DependentUpon>FrmSearchAccessLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetAddress_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetBOL_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetIsAdvert_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOrderToConfirm_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOrderToLoad_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Getpoduct_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPOL_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSOL_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTotalQty_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_Credit_Return_Line_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Client_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Credit_Return_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Purcase_Order_Line_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Purchase_Order_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Supplier_Order_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pack_Size.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Term.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pLength.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ply.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Brand.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Province.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_Order_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reason_For_Return.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Refund_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sale.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Order_line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sale_Refund.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SP.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Backorder.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Title.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Role.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Width.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Admin\FrmAddNotification.cs">
       <SubType>Form</SubType>
@@ -93,6 +314,12 @@
     </Compile>
     <Compile Include="Admin\FrmPublish.Designer.cs">
       <DependentUpon>FrmPublish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmSearchNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmSearchNotification.Designer.cs">
+      <DependentUpon>FrmSearchNotification.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\FrmUpdateCompanyInformation.cs">
       <SubType>Form</SubType>
@@ -475,6 +702,9 @@
     <EmbeddedResource Include="Admin\FrmPublish.resx">
       <DependentUpon>FrmPublish.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FrmSearchNotification.resx">
+      <DependentUpon>FrmSearchNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmUpdateCompanyInformation.resx">
       <DependentUpon>FrmUpdateCompanyInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -662,7 +892,15 @@
     <EmbeddedResource Include="Vehicle\FrmSearchVehicle.resx">
       <DependentUpon>FrmSearchVehicle.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="SP.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SP.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SP.edmx.diagram">
+      <DependentUpon>SP.edmx</DependentUpon>
+    </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -677,6 +915,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SP.edmx</DependentUpon>
+      <LastGenOutput>SP.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SP.edmx</DependentUpon>
+      <LastGenOutput>SP.cs</LastGenOutput>
+    </Content>
     <Content Include="Images\Bar Chart - 01.png" />
     <Content Include="Images\Close.png" />
     <Content Include="Images\Customer.png" />
@@ -702,7 +950,9 @@
     <Content Include="Images\WhatsApp Image 2018-06-25 at 19.20.37.jpeg" />
     <Content Include="Images\WhatsApp Image 2018-06-25 at 19.20.38.jpeg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Employee
+﻿namespace MainSystem.Employees
 {
     partial class FrmEmployeeSignInSignOut
     {
@@ -94,7 +94,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(253, 28);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Employee Logsheet";
+            this.label3.Text = "Employees Logsheet";
             // 
             // panel2
             // 
@@ -153,7 +153,7 @@
             this.groupBox1.Size = new System.Drawing.Size(793, 383);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Employee Logsheet Details";
+            this.groupBox1.Text = "Employees Logsheet Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox2
@@ -204,7 +204,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 20);
             this.label7.TabIndex = 67;
-            this.label7.Text = "Employee Name";
+            this.label7.Text = "Employees Name";
             // 
             // groupBox4
             // 
@@ -281,7 +281,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 28);
             this.label1.TabIndex = 66;
-            this.label1.Text = "Employee Logsheet";
+            this.label1.Text = "Employees Logsheet";
             // 
             // groupBox2
             // 
@@ -433,7 +433,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 20);
             this.label6.TabIndex = 55;
-            this.label6.Text = "Employee Name";
+            this.label6.Text = "Employees Name";
             // 
             // FrmEmployeeSignInSignOut
             // 

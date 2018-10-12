@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Access_Level
+﻿namespace MainSystem.AccessLevel
 {
     partial class FrmSearchAccessLevel
     {

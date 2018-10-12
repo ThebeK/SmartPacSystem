@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Width
+﻿namespace MainSystem.Products.Width
 {
     partial class FrmAddWidth
     {
@@ -86,7 +86,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 34);
             this.label3.TabIndex = 60;
-            this.label3.Text = "Add Product Width";
+            this.label3.Text = "Add Products Width";
             // 
             // lblUnit
             // 

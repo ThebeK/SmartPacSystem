@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Product
+namespace MainSystem.Products
 {
     public partial class FrmMaintainProductType : Form
     {

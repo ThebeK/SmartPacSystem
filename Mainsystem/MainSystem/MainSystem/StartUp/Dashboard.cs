@@ -124,7 +124,7 @@ namespace MainSystem
 
         private void addAccessLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Access_Level.FrmAddAccessLevel al = new Access_Level.FrmAddAccessLevel();
+            AccessLevel.FrmAddAccessLevel al = new AccessLevel.FrmAddAccessLevel();
             al.ShowDialog();
             this.Show();
             this.Activate();
@@ -132,7 +132,7 @@ namespace MainSystem
 
         private void searchUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            User.FrmAddUser a2 = new User.FrmAddUser();
+            Users.FrmAddUser a2 = new Users.FrmAddUser();
             a2.ShowDialog();
 
 
@@ -140,7 +140,7 @@ namespace MainSystem
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Access_Level.FrmSearchAccessLevel qw = new Access_Level.FrmSearchAccessLevel("");
+            AccessLevel.FrmSearchAccessLevel qw = new AccessLevel.FrmSearchAccessLevel("");
             qw.ShowDialog();
 
 
@@ -149,7 +149,7 @@ namespace MainSystem
 
         private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employee.FrmAddEmployee eew = new Employee.FrmAddEmployee();
+            Employees.FrmAddEmployee eew = new Employees.FrmAddEmployee();
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -158,7 +158,7 @@ namespace MainSystem
         private void maintainEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Employee.FrmSearchEmployee eew = new Employee.FrmSearchEmployee();
+            Employees.FrmSearchEmployee eew = new Employees.FrmSearchEmployee();
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -166,7 +166,7 @@ namespace MainSystem
 
         private void addEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employee.FrmAddEmployeeType eew = new Employee.FrmAddEmployeeType();
+            Employees.FrmAddEmployeeType eew = new Employees.FrmAddEmployeeType();
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -174,7 +174,7 @@ namespace MainSystem
 
         private void maintainEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employee.FrmSearchEmployeeType eew = new Employee.FrmSearchEmployeeType();
+            Employees.FrmSearchEmployeeType eew = new Employees.FrmSearchEmployeeType();
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -182,7 +182,7 @@ namespace MainSystem
 
         private void employeeLogsheetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employee.FrmEmployeeSignInSignOut eew = new Employee.FrmEmployeeSignInSignOut();
+            Employees.FrmEmployeeSignInSignOut eew = new Employees.FrmEmployeeSignInSignOut();
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -196,7 +196,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Product.FrmMaintainProduct qw = new Product.FrmMaintainProduct();
+            Products.FrmMaintainProduct qw = new Products.FrmMaintainProduct();
             qw.ShowDialog();
             this.Show();
             this.Activate();
@@ -204,7 +204,7 @@ namespace MainSystem
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Product.FrmAddProductType ee = new Product.FrmAddProductType();
+            Products.FrmAddProductType ee = new Products.FrmAddProductType();
             ee.ShowDialog();
             this.Show();
             this.Activate();
@@ -212,7 +212,7 @@ namespace MainSystem
 
         private void maintainProductTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Product.FrmSearchProductType ee = new Product.FrmSearchProductType();
+            Products.FrmSearchProductType ee = new Products.FrmSearchProductType();
             ee.ShowDialog();
             this.Show();
             this.Activate();
@@ -220,7 +220,7 @@ namespace MainSystem
 
         private void notificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Admin.FrmAddNotification ff = new Admin.FrmAddNotification();
+            Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("");
             ff.ShowDialog();
             this.Show();
             this.Activate();
@@ -229,7 +229,7 @@ namespace MainSystem
         private void maintainUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            User.FrmAddUser su = new User.FrmAddUser();
+            Users.FrmAddUser su = new Users.FrmAddUser();
             su.ShowDialog();
             this.Show();
             this.Activate();

@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Vehicle
+﻿namespace MainSystem.Vehicles
 {
     partial class FrmSearchVehicle
     {
@@ -63,7 +63,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Please Specify Vehicle make";
+            this.label2.Text = "Please Specify Vehicles make";
             // 
             // panel1
             // 
@@ -108,7 +108,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(220, 34);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Search Vehicle";
+            this.label13.Text = "Search Vehicles";
             // 
             // btnMaintain
             // 
@@ -131,7 +131,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(306, 20);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Please specify valid Vehicle make";
+            this.label3.Text = "Please specify valid Vehicles make";
             this.label3.Visible = false;
             // 
             // dgvClientSearch

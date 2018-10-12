@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Employee
+namespace MainSystem.Employees
 {
     public partial class FrmMaintainEmployeeType : Form
     {
@@ -92,8 +92,8 @@ namespace MainSystem.Employee
 
         private void FrmMaintainEmployeeType_Load(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(this.rtxtDescription, "Enter Employee Type/Role");
-            toolTip1.SetToolTip(this.btnUpdate, "Click to edit Employee Type");
+            toolTip1.SetToolTip(this.rtxtDescription, "Enter Employees Type/Role");
+            toolTip1.SetToolTip(this.btnUpdate, "Click to edit Employees Type");
             toolTip1.SetToolTip(this.btnDelete, "Click to delete an employee Type");
         }
     }

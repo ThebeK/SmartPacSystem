@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Product.Sheet
+namespace MainSystem.Products.Sheet
 {
     public partial class FrmAddSheet : Form
     {

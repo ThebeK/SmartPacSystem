@@ -152,7 +152,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 146;
-            this.label1.Text = "User Name";
+            this.label1.Text = "Users Name";
             // 
             // btnContinue
             // 

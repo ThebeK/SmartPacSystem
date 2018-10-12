@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Employee
+namespace MainSystem.Employees
 {
     public partial class FrmSearchEmployeeType : Form
     {
@@ -87,7 +87,7 @@ namespace MainSystem.Employee
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-            Employee.FrmMaintainEmployeeType gg = new Employee.FrmMaintainEmployeeType();
+            Employees.FrmMaintainEmployeeType gg = new Employees.FrmMaintainEmployeeType();
             gg.ShowDialog();
         }
 
@@ -103,8 +103,8 @@ namespace MainSystem.Employee
 
         private void FrmSearchEmployeeType_Load(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(this.txtSearchEmployeeType, "Enter a Employee Type search criteria");
-            toolTip1.SetToolTip(this.btnSearch, "Click to Search Employee Type/Role");
+            toolTip1.SetToolTip(this.txtSearchEmployeeType, "Enter a Employees Type search criteria");
+            toolTip1.SetToolTip(this.btnSearch, "Click to Search Employees Type/Role");
             toolTip1.SetToolTip(this.btnMaintain, "Click to edit or remove employee type");
         }
 

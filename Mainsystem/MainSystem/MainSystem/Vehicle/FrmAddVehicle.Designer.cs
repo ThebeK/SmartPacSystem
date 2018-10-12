@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Vehicle
+﻿namespace MainSystem.Vehicles
 {
     partial class FrmAddVehicle
     {
@@ -101,7 +101,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 34);
             this.label1.TabIndex = 56;
-            this.label1.Text = "Add Vehicle";
+            this.label1.Text = "Add Vehicles";
             // 
             // lblVIN
             // 
@@ -290,7 +290,7 @@
             this.groupBox1.Size = new System.Drawing.Size(735, 232);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vehicle Information";
+            this.groupBox1.Text = "Vehicles Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // FrmAddVehicle
