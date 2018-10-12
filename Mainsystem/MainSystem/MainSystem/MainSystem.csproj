@@ -249,6 +249,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SPDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -921,6 +926,17 @@
     </EntityDeploy>
     <None Include="SP.edmx.diagram">
       <DependentUpon>SP.edmx</DependentUpon>
+    </None>
+    <None Include="SPDataSet.xsc">
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPDataSet.xss">
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
