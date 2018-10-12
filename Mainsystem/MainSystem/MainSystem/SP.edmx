@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Access_Level">
           <Key>
             <PropertyRef Name="Access_Level_Id" />
@@ -68,6 +68,7 @@
           </Key>
           <Property Name="City_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="City_Name" Type="text" />
+          <Property Name="Province_ID" Type="int" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -213,7 +214,7 @@
           <Property Name="Employee_Tax_Number" Type="text" />
           <Property Name="Employee_Type_ID" Type="int" />
           <Property Name="Title_Id" Type="int" />
-          <Property Name="Employee" Type="int" />
+          <Property Name="Employee_Image" Type="image" />
           <Property Name="EMP_Number" Type="varchar" MaxLength="10" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Employee_Logsheet">
@@ -408,16 +409,6 @@
           <Property Name="Supplier_Order_Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Supplier_Order_Status_Description" Type="text" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Title">
           <Key>
             <PropertyRef Name="Title_Id" />
@@ -470,7 +461,7 @@
           <Property Name="Width_Size" Type="int" />
           <Property Name="Width_Measurement_Unit" Type="text" />
         </EntityType>
-        <Association Name="FK__Access_Le__Role___75A278F5">
+        <Association Name="FK__Access_Le__Role___09A971A2">
           <End Role="User_Role" Type="Self.User_Role" Multiplicity="0..1" />
           <End Role="Access_Level" Type="Self.Access_Level" Multiplicity="*" />
           <ReferentialConstraint>
@@ -482,7 +473,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Active_Us__Acces__76969D2E">
+        <Association Name="FK__Active_Us__Acces__0A9D95DB">
           <End Role="Access_Level" Type="Self.Access_Level" Multiplicity="0..1" />
           <End Role="Active_User" Type="Self.Active_User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -494,7 +485,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Audit_Cre__Audit__787EE5A0">
+        <Association Name="FK__Audit_Cre__Audit__0C85DE4D">
           <End Role="Audit_Log" Type="Self.Audit_Log" Multiplicity="0..1" />
           <End Role="Audit_Create_Delete" Type="Self.Audit_Create_Delete" Multiplicity="*" />
           <ReferentialConstraint>
@@ -506,7 +497,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Audit_Upd__Audit__7A672E12">
+        <Association Name="FK__Audit_Upd__Audit__0E6E26BF">
           <End Role="Audit_Log" Type="Self.Audit_Log" Multiplicity="0..1" />
           <End Role="Audit_Update" Type="Self.Audit_Update" Multiplicity="*" />
           <ReferentialConstraint>
@@ -518,7 +509,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Backorder__Suppl__7B5B524B">
+        <Association Name="FK__Backorder__Suppl__0F624AF8">
           <End Role="Supplier_Backorder" Type="Self.Supplier_Backorder" Multiplicity="0..1" />
           <End Role="Backorder_Line" Type="Self.Backorder_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -530,19 +521,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Backorder__Suppl__7C4F7684">
-          <End Role="Supplier_Order_Line" Type="Self.Supplier_Order_Line" Multiplicity="0..1" />
-          <End Role="Backorder_Line" Type="Self.Backorder_Line" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier_Order_Line">
-              <PropertyRef Name="Supplier_Order_Line_ID" />
-            </Principal>
-            <Dependent Role="Backorder_Line">
-              <PropertyRef Name="Supplier_Order_Line_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Client__Account___7D439ABD">
+        <Association Name="FK__Client__Account___114A936A">
           <End Role="Client_Account_Status" Type="Self.Client_Account_Status" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
@@ -554,7 +533,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client__City_Id__7E37BEF6">
+        <Association Name="FK__Client__City_Id__123EB7A3">
           <End Role="City" Type="Self.City" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
@@ -566,7 +545,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client__Credit_A__7F2BE32F">
+        <Association Name="FK__Client__Credit_A__1332DBDC">
           <End Role="Credit_Approval" Type="Self.Credit_Approval" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
@@ -578,7 +557,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client__Province__00200768">
+        <Association Name="FK__Client__Province__14270015">
           <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
@@ -590,7 +569,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client_Pu__Clien__01142BA1">
+        <Association Name="FK__Client_Pu__Clien__151B244E">
           <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
           <End Role="Client_Purchase_Order" Type="Self.Client_Purchase_Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -602,7 +581,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client_Pu__Clien__06CD04F7">
+        <Association Name="FK__Client_Pu__Clien__1AD3FDA4">
           <End Role="Client_Purchase_Order" Type="Self.Client_Purchase_Order" Multiplicity="0..1" />
           <End Role="Client_Purchase_Order_Line" Type="Self.Client_Purchase_Order_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -614,7 +593,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client_Pu__Dispa__02084FDA">
+        <Association Name="FK__Client_Pu__Dispa__160F4887">
           <End Role="Dispatch_Type" Type="Self.Dispatch_Type" Multiplicity="0..1" />
           <End Role="Client_Purchase_Order" Type="Self.Client_Purchase_Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -638,7 +617,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client_Pu__Payme__03F0984C">
+        <Association Name="FK__Client_Pu__Payme__17F790F9">
           <End Role="Payment_Term" Type="Self.Payment_Term" Multiplicity="0..1" />
           <End Role="Client_Purchase_Order" Type="Self.Client_Purchase_Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -650,7 +629,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client_Pu__Produ__07C12930">
+        <Association Name="FK__Client_Pu__Produ__1BC821DD">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Client_Purchase_Order_Line" Type="Self.Client_Purchase_Order_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -662,7 +641,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client_Pu__Purch__04E4BC85">
+        <Association Name="FK__Client_Pu__Purch__18EBB532">
           <End Role="Purchase_Order_Status" Type="Self.Purchase_Order_Status" Multiplicity="0..1" />
           <End Role="Client_Purchase_Order" Type="Self.Client_Purchase_Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -674,7 +653,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Client_Pu__Suppl__05D8E0BE">
+        <Association Name="FK__Client_Pu__Suppl__19DFD96B">
           <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="0..1" />
           <End Role="Client_Purchase_Order" Type="Self.Client_Purchase_Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -686,7 +665,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Credit_Ap__Credi__08B54D69">
+        <Association Name="FK__Credit_Ap__Credi__1CBC4616">
           <End Role="Credit_Status" Type="Self.Credit_Status" Multiplicity="0..1" />
           <End Role="Credit_Approval" Type="Self.Credit_Approval" Multiplicity="*" />
           <ReferentialConstraint>
@@ -698,7 +677,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Credit_Re__Clien__09A971A2">
+        <Association Name="FK__Credit_Re__Clien__1DB06A4F">
           <End Role="Client_Purchase_Order_Line" Type="Self.Client_Purchase_Order_Line" Multiplicity="0..1" />
           <End Role="Credit_Return_Line" Type="Self.Credit_Return_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -710,7 +689,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Credit_Re__Credi__0A9D95DB">
+        <Association Name="FK__Credit_Re__Credi__1EA48E88">
           <End Role="Credit_Return" Type="Self.Credit_Return" Multiplicity="0..1" />
           <End Role="Credit_Return_Line" Type="Self.Credit_Return_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -722,7 +701,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Credit_Re__Reaso__0B91BA14">
+        <Association Name="FK__Credit_Re__Reaso__1F98B2C1">
           <End Role="Reason_For_Return" Type="Self.Reason_For_Return" Multiplicity="0..1" />
           <End Role="Credit_Return_Line" Type="Self.Credit_Return_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -734,7 +713,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dispatch__Employ__0C85DE4D">
+        <Association Name="FK__Dispatch__Employ__208CD6FA">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="*" />
           <ReferentialConstraint>
@@ -746,7 +725,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employee___Emplo__10566F31">
+        <Association Name="FK__Employee___Emplo__245D67DE">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Employee_Logsheet" Type="Self.Employee_Logsheet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -758,7 +737,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employee__Employ__0E6E26BF">
+        <Association Name="FK__Employee__Employ__22751F6C">
           <End Role="Employee_Type" Type="Self.Employee_Type" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -770,7 +749,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employee__Title___0F624AF8">
+        <Association Name="FK__Employee__Title___236943A5">
           <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -782,7 +761,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Length___114A936A">
+        <Association Name="FK__Product__Length___25518C17">
           <End Role="pLength" Type="Self.pLength" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -794,7 +773,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Pack_Si__123EB7A3">
+        <Association Name="FK__Product__Pack_Si__2645B050">
           <End Role="Pack_Size" Type="Self.Pack_Size" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -806,7 +785,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Ply_ID__1332DBDC">
+        <Association Name="FK__Product__Ply_ID__2739D489">
           <End Role="Ply" Type="Self.Ply" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -818,7 +797,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__14270015">
+        <Association Name="FK__Product__Product__282DF8C2">
           <End Role="Product_Type" Type="Self.Product_Type" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -830,19 +809,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Product__151B244E">
-          <End Role="Product_Brand" Type="Self.Product_Brand" Multiplicity="0..1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product_Brand">
-              <PropertyRef Name="Product_Brand_ID" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="Product_Brand_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Product__Sheet_I__160F4887">
+        <Association Name="FK__Product__Sheet_I__29221CFB">
           <End Role="Sheet" Type="Self.Sheet" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -854,7 +821,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Width_I__17036CC0">
+        <Association Name="FK__Product__Width_I__2A164134">
           <End Role="Width" Type="Self.Width" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -866,7 +833,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Refund_Li__Sale___17F790F9">
+        <Association Name="FK__Refund_Li__Sale___2BFE89A6">
           <End Role="Sale_Refund" Type="Self.Sale_Refund" Multiplicity="0..1" />
           <End Role="Refund_Line" Type="Self.Refund_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -878,7 +845,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Refund_Li__Sales__18EBB532">
+        <Association Name="FK__Refund_Li__Sales__2CF2ADDF">
           <End Role="Sales_Order_line" Type="Self.Sales_Order_line" Multiplicity="0..1" />
           <End Role="Refund_Line" Type="Self.Refund_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -890,7 +857,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Sales_Ord__Produ__19DFD96B">
+        <Association Name="FK__Sales_Ord__Produ__2DE6D218">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Sales_Order_line" Type="Self.Sales_Order_line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -902,7 +869,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Sales_Ord__Sale___1AD3FDA4">
+        <Association Name="FK__Sales_Ord__Sale___2EDAF651">
           <End Role="Sale" Type="Self.Sale" Multiplicity="0..1" />
           <End Role="Sales_Order_line" Type="Self.Sales_Order_line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -914,7 +881,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Supplier___Produ__1EA48E88">
+        <Association Name="FK__Supplier___Produ__32AB8735">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Supplier_Order_Line" Type="Self.Supplier_Order_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -926,7 +893,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Supplier___Suppl__1CBC4616">
+        <Association Name="FK__Supplier___Suppl__30C33EC3">
           <End Role="Supplier_Order_Status" Type="Self.Supplier_Order_Status" Multiplicity="0..1" />
           <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -938,19 +905,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Supplier___Suppl__1DB06A4F">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
-          <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="Supplier_Id" />
-            </Principal>
-            <Dependent Role="Supplier_Order">
-              <PropertyRef Name="Supplier_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Supplier___Suppl__1F98B2C1">
+        <Association Name="FK__Supplier___Suppl__339FAB6E">
           <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="0..1" />
           <End Role="Supplier_Order_Line" Type="Self.Supplier_Order_Line" Multiplicity="*" />
           <ReferentialConstraint>
@@ -962,7 +917,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vehicle__Vehicle__208CD6FA">
+        <Association Name="FK__Vehicle__Vehicle__3493CFA7">
           <End Role="Vehicle_Status" Type="Self.Vehicle_Status" Multiplicity="0..1" />
           <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
           <ReferentialConstraint>
@@ -998,6 +953,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Backorder_Line_Supplier_Order_Line">
+          <End Role="Supplier_Order_Line" Type="Self.Supplier_Order_Line" Multiplicity="0..1" />
+          <End Role="Backorder_Line" Type="Self.Backorder_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier_Order_Line">
+              <PropertyRef Name="Supplier_Order_Line_ID" />
+            </Principal>
+            <Dependent Role="Backorder_Line">
+              <PropertyRef Name="Supplier_Order_Line_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Dispatch_Vehicle">
           <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
           <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="*" />
@@ -1010,6 +977,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Product_Product_Brand">
+          <End Role="Product_Brand" Type="Self.Product_Brand" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_Brand">
+              <PropertyRef Name="Product_Brand_ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Product_Brand_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Supplier_Company_Information">
           <End Role="Company_Information" Type="Self.Company_Information" Multiplicity="1" />
           <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
@@ -1019,6 +998,18 @@
             </Principal>
             <Dependent Role="Supplier">
               <PropertyRef Name="Company_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_Order_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Supplier_Id" />
+            </Principal>
+            <Dependent Role="Supplier_Order">
+              <PropertyRef Name="Supplier_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1040,7 +1031,6 @@
         <Function Name="EMPNum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="Get_Credit_Return_Line" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="crnum" Type="int" Mode="In" />
         </Function>
@@ -1081,36 +1071,6 @@
         <Function Name="SONum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SPNum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
@@ -1166,61 +1126,56 @@
           <EntitySet Name="Supplier_Order" EntityType="Self.Supplier_Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier_Order_Line" EntityType="Self.Supplier_Order_Line" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier_Order_Status" EntityType="Self.Supplier_Order_Status" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Role" EntityType="Self.User_Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehicle_Status" EntityType="Self.Vehicle_Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Width" EntityType="Self.Width" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Access_Le__Role___75A278F5" Association="Self.FK__Access_Le__Role___75A278F5">
+          <AssociationSet Name="FK__Access_Le__Role___09A971A2" Association="Self.FK__Access_Le__Role___09A971A2">
             <End Role="User_Role" EntitySet="User_Role" />
             <End Role="Access_Level" EntitySet="Access_Level" />
           </AssociationSet>
-          <AssociationSet Name="FK__Active_Us__Acces__76969D2E" Association="Self.FK__Active_Us__Acces__76969D2E">
+          <AssociationSet Name="FK__Active_Us__Acces__0A9D95DB" Association="Self.FK__Active_Us__Acces__0A9D95DB">
             <End Role="Access_Level" EntitySet="Access_Level" />
             <End Role="Active_User" EntitySet="Active_User" />
           </AssociationSet>
-          <AssociationSet Name="FK__Audit_Cre__Audit__787EE5A0" Association="Self.FK__Audit_Cre__Audit__787EE5A0">
+          <AssociationSet Name="FK__Audit_Cre__Audit__0C85DE4D" Association="Self.FK__Audit_Cre__Audit__0C85DE4D">
             <End Role="Audit_Log" EntitySet="Audit_Log" />
             <End Role="Audit_Create_Delete" EntitySet="Audit_Create_Delete" />
           </AssociationSet>
-          <AssociationSet Name="FK__Audit_Upd__Audit__7A672E12" Association="Self.FK__Audit_Upd__Audit__7A672E12">
+          <AssociationSet Name="FK__Audit_Upd__Audit__0E6E26BF" Association="Self.FK__Audit_Upd__Audit__0E6E26BF">
             <End Role="Audit_Log" EntitySet="Audit_Log" />
             <End Role="Audit_Update" EntitySet="Audit_Update" />
           </AssociationSet>
-          <AssociationSet Name="FK__Backorder__Suppl__7B5B524B" Association="Self.FK__Backorder__Suppl__7B5B524B">
+          <AssociationSet Name="FK__Backorder__Suppl__0F624AF8" Association="Self.FK__Backorder__Suppl__0F624AF8">
             <End Role="Supplier_Backorder" EntitySet="Supplier_Backorder" />
             <End Role="Backorder_Line" EntitySet="Backorder_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Backorder__Suppl__7C4F7684" Association="Self.FK__Backorder__Suppl__7C4F7684">
-            <End Role="Supplier_Order_Line" EntitySet="Supplier_Order_Line" />
-            <End Role="Backorder_Line" EntitySet="Backorder_Line" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Client__Account___7D439ABD" Association="Self.FK__Client__Account___7D439ABD">
+          <AssociationSet Name="FK__Client__Account___114A936A" Association="Self.FK__Client__Account___114A936A">
             <End Role="Client_Account_Status" EntitySet="Client_Account_Status" />
             <End Role="Client" EntitySet="Client" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client__City_Id__7E37BEF6" Association="Self.FK__Client__City_Id__7E37BEF6">
+          <AssociationSet Name="FK__Client__City_Id__123EB7A3" Association="Self.FK__Client__City_Id__123EB7A3">
             <End Role="City" EntitySet="City" />
             <End Role="Client" EntitySet="Client" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client__Credit_A__7F2BE32F" Association="Self.FK__Client__Credit_A__7F2BE32F">
+          <AssociationSet Name="FK__Client__Credit_A__1332DBDC" Association="Self.FK__Client__Credit_A__1332DBDC">
             <End Role="Credit_Approval" EntitySet="Credit_Approval" />
             <End Role="Client" EntitySet="Client" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client__Province__00200768" Association="Self.FK__Client__Province__00200768">
+          <AssociationSet Name="FK__Client__Province__14270015" Association="Self.FK__Client__Province__14270015">
             <End Role="Province" EntitySet="Province" />
             <End Role="Client" EntitySet="Client" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client_Pu__Clien__01142BA1" Association="Self.FK__Client_Pu__Clien__01142BA1">
+          <AssociationSet Name="FK__Client_Pu__Clien__151B244E" Association="Self.FK__Client_Pu__Clien__151B244E">
             <End Role="Client" EntitySet="Client" />
             <End Role="Client_Purchase_Order" EntitySet="Client_Purchase_Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client_Pu__Clien__06CD04F7" Association="Self.FK__Client_Pu__Clien__06CD04F7">
+          <AssociationSet Name="FK__Client_Pu__Clien__1AD3FDA4" Association="Self.FK__Client_Pu__Clien__1AD3FDA4">
             <End Role="Client_Purchase_Order" EntitySet="Client_Purchase_Order" />
             <End Role="Client_Purchase_Order_Line" EntitySet="Client_Purchase_Order_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client_Pu__Dispa__02084FDA" Association="Self.FK__Client_Pu__Dispa__02084FDA">
+          <AssociationSet Name="FK__Client_Pu__Dispa__160F4887" Association="Self.FK__Client_Pu__Dispa__160F4887">
             <End Role="Dispatch_Type" EntitySet="Dispatch_Type" />
             <End Role="Client_Purchase_Order" EntitySet="Client_Purchase_Order" />
           </AssociationSet>
@@ -1228,115 +1183,107 @@
             <End Role="Dispatch" EntitySet="Dispatch" />
             <End Role="Client_Purchase_Order" EntitySet="Client_Purchase_Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client_Pu__Payme__03F0984C" Association="Self.FK__Client_Pu__Payme__03F0984C">
+          <AssociationSet Name="FK__Client_Pu__Payme__17F790F9" Association="Self.FK__Client_Pu__Payme__17F790F9">
             <End Role="Payment_Term" EntitySet="Payment_Term" />
             <End Role="Client_Purchase_Order" EntitySet="Client_Purchase_Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client_Pu__Produ__07C12930" Association="Self.FK__Client_Pu__Produ__07C12930">
+          <AssociationSet Name="FK__Client_Pu__Produ__1BC821DD" Association="Self.FK__Client_Pu__Produ__1BC821DD">
             <End Role="Product" EntitySet="Product" />
             <End Role="Client_Purchase_Order_Line" EntitySet="Client_Purchase_Order_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client_Pu__Purch__04E4BC85" Association="Self.FK__Client_Pu__Purch__04E4BC85">
+          <AssociationSet Name="FK__Client_Pu__Purch__18EBB532" Association="Self.FK__Client_Pu__Purch__18EBB532">
             <End Role="Purchase_Order_Status" EntitySet="Purchase_Order_Status" />
             <End Role="Client_Purchase_Order" EntitySet="Client_Purchase_Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Client_Pu__Suppl__05D8E0BE" Association="Self.FK__Client_Pu__Suppl__05D8E0BE">
+          <AssociationSet Name="FK__Client_Pu__Suppl__19DFD96B" Association="Self.FK__Client_Pu__Suppl__19DFD96B">
             <End Role="Supplier_Order" EntitySet="Supplier_Order" />
             <End Role="Client_Purchase_Order" EntitySet="Client_Purchase_Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Credit_Ap__Credi__08B54D69" Association="Self.FK__Credit_Ap__Credi__08B54D69">
+          <AssociationSet Name="FK__Credit_Ap__Credi__1CBC4616" Association="Self.FK__Credit_Ap__Credi__1CBC4616">
             <End Role="Credit_Status" EntitySet="Credit_Status" />
             <End Role="Credit_Approval" EntitySet="Credit_Approval" />
           </AssociationSet>
-          <AssociationSet Name="FK__Credit_Re__Clien__09A971A2" Association="Self.FK__Credit_Re__Clien__09A971A2">
+          <AssociationSet Name="FK__Credit_Re__Clien__1DB06A4F" Association="Self.FK__Credit_Re__Clien__1DB06A4F">
             <End Role="Client_Purchase_Order_Line" EntitySet="Client_Purchase_Order_Line" />
             <End Role="Credit_Return_Line" EntitySet="Credit_Return_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Credit_Re__Credi__0A9D95DB" Association="Self.FK__Credit_Re__Credi__0A9D95DB">
+          <AssociationSet Name="FK__Credit_Re__Credi__1EA48E88" Association="Self.FK__Credit_Re__Credi__1EA48E88">
             <End Role="Credit_Return" EntitySet="Credit_Return" />
             <End Role="Credit_Return_Line" EntitySet="Credit_Return_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Credit_Re__Reaso__0B91BA14" Association="Self.FK__Credit_Re__Reaso__0B91BA14">
+          <AssociationSet Name="FK__Credit_Re__Reaso__1F98B2C1" Association="Self.FK__Credit_Re__Reaso__1F98B2C1">
             <End Role="Reason_For_Return" EntitySet="Reason_For_Return" />
             <End Role="Credit_Return_Line" EntitySet="Credit_Return_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dispatch__Employ__0C85DE4D" Association="Self.FK__Dispatch__Employ__0C85DE4D">
+          <AssociationSet Name="FK__Dispatch__Employ__208CD6FA" Association="Self.FK__Dispatch__Employ__208CD6FA">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Dispatch" EntitySet="Dispatch" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employee___Emplo__10566F31" Association="Self.FK__Employee___Emplo__10566F31">
+          <AssociationSet Name="FK__Employee___Emplo__245D67DE" Association="Self.FK__Employee___Emplo__245D67DE">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Employee_Logsheet" EntitySet="Employee_Logsheet" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employee__Employ__0E6E26BF" Association="Self.FK__Employee__Employ__0E6E26BF">
+          <AssociationSet Name="FK__Employee__Employ__22751F6C" Association="Self.FK__Employee__Employ__22751F6C">
             <End Role="Employee_Type" EntitySet="Employee_Type" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employee__Title___0F624AF8" Association="Self.FK__Employee__Title___0F624AF8">
+          <AssociationSet Name="FK__Employee__Title___236943A5" Association="Self.FK__Employee__Title___236943A5">
             <End Role="Title" EntitySet="Title" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Length___114A936A" Association="Self.FK__Product__Length___114A936A">
+          <AssociationSet Name="FK__Product__Length___25518C17" Association="Self.FK__Product__Length___25518C17">
             <End Role="pLength" EntitySet="pLength" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Pack_Si__123EB7A3" Association="Self.FK__Product__Pack_Si__123EB7A3">
+          <AssociationSet Name="FK__Product__Pack_Si__2645B050" Association="Self.FK__Product__Pack_Si__2645B050">
             <End Role="Pack_Size" EntitySet="Pack_Size" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Ply_ID__1332DBDC" Association="Self.FK__Product__Ply_ID__1332DBDC">
+          <AssociationSet Name="FK__Product__Ply_ID__2739D489" Association="Self.FK__Product__Ply_ID__2739D489">
             <End Role="Ply" EntitySet="Ply" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__14270015" Association="Self.FK__Product__Product__14270015">
+          <AssociationSet Name="FK__Product__Product__282DF8C2" Association="Self.FK__Product__Product__282DF8C2">
             <End Role="Product_Type" EntitySet="Product_Type" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Product__151B244E" Association="Self.FK__Product__Product__151B244E">
-            <End Role="Product_Brand" EntitySet="Product_Brand" />
-            <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Product__Sheet_I__160F4887" Association="Self.FK__Product__Sheet_I__160F4887">
+          <AssociationSet Name="FK__Product__Sheet_I__29221CFB" Association="Self.FK__Product__Sheet_I__29221CFB">
             <End Role="Sheet" EntitySet="Sheet" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Width_I__17036CC0" Association="Self.FK__Product__Width_I__17036CC0">
+          <AssociationSet Name="FK__Product__Width_I__2A164134" Association="Self.FK__Product__Width_I__2A164134">
             <End Role="Width" EntitySet="Width" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Refund_Li__Sale___17F790F9" Association="Self.FK__Refund_Li__Sale___17F790F9">
+          <AssociationSet Name="FK__Refund_Li__Sale___2BFE89A6" Association="Self.FK__Refund_Li__Sale___2BFE89A6">
             <End Role="Sale_Refund" EntitySet="Sale_Refund" />
             <End Role="Refund_Line" EntitySet="Refund_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Refund_Li__Sales__18EBB532" Association="Self.FK__Refund_Li__Sales__18EBB532">
+          <AssociationSet Name="FK__Refund_Li__Sales__2CF2ADDF" Association="Self.FK__Refund_Li__Sales__2CF2ADDF">
             <End Role="Sales_Order_line" EntitySet="Sales_Order_line" />
             <End Role="Refund_Line" EntitySet="Refund_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Sales_Ord__Produ__19DFD96B" Association="Self.FK__Sales_Ord__Produ__19DFD96B">
+          <AssociationSet Name="FK__Sales_Ord__Produ__2DE6D218" Association="Self.FK__Sales_Ord__Produ__2DE6D218">
             <End Role="Product" EntitySet="Product" />
             <End Role="Sales_Order_line" EntitySet="Sales_Order_line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Sales_Ord__Sale___1AD3FDA4" Association="Self.FK__Sales_Ord__Sale___1AD3FDA4">
+          <AssociationSet Name="FK__Sales_Ord__Sale___2EDAF651" Association="Self.FK__Sales_Ord__Sale___2EDAF651">
             <End Role="Sale" EntitySet="Sale" />
             <End Role="Sales_Order_line" EntitySet="Sales_Order_line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Supplier___Produ__1EA48E88" Association="Self.FK__Supplier___Produ__1EA48E88">
+          <AssociationSet Name="FK__Supplier___Produ__32AB8735" Association="Self.FK__Supplier___Produ__32AB8735">
             <End Role="Product" EntitySet="Product" />
             <End Role="Supplier_Order_Line" EntitySet="Supplier_Order_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Supplier___Suppl__1CBC4616" Association="Self.FK__Supplier___Suppl__1CBC4616">
+          <AssociationSet Name="FK__Supplier___Suppl__30C33EC3" Association="Self.FK__Supplier___Suppl__30C33EC3">
             <End Role="Supplier_Order_Status" EntitySet="Supplier_Order_Status" />
             <End Role="Supplier_Order" EntitySet="Supplier_Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__Supplier___Suppl__1DB06A4F" Association="Self.FK__Supplier___Suppl__1DB06A4F">
-            <End Role="Supplier" EntitySet="Supplier" />
-            <End Role="Supplier_Order" EntitySet="Supplier_Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Supplier___Suppl__1F98B2C1" Association="Self.FK__Supplier___Suppl__1F98B2C1">
+          <AssociationSet Name="FK__Supplier___Suppl__339FAB6E" Association="Self.FK__Supplier___Suppl__339FAB6E">
             <End Role="Supplier_Order" EntitySet="Supplier_Order" />
             <End Role="Supplier_Order_Line" EntitySet="Supplier_Order_Line" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vehicle__Vehicle__208CD6FA" Association="Self.FK__Vehicle__Vehicle__208CD6FA">
+          <AssociationSet Name="FK__Vehicle__Vehicle__3493CFA7" Association="Self.FK__Vehicle__Vehicle__3493CFA7">
             <End Role="Vehicle_Status" EntitySet="Vehicle_Status" />
             <End Role="Vehicle" EntitySet="Vehicle" />
           </AssociationSet>
@@ -1348,17 +1295,28 @@
             <End Role="Active_User" EntitySet="Active_User" />
             <End Role="Audit_Log" EntitySet="Audit_Log" />
           </AssociationSet>
+          <AssociationSet Name="FK_Backorder_Line_Supplier_Order_Line" Association="Self.FK_Backorder_Line_Supplier_Order_Line">
+            <End Role="Supplier_Order_Line" EntitySet="Supplier_Order_Line" />
+            <End Role="Backorder_Line" EntitySet="Backorder_Line" />
+          </AssociationSet>
           <AssociationSet Name="FK_Dispatch_Vehicle" Association="Self.FK_Dispatch_Vehicle">
             <End Role="Vehicle" EntitySet="Vehicle" />
             <End Role="Dispatch" EntitySet="Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Product_Brand" Association="Self.FK_Product_Product_Brand">
+            <End Role="Product_Brand" EntitySet="Product_Brand" />
+            <End Role="Product" EntitySet="Product" />
           </AssociationSet>
           <AssociationSet Name="FK_Supplier_Company_Information" Association="Self.FK_Supplier_Company_Information">
             <End Role="Company_Information" EntitySet="Company_Information" />
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
+          <AssociationSet Name="FK_Supplier_Order_Supplier" Association="Self.FK_Supplier_Order_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Supplier_Order" EntitySet="Supplier_Order" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1438,6 +1396,7 @@
           <Property Name="City_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="City_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Clients" Relationship="Self.FK__Client__City_Id__7E37BEF6" FromRole="City" ToRole="Client" />
+          <Property Name="Province_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -1618,6 +1577,7 @@
           <NavigationProperty Name="Employee_Logsheet" Relationship="Self.FK__Employee___Emplo__10566F31" FromRole="Employee" ToRole="Employee_Logsheet" />
           <NavigationProperty Name="Employee_Type" Relationship="Self.FK__Employee__Employ__0E6E26BF" FromRole="Employee" ToRole="Employee_Type" />
           <NavigationProperty Name="Title" Relationship="Self.FK__Employee__Title___0F624AF8" FromRole="Employee" ToRole="Title" />
+          <Property Name="Employee_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Employee_Logsheet">
           <Key>
@@ -2705,14 +2665,14 @@
             <End Role="Vehicle" EntitySet="Vehicles" />
           </AssociationSet>
           <FunctionImport Name="Get_Credit_Return_Line" ReturnType="Collection(SPModel.Get_Credit_Return_Line_Result)">
-            <Parameter Name="crnum" Mode="In" Type="Int32" />
+          <Parameter Name="crnum" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetAddress" ReturnType="Collection(SPModel.GetAddress_Result)">
             <Parameter Name="cid" Mode="In" Type="Int32" />
             <Parameter Name="pid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetBOL" ReturnType="Collection(SPModel.GetBOL_Result)">
-            <Parameter Name="soid" Mode="In" Type="Int32" />
+          <Parameter Name="soid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetDeliveryVehicle" ReturnType="Collection(String)" />
           <FunctionImport Name="GetDriver" ReturnType="Collection(String)" />
@@ -2721,10 +2681,10 @@
           <FunctionImport Name="GetOrderToLoad" ReturnType="Collection(SPModel.GetOrderToLoad_Result)" />
           <FunctionImport Name="Getpoduct" ReturnType="Collection(SPModel.Getpoduct_Result)" />
           <FunctionImport Name="GetPOL" ReturnType="Collection(SPModel.GetPOL_Result)">
-            <Parameter Name="poid" Mode="In" Type="Int32" />
+          <Parameter Name="poid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetSOL" ReturnType="Collection(SPModel.GetSOL_Result)">
-            <Parameter Name="soid" Mode="In" Type="Int32" />
+          <Parameter Name="soid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetTotalQty" ReturnType="Collection(SPModel.GetTotalQty_Result)" />
           <FunctionImport Name="Load_Client" ReturnType="Collection(SPModel.Load_Client_Result)" />
@@ -2981,6 +2941,7 @@
           <EntitySetMapping Name="Cities">
             <EntityTypeMapping TypeName="SPModel.City">
               <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="Province_ID" ColumnName="Province_ID" />
                 <ScalarProperty Name="City_Id" ColumnName="City_Id" />
                 <ScalarProperty Name="City_Name" ColumnName="City_Name" />
               </MappingFragment>
@@ -3130,6 +3091,7 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="SPModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Employee_Image" ColumnName="Employee_Image" />
                 <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
                 <ScalarProperty Name="Employee_Name" ColumnName="Employee_Name" />
                 <ScalarProperty Name="Employee_Surname" ColumnName="Employee_Surname" />
@@ -3141,7 +3103,6 @@
                 <ScalarProperty Name="Employee_Tax_Number" ColumnName="Employee_Tax_Number" />
                 <ScalarProperty Name="Employee_Type_ID" ColumnName="Employee_Type_ID" />
                 <ScalarProperty Name="Title_Id" ColumnName="Title_Id" />
-                <ScalarProperty Name="Employee1" ColumnName="Employee" />
                 <ScalarProperty Name="EMP_Number" ColumnName="EMP_Number" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -3356,17 +3317,6 @@
               <MappingFragment StoreEntitySet="Supplier_Order_Status">
                 <ScalarProperty Name="Supplier_Order_Status_ID" ColumnName="Supplier_Order_Status_ID" />
                 <ScalarProperty Name="Supplier_Order_Status_Description" ColumnName="Supplier_Order_Status_Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SPModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3624,31 +3574,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SPModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SPModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SPModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SPModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SPModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SPModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SPModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SPModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SPModel.Store.sp_upgraddiagrams" />
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

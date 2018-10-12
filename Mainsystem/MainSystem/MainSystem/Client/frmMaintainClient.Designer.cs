@@ -77,6 +77,10 @@
             this.txtEmailAdd = new System.Windows.Forms.TextBox();
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +91,10 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -246,12 +254,14 @@
             // comboBox5
             // 
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox5.DataSource = this.clientAccountStatusBindingSource;
             this.comboBox5.DisplayMember = "Account_Status_Description";
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(231, 170);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(196, 24);
             this.comboBox5.TabIndex = 23;
+            this.comboBox5.ValueMember = "Account_Status_ID";
             // 
             // label16
             // 
@@ -324,12 +334,14 @@
             // cbxCreditStatus
             // 
             this.cbxCreditStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbxCreditStatus.DataSource = this.creditStatusBindingSource;
             this.cbxCreditStatus.DisplayMember = "Credit_Status_Description";
             this.cbxCreditStatus.FormattingEnabled = true;
             this.cbxCreditStatus.Location = new System.Drawing.Point(231, 72);
             this.cbxCreditStatus.Name = "cbxCreditStatus";
             this.cbxCreditStatus.Size = new System.Drawing.Size(186, 24);
             this.cbxCreditStatus.TabIndex = 18;
+            this.cbxCreditStatus.ValueMember = "Credit_Status_ID";
             // 
             // label14
             // 
@@ -418,21 +430,25 @@
             // 
             // cbxCity
             // 
+            this.cbxCity.DataSource = this.cityBindingSource;
             this.cbxCity.DisplayMember = "City_Name";
             this.cbxCity.FormattingEnabled = true;
             this.cbxCity.Location = new System.Drawing.Point(360, 121);
             this.cbxCity.Name = "cbxCity";
             this.cbxCity.Size = new System.Drawing.Size(174, 21);
             this.cbxCity.TabIndex = 19;
+            this.cbxCity.ValueMember = "City_Id";
             // 
             // cbxProvince
             // 
+            this.cbxProvince.DataSource = this.provinceBindingSource;
             this.cbxProvince.DisplayMember = "Province_Name";
             this.cbxProvince.FormattingEnabled = true;
             this.cbxProvince.Location = new System.Drawing.Point(91, 121);
             this.cbxProvince.Name = "cbxProvince";
             this.cbxProvince.Size = new System.Drawing.Size(174, 21);
             this.cbxProvince.TabIndex = 17;
+            this.cbxProvince.ValueMember = "Province_Id";
             // 
             // txtPhysicalAdd
             // 
@@ -597,6 +613,22 @@
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.button2_Click);
             // 
+            // provinceBindingSource
+            // 
+            this.provinceBindingSource.DataSource = typeof(MainSystem.Province);
+            // 
+            // cityBindingSource
+            // 
+            this.cityBindingSource.DataSource = typeof(MainSystem.City);
+            // 
+            // creditStatusBindingSource
+            // 
+            this.creditStatusBindingSource.DataSource = typeof(MainSystem.Credit_Status);
+            // 
+            // clientAccountStatusBindingSource
+            // 
+            this.clientAccountStatusBindingSource.DataSource = typeof(MainSystem.Client_Account_Status);
+            // 
             // frmMaintainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,6 +661,10 @@
             this.panel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -682,5 +718,9 @@
         private System.Windows.Forms.Button btnUpdateClient;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnDownload;
+        private System.Windows.Forms.BindingSource clientAccountStatusBindingSource;
+        private System.Windows.Forms.BindingSource creditStatusBindingSource;
+        private System.Windows.Forms.BindingSource cityBindingSource;
+        private System.Windows.Forms.BindingSource provinceBindingSource;
     }
 }

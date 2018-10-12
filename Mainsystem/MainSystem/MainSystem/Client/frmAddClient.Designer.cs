@@ -72,6 +72,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,6 +84,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -127,22 +135,26 @@
             // 
             // cbxCity
             // 
+            this.cbxCity.DataSource = this.cityBindingSource;
             this.cbxCity.DisplayMember = "City_Name";
             this.cbxCity.FormattingEnabled = true;
             this.cbxCity.Location = new System.Drawing.Point(360, 121);
             this.cbxCity.Name = "cbxCity";
             this.cbxCity.Size = new System.Drawing.Size(174, 21);
             this.cbxCity.TabIndex = 19;
+            this.cbxCity.ValueMember = "City_Id";
             this.cbxCity.SelectedIndexChanged += new System.EventHandler(this.txtCity_SelectedIndexChanged);
             // 
             // cbxProvince
             // 
+            this.cbxProvince.DataSource = this.provinceBindingSource;
             this.cbxProvince.DisplayMember = "Province_Name";
             this.cbxProvince.FormattingEnabled = true;
             this.cbxProvince.Location = new System.Drawing.Point(91, 121);
             this.cbxProvince.Name = "cbxProvince";
             this.cbxProvince.Size = new System.Drawing.Size(174, 21);
             this.cbxProvince.TabIndex = 17;
+            this.cbxProvince.ValueMember = "Province_Id";
             this.cbxProvince.SelectedIndexChanged += new System.EventHandler(this.txtProvince_SelectedIndexChanged);
             // 
             // txtPhysicalAdd
@@ -426,12 +438,14 @@
             // cbxAccountStatus
             // 
             this.cbxAccountStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbxAccountStatus.DataSource = this.clientAccountStatusBindingSource;
             this.cbxAccountStatus.DisplayMember = "Account_Status_Description";
             this.cbxAccountStatus.FormattingEnabled = true;
             this.cbxAccountStatus.Location = new System.Drawing.Point(238, 170);
             this.cbxAccountStatus.Name = "cbxAccountStatus";
             this.cbxAccountStatus.Size = new System.Drawing.Size(196, 24);
             this.cbxAccountStatus.TabIndex = 23;
+            this.cbxAccountStatus.ValueMember = "Account_Status_ID";
             this.cbxAccountStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // label16
@@ -511,12 +525,14 @@
             // cbxCreditStatus
             // 
             this.cbxCreditStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbxCreditStatus.DataSource = this.creditStatusBindingSource;
             this.cbxCreditStatus.DisplayMember = "Credit_Status_Description";
             this.cbxCreditStatus.FormattingEnabled = true;
             this.cbxCreditStatus.Location = new System.Drawing.Point(238, 72);
             this.cbxCreditStatus.Name = "cbxCreditStatus";
             this.cbxCreditStatus.Size = new System.Drawing.Size(186, 24);
             this.cbxCreditStatus.TabIndex = 18;
+            this.cbxCreditStatus.ValueMember = "Credit_Status_ID";
             this.cbxCreditStatus.SelectedIndexChanged += new System.EventHandler(this.txtCreditSta_SelectedIndexChanged);
             // 
             // label14
@@ -573,6 +589,22 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
+            // provinceBindingSource
+            // 
+            this.provinceBindingSource.DataSource = typeof(MainSystem.Province);
+            // 
+            // cityBindingSource
+            // 
+            this.cityBindingSource.DataSource = typeof(MainSystem.City);
+            // 
+            // creditStatusBindingSource
+            // 
+            this.creditStatusBindingSource.DataSource = typeof(MainSystem.Credit_Status);
+            // 
+            // clientAccountStatusBindingSource
+            // 
+            this.clientAccountStatusBindingSource.DataSource = typeof(MainSystem.Client_Account_Status);
+            // 
             // frmAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,6 +633,10 @@
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -649,5 +685,9 @@
         private System.Windows.Forms.Button btnViewCreditApproval;
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.BindingSource cityBindingSource;
+        private System.Windows.Forms.BindingSource provinceBindingSource;
+        private System.Windows.Forms.BindingSource clientAccountStatusBindingSource;
+        private System.Windows.Forms.BindingSource creditStatusBindingSource;
     }
 }

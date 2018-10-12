@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3273a46fdb3f46298c4614dc85af6ccf" Name="Diagram1" ZoomLevel="95">
+      <Diagram DiagramId="3273a46fdb3f46298c4614dc85af6ccf" Name="Diagram1" ZoomLevel="121">
         <EntityTypeShape EntityType="SPModel.Access_Level" Width="1.5" PointX="13" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SPModel.Active_User" Width="1.5" PointX="15.25" PointY="40.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SPModel.Audit_Create_Delete" Width="1.5" PointX="19.75" PointY="39.25" IsExpanded="true" />

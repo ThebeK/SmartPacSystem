@@ -15,10 +15,16 @@ namespace MainSystem
 {
     public partial class frmSearchClient : Form
     {
-        public frmSearchClient()
+        string selectedOption;
+        public frmSearchClient(string option)
         {
+            if (option == "Maintain Client")
+            {
+                selectedOption = "Maintain Client";
+            }
             InitializeComponent();
         }
+        SPEntities db = new SPEntities();
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -97,6 +103,7 @@ namespace MainSystem
             toolTip1.SetToolTip(this.btnSearch, "Click to search client");
             toolTip1.SetToolTip(this.btnMaintain, "Click to edit or remove client");
 
+            dgvClientSearch.DataSource= db.Load_Client().ToList();
         }
 
         private void txtSearchSale_TextChanged(object sender, EventArgs e)
@@ -111,7 +118,31 @@ namespace MainSystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (txtSearchclient.Text == "")
+            {
+                label3.Visible= true;
+                 
 
+            }
+            else if (txtSearchclient.Text !="")
+            {
+                label3.Visible = false;
+                List<Client> search = db.Clients.Where(o => o.Client_Name.Contains(txtSearchclient.Text)).ToList();
+
+                if (search.Count == 0)
+                {
+                    label3.Visible = true;
+                }
+                else
+                {
+                    foreach (var item in search)
+                    {
+                        dgvClientSearch.DataSource = db.Load_Client().ToList();
+
+                    }
+                }
+            }
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

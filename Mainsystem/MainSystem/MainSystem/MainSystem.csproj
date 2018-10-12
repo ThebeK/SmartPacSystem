@@ -896,6 +896,11 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SP.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Properties\DataSources\City.datasource" />
+    <None Include="Properties\DataSources\Client_Account_Status.datasource" />
+    <None Include="Properties\DataSources\Credit_Status.datasource" />
+    <None Include="Properties\DataSources\Load_Client_Result.datasource" />
+    <None Include="Properties\DataSources\Province.datasource" />
     <None Include="SP.edmx.diagram">
       <DependentUpon>SP.edmx</DependentUpon>
     </None>

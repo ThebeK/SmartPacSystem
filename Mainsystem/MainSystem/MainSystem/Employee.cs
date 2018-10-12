@@ -35,6 +35,7 @@ namespace MainSystem
         public Nullable<int> Title_Id { get; set; }
         public Nullable<int> Employee1 { get; set; }
         public string EMP_Number { get; set; }
+        public byte[] Employee_Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Active_User> Active_User { get; set; }
