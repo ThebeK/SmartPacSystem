@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -14,8 +15,11 @@ namespace MainSystem.Users
 {
     public partial class FrmResetPassword : Form
     {
-        public FrmResetPassword()
+        SPEntities db = new SPEntities();
+        int Access_ID;
+        public FrmResetPassword(int x)
         {
+            Access_ID = x;
             InitializeComponent();
         }
         public sealed class UserActivityMonitor
@@ -87,6 +91,110 @@ namespace MainSystem.Users
         private void FrmResetPassword_Load(object sender, EventArgs e)
         {
 
+            textBox1.PasswordChar = '•';
+            textBox2.PasswordChar = '•';
+            groupBox1.Enabled = false;
+            button1.Enabled = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label4.Visible = false;
+        }
+        bool correct;
+        public static byte[] StrToByteArray(string str)
+        {
+            System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+            return encoding.GetBytes(str);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            correct = true;
+
+            if (txtUsername.Text == "")
+            {
+                label4.Visible = true;
+                label4.Text = "Please Provide the username you wish to reset";
+
+                correct = false;
+            }
+            if (correct == true)
+            {
+                string username = txtUsername.Text;
+                var query1 = db.Active_User.Where(co => co.Username == username).FirstOrDefault();
+
+                if (query1 == null)
+                {
+                    label4.Visible = true;
+                    label4.Text = "User Not Found. Re-enter userName";
+
+                    correct = false;
+                }
+                else
+                {
+                    groupBox1.Enabled = true;
+                    button1.Enabled = true;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+
+            correct = true;
+
+            string username = txtUsername.Text;
+            var query1 = db.Active_User.Where(co => co.Username == username/* && co.User_Type.User_Type_Description != "Customer"*/).FirstOrDefault();
+            if (txtUsername.Text == "")
+            {
+                label4.Visible = true;
+                label4.Text = "Please Provide the username you wish to reset";
+
+                correct = false;
+            }
+            if (textBox1.Text == "")
+            {
+                label5.Visible = true;
+                label5.Text = "Please Provide New Password";
+
+                correct = false;
+            }
+            if (textBox2.Text == "")
+            {
+                label6.Visible = true;
+                label6.Text = "Please Confirm Password";
+
+                correct = false;
+            }
+            if (textBox1.Text != textBox2.Text)
+            {
+                label7.Visible = true;
+                label7.Text = "Passwords provided do not match";
+
+                correct = false;
+            }
+
+
+            if (correct == true)
+            {
+                byte[] bit = new byte[25];
+                bit = StrToByteArray(textBox2.Text);
+
+                query1.pass = Convert.ToString(bit);
+                db.SaveChanges();
+                MessageBox.Show("Password Successfully Updated");
+                this.Close();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            Process.Start(@".\" + "ResetPassword.pdf");
         }
     }
 }

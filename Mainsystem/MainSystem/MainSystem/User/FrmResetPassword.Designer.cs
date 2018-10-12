@@ -72,6 +72,7 @@
             this.button5.TabIndex = 70;
             this.button5.Text = "?";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox1
             // 
@@ -207,6 +208,7 @@
             this.button1.TabIndex = 61;
             this.button1.Text = "Reset Password";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtUsername
             // 
@@ -242,6 +244,7 @@
             this.button2.TabIndex = 63;
             this.button2.Text = "Search Username";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FrmResetPassword
             // 
