@@ -99,7 +99,7 @@ namespace MainSystem.AccessLevel
             {
                 try
                 {
-                    if (cbxAdminScreen.Checked == true || cbxUserAccessLevelScreen.Checked == true || cbxEmployeeScreen.Checked == true || cbxSupplierOrderScreen.Checked == true || cbxPurchaseOrderScreen.Checked == true || cbxProductScreen.Checked == true || cbClient.Checked == true || cbxReportsScreen.Checked == true || cbxSaleScreen.Checked == true || cbxVehicleScreen.Checked == true)
+                    if (cbxAdminScreen.Checked == true || cbxUserAccessLevelScreen.Checked == true || cbxEmployeeScreen.Checked == true || cbxSupplierOrderScreen.Checked == true || cbxPurchaseOrderScreen.Checked == true || cbxProductScreen.Checked == true || cbxClient.Checked == true || cbxReportsScreen.Checked == true || cbxSaleScreen.Checked == true || cbxVehicleScreen.Checked == true)
                     {
 
                         if (db.Access_Level.Where(al => al.Access_Level_Name == txtAccessName.Text.ToUpper()).Count() == 0)
