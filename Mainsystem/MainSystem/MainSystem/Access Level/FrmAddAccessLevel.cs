@@ -15,6 +15,10 @@ namespace MainSystem.AccessLevel
 {
     public partial class FrmAddAccessLevel : Form
     {
+        public SPEntities db = new SPEntities();
+        Access_Level NewAccess = new Access_Level();
+        User_Role NewRole = new User_Role();
+        Active_User NewUser = new Active_User();
         public FrmAddAccessLevel()
         {
             InitializeComponent();
@@ -87,7 +91,68 @@ namespace MainSystem.AccessLevel
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (txtAccessName.Text == "")
+            {
+                MessageBox.Show("Please enter Access Level Name");
+            }
+            else
+            {
+                try
+                {
+                    if (cbxAdminScreen.Checked == true || cbxUserAccessLevelScreen.Checked == true || cbxEmployeeScreen.Checked == true || cbxSupplierOrderScreen.Checked == true || cbxPurchaseOrderScreen.Checked == true || cbxProductScreen.Checked == true || cbClient.Checked == true || cbxReportsScreen.Checked == true || cbxSaleScreen.Checked == true || cbxVehicleScreen.Checked == true)
+                    {
 
+                        if (db.Access_Level.Where(al => al.Access_Level_Name == txtAccessName.Text.ToUpper()).Count() == 0)
+                        {
+                            NewRole.Admin_Role = cbxAdminScreen.Checked;
+                            NewRole.Client_Role = cbxClient.Checked;
+                            NewRole.Employee_Role = cbxEmployeeScreen.Checked;
+                            NewRole.Product_Role = cbxProductScreen.Checked;
+                            NewRole.Reports_Role = cbxReportsScreen.Checked;
+                            NewRole.Sale_Role = cbxSaleScreen.Checked;
+                            NewRole.Supplier_Order_Role = cbxSupplierOrderScreen.Checked;
+                            NewRole.Client_Order_Role = cbxPurchaseOrderScreen.Checked;
+                            NewRole.Vehicle_Role = cbxVehicleScreen.Checked;
+                            NewRole.User_And_Access_Level_Role = cbxUserAccessLevelScreen.Checked;
+                            NewRole.Website_Role = false;
+
+
+
+
+                            db.User_Role.Add(NewRole);
+                            NewAccess.Access_Level_Name = txtAccessName.Text.ToUpper();
+                            NewAccess.Role_Id = NewRole.User_Role_Id;
+                            db.Access_Level.Add(NewAccess);
+                            db.SaveChanges();
+                            
+
+                            MessageBox.Show("Access level added successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Access level already exists");
+                        }
+
+
+
+
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Please select atleast one access level");
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Whoops, An Error Occured, Please try again" + ex);
+                }
+
+            }
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)

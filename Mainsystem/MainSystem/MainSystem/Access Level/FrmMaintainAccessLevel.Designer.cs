@@ -72,7 +72,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(381, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(458, 34);
+            this.label1.Size = new System.Drawing.Size(473, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Maintain Users and Access Level";
             // 
@@ -88,6 +88,7 @@
             this.btnUpdate.TabIndex = 36;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -149,7 +150,7 @@
             this.cbxProductScreen.ForeColor = System.Drawing.Color.Silver;
             this.cbxProductScreen.Location = new System.Drawing.Point(456, 75);
             this.cbxProductScreen.Name = "cbxProductScreen";
-            this.cbxProductScreen.Size = new System.Drawing.Size(82, 20);
+            this.cbxProductScreen.Size = new System.Drawing.Size(90, 20);
             this.cbxProductScreen.TabIndex = 21;
             this.cbxProductScreen.Text = "Products";
             this.cbxProductScreen.UseVisualStyleBackColor = true;
@@ -160,7 +161,7 @@
             this.cbxVehicleScreen.ForeColor = System.Drawing.Color.Silver;
             this.cbxVehicleScreen.Location = new System.Drawing.Point(847, 22);
             this.cbxVehicleScreen.Name = "cbxVehicleScreen";
-            this.cbxVehicleScreen.Size = new System.Drawing.Size(80, 20);
+            this.cbxVehicleScreen.Size = new System.Drawing.Size(88, 20);
             this.cbxVehicleScreen.TabIndex = 21;
             this.cbxVehicleScreen.Text = "Vehicles";
             this.cbxVehicleScreen.UseVisualStyleBackColor = true;
@@ -273,7 +274,7 @@
             this.cbxEmployeeScreen.ForeColor = System.Drawing.Color.Silver;
             this.cbxEmployeeScreen.Location = new System.Drawing.Point(456, 22);
             this.cbxEmployeeScreen.Name = "cbxEmployeeScreen";
-            this.cbxEmployeeScreen.Size = new System.Drawing.Size(95, 20);
+            this.cbxEmployeeScreen.Size = new System.Drawing.Size(103, 20);
             this.cbxEmployeeScreen.TabIndex = 26;
             this.cbxEmployeeScreen.Text = "Employees";
             this.cbxEmployeeScreen.UseVisualStyleBackColor = true;
@@ -317,6 +318,7 @@
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Access Levels";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // cbxUserAccessLevelScreen
             // 
@@ -324,7 +326,7 @@
             this.cbxUserAccessLevelScreen.ForeColor = System.Drawing.Color.Silver;
             this.cbxUserAccessLevelScreen.Location = new System.Drawing.Point(227, 22);
             this.cbxUserAccessLevelScreen.Name = "cbxUserAccessLevelScreen";
-            this.cbxUserAccessLevelScreen.Size = new System.Drawing.Size(156, 20);
+            this.cbxUserAccessLevelScreen.Size = new System.Drawing.Size(164, 20);
             this.cbxUserAccessLevelScreen.TabIndex = 23;
             this.cbxUserAccessLevelScreen.Text = "Users Access Level";
             this.cbxUserAccessLevelScreen.UseVisualStyleBackColor = true;

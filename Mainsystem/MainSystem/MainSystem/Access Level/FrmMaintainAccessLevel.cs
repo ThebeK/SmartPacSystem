@@ -16,6 +16,7 @@ namespace MainSystem.AccessLevel
     public partial class FrmMaintainAccessLevel : Form
     {
         int AccessId;
+        SPEntities db = new SPEntities();
         public FrmMaintainAccessLevel(string val)
         {
             InitializeComponent();
@@ -84,10 +85,27 @@ namespace MainSystem.AccessLevel
         }
         private void FrmMaintainAccessLevel_Load(object sender, EventArgs e)
         { //tips
-            
             toolTip1.SetToolTip(this.txtAccessName, "Please enter access name");
             toolTip1.SetToolTip(this.btnDelete, "Click to remove access level");
             toolTip1.SetToolTip(this.btnUpdate, "Click to edit access level");
+
+            var query = db.Access_Level.Where(co => co.Access_Level_Id == AccessId).FirstOrDefault();
+            var mark = db.User_Role.Where(co => co.User_Role_Id == query.Access_Level_Id).FirstOrDefault();
+
+            txtAccessName.Text = query.Access_Level_Name;
+            cbxAdminScreen.Checked = query.User_Role.Admin_Role;
+            cbxUserAccessLevelScreen.Checked = query.User_Role.User_And_Access_Level_Role;
+            cbxEmployeeScreen.Checked = query.User_Role.Employee_Role;
+            cbxSupplierOrderScreen.Checked = query.User_Role.Supplier_Order_Role;
+            cbxPurchaseOrderScreen.Checked = query.User_Role.Client_Order_Role;
+            cbxProductScreen.Checked = query.User_Role.Product_Role;
+            cbxClient.Checked = query.User_Role.Client_Role;
+            cbxReportsScreen.Checked = query.User_Role.Reports_Role;
+            cbWebsite.Checked = query.User_Role.Website_Role;
+            cbxSaleScreen.Checked = query.User_Role.Sale_Role;
+            cbxVehicleScreen.Checked = query.User_Role.Vehicle_Role;
+
+          
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -101,6 +119,51 @@ namespace MainSystem.AccessLevel
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var query = db.Access_Level.Where(co => co.Access_Level_Id == AccessId).FirstOrDefault();
+                var UserRole = db.User_Role.Where(co => co.User_Role_Id == query.Access_Level_Id).FirstOrDefault();
+
+                Access_Level CurrentAccessLevel = new Access_Level();
+                User_Role CurrentRole = new User_Role();
+
+                CurrentAccessLevel = db.Access_Level.Where(co => co.Access_Level_Id == AccessId).FirstOrDefault();
+                CurrentRole = db.User_Role.Where(co => co.User_Role_Id == query.Access_Level_Id).FirstOrDefault();
+
+                var Newquery = db.Access_Level.Where(co => co.Access_Level_Id == AccessId).FirstOrDefault();
+                var NewUserRole = db.User_Role.Where(co => co.User_Role_Id == query.Access_Level_Id).FirstOrDefault();
+
+                query.Access_Level_Name = txtAccessName.Text;
+                UserRole.Admin_Role = cbxAdminScreen.Checked;
+                UserRole.User_And_Access_Level_Role = cbxUserAccessLevelScreen.Checked;
+                UserRole.Employee_Role = cbxEmployeeScreen.Checked;
+                UserRole.Supplier_Order_Role = cbxSupplierOrderScreen.Checked;
+                UserRole.Client_Order_Role = cbxPurchaseOrderScreen.Checked;
+                UserRole.Product_Role = cbxProductScreen.Checked;
+                UserRole.Client_Role = cbxClient.Checked;
+                UserRole.Reports_Role = cbxReportsScreen.Checked;
+                UserRole.Website_Role = cbWebsite.Checked;
+                UserRole.Sale_Role = cbxSaleScreen.Checked;
+                UserRole.Vehicle_Role = cbxVehicleScreen.Checked;
+
+                db.SaveChanges();
+                MessageBox.Show("Access Level Updated Successfully");
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("An error occured, please try again");
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }
