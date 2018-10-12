@@ -46,25 +46,25 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.chkRemember = new System.Windows.Forms.CheckBox();
-            this.SMARTPAC = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.SMARTPAC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(98, 92);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 165);
+            this.pictureBox1.Size = new System.Drawing.Size(230, 184);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // BtnLogin
             // 
@@ -133,6 +133,7 @@
             this.checkBox1.Size = new System.Drawing.Size(51, 31);
             this.checkBox1.TabIndex = 34;
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtPasswordLogin
             // 
@@ -158,6 +159,7 @@
             this.linkLabel1.TabIndex = 48;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // lblTime
             // 
@@ -185,6 +187,7 @@
             this.button11.TabIndex = 45;
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Visible = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox2
             // 
@@ -218,6 +221,7 @@
             // timer2
             // 
             this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // button1
             // 
@@ -232,6 +236,7 @@
             this.button1.TabIndex = 50;
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // chkRemember
             // 
@@ -245,37 +250,14 @@
             this.chkRemember.Text = "Remember me";
             this.chkRemember.UseVisualStyleBackColor = false;
             // 
-            // SMARTPAC
-            // 
-            this.SMARTPAC.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SMARTPAC.CausesValidation = false;
-            this.SMARTPAC.Controls.Add(this.pictureBox1);
-            this.SMARTPAC.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.SMARTPAC.Location = new System.Drawing.Point(23, 91);
-            this.SMARTPAC.Name = "SMARTPAC";
-            this.SMARTPAC.Size = new System.Drawing.Size(210, 195);
-            this.SMARTPAC.TabIndex = 51;
-            this.SMARTPAC.TabStop = false;
-            this.SMARTPAC.Text = "SMARTPAC";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox2.Location = new System.Drawing.Point(662, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 43);
-            this.pictureBox2.TabIndex = 52;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(737, 394);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.SMARTPAC);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.groupBox1);
@@ -289,13 +271,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.SMARTPAC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +300,5 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox chkRemember;
-        private System.Windows.Forms.GroupBox SMARTPAC;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -45,12 +45,12 @@ namespace MainSystem
         public virtual pLength pLength { get; set; }
         public virtual Ply Ply { get; set; }
         public virtual Product_Type Product_Type { get; set; }
-        public virtual Product_Brand Product_Brand { get; set; }
         public virtual Sheet Sheet { get; set; }
         public virtual Width Width { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sales_Order_line> Sales_Order_line { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Supplier_Order_Line> Supplier_Order_Line { get; set; }
+        public virtual Product_Brand Product_Brand { get; set; }
     }
 }

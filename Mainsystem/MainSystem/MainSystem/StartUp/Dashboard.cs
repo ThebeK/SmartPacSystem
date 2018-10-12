@@ -324,5 +324,14 @@ namespace MainSystem
             this.Show();
             this.Activate();
         }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DialogResult = DialogResult.No;
+                Close();
+            }
+        }
     }
 }
