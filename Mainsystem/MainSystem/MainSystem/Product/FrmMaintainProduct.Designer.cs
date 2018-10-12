@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product
+﻿namespace MainSystem.Products
 {
     partial class FrmMaintainProduct
     {
@@ -101,7 +101,7 @@
             this.lblProdDescr.Name = "lblProdDescr";
             this.lblProdDescr.Size = new System.Drawing.Size(297, 16);
             this.lblProdDescr.TabIndex = 62;
-            this.lblProdDescr.Text = "Please enter a valid Product Description";
+            this.lblProdDescr.Text = "Please enter a valid Products Description";
             this.lblProdDescr.Visible = false;
             // 
             // txtImageName
@@ -131,7 +131,7 @@
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(189, 30);
             this.btnBrowse.TabIndex = 56;
-            this.btnBrowse.Text = "Browse for Product Image";
+            this.btnBrowse.Text = "Browse for Products Image";
             this.btnBrowse.UseVisualStyleBackColor = false;
             // 
             // txtImage
@@ -157,7 +157,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 16);
             this.label4.TabIndex = 53;
-            this.label4.Text = "Product Price";
+            this.label4.Text = "Products Price";
             // 
             // cbxLengths2
             // 
@@ -418,7 +418,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 16);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Product Type";
+            this.label7.Text = "Products Type";
             // 
             // label5
             // 
@@ -440,7 +440,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Product Description:";
+            this.label2.Text = "Products Description:";
             // 
             // txtDescription
             // 
@@ -469,7 +469,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(178, 38);
             this.btnDelete.TabIndex = 65;
-            this.btnDelete.Text = "Delete Product";
+            this.btnDelete.Text = "Delete Products";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
@@ -481,7 +481,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(178, 38);
             this.btnUpdate.TabIndex = 64;
-            this.btnUpdate.Text = "Update Product";
+            this.btnUpdate.Text = "Update Products";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // groupBox1
@@ -536,7 +536,7 @@
             this.groupBox1.Size = new System.Drawing.Size(886, 430);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General Product Information";
+            this.groupBox1.Text = "General Products Information";
             // 
             // txtQuantity
             // 
@@ -629,7 +629,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(254, 34);
             this.label9.TabIndex = 24;
-            this.label9.Text = "Maintain Product";
+            this.label9.Text = "Maintain Products";
             // 
             // button5
             // 

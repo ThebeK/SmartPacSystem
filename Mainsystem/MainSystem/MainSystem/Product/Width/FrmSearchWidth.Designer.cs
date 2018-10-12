@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Width
+﻿namespace MainSystem.Products.Width
 {
     partial class FrmSearchWidth
     {

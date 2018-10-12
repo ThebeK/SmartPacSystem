@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Access_Level
+﻿namespace MainSystem.AccessLevel
 {
     partial class FrmMaintainAccessLevel
     {
@@ -74,7 +74,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(458, 34);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Maintain User and Access Level";
+            this.label1.Text = "Maintain Users and Access Level";
             // 
             // btnUpdate
             // 
@@ -151,7 +151,7 @@
             this.cbxProductScreen.Name = "cbxProductScreen";
             this.cbxProductScreen.Size = new System.Drawing.Size(82, 20);
             this.cbxProductScreen.TabIndex = 21;
-            this.cbxProductScreen.Text = "Product";
+            this.cbxProductScreen.Text = "Products";
             this.cbxProductScreen.UseVisualStyleBackColor = true;
             // 
             // cbxVehicleScreen
@@ -162,7 +162,7 @@
             this.cbxVehicleScreen.Name = "cbxVehicleScreen";
             this.cbxVehicleScreen.Size = new System.Drawing.Size(80, 20);
             this.cbxVehicleScreen.TabIndex = 21;
-            this.cbxVehicleScreen.Text = "Vehicle";
+            this.cbxVehicleScreen.Text = "Vehicles";
             this.cbxVehicleScreen.UseVisualStyleBackColor = true;
             // 
             // cbxSaleScreen
@@ -275,7 +275,7 @@
             this.cbxEmployeeScreen.Name = "cbxEmployeeScreen";
             this.cbxEmployeeScreen.Size = new System.Drawing.Size(95, 20);
             this.cbxEmployeeScreen.TabIndex = 26;
-            this.cbxEmployeeScreen.Text = "Employee";
+            this.cbxEmployeeScreen.Text = "Employees";
             this.cbxEmployeeScreen.UseVisualStyleBackColor = true;
             // 
             // txtErrorName
@@ -326,7 +326,7 @@
             this.cbxUserAccessLevelScreen.Name = "cbxUserAccessLevelScreen";
             this.cbxUserAccessLevelScreen.Size = new System.Drawing.Size(156, 20);
             this.cbxUserAccessLevelScreen.TabIndex = 23;
-            this.cbxUserAccessLevelScreen.Text = "User Access Level";
+            this.cbxUserAccessLevelScreen.Text = "Users Access Level";
             this.cbxUserAccessLevelScreen.UseVisualStyleBackColor = true;
             // 
             // groupBox2
@@ -342,7 +342,7 @@
             this.groupBox2.Size = new System.Drawing.Size(998, 371);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "User Access Level";
+            this.groupBox2.Text = "Users Access Level";
             // 
             // panel4
             // 

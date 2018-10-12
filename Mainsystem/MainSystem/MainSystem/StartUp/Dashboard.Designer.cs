@@ -325,7 +325,7 @@
             this.productToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
             this.productToolStripMenuItem.Size = new System.Drawing.Size(179, 52);
-            this.productToolStripMenuItem.Text = "Product";
+            this.productToolStripMenuItem.Text = "Products";
             this.productToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
@@ -336,7 +336,7 @@
             this.addProductToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
             this.addProductToolStripMenuItem.Size = new System.Drawing.Size(369, 32);
-            this.addProductToolStripMenuItem.Text = "Add Product";
+            this.addProductToolStripMenuItem.Text = "Add Products";
             this.addProductToolStripMenuItem.Click += new System.EventHandler(this.addProductToolStripMenuItem_Click);
             // 
             // maintainClientToolStripMenuItem1
@@ -346,7 +346,7 @@
             this.maintainClientToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainClientToolStripMenuItem1.Name = "maintainClientToolStripMenuItem1";
             this.maintainClientToolStripMenuItem1.Size = new System.Drawing.Size(369, 32);
-            this.maintainClientToolStripMenuItem1.Text = "Maintain Product";
+            this.maintainClientToolStripMenuItem1.Text = "Maintain Products";
             this.maintainClientToolStripMenuItem1.Click += new System.EventHandler(this.maintainClientToolStripMenuItem1_Click);
             // 
             // aToolStripMenuItem
@@ -356,7 +356,7 @@
             this.aToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.aToolStripMenuItem.Name = "aToolStripMenuItem";
             this.aToolStripMenuItem.Size = new System.Drawing.Size(369, 32);
-            this.aToolStripMenuItem.Text = "Add Product Type";
+            this.aToolStripMenuItem.Text = "Add Products Type";
             this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
             // 
             // maintainProductTypeToolStripMenuItem
@@ -366,7 +366,7 @@
             this.maintainProductTypeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainProductTypeToolStripMenuItem.Name = "maintainProductTypeToolStripMenuItem";
             this.maintainProductTypeToolStripMenuItem.Size = new System.Drawing.Size(369, 32);
-            this.maintainProductTypeToolStripMenuItem.Text = "Maintain Product Type";
+            this.maintainProductTypeToolStripMenuItem.Text = "Maintain Products Type";
             this.maintainProductTypeToolStripMenuItem.Click += new System.EventHandler(this.maintainProductTypeToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
@@ -398,7 +398,7 @@
             this.userAccessLevelToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.userAccessLevelToolStripMenuItem.Name = "userAccessLevelToolStripMenuItem";
             this.userAccessLevelToolStripMenuItem.Size = new System.Drawing.Size(367, 32);
-            this.userAccessLevelToolStripMenuItem.Text = "User And Access Level";
+            this.userAccessLevelToolStripMenuItem.Text = "Users And Access Level";
             // 
             // addAccessLevelToolStripMenuItem
             // 
@@ -424,7 +424,7 @@
             this.searchUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.searchUserToolStripMenuItem.Name = "searchUserToolStripMenuItem";
             this.searchUserToolStripMenuItem.Size = new System.Drawing.Size(357, 32);
-            this.searchUserToolStripMenuItem.Text = "Add User";
+            this.searchUserToolStripMenuItem.Text = "Add Users";
             this.searchUserToolStripMenuItem.Click += new System.EventHandler(this.searchUserToolStripMenuItem_Click);
             // 
             // maintainUserToolStripMenuItem
@@ -433,7 +433,7 @@
             this.maintainUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainUserToolStripMenuItem.Name = "maintainUserToolStripMenuItem";
             this.maintainUserToolStripMenuItem.Size = new System.Drawing.Size(357, 32);
-            this.maintainUserToolStripMenuItem.Text = "Maintain User";
+            this.maintainUserToolStripMenuItem.Text = "Maintain Users";
             this.maintainUserToolStripMenuItem.Click += new System.EventHandler(this.maintainUserToolStripMenuItem_Click);
             // 
             // employeeToolStripMenuItem
@@ -449,7 +449,7 @@
             this.employeeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
             this.employeeToolStripMenuItem.Size = new System.Drawing.Size(367, 32);
-            this.employeeToolStripMenuItem.Text = "Employee";
+            this.employeeToolStripMenuItem.Text = "Employees";
             // 
             // addEmployeeToolStripMenuItem
             // 
@@ -457,7 +457,7 @@
             this.addEmployeeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
             this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(389, 32);
-            this.addEmployeeToolStripMenuItem.Text = "Add Employee";
+            this.addEmployeeToolStripMenuItem.Text = "Add Employees";
             this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
             // 
             // maintainEmployeeToolStripMenuItem
@@ -466,7 +466,7 @@
             this.maintainEmployeeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainEmployeeToolStripMenuItem.Name = "maintainEmployeeToolStripMenuItem";
             this.maintainEmployeeToolStripMenuItem.Size = new System.Drawing.Size(389, 32);
-            this.maintainEmployeeToolStripMenuItem.Text = "Maintain Employee";
+            this.maintainEmployeeToolStripMenuItem.Text = "Maintain Employees";
             this.maintainEmployeeToolStripMenuItem.Click += new System.EventHandler(this.maintainEmployeeToolStripMenuItem_Click);
             // 
             // addEmployeeTypeToolStripMenuItem
@@ -475,7 +475,7 @@
             this.addEmployeeTypeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addEmployeeTypeToolStripMenuItem.Name = "addEmployeeTypeToolStripMenuItem";
             this.addEmployeeTypeToolStripMenuItem.Size = new System.Drawing.Size(389, 32);
-            this.addEmployeeTypeToolStripMenuItem.Text = "Add Employee Type";
+            this.addEmployeeTypeToolStripMenuItem.Text = "Add Employees Type";
             this.addEmployeeTypeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeTypeToolStripMenuItem_Click);
             // 
             // maintainEmployeeTypeToolStripMenuItem
@@ -484,7 +484,7 @@
             this.maintainEmployeeTypeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainEmployeeTypeToolStripMenuItem.Name = "maintainEmployeeTypeToolStripMenuItem";
             this.maintainEmployeeTypeToolStripMenuItem.Size = new System.Drawing.Size(389, 32);
-            this.maintainEmployeeTypeToolStripMenuItem.Text = "Maintain Employee Type";
+            this.maintainEmployeeTypeToolStripMenuItem.Text = "Maintain Employees Type";
             this.maintainEmployeeTypeToolStripMenuItem.Click += new System.EventHandler(this.maintainEmployeeTypeToolStripMenuItem_Click);
             // 
             // employeeLogsheetToolStripMenuItem
@@ -493,7 +493,7 @@
             this.employeeLogsheetToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.employeeLogsheetToolStripMenuItem.Name = "employeeLogsheetToolStripMenuItem";
             this.employeeLogsheetToolStripMenuItem.Size = new System.Drawing.Size(389, 32);
-            this.employeeLogsheetToolStripMenuItem.Text = "Employee Logsheet";
+            this.employeeLogsheetToolStripMenuItem.Text = "Employees Logsheet";
             this.employeeLogsheetToolStripMenuItem.Click += new System.EventHandler(this.employeeLogsheetToolStripMenuItem_Click);
             // 
             // administrationToolStripMenuItem
@@ -546,7 +546,7 @@
             this.vehicleToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.vehicleToolStripMenuItem.Name = "vehicleToolStripMenuItem";
             this.vehicleToolStripMenuItem.Size = new System.Drawing.Size(367, 32);
-            this.vehicleToolStripMenuItem.Text = "Vehicle";
+            this.vehicleToolStripMenuItem.Text = "Vehicles";
             // 
             // addVehicleToolStripMenuItem
             // 
@@ -554,7 +554,7 @@
             this.addVehicleToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addVehicleToolStripMenuItem.Name = "addVehicleToolStripMenuItem";
             this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(291, 32);
-            this.addVehicleToolStripMenuItem.Text = "Add Vehicle";
+            this.addVehicleToolStripMenuItem.Text = "Add Vehicles";
             // 
             // maintainVehicleToolStripMenuItem
             // 
@@ -562,7 +562,7 @@
             this.maintainVehicleToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainVehicleToolStripMenuItem.Name = "maintainVehicleToolStripMenuItem";
             this.maintainVehicleToolStripMenuItem.Size = new System.Drawing.Size(291, 32);
-            this.maintainVehicleToolStripMenuItem.Text = "Maintain Vehicle";
+            this.maintainVehicleToolStripMenuItem.Text = "Maintain Vehicles";
             // 
             // reportsToolStripMenuItem
             // 
@@ -593,13 +593,13 @@
             // 
             this.employeeReportToolStripMenuItem.Name = "employeeReportToolStripMenuItem";
             this.employeeReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.employeeReportToolStripMenuItem.Text = "Employee Report";
+            this.employeeReportToolStripMenuItem.Text = "Employees Report";
             // 
             // productReportToolStripMenuItem
             // 
             this.productReportToolStripMenuItem.Name = "productReportToolStripMenuItem";
             this.productReportToolStripMenuItem.Size = new System.Drawing.Size(515, 38);
-            this.productReportToolStripMenuItem.Text = "Product Report";
+            this.productReportToolStripMenuItem.Text = "Products Report";
             // 
             // purchaseOrderReportsToolStripMenuItem
             // 

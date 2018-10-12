@@ -1,4 +1,4 @@
-﻿namespace MainSystem.User
+﻿namespace MainSystem.Users
 {
     partial class FrmResetPassword
     {

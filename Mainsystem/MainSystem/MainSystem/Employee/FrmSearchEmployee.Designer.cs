@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Employee
+﻿namespace MainSystem.Employees
 {
     partial class FrmSearchEmployee
     {
@@ -65,7 +65,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(282, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Please Specify Employee Name";
+            this.label2.Text = "Please Specify Employees Name";
             // 
             // panel1
             // 
@@ -111,7 +111,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(252, 34);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Search Employee";
+            this.label13.Text = "Search Employees";
             // 
             // btnMaintain
             // 
@@ -135,7 +135,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(329, 20);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Please specify valid Employee Name";
+            this.label3.Text = "Please specify valid Employees Name";
             this.label3.Visible = false;
             // 
             // dgvClientSearch

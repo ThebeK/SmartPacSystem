@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Sheet
+﻿namespace MainSystem.Products.Sheet
 {
     partial class FrmAddSheet
     {

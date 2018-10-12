@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Employee
+﻿namespace MainSystem.Employees
 {
     partial class FrmAddEmployee
     {
@@ -124,7 +124,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 34);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Add Employee";
+            this.label1.Text = "Add Employees";
             // 
             // panel2
             // 
@@ -164,7 +164,7 @@
             this.groupBox1.Size = new System.Drawing.Size(533, 549);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Employee Information";
+            this.groupBox1.Text = "Employees Information";
             // 
             // lblTaxN
             // 
@@ -410,7 +410,7 @@
             this.groupBox2.Size = new System.Drawing.Size(530, 538);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Employee Information";
+            this.groupBox2.Text = "Employees Information";
             // 
             // btnAddEmployee
             // 
@@ -420,7 +420,7 @@
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(128, 29);
             this.btnAddEmployee.TabIndex = 40;
-            this.btnAddEmployee.Text = "Add Employee";
+            this.btnAddEmployee.Text = "Add Employees";
             this.btnAddEmployee.UseVisualStyleBackColor = false;
             // 
             // btnTakePic
@@ -467,7 +467,7 @@
             this.lblEmployeetype.Name = "lblEmployeetype";
             this.lblEmployeetype.Size = new System.Drawing.Size(266, 16);
             this.lblEmployeetype.TabIndex = 35;
-            this.lblEmployeetype.Text = "Please select a valid Employee Type";
+            this.lblEmployeetype.Text = "Please select a valid Employees Type";
             this.lblEmployeetype.Visible = false;
             // 
             // lblEmailAddress
@@ -584,7 +584,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(115, 16);
             this.label11.TabIndex = 23;
-            this.label11.Text = "Employee Type";
+            this.label11.Text = "Employees Type";
             // 
             // FrmAddEmployee
             // 

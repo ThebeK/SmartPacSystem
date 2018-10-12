@@ -1,4 +1,4 @@
-﻿namespace MainSystem.User
+﻿namespace MainSystem.Users
 {
     partial class FrmAddUser
     {
@@ -102,7 +102,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 34);
             this.label1.TabIndex = 55;
-            this.label1.Text = "Add User Profile";
+            this.label1.Text = "Add Users Profile";
             // 
             // groupBox1
             // 
@@ -128,7 +128,7 @@
             this.groupBox1.Size = new System.Drawing.Size(606, 377);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User Profile";
+            this.groupBox1.Text = "Users Profile";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // comboBox1

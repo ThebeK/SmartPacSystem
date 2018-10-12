@@ -275,7 +275,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 16);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Select Product";
+            this.label6.Text = "Select Products";
             // 
             // label5
             // 

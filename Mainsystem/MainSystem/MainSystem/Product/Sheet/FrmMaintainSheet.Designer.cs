@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Sheet
+﻿namespace MainSystem.Products.Sheet
 {
     partial class FrmMaintainSheet
     {
@@ -145,7 +145,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 16);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Product Sheet Number";
+            this.label1.Text = "Products Sheet Number";
             // 
             // FrmMaintainSheet
             // 

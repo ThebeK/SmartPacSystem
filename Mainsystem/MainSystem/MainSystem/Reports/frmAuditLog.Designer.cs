@@ -151,7 +151,7 @@
             this.groupBox4.Size = new System.Drawing.Size(336, 168);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Selected User(s)";
+            this.groupBox4.Text = "Selected Users(s)";
             // 
             // listBox1
             // 
@@ -247,7 +247,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 16);
             this.label5.TabIndex = 0;
-            this.label5.Text = "User name:";
+            this.label5.Text = "Users name:";
             // 
             // btnSelect
             // 
@@ -258,7 +258,7 @@
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 41);
             this.btnSelect.TabIndex = 3;
-            this.btnSelect.Text = "Select User";
+            this.btnSelect.Text = "Select Users";
             this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // button1

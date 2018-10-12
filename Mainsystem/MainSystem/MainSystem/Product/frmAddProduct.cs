@@ -92,7 +92,7 @@ namespace MainSystem
 
         private void btnAddProdType_Click(object sender, EventArgs e)
         {
-            Product.FrmAddProductType qq = new Product.FrmAddProductType();
+            Products.FrmAddProductType qq = new Products.FrmAddProductType();
             qq.ShowDialog();
             this.Show();
             this.Activate();
@@ -101,7 +101,7 @@ namespace MainSystem
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Product.FrmSearchProductType qq = new Product.FrmSearchProductType();
+            Products.FrmSearchProductType qq = new Products.FrmSearchProductType();
             qq.ShowDialog();
             this.Show();
             this.Activate();
@@ -109,7 +109,7 @@ namespace MainSystem
 
         private void btnAddBrand_Click(object sender, EventArgs e)
         {
-            Product.Brand.FrmAddBrand wq = new Product.Brand.FrmAddBrand();
+            Products.Brand.FrmAddBrand wq = new Products.Brand.FrmAddBrand();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -117,7 +117,7 @@ namespace MainSystem
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            Product.Brand.FrmSearchBrand wq = new Product.Brand.FrmSearchBrand();
+            Products.Brand.FrmSearchBrand wq = new Products.Brand.FrmSearchBrand();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -125,7 +125,7 @@ namespace MainSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Product.Length.FrmAddLength wq = new Product.Length.FrmAddLength();
+            Products.Length.FrmAddLength wq = new Products.Length.FrmAddLength();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -133,7 +133,7 @@ namespace MainSystem
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Product.Length.FrmSearchLength wq = new Product.Length.FrmSearchLength();
+            Products.Length.FrmSearchLength wq = new Products.Length.FrmSearchLength();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -141,7 +141,7 @@ namespace MainSystem
 
         private void btnAddPackSize_Click(object sender, EventArgs e)
         {
-            Product.Pack_Size.FrmAddPackSize wq = new Product.Pack_Size.FrmAddPackSize();
+            Products.Pack_Size.FrmAddPackSize wq = new Products.Pack_Size.FrmAddPackSize();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -149,7 +149,7 @@ namespace MainSystem
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Product.Pack_Size.FrmSearchPackSize wq = new Product.Pack_Size.FrmSearchPackSize();
+            Products.Pack_Size.FrmSearchPackSize wq = new Products.Pack_Size.FrmSearchPackSize();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -157,7 +157,7 @@ namespace MainSystem
 
         private void btnAddSheetNumber_Click(object sender, EventArgs e)
         {
-            Product.Sheet.FrmAddSheet wq = new Product.Sheet.FrmAddSheet();
+            Products.Sheet.FrmAddSheet wq = new Products.Sheet.FrmAddSheet();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -165,7 +165,7 @@ namespace MainSystem
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Product.Sheet.FrmSearchSheet wq = new Product.Sheet.FrmSearchSheet();
+            Products.Sheet.FrmSearchSheet wq = new Products.Sheet.FrmSearchSheet();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -173,7 +173,7 @@ namespace MainSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Product.Width.FrmAddWidth wq = new Product.Width.FrmAddWidth();
+            Products.Width.FrmAddWidth wq = new Products.Width.FrmAddWidth();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -181,7 +181,7 @@ namespace MainSystem
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Product.Width.FrmSearchWidth wq = new Product.Width.FrmSearchWidth();
+            Products.Width.FrmSearchWidth wq = new Products.Width.FrmSearchWidth();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -189,10 +189,10 @@ namespace MainSystem
 
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(this.txtDescription, "Product Name");
+            toolTip1.SetToolTip(this.txtDescription, "Products Name");
             toolTip1.SetToolTip(this.txtQuantity, "Number of Products");
-            toolTip1.SetToolTip(this.cbxbrand, "Select Product Brand");
-            toolTip1.SetToolTip(this.cbxLength, "Select Product Length");
+            toolTip1.SetToolTip(this.cbxbrand, "Select Products Brand");
+            toolTip1.SetToolTip(this.cbxLength, "Select Products Length");
             toolTip1.SetToolTip(this.cbxPackSize, "Select Number of packs");
             toolTip1.SetToolTip(this.cbxprodT, "Select product type");
             toolTip1.SetToolTip(this.cbxWidth, "Select Width size");

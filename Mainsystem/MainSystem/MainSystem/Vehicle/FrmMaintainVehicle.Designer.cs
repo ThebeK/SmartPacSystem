@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Vehicle
+﻿namespace MainSystem.Vehicles
 {
     partial class FrmMaintainVehicle
     {
@@ -86,7 +86,7 @@
             this.groupBox1.Size = new System.Drawing.Size(729, 265);
             this.groupBox1.TabIndex = 57;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vehicle Information";
+            this.groupBox1.Text = "Vehicles Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button1
@@ -97,7 +97,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 56);
             this.button1.TabIndex = 28;
-            this.button1.Text = "Update Vehicle";
+            this.button1.Text = "Update Vehicles";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // lblVIN
@@ -160,7 +160,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 56);
             this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Delete Vehicle";
+            this.btnAdd.Text = "Delete Vehicles";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // cbxStatus
@@ -312,7 +312,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 34);
             this.label1.TabIndex = 56;
-            this.label1.Text = "Maintain Vehicle";
+            this.label1.Text = "Maintain Vehicles";
             // 
             // FrmMaintainVehicle
             // 

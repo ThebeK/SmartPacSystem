@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.User
+namespace MainSystem.Users
 {
     public partial class FrmAddUser : Form
     {
@@ -87,7 +87,7 @@ namespace MainSystem.User
 
         private void btnAddProdType_Click(object sender, EventArgs e)
         {
-            Access_Level.FrmAddAccessLevel rt = new Access_Level.FrmAddAccessLevel();
+            AccessLevel.FrmAddAccessLevel rt = new AccessLevel.FrmAddAccessLevel();
             rt.ShowDialog();
             this.Show();
             this.Activate();
@@ -95,7 +95,7 @@ namespace MainSystem.User
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Access_Level.FrmSearchAccessLevel rtt = new Access_Level.FrmSearchAccessLevel("");
+            AccessLevel.FrmSearchAccessLevel rtt = new AccessLevel.FrmSearchAccessLevel("");
             rtt.ShowDialog();
             this.Show();
             this.Activate();

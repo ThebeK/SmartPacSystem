@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Employee
+namespace MainSystem.Employees
 {
     public partial class FrmAddEmployeeType : Form
     {
@@ -92,8 +92,8 @@ namespace MainSystem.Employee
 
         private void FrmAddEmployeeType_Load(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(this.rtxtDescription, "Enter Employee Type/Role");
-            toolTip1.SetToolTip(this.btnAdd, "Click to add Employee Type/Role");
+            toolTip1.SetToolTip(this.rtxtDescription, "Enter Employees Type/Role");
+            toolTip1.SetToolTip(this.btnAdd, "Click to add Employees Type/Role");
 
         }
     }

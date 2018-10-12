@@ -277,7 +277,7 @@
             this.groupBox1.Size = new System.Drawing.Size(289, 156);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Product Selection";
+            this.groupBox1.Text = "Products Selection";
             // 
             // txtQuantity
             // 
@@ -318,7 +318,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Product Description:";
+            this.label2.Text = "Products Description:";
             // 
             // comboBox1
             // 
@@ -458,7 +458,6 @@
             this.cbxClient.Size = new System.Drawing.Size(212, 24);
             this.cbxClient.TabIndex = 3;
             this.cbxClient.ValueMember = "Client_ID";
-            this.cbxClient.SelectedIndexChanged += new System.EventHandler(this.cbxClient_SelectedIndexChanged);
             // 
             // label5
             // 

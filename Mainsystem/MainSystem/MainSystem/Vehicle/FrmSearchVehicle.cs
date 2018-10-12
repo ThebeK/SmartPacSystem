@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Vehicle
+namespace MainSystem.Vehicles
 {
     public partial class FrmSearchVehicle : Form
     {

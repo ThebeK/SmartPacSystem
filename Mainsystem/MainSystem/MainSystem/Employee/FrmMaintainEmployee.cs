@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Employee
+namespace MainSystem.Employees
 {
     public partial class FrmMaintainEmployee : Form
     {
@@ -92,16 +92,16 @@ namespace MainSystem.Employee
 
         private void FrmMaintainEmployee_Load(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(this.txtEName, "Enter Employee First Name");
-            toolTip1.SetToolTip(this.txtESurname, "Enter Employee Last Name");
-            toolTip1.SetToolTip(this.txtAddress, "Enter Employee Address");
-            toolTip1.SetToolTip(this.txtID, "Enter Employee 13 digit ID");
+            toolTip1.SetToolTip(this.txtEName, "Enter Employees First Name");
+            toolTip1.SetToolTip(this.txtESurname, "Enter Employees Last Name");
+            toolTip1.SetToolTip(this.txtAddress, "Enter Employees Address");
+            toolTip1.SetToolTip(this.txtID, "Enter Employees 13 digit ID");
             toolTip1.SetToolTip(this.txtAccountNum, "Enter 13 digit Account Number");
             toolTip1.SetToolTip(this.txtTaxumber, "Enter 10 digit tax number");
-            toolTip1.SetToolTip(this.cbxEmployeeType, "Select Employee Role");
+            toolTip1.SetToolTip(this.cbxEmployeeType, "Select Employees Role");
             toolTip1.SetToolTip(this.txtContactNumber, "Enter 10 digit telephone number");
-            toolTip1.SetToolTip(this.txtAddress, "Enter Employee address containing @");
-            toolTip1.SetToolTip(this.cbxTitle, "Select Employee suffix");
+            toolTip1.SetToolTip(this.txtAddress, "Enter Employees address containing @");
+            toolTip1.SetToolTip(this.cbxTitle, "Select Employees suffix");
             toolTip1.SetToolTip(this.btnRetakePic, "Click to take picture");
             toolTip1.SetToolTip(this.btnUpdateEmployee, "Click to edit employee");
             toolTip1.SetToolTip(this.btnDeleteEmployee, "Click to remove employee");

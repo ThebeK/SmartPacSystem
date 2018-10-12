@@ -1,4 +1,4 @@
-﻿namespace MainSystem.User
+﻿namespace MainSystem.Users
 {
     partial class FrmMaintainUser
     {
@@ -147,7 +147,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(310, 34);
             this.label1.TabIndex = 55;
-            this.label1.Text = "Maintain User Profile";
+            this.label1.Text = "Maintain Users Profile";
             // 
             // btnAddUser
             // 
@@ -159,7 +159,7 @@
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(92, 67);
             this.btnAddUser.TabIndex = 44;
-            this.btnAddUser.Text = "Delete User Profile";
+            this.btnAddUser.Text = "Delete Users Profile";
             this.btnAddUser.UseVisualStyleBackColor = false;
             // 
             // lbUsername
@@ -279,7 +279,7 @@
             this.groupBox1.Size = new System.Drawing.Size(636, 452);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "User Profile";
+            this.groupBox1.Text = "Users Profile";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnUpdate
@@ -292,7 +292,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(92, 67);
             this.btnUpdate.TabIndex = 60;
-            this.btnUpdate.Text = "Update User Profile";
+            this.btnUpdate.Text = "Update Users Profile";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // panel1

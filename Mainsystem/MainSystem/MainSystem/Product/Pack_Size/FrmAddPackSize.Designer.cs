@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product.Pack_Size
+﻿namespace MainSystem.Products.Pack_Size
 {
     partial class FrmAddPackSize
     {

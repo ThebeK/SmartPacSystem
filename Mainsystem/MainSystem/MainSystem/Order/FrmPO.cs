@@ -102,10 +102,5 @@ namespace MainSystem.Order
         {
 
         }
-
-        private void cbxClient_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

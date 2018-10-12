@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Access_Level
+namespace MainSystem.AccessLevel
 {
     public partial class FrmSearchAccessLevel : Form
     {
@@ -117,7 +117,7 @@ namespace MainSystem.Access_Level
             //else if (txtSearchAccess.Text != "")
             //{
 
-            //    List<Access_Level> Accesssearch = db.Access_Level.Where(o => o.Access_Level_Name.Contains(textBox1.Text)).ToList();
+            //    List<AccessLevel> Accesssearch = db.AccessLevel.Where(o => o.Access_Level_Name.Contains(textBox1.Text)).ToList();
 
             //    if (Accesssearch.Count == 0)
             //    {

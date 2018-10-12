@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Employee
+namespace MainSystem.Employees
 {
     public partial class FrmEmployeeSignInSignOut : Form
     {
@@ -87,7 +87,7 @@ namespace MainSystem.Employee
 
         private void btnAddProdType_Click(object sender, EventArgs e)
         {
-            Employee.FrmAddEmployee red = new Employee.FrmAddEmployee();
+            Employees.FrmAddEmployee red = new Employees.FrmAddEmployee();
             red.ShowDialog();
             this.Show();
             this.Activate();
@@ -95,7 +95,7 @@ namespace MainSystem.Employee
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Employee.FrmSearchEmployee red = new Employee.FrmSearchEmployee();
+            Employees.FrmSearchEmployee red = new Employees.FrmSearchEmployee();
             red.ShowDialog();
             this.Show();
             this.Activate();
@@ -108,7 +108,7 @@ namespace MainSystem.Employee
 
         private void FrmEmployeeSignInSignOut_Load(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(this.cbxEmployeeName, "Select Employee Name");
+            toolTip1.SetToolTip(this.cbxEmployeeName, "Select Employees Name");
             toolTip1.SetToolTip(this.btnAddProdType, "Click to add employee");
             toolTip1.SetToolTip(this.pictureBox1, "Click to edit employee");
             //

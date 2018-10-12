@@ -1,4 +1,4 @@
-﻿namespace MainSystem.User
+﻿namespace MainSystem.Users
 {
     partial class FrmSearchUser
     {
@@ -63,7 +63,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(237, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Please Specify User Name";
+            this.label2.Text = "Please Specify Users Name";
             // 
             // panel1
             // 
@@ -108,7 +108,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(181, 34);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Search User";
+            this.label13.Text = "Search Users";
             // 
             // btnMaintain
             // 
@@ -131,7 +131,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(284, 20);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Please specify valid User Name";
+            this.label3.Text = "Please specify valid Users Name";
             this.label3.Visible = false;
             // 
             // dgvClientSearch

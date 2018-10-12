@@ -87,7 +87,7 @@ namespace MainSystem.Admin
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            User.FrmResetPassword tt = new User.FrmResetPassword();
+            Users.FrmResetPassword tt = new Users.FrmResetPassword();
             tt.ShowDialog();
             this.Show();
             this.Activate();
