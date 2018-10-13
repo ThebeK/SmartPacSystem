@@ -75,7 +75,7 @@ namespace MainSystem
                 if (hash == Hashb)
                 {
                     MessageBox.Show("Login was successful");
-                    
+
                     Form1 ds = new Form1();
                     ds.ShowDialog();
                     
@@ -117,13 +117,14 @@ namespace MainSystem
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Admin.FrmAuthorization af = new Admin.FrmAuthorization();
+            Admin.FrmAuthorization au = new Admin.FrmAuthorization();
+            au.ShowDialog();
             
-            af.ShowDialog();
-            af.Focus();
-            af.BringToFront();
-            af.Activate();
+            //Admin.FrmAuthorization af = new Admin.FrmAuthorization();
             
+            //af.ShowDialog();
+            //af.Focus();
+            //this.Hide();
             //this.Activate();
             //this.Show();
             //this.Dispose();
@@ -190,10 +191,13 @@ namespace MainSystem
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //FrmAuthorization fr = new FrmAuthorization();
+            
             Admin.FrmAuthorization af = new Admin.FrmAuthorization();
-
-            af.ShowDialog();
-            af.Focus();
+            //af.Owner = this;
+            af.Show();
+            //af.ShowDialog();
+            //af.Focus();
         }
     }
 }

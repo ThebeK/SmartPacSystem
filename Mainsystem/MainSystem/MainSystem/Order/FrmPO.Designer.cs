@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbtnDelNo = new System.Windows.Forms.RadioButton();
             this.rbtnDelYes = new System.Windows.Forms.RadioButton();
@@ -62,11 +63,13 @@
             this.txtAccNum = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbxClient = new System.Windows.Forms.ComboBox();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnFinish = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -78,8 +81,10 @@
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -93,7 +98,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1302, 59);
+            this.panel1.Size = new System.Drawing.Size(1302, 53);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -123,7 +128,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(375, 9);
+            this.label3.Location = new System.Drawing.Point(522, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(231, 34);
             this.label3.TabIndex = 1;
@@ -134,10 +139,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 59);
+            this.tabControl1.Location = new System.Drawing.Point(0, 53);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1302, 546);
+            this.tabControl1.Size = new System.Drawing.Size(1302, 552);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -148,7 +153,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1294, 520);
+            this.tabPage1.Size = new System.Drawing.Size(1294, 526);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Purchase Order";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -159,10 +164,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(292, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(999, 480);
+            this.dataGridView1.Size = new System.Drawing.Size(999, 486);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel2
             // 
@@ -173,7 +180,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(289, 480);
+            this.panel2.Size = new System.Drawing.Size(289, 486);
             this.panel2.TabIndex = 9;
             // 
             // groupBox2
@@ -187,12 +194,13 @@
             this.groupBox2.Controls.Add(this.lblVATRate);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Enabled = false;
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(0, 374);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(289, 62);
+            this.groupBox2.Size = new System.Drawing.Size(289, 68);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order Total";
@@ -270,6 +278,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(0, 218);
@@ -285,6 +294,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(100, 27);
             this.txtQuantity.TabIndex = 8;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // button2
             // 
@@ -297,6 +307,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Add ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -316,13 +327,14 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(5, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 16);
+            this.label2.Size = new System.Drawing.Size(165, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Products Description:";
             // 
             // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.comboBox1.DataSource = this.productBindingSource;
             this.comboBox1.DisplayMember = "Product_Description";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(8, 49);
@@ -331,15 +343,20 @@
             this.comboBox1.TabIndex = 2;
             this.comboBox1.ValueMember = "Product_ID";
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(MainSystem.Product);
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox3.Controls.Add(this.rbtnDelNo);
             this.groupBox3.Controls.Add(this.rbtnDelYes);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Enabled = false;
             this.groupBox3.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(0, 436);
+            this.groupBox3.Location = new System.Drawing.Point(0, 442);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(289, 44);
             this.groupBox3.TabIndex = 15;
@@ -394,6 +411,7 @@
             // txtCreditBalance
             // 
             this.txtCreditBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCreditBalance.Enabled = false;
             this.txtCreditBalance.Location = new System.Drawing.Point(8, 184);
             this.txtCreditBalance.Name = "txtCreditBalance";
             this.txtCreditBalance.Size = new System.Drawing.Size(212, 27);
@@ -413,6 +431,7 @@
             // txtCreditApprovalAmount
             // 
             this.txtCreditApprovalAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCreditApprovalAmount.Enabled = false;
             this.txtCreditApprovalAmount.Location = new System.Drawing.Point(8, 134);
             this.txtCreditApprovalAmount.Name = "txtCreditApprovalAmount";
             this.txtCreditApprovalAmount.Size = new System.Drawing.Size(212, 27);
@@ -432,6 +451,7 @@
             // txtAccNum
             // 
             this.txtAccNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAccNum.Enabled = false;
             this.txtAccNum.Location = new System.Drawing.Point(8, 89);
             this.txtAccNum.Name = "txtAccNum";
             this.txtAccNum.Size = new System.Drawing.Size(212, 27);
@@ -451,6 +471,7 @@
             // cbxClient
             // 
             this.cbxClient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxClient.DataSource = this.clientBindingSource;
             this.cbxClient.DisplayMember = "Client_Name";
             this.cbxClient.FormattingEnabled = true;
             this.cbxClient.Location = new System.Drawing.Point(8, 48);
@@ -458,6 +479,11 @@
             this.cbxClient.Size = new System.Drawing.Size(212, 24);
             this.cbxClient.TabIndex = 3;
             this.cbxClient.ValueMember = "Client_ID";
+            this.cbxClient.SelectedIndexChanged += new System.EventHandler(this.cbxClient_SelectedIndexChanged);
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(MainSystem.Client);
             // 
             // label5
             // 
@@ -476,7 +502,7 @@
             this.panel3.Controls.Add(this.btnRemove);
             this.panel3.Controls.Add(this.btnConfirm);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 483);
+            this.panel3.Location = new System.Drawing.Point(3, 489);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1288, 34);
             this.panel3.TabIndex = 17;
@@ -493,6 +519,7 @@
             this.btnRemove.TabIndex = 14;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnConfirm
             // 
@@ -506,35 +533,49 @@
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.crystalReportViewer1);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1294, 520);
+            this.tabPage2.Size = new System.Drawing.Size(1294, 526);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Invoice";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1288, 485);
+            this.crystalReportViewer1.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnFinish);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(3, 482);
+            this.panel4.Location = new System.Drawing.Point(3, 488);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1288, 35);
             this.panel4.TabIndex = 2;
             // 
             // btnFinish
             // 
-            this.btnFinish.Location = new System.Drawing.Point(864, 6);
+            this.btnFinish.Location = new System.Drawing.Point(1208, 7);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(75, 23);
             this.btnFinish.TabIndex = 1;
             this.btnFinish.Text = "Finish";
             this.btnFinish.UseVisualStyleBackColor = true;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // FrmPO
             // 
@@ -548,6 +589,7 @@
             this.Name = "FrmPO";
             this.Text = "FrmPO";
             this.Load += new System.EventHandler(this.FrmPO_Load);
+            this.Leave += new System.EventHandler(this.FrmPO_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -559,10 +601,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -613,5 +657,8 @@
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.BindingSource clientBindingSource;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MainSystem.Admin
 {
-    partial class FrmAuthorization
+    partial class FrmAuthorize
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,9 +41,10 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,19 +55,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(707, 68);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox1.Location = new System.Drawing.Point(631, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 43);
-            this.pictureBox1.TabIndex = 151;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.panel1.Size = new System.Drawing.Size(792, 68);
+            this.panel1.TabIndex = 2;
             // 
             // button5
             // 
@@ -92,7 +81,6 @@
             this.label13.Size = new System.Drawing.Size(555, 45);
             this.label13.TabIndex = 148;
             this.label13.Text = "Administrator Authorization";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // panel2
             // 
@@ -103,11 +91,10 @@
             this.panel2.Controls.Add(this.btnContinue);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtPassword);
-            this.panel2.Location = new System.Drawing.Point(44, 74);
+            this.panel2.Location = new System.Drawing.Point(44, 129);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(663, 190);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.TabIndex = 3;
             // 
             // lbWarningPassword
             // 
@@ -120,7 +107,6 @@
             this.lbWarningPassword.Size = new System.Drawing.Size(54, 13);
             this.lbWarningPassword.TabIndex = 150;
             this.lbWarningPassword.Text = "Warning";
-            this.lbWarningPassword.Click += new System.EventHandler(this.lbWarningPassword_Click);
             // 
             // lbWarningEmail
             // 
@@ -133,7 +119,6 @@
             this.lbWarningEmail.Size = new System.Drawing.Size(54, 13);
             this.lbWarningEmail.TabIndex = 149;
             this.lbWarningEmail.Text = "Warning";
-            this.lbWarningEmail.Click += new System.EventHandler(this.lbWarningEmail_Click);
             // 
             // label2
             // 
@@ -145,7 +130,6 @@
             this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 147;
             this.label2.Text = "Password:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -157,7 +141,6 @@
             this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 146;
             this.label1.Text = "Users Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnContinue
             // 
@@ -180,7 +163,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(357, 32);
             this.txtEmail.TabIndex = 143;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtPassword
             // 
@@ -191,30 +173,37 @@
             this.txtPassword.Size = new System.Drawing.Size(357, 32);
             this.txtPassword.TabIndex = 144;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // FrmAuthorization
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
+            this.pictureBox1.Location = new System.Drawing.Point(631, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 43);
+            this.pictureBox1.TabIndex = 151;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // FrmAuthorize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(707, 264);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(792, 375);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmAuthorization";
-            this.Text = "FrmAuthorization";
-            this.Leave += new System.EventHandler(this.FrmAuthorization_Leave);
+            this.Name = "FrmAuthorize";
+            this.Text = "FrmAuthorize";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,6 +211,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbWarningPassword;
@@ -232,7 +223,5 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button5;
     }
 }

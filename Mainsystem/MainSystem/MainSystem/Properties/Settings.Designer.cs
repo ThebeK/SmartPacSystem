@@ -26,7 +26,7 @@ namespace MainSystem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WINDOWS;Initial Catalog=SP;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=SP;Integrated Security=True")]
         public string SPConnectionString {
             get {
                 return ((string)(this["SPConnectionString"]));
