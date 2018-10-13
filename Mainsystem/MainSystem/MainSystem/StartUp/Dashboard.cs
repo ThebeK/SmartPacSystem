@@ -300,7 +300,7 @@ namespace MainSystem
 
         private void generateSupplierOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Order.FrmSO gg = new Order.FrmSO();
+            frmSO gg = new frmSO();
             gg.ShowDialog();
             this.Show();
             this.Activate();

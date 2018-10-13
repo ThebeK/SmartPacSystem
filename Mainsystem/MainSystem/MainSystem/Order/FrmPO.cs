@@ -342,7 +342,8 @@ namespace MainSystem.Order
                 db.SaveChanges();
                 tabControl1.SelectedIndex = 1;
                 repdoc.Load(AppDomain.CurrentDomain.BaseDirectory + "\\rpts\\PurchaseOrderInvoiceCrystalReport1.rpt");
-                repdoc.SetParameterValue("@poid", newPO.Client_Purchase_Id);
+                
+                repdoc.SetParameterValue( newPO.Client_Purchase_Id,"@poid");
                 crystalReportViewer1.ReportSource = repdoc;
                 crystalReportViewer1.Refresh();
 

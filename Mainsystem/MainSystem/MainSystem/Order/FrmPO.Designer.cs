@@ -98,7 +98,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1302, 53);
+            this.panel1.Size = new System.Drawing.Size(1302, 41);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -128,7 +128,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(522, 9);
+            this.label3.Location = new System.Drawing.Point(521, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(231, 34);
             this.label3.TabIndex = 1;
@@ -139,10 +139,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 53);
+            this.tabControl1.Location = new System.Drawing.Point(0, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1302, 552);
+            this.tabControl1.Size = new System.Drawing.Size(1302, 564);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -153,7 +153,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1294, 526);
+            this.tabPage1.Size = new System.Drawing.Size(1294, 538);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Purchase Order";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(292, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(999, 486);
+            this.dataGridView1.Size = new System.Drawing.Size(999, 498);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -180,7 +180,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(289, 486);
+            this.panel2.Size = new System.Drawing.Size(289, 498);
             this.panel2.TabIndex = 9;
             // 
             // groupBox2
@@ -200,7 +200,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(0, 374);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(289, 68);
+            this.groupBox2.Size = new System.Drawing.Size(289, 80);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order Total";
@@ -356,7 +356,7 @@
             this.groupBox3.Enabled = false;
             this.groupBox3.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(0, 442);
+            this.groupBox3.Location = new System.Drawing.Point(0, 454);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(289, 44);
             this.groupBox3.TabIndex = 15;
@@ -502,7 +502,7 @@
             this.panel3.Controls.Add(this.btnRemove);
             this.panel3.Controls.Add(this.btnConfirm);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 489);
+            this.panel3.Location = new System.Drawing.Point(3, 501);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1288, 34);
             this.panel3.TabIndex = 17;
