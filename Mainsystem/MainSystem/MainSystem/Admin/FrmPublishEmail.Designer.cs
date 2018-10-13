@@ -1,6 +1,6 @@
 ﻿namespace MainSystem.Admin
 {
-    partial class FrmPublish
+    partial class FrmPublishEmail
     {
         /// <summary>
         /// Required designer variable.
@@ -34,17 +34,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ColSright = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clientBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.btnRemove = new System.Windows.Forms.Button();
             this.btndd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Client_Email_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -55,16 +52,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.clientBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientEmailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColRIght = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,9 +129,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.btnBack);
             this.panel2.Controls.Add(this.btnSend);
-            this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.btnRemove);
             this.panel2.Controls.Add(this.btndd);
             this.panel2.Controls.Add(this.dataGridView1);
@@ -127,6 +141,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1092, 529);
             this.panel2.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Client,
+            this.clientNameDataGridViewTextBoxColumn1,
+            this.clientEmailAddressDataGridViewTextBoxColumn,
+            this.ColRIght});
+            this.dataGridView2.DataSource = this.clientBindingSource7;
+            this.dataGridView2.Location = new System.Drawing.Point(593, 41);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(413, 141);
+            this.dataGridView2.TabIndex = 62;
             // 
             // btnBack
             // 
@@ -152,27 +182,6 @@
             this.btnSend.TabIndex = 56;
             this.btnSend.Text = "Send To Clients";
             this.btnSend.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColSright});
-            this.dataGridView2.DataSource = this.clientBindingSource2;
-            this.dataGridView2.Location = new System.Drawing.Point(560, 32);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(411, 150);
-            this.dataGridView2.TabIndex = 60;
-            // 
-            // ColSright
-            // 
-            this.ColSright.HeaderText = "Select";
-            this.ColSright.Name = "ColSright";
-            this.ColSright.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColSright.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColSright.Width = 70;
             // 
             // btnRemove
             // 
@@ -205,12 +214,13 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientNameDataGridViewTextBoxColumn,
             this.Client_Email_Address,
             this.ColSelect});
-            this.dataGridView1.DataSource = this.clientBindingSource1;
+            this.dataGridView1.DataSource = this.clientBindingSource3;
             this.dataGridView1.Location = new System.Drawing.Point(45, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(392, 141);
+            this.dataGridView1.Size = new System.Drawing.Size(378, 141);
             this.dataGridView1.TabIndex = 57;
             // 
             // Client_Email_Address
@@ -218,6 +228,7 @@
             this.Client_Email_Address.DataPropertyName = "Client_Email_Address";
             this.Client_Email_Address.HeaderText = "Email Address";
             this.Client_Email_Address.Name = "Client_Email_Address";
+            this.Client_Email_Address.Width = 120;
             // 
             // ColSelect
             // 
@@ -338,7 +349,58 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Subject Line:\r\n\r\n";
             // 
-            // FrmPublish
+            // clientBindingSource6
+            // 
+            this.clientBindingSource6.DataSource = typeof(MainSystem.Client);
+            // 
+            // clientNameDataGridViewTextBoxColumn
+            // 
+            this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Client_Name";
+            this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
+            this.clientNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientBindingSource3
+            // 
+            this.clientBindingSource3.DataSource = typeof(MainSystem.Client);
+            // 
+            // clientBindingSource5
+            // 
+            this.clientBindingSource5.DataSource = typeof(MainSystem.Client);
+            // 
+            // clientBindingSource4
+            // 
+            this.clientBindingSource4.DataSource = typeof(MainSystem.Client);
+            // 
+            // clientBindingSource7
+            // 
+            this.clientBindingSource7.DataSource = typeof(MainSystem.Client);
+            // 
+            // Client
+            // 
+            this.Client.DataPropertyName = "Client_ID";
+            this.Client.HeaderText = "Client ID";
+            this.Client.Name = "Client";
+            // 
+            // clientNameDataGridViewTextBoxColumn1
+            // 
+            this.clientNameDataGridViewTextBoxColumn1.DataPropertyName = "Client_Name";
+            this.clientNameDataGridViewTextBoxColumn1.HeaderText = "Client Name";
+            this.clientNameDataGridViewTextBoxColumn1.Name = "clientNameDataGridViewTextBoxColumn1";
+            // 
+            // clientEmailAddressDataGridViewTextBoxColumn
+            // 
+            this.clientEmailAddressDataGridViewTextBoxColumn.DataPropertyName = "Client_Email_Address";
+            this.clientEmailAddressDataGridViewTextBoxColumn.HeaderText = "Email Address";
+            this.clientEmailAddressDataGridViewTextBoxColumn.Name = "clientEmailAddressDataGridViewTextBoxColumn";
+            // 
+            // ColRIght
+            // 
+            this.ColRIght.HeaderText = "Select";
+            this.ColRIght.Name = "ColRIght";
+            this.ColRIght.Width = 70;
+            // 
+            // FrmPublishEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,7 +409,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmPublish";
+            this.Name = "FrmPublishEmail";
             this.Text = "FrmPublish";
             this.Load += new System.EventHandler(this.FrmPublish_Load);
             this.panel1.ResumeLayout(false);
@@ -355,12 +417,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,14 +441,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSright;
         private System.Windows.Forms.BindingSource clientBindingSource2;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btndd;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Email_Address;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelect;
         private System.Windows.Forms.BindingSource clientBindingSource1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
@@ -394,5 +457,18 @@
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource clientBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.BindingSource clientBindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Email_Address;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelect;
+        private System.Windows.Forms.BindingSource clientBindingSource5;
+        private System.Windows.Forms.BindingSource clientBindingSource4;
+        private System.Windows.Forms.BindingSource clientBindingSource6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientEmailAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColRIght;
+        private System.Windows.Forms.BindingSource clientBindingSource7;
     }
 }

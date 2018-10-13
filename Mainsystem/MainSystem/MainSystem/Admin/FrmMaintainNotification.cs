@@ -229,5 +229,16 @@ namespace MainSystem.Admin
 
             }
         }
+
+        private void FrmMaintainNotification_Load(object sender, EventArgs e)
+        {
+            var query = db.Email_Notice_Template.Where(co => co.Template_Id == tempID).FirstOrDefault();
+
+            txtDescription.Text = query.Template_Description;
+            txtText.Text = query.Template_Text;
+
+            Desc = query.Template_Description;
+            iText = query.Template_Text;
+        }
     }
 }

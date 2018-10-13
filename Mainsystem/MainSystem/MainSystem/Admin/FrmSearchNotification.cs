@@ -60,7 +60,7 @@ namespace MainSystem.Admin
         {
             int val = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-            if (option == "Maintain Template")
+            if (option == "Maintain Notification")
             {
                 Admin.FrmMaintainNotification myform = new Admin.FrmMaintainNotification(val);
                 myform.ShowDialog();
@@ -74,12 +74,18 @@ namespace MainSystem.Admin
         {
             int val = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-            if (option == "Maintain Template")
+            if (option == "Maintain Notification")
             {
-                Admin.FrmPublish myform = new Admin.FrmPublish(val);
+                FrmPublishEmail myform = new FrmPublishEmail(val);
                 myform.ShowDialog();
                 dataGridView1.DataSource = db.Email_Notice_Template.ToList();
             }
+
+        }
+
+        private void btnSendsms_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

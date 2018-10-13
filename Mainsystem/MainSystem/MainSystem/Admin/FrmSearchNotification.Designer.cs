@@ -44,6 +44,7 @@
             this.btnMaintain = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnSendsms = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -170,6 +171,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.btnSendsms);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.btnPublish);
             this.panel1.Controls.Add(this.btnMaintain);
@@ -199,24 +201,24 @@
             this.btnPublish.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPublish.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
             this.btnPublish.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnPublish.Location = new System.Drawing.Point(1094, 3);
+            this.btnPublish.Location = new System.Drawing.Point(894, 2);
             this.btnPublish.Name = "btnPublish";
-            this.btnPublish.Size = new System.Drawing.Size(104, 33);
+            this.btnPublish.Size = new System.Drawing.Size(177, 33);
             this.btnPublish.TabIndex = 2;
-            this.btnPublish.Text = "Publish";
+            this.btnPublish.Text = "Publish Email";
             this.btnPublish.UseVisualStyleBackColor = false;
             this.btnPublish.Click += new System.EventHandler(this.btnPublish_Click);
             // 
             // btnMaintain
             // 
             this.btnMaintain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMaintain.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMaintain.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold);
             this.btnMaintain.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMaintain.Location = new System.Drawing.Point(977, 3);
+            this.btnMaintain.Location = new System.Drawing.Point(730, 4);
             this.btnMaintain.Name = "btnMaintain";
-            this.btnMaintain.Size = new System.Drawing.Size(97, 33);
+            this.btnMaintain.Size = new System.Drawing.Size(158, 33);
             this.btnMaintain.TabIndex = 1;
-            this.btnMaintain.Text = "Maintain ";
+            this.btnMaintain.Text = "Maintain Template";
             this.btnMaintain.UseVisualStyleBackColor = false;
             this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
             // 
@@ -225,11 +227,11 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAdd.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAdd.Location = new System.Drawing.Point(881, 3);
+            this.btnAdd.Location = new System.Drawing.Point(559, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 33);
+            this.btnAdd.Size = new System.Drawing.Size(165, 33);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Add Template";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -242,6 +244,19 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1286, 606);
             this.tabControl1.TabIndex = 9;
+            // 
+            // btnSendsms
+            // 
+            this.btnSendsms.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSendsms.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSendsms.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnSendsms.Location = new System.Drawing.Point(1077, 3);
+            this.btnSendsms.Name = "btnSendsms";
+            this.btnSendsms.Size = new System.Drawing.Size(177, 33);
+            this.btnSendsms.TabIndex = 13;
+            this.btnSendsms.Text = "Publish SMS";
+            this.btnSendsms.UseVisualStyleBackColor = false;
+            this.btnSendsms.Click += new System.EventHandler(this.btnSendsms_Click);
             // 
             // FrmSearchNotification
             // 
@@ -284,5 +299,6 @@
         private System.Windows.Forms.Button btnMaintain;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button btnSendsms;
     }
 }

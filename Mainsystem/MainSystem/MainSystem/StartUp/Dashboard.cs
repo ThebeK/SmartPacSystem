@@ -217,7 +217,7 @@ namespace MainSystem
 
         private void notificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("");
+            Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("Maintain Notification");
             ff.ShowDialog();
             this.Show();
             this.Activate();
