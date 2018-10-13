@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.PackSize
+﻿namespace MainSystem.Products.Pack_Size
 {
     partial class FrmAddPackSize
     {
@@ -109,7 +109,6 @@
             this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -129,7 +128,6 @@
             this.rtxtDescription.Size = new System.Drawing.Size(182, 30);
             this.rtxtDescription.TabIndex = 29;
             this.rtxtDescription.Text = "";
-            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
             // 
             // FrmAddPackSize
             // 

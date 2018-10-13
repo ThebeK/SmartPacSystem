@@ -11,11 +11,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products
+namespace MainSystem.Products.Width
 {
-    public partial class FrmSearchProduct : Form
+    public partial class FrmSearchWidth : Form
     {
-        public FrmSearchProduct()
+        public FrmSearchWidth()
         {
             InitializeComponent();
         }
@@ -85,17 +85,25 @@ namespace MainSystem.Products
             this.Close();
         }
 
-        private void FrmSearchProduct_Leave(object sender, EventArgs e)
+        private void btnMaintain_Click(object sender, EventArgs e)
+        {
+            FrmMaintainWidth dd = new FrmMaintainWidth();
+            dd.ShowDialog();
+            this.Show();
+            this.Activate();
+        }
+
+        private void FrmSearchWidth_Leave(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Process.Start(@".\" + "MaintainProduct.pdf");
+            Process.Start(@".\" + "AddProduct.pdf");
         }
 
-        private void FrmSearchProduct_Load(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

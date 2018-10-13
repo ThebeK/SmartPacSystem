@@ -15,8 +15,6 @@ namespace MainSystem.Products.Length
 {
     public partial class FrmAddLength : Form
     {
-        SPEntities db = new SPEntities();
-        bool correct = false;
         public FrmAddLength()
         {
             InitializeComponent();
@@ -95,89 +93,6 @@ namespace MainSystem.Products.Length
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-        public bool ValidateIfLengthExists(string Lengthh)
-        {
-            bool Check = false;
-            foreach (var item in db.pLengths)
-            {
-                if (item.Length_Size == Convert.ToInt32(Lengthh))
-                {
-                    Check = true;
-                    break;
-                }
-            }
-            return Check;
-        }
-
-        private void FrmAddLength_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ValidateIfLengthExists(txtLengthDescription.Text) == true)
-                {
-                    MessageBox.Show("Product Length exists");
-                }
-
-
-                correct = true;
-                pLength PL = new pLength();
-
-                if (txtLengthDescription.Text == "")
-                {
-                    lblLength.Visible = true;
-                    //MessageBox.Show("Please Enter Product Widths");
-                    correct = false;
-                }
-
-                if (txtMeasurement.Text == "")
-                {
-                    lblUnit.Visible = true;
-                }
-
-                if (correct == true)
-                {
-                    PL.Length_Size = Convert.ToInt32(txtLengthDescription.Text);
-                    PL.Length_Measurement_Unit = txtMeasurement.Text;
-                    db.pLengths.Add(PL);
-
-                    db.SaveChanges();
-
-                    int Length_ID = PL.Length_ID;
-                    string Length_value = Convert.ToString(PL);
-                    MessageBox.Show("Product Length Successfully Added");
-                    this.Close();
-                }
-
-
-
-
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Product Length Added");
-            }
-        }
-
-        private void txtLengthDescription_KeyPress(object sender, KeyPressEventArgs Event)
-        {
-            if (!char.IsControl(Event.KeyChar) && !char.IsDigit(Event.KeyChar))
-            {
-                Event.Handled = true;
-            }
-        }
-
-        private void txtMeasurement_KeyPress(object sender, KeyPressEventArgs Event)
-        {
-            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
-            {
-                Event.Handled = true;
-            }
         }
     }
 }

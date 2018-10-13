@@ -11,19 +11,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.Widths
+namespace MainSystem.Products.Width
 {
     public partial class FrmMaintainWidth : Form
     {
-        int tempID;
-        public FrmMaintainWidth(int x)
+        public FrmMaintainWidth()
         {
             InitializeComponent();
-            tempID = x;
         }
-        SPEntities db = new SPEntities();
-        bool correct = false;
-
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -97,99 +92,7 @@ namespace MainSystem.Products.Widths
 
         private void FrmMaintainWidth_Load(object sender, EventArgs e)
         {
-            var query = db.Widths.Where(co => co.Width_ID == tempID).FirstOrDefault();
 
-            txtWidthDesc.Text = query.Width_Size.ToString();
-            txtUnit.Text = query.Width_Measurement_Unit;
-        }
-
-        private void btnDeletePT_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Would you like to delete this Product Width?", "Delete Product Width", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                try
-                {
-
-                    Width Emt2 = new Width();
-                    Emt2 = db.Widths.Find(tempID);
-
-                    db.Widths.Remove(Emt2);
-                    db.SaveChanges();
-
-                    int length = Convert.ToInt32(Emt2.Width_ID);
-                    string Length_Value = Convert.ToString(Emt2);
-                    MessageBox.Show("Width Successfully Deleted");
-                    this.Close();
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Error: Width was not deleted");
-
-                }
-            }
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUpdatePT_Click(object sender, EventArgs e)
-        {
-            correct = true;
-            try
-            {
-                if (txtWidthDesc.Text == "")
-                {
-                    lblWidth.Visible = true;
-                }
-                if (txtUnit.Text == "")
-                {
-                    lblUnit.Visible = true;
-                }
-                if (txtWidthDesc.Text == "" || txtUnit.Text == "")
-                {
-
-                    MessageBox.Show("Please Enter a product width");
-                    correct = false;
-                }
-
-
-                if (correct == true)
-                {
-
-                    var query = db.Widths.Where(co => co.Width_ID == tempID).FirstOrDefault();
-
-                    query.Width_Size = Convert.ToInt32(txtWidthDesc.Text);
-                    query.Width_Measurement_Unit = txtUnit.Text;
-
-                    db.SaveChanges();
-                    MessageBox.Show("Product Width Successfully Updated");
-                    this.Close();
-                }
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Width updated");
-            }
-        }
-
-        private void txtUnit_KeyPress(object sender, KeyPressEventArgs Event)
-        {
-            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
-            {
-                Event.Handled = true;
-            }
-        }
-
-        private void txtWidthDesc_KeyPress(object sender, KeyPressEventArgs Event)
-        {
-            if (!char.IsControl(Event.KeyChar) && !char.IsDigit(Event.KeyChar))
-            {
-                Event.Handled = true;
-            }
         }
     }
 }

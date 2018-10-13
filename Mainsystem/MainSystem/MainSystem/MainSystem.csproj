@@ -565,57 +565,39 @@
     <Compile Include="Product\Length\FrmSearchLength.Designer.cs">
       <DependentUpon>FrmSearchLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmAddPackSize.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\PackSize\FrmAddPackSize.cs" />
     <Compile Include="Product\PackSize\FrmAddPackSize.Designer.cs">
       <DependentUpon>FrmAddPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmMaintainPackSize.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\PackSize\FrmMaintainPackSize.cs" />
     <Compile Include="Product\PackSize\FrmMaintainPackSize.Designer.cs">
       <DependentUpon>FrmMaintainPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmSearchPackSize.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\PackSize\FrmSearchPackSize.cs" />
     <Compile Include="Product\PackSize\FrmSearchPackSize.Designer.cs">
       <DependentUpon>FrmSearchPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmAddSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Sheets\FrmAddSheet.cs" />
     <Compile Include="Product\Sheets\FrmAddSheet.Designer.cs">
       <DependentUpon>FrmAddSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmMaintainSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Sheets\FrmMaintainSheet.cs" />
     <Compile Include="Product\Sheets\FrmMaintainSheet.Designer.cs">
       <DependentUpon>FrmMaintainSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmSearchSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Sheets\FrmSearchSheet.cs" />
     <Compile Include="Product\Sheets\FrmSearchSheet.Designer.cs">
       <DependentUpon>FrmSearchSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmAddWidth.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Widths\FrmAddWidth.cs" />
     <Compile Include="Product\Widths\FrmAddWidth.Designer.cs">
       <DependentUpon>FrmAddWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmMaintainWidth.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Widths\FrmMaintainWidth.cs" />
     <Compile Include="Product\Widths\FrmMaintainWidth.Designer.cs">
       <DependentUpon>FrmMaintainWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmSearchWidth.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Widths\FrmSearchWidth.cs" />
     <Compile Include="Product\Widths\FrmSearchWidth.Designer.cs">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </Compile>

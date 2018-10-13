@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.PackSize
+﻿namespace MainSystem.Products.Pack_Size
 {
     partial class FrmMaintainPackSize
     {
@@ -109,7 +109,6 @@
             this.btnDeleteSheet.TabIndex = 22;
             this.btnDeleteSheet.Text = "Delete Pack Size";
             this.btnDeleteSheet.UseVisualStyleBackColor = false;
-            this.btnDeleteSheet.Click += new System.EventHandler(this.btnDeleteSheet_Click);
             // 
             // btnUpdateSheet
             // 
@@ -122,7 +121,6 @@
             this.btnUpdateSheet.TabIndex = 21;
             this.btnUpdateSheet.Text = "Update Pack SIze";
             this.btnUpdateSheet.UseVisualStyleBackColor = false;
-            this.btnUpdateSheet.Click += new System.EventHandler(this.btnUpdateSheet_Click);
             // 
             // txtProductSheetDesc
             // 
@@ -131,7 +129,6 @@
             this.txtProductSheetDesc.Name = "txtProductSheetDesc";
             this.txtProductSheetDesc.Size = new System.Drawing.Size(78, 25);
             this.txtProductSheetDesc.TabIndex = 20;
-            this.txtProductSheetDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductSheetDesc_KeyPress);
             // 
             // label1
             // 
@@ -140,7 +137,7 @@
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(54, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 16);
+            this.label1.Size = new System.Drawing.Size(140, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Products Pack Size ";
             // 

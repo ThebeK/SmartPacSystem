@@ -15,11 +15,9 @@ namespace MainSystem.Products
 {
     public partial class FrmMaintainProduct : Form
     {
-        int tempID;
-        public FrmMaintainProduct(int x)
+        public FrmMaintainProduct()
         {
             InitializeComponent();
-            tempID = x;
         }
         public sealed class UserActivityMonitor
         {
@@ -94,7 +92,7 @@ namespace MainSystem.Products
         {
             Products.FrmSearchProductType qq = new Products.FrmSearchProductType();
             qq.ShowDialog();
-            this.Show();
+         
             this.Activate();
         }
 
@@ -102,63 +100,63 @@ namespace MainSystem.Products
         {
             Products.Brand.FrmAddBrand wq = new Products.Brand.FrmAddBrand();
             wq.ShowDialog();
-            this.Show();
+       
             this.Activate();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            Products.Brand.FrmSearchBrand wq = new Products.Brand.FrmSearchBrand("Maintain Product Brand");
+            Products.Brand.FrmSearchBrand wq = new Products.Brand.FrmSearchBrand();
             wq.ShowDialog();
-            this.Show();
+            
             this.Activate();
         }
 
         private void btnAddPackSize_Click(object sender, EventArgs e)
         {
-            Products.PackSize.FrmAddPackSize wq = new Products.PackSize.FrmAddPackSize("Maintain Product Pack Size");
+            Products.Pack_Size.FrmAddPackSize wq = new Products.Pack_Size.FrmAddPackSize();
             wq.ShowDialog();
-            this.Show();
+           
             this.Activate();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Products.PackSize.FrmSearchPackSize wq = new Products.PackSize.FrmSearchPackSize("Maintain Product Pack Size");
+            Products.Pack_Size.FrmSearchPackSize wq = new Products.Pack_Size.FrmSearchPackSize();
             wq.ShowDialog();
-            this.Show();
+     
             this.Activate();
         }
 
         private void btnAddSheetNumber_Click(object sender, EventArgs e)
         {
-            Products.Sheets.FrmAddSheet wq = new Products.Sheets.FrmAddSheet("Maintain Product Sheet Number");
+            Products.Sheet.FrmAddSheet wq = new Products.Sheet.FrmAddSheet();
             wq.ShowDialog();
-            this.Show();
+    
             this.Activate();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Products.Sheets.FrmSearchSheet wq = new Products.Sheets.FrmSearchSheet("Maintain Product Sheet Number");
+            Products.Sheet.FrmSearchSheet wq = new Products.Sheet.FrmSearchSheet();
             wq.ShowDialog();
-            this.Show();
+           
             this.Activate();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Products.Widths.FrmAddWidth wq = new Products.Widths.FrmAddWidth("Maintain Product Width");
+            Products.Width.FrmAddWidth wq = new Products.Width.FrmAddWidth();
             wq.ShowDialog();
-            this.Show();
+           
             this.Activate();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Products.Widths.FrmSearchWidth wq = new Products.Widths.FrmSearchWidth("Maintain Product Width");
+            Products.Width.FrmSearchWidth wq = new Products.Width.FrmSearchWidth();
             wq.ShowDialog();
-            this.Show();
+       
             this.Activate();
         }
 
@@ -166,15 +164,15 @@ namespace MainSystem.Products
         {
             Products.Length.FrmAddLength wq = new Products.Length.FrmAddLength();
             wq.ShowDialog();
-            this.Show();
+            
             this.Activate();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Products.Length.FrmSearchLength wq = new Products.Length.FrmSearchLength("");
+            Products.Length.FrmSearchLength wq = new Products.Length.FrmSearchLength();
             wq.ShowDialog();
-            this.Show();
+           
             this.Activate();
         }
 
@@ -191,19 +189,14 @@ namespace MainSystem.Products
             toolTip1.SetToolTip(this.cbxLength, "Select Products Length");
             toolTip1.SetToolTip(this.cbxPackSize, "Select Number of packs");
             toolTip1.SetToolTip(this.cbxprodT, "Select product type");
-            toolTip1.SetToolTip(this.cbxWidth, "Select Widths size");
-            toolTip1.SetToolTip(this.cbxSheet, "Select Sheets");
+            toolTip1.SetToolTip(this.cbxWidth, "Select Width size");
+            toolTip1.SetToolTip(this.cbxSheet, "Select Sheet");
             toolTip1.SetToolTip(this.btnUpdate, "Click to edit product");
             toolTip1.SetToolTip(this.btnDelete, "Click to delete product");
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
