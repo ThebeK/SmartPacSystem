@@ -141,7 +141,7 @@ namespace MainSystem
 
         private void btnAddPackSize_Click(object sender, EventArgs e)
         {
-            Products.PackSize.FrmAddPackSize wq = new Products.PackSize.FrmAddPackSize();
+            Products.Pack_Size.FrmAddPackSize wq = new Products.Pack_Size.FrmAddPackSize();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -149,7 +149,7 @@ namespace MainSystem
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Products.PackSize.FrmSearchPackSize wq = new Products.PackSize.FrmSearchPackSize();
+            Products.Pack_Size.FrmSearchPackSize wq = new Products.Pack_Size.FrmSearchPackSize();
             wq.ShowDialog();
             this.Show();
             this.Activate();

@@ -165,7 +165,7 @@ namespace MainSystem.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Product {
             get {
-                object obj = ResourceManager.GetObject("Product", resourceCulture);
+                object obj = ResourceManager.GetObject("Products", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
