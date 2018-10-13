@@ -51,9 +51,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.accessLevelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPDataSet = new MainSystem.SPDataSet();
+           //  this.sPDataSet = new MainSystem.SPDataSet();
             this.accessLevelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.access_LevelTableAdapter = new MainSystem.SPDataSetTableAdapters.Access_LevelTableAdapter();
+           // this.access_LevelTableAdapter = new MainSystem.SPDataSetTableAdapters.Access_LevelTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).BeginInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -303,17 +303,17 @@
             // 
             // sPDataSet
             // 
-            this.sPDataSet.DataSetName = "SPDataSet";
-            this.sPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           // this.sPDataSet.DataSetName = "SPDataSet";
+          //  this.sPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // accessLevelBindingSource1
             // 
             this.accessLevelBindingSource1.DataMember = "Access_Level";
-            this.accessLevelBindingSource1.DataSource = this.sPDataSet;
+            //this.accessLevelBindingSource1.DataSource = this.sPDataSet;
             // 
             // access_LevelTableAdapter
             // 
-            this.access_LevelTableAdapter.ClearBeforeFill = true;
+           // this.access_LevelTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -349,7 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -379,9 +379,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAddProdType;
         private System.Windows.Forms.ComboBox cbAccessLevelName;
-        private SPDataSet sPDataSet;
+       // private SPDataSet sPDataSet;
         private System.Windows.Forms.BindingSource accessLevelBindingSource1;
-        private SPDataSetTableAdapters.Access_LevelTableAdapter access_LevelTableAdapter;
+       // private SPDataSetTableAdapters.Access_LevelTableAdapter access_LevelTableAdapter;
         private System.Windows.Forms.Button button1;
     }
 }

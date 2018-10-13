@@ -111,7 +111,7 @@
             this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label9.Location = new System.Drawing.Point(467, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(189, 34);
+            this.label9.Size = new System.Drawing.Size(204, 34);
             this.label9.TabIndex = 24;
             this.label9.Text = "Add Products";
             // 
@@ -227,7 +227,7 @@
             this.lblProdDescr.ForeColor = System.Drawing.Color.Red;
             this.lblProdDescr.Location = new System.Drawing.Point(163, 104);
             this.lblProdDescr.Name = "lblProdDescr";
-            this.lblProdDescr.Size = new System.Drawing.Size(297, 16);
+            this.lblProdDescr.Size = new System.Drawing.Size(305, 16);
             this.lblProdDescr.TabIndex = 62;
             this.lblProdDescr.Text = "Please enter a valid Products Description";
             this.lblProdDescr.Visible = false;
@@ -292,7 +292,7 @@
             this.label4.ForeColor = System.Drawing.Color.Silver;
             this.label4.Location = new System.Drawing.Point(10, 172);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 16);
+            this.label4.Size = new System.Drawing.Size(111, 16);
             this.label4.TabIndex = 53;
             this.label4.Text = "Products Price";
             // 
@@ -593,13 +593,11 @@
             // 
             // cbxbrand
             // 
-            this.cbxbrand.DisplayMember = "Product_Brand_Name";
             this.cbxbrand.FormattingEnabled = true;
             this.cbxbrand.Location = new System.Drawing.Point(163, 245);
             this.cbxbrand.Name = "cbxbrand";
             this.cbxbrand.Size = new System.Drawing.Size(140, 24);
             this.cbxbrand.TabIndex = 22;
-            this.cbxbrand.ValueMember = "Product_Brand_ID";
             // 
             // label8
             // 
@@ -619,7 +617,7 @@
             this.label7.ForeColor = System.Drawing.Color.Silver;
             this.label7.Location = new System.Drawing.Point(6, 203);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 16);
+            this.label7.Size = new System.Drawing.Size(110, 16);
             this.label7.TabIndex = 19;
             this.label7.Text = "Products Type";
             // 
@@ -641,7 +639,7 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(6, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 16);
+            this.label2.Size = new System.Drawing.Size(165, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Products Description:";
             // 

@@ -11,11 +11,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.Brand
+namespace MainSystem.Products.Sheet
 {
-    public partial class FrmSearchBrand : Form
+    public partial class FrmSearchSheet : Form
     {
-        public FrmSearchBrand()
+        public FrmSearchSheet()
         {
             InitializeComponent();
         }
@@ -87,14 +87,13 @@ namespace MainSystem.Products.Brand
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-            Brand.FrmMaintainBrand ww = new Brand.FrmMaintainBrand();
-            ww.ShowDialog();
+            FrmMaintainSheet qw = new FrmMaintainSheet();
+            qw.ShowDialog();
             this.Show();
             this.Activate();
-
         }
 
-        private void FrmSearchBrand_Leave(object sender, EventArgs e)
+        private void FrmSearchSheet_Leave(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -104,12 +103,7 @@ namespace MainSystem.Products.Brand
             Process.Start(@".\" + "AddProduct.pdf");
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
