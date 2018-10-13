@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Width
+﻿namespace MainSystem.Products.Widths
 {
     partial class FrmSearchWidth
     {
@@ -90,7 +90,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 34);
             this.label1.TabIndex = 53;
-            this.label1.Text = "Search Width ";
+            this.label1.Text = "Search Widths ";
             // 
             // panel2
             // 
@@ -110,7 +110,7 @@
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(156, 16);
             this.lbl.TabIndex = 59;
-            this.lbl.Text = "Please Specify Width";
+            this.lbl.Text = "Please Specify Widths";
             // 
             // panel3
             // 

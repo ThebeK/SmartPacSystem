@@ -50,7 +50,7 @@
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(90, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 16);
+            this.label1.Size = new System.Drawing.Size(205, 16);
             this.label1.TabIndex = 55;
             this.label1.Text = "Products Brand Description";
             // 
@@ -65,6 +65,7 @@
             this.btnUpdatePT.TabIndex = 57;
             this.btnUpdatePT.Text = "Update Products Brand";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
+            this.btnUpdatePT.Click += new System.EventHandler(this.btnUpdatePT_Click);
             // 
             // btnDeletePT
             // 
@@ -77,6 +78,7 @@
             this.btnDeletePT.TabIndex = 58;
             this.btnDeletePT.Text = "Delete Products Brand";
             this.btnDeletePT.UseVisualStyleBackColor = false;
+            this.btnDeletePT.Click += new System.EventHandler(this.btnDeletePT_Click);
             // 
             // lblBrand
             // 
@@ -111,6 +113,8 @@
             this.txtBrandDesc.Name = "txtBrandDesc";
             this.txtBrandDesc.Size = new System.Drawing.Size(287, 85);
             this.txtBrandDesc.TabIndex = 56;
+            this.txtBrandDesc.TextChanged += new System.EventHandler(this.txtBrandDesc_TextChanged);
+            this.txtBrandDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrandDesc_KeyPress);
             // 
             // label2
             // 
@@ -169,6 +173,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMaintainBrand";
             this.Text = "FrmMaintainBrand";
+            this.Load += new System.EventHandler(this.FrmMaintainBrand_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

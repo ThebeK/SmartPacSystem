@@ -117,7 +117,7 @@ namespace MainSystem
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Admin.FrmAuthorize au = new Admin.FrmAuthorize();
+            Admin.FrmAuthorization au = new Admin.FrmAuthorization();
             au.ShowDialog();
             //Admin.FrmAuthorization af = new Admin.FrmAuthorization();
             
