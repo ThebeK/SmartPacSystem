@@ -143,6 +143,7 @@
     <Compile Include="Client_Purchase_Order_Line.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="clsUser.cs" />
     <Compile Include="Company_Information.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
