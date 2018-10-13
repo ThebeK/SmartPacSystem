@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Length
+﻿namespace MainSystem.Product.Length
 {
     partial class FrmMaintainLength
     {
@@ -141,7 +141,7 @@
             this.btnDeletePT.Name = "btnDeletePT";
             this.btnDeletePT.Size = new System.Drawing.Size(101, 56);
             this.btnDeletePT.TabIndex = 36;
-            this.btnDeletePT.Text = "Delete Products Length";
+            this.btnDeletePT.Text = "Delete Product Length";
             this.btnDeletePT.UseVisualStyleBackColor = false;
             // 
             // btnUpdatePT
@@ -153,7 +153,7 @@
             this.btnUpdatePT.Name = "btnUpdatePT";
             this.btnUpdatePT.Size = new System.Drawing.Size(94, 56);
             this.btnUpdatePT.TabIndex = 35;
-            this.btnUpdatePT.Text = "Update Products Length";
+            this.btnUpdatePT.Text = "Update Product Length";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
             // 
             // txtWidthDesc

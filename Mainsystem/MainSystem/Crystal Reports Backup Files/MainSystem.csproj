@@ -45,10 +45,10 @@
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -70,7 +70,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -422,28 +421,28 @@
     <Compile Include="Reports\frmAuditLog.Designer.cs">
       <DependentUpon>frmAuditLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Brand\FrmAddBrand.cs">
+    <Compile Include="Product\Brand\FrmAddBrand.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Brand\FrmAddBrand.Designer.cs">
+    <Compile Include="Product\Brand\FrmAddBrand.Designer.cs">
       <DependentUpon>FrmAddBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Brand\FrmMaintainBrand.cs">
+    <Compile Include="Product\Brand\FrmMaintainBrand.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Brand\FrmMaintainBrand.Designer.cs">
+    <Compile Include="Product\Brand\FrmMaintainBrand.Designer.cs">
       <DependentUpon>FrmMaintainBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Brand\FrmSearchBrand.cs">
+    <Compile Include="Product\Brand\FrmSearchBrand.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Brand\FrmSearchBrand.Designer.cs">
+    <Compile Include="Product\Brand\FrmSearchBrand.Designer.cs">
       <DependentUpon>FrmSearchBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\frmAddProduct.cs">
+    <Compile Include="Product\frmAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\frmAddProduct.Designer.cs">
+    <Compile Include="Product\frmAddProduct.Designer.cs">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Client\frmMaintainClient.cs">
@@ -518,88 +517,88 @@
     <Compile Include="Order\FrmView.Designer.cs">
       <DependentUpon>FrmView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Product_Type\FrmAddProductType.cs">
+    <Compile Include="Product\Product_Type\FrmAddProductType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Product_Type\FrmAddProductType.Designer.cs">
+    <Compile Include="Product\Product_Type\FrmAddProductType.Designer.cs">
       <DependentUpon>FrmAddProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\FrmMaintainProduct.cs">
+    <Compile Include="Product\FrmMaintainProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\FrmMaintainProduct.Designer.cs">
+    <Compile Include="Product\FrmMaintainProduct.Designer.cs">
       <DependentUpon>FrmMaintainProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Product_Type\FrmMaintainProductType.cs">
+    <Compile Include="Product\Product_Type\FrmMaintainProductType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Product_Type\FrmMaintainProductType.Designer.cs">
+    <Compile Include="Product\Product_Type\FrmMaintainProductType.Designer.cs">
       <DependentUpon>FrmMaintainProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\FrmSearchProduct.cs">
+    <Compile Include="Product\FrmSearchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\FrmSearchProduct.Designer.cs">
+    <Compile Include="Product\FrmSearchProduct.Designer.cs">
       <DependentUpon>FrmSearchProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Product_Type\FrmSearchProductType.cs">
+    <Compile Include="Product\Product_Type\FrmSearchProductType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Product_Type\FrmSearchProductType.Designer.cs">
+    <Compile Include="Product\Product_Type\FrmSearchProductType.Designer.cs">
       <DependentUpon>FrmSearchProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Length\FrmAddLength.cs">
+    <Compile Include="Product\Length\FrmAddLength.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Length\FrmAddLength.Designer.cs">
+    <Compile Include="Product\Length\FrmAddLength.Designer.cs">
       <DependentUpon>FrmAddLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Length\FrmMaintainLength.cs">
+    <Compile Include="Product\Length\FrmMaintainLength.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Length\FrmMaintainLength.Designer.cs">
+    <Compile Include="Product\Length\FrmMaintainLength.Designer.cs">
       <DependentUpon>FrmMaintainLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Length\FrmSearchLength.cs">
+    <Compile Include="Product\Length\FrmSearchLength.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products\Length\FrmSearchLength.Designer.cs">
+    <Compile Include="Product\Length\FrmSearchLength.Designer.cs">
       <DependentUpon>FrmSearchLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\PackSize\FrmAddPackSize.cs" />
-    <Compile Include="Products\PackSize\FrmAddPackSize.Designer.cs">
+    <Compile Include="Product\PackSize\FrmAddPackSize.cs" />
+    <Compile Include="Product\PackSize\FrmAddPackSize.Designer.cs">
       <DependentUpon>FrmAddPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\PackSize\FrmMaintainPackSize.cs" />
-    <Compile Include="Products\PackSize\FrmMaintainPackSize.Designer.cs">
+    <Compile Include="Product\PackSize\FrmMaintainPackSize.cs" />
+    <Compile Include="Product\PackSize\FrmMaintainPackSize.Designer.cs">
       <DependentUpon>FrmMaintainPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\PackSize\FrmSearchPackSize.cs" />
-    <Compile Include="Products\PackSize\FrmSearchPackSize.Designer.cs">
+    <Compile Include="Product\PackSize\FrmSearchPackSize.cs" />
+    <Compile Include="Product\PackSize\FrmSearchPackSize.Designer.cs">
       <DependentUpon>FrmSearchPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Sheets\FrmAddSheet.cs" />
-    <Compile Include="Products\Sheets\FrmAddSheet.Designer.cs">
+    <Compile Include="Product\Sheets\FrmAddSheet.cs" />
+    <Compile Include="Product\Sheets\FrmAddSheet.Designer.cs">
       <DependentUpon>FrmAddSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Sheets\FrmMaintainSheet.cs" />
-    <Compile Include="Products\Sheets\FrmMaintainSheet.Designer.cs">
+    <Compile Include="Product\Sheets\FrmMaintainSheet.cs" />
+    <Compile Include="Product\Sheets\FrmMaintainSheet.Designer.cs">
       <DependentUpon>FrmMaintainSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Sheets\FrmSearchSheet.cs" />
-    <Compile Include="Products\Sheets\FrmSearchSheet.Designer.cs">
+    <Compile Include="Product\Sheets\FrmSearchSheet.cs" />
+    <Compile Include="Product\Sheets\FrmSearchSheet.Designer.cs">
       <DependentUpon>FrmSearchSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Widths\FrmAddWidth.cs" />
-    <Compile Include="Products\Widths\FrmAddWidth.Designer.cs">
+    <Compile Include="Product\Widths\FrmAddWidth.cs" />
+    <Compile Include="Product\Widths\FrmAddWidth.Designer.cs">
       <DependentUpon>FrmAddWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Widths\FrmMaintainWidth.cs" />
-    <Compile Include="Products\Widths\FrmMaintainWidth.Designer.cs">
+    <Compile Include="Product\Widths\FrmMaintainWidth.cs" />
+    <Compile Include="Product\Widths\FrmMaintainWidth.Designer.cs">
       <DependentUpon>FrmMaintainWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products\Widths\FrmSearchWidth.cs" />
-    <Compile Include="Products\Widths\FrmSearchWidth.Designer.cs">
+    <Compile Include="Product\Widths\FrmSearchWidth.cs" />
+    <Compile Include="Product\Widths\FrmSearchWidth.Designer.cs">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </Compile>
     <Compile Include="Sale\frmASale.cs">
@@ -808,16 +807,16 @@
     <EmbeddedResource Include="Order\FrmView.resx">
       <DependentUpon>FrmView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Brand\FrmAddBrand.resx">
+    <EmbeddedResource Include="Product\Brand\FrmAddBrand.resx">
       <DependentUpon>FrmAddBrand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Brand\FrmMaintainBrand.resx">
+    <EmbeddedResource Include="Product\Brand\FrmMaintainBrand.resx">
       <DependentUpon>FrmMaintainBrand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Brand\FrmSearchBrand.resx">
+    <EmbeddedResource Include="Product\Brand\FrmSearchBrand.resx">
       <DependentUpon>FrmSearchBrand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\frmAddProduct.resx">
+    <EmbeddedResource Include="Product\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\frmMaintainClient.resx">
@@ -826,55 +825,55 @@
     <EmbeddedResource Include="Client\frmSearchClient.resx">
       <DependentUpon>frmSearchClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Product_Type\FrmAddProductType.resx">
+    <EmbeddedResource Include="Product\Product_Type\FrmAddProductType.resx">
       <DependentUpon>FrmAddProductType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\FrmMaintainProduct.resx">
+    <EmbeddedResource Include="Product\FrmMaintainProduct.resx">
       <DependentUpon>FrmMaintainProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Product_Type\FrmMaintainProductType.resx">
+    <EmbeddedResource Include="Product\Product_Type\FrmMaintainProductType.resx">
       <DependentUpon>FrmMaintainProductType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\FrmSearchProduct.resx">
+    <EmbeddedResource Include="Product\FrmSearchProduct.resx">
       <DependentUpon>FrmSearchProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Product_Type\FrmSearchProductType.resx">
+    <EmbeddedResource Include="Product\Product_Type\FrmSearchProductType.resx">
       <DependentUpon>FrmSearchProductType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Length\FrmAddLength.resx">
+    <EmbeddedResource Include="Product\Length\FrmAddLength.resx">
       <DependentUpon>FrmAddLength.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Length\FrmMaintainLength.resx">
+    <EmbeddedResource Include="Product\Length\FrmMaintainLength.resx">
       <DependentUpon>FrmMaintainLength.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Length\FrmSearchLength.resx">
+    <EmbeddedResource Include="Product\Length\FrmSearchLength.resx">
       <DependentUpon>FrmSearchLength.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\PackSize\FrmAddPackSize.resx">
+    <EmbeddedResource Include="Product\PackSize\FrmAddPackSize.resx">
       <DependentUpon>FrmAddPackSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\PackSize\FrmMaintainPackSize.resx">
+    <EmbeddedResource Include="Product\PackSize\FrmMaintainPackSize.resx">
       <DependentUpon>FrmMaintainPackSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\PackSize\FrmSearchPackSize.resx">
+    <EmbeddedResource Include="Product\PackSize\FrmSearchPackSize.resx">
       <DependentUpon>FrmSearchPackSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Sheets\FrmAddSheet.resx">
+    <EmbeddedResource Include="Product\Sheets\FrmAddSheet.resx">
       <DependentUpon>FrmAddSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Sheets\FrmMaintainSheet.resx">
+    <EmbeddedResource Include="Product\Sheets\FrmMaintainSheet.resx">
       <DependentUpon>FrmMaintainSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Sheets\FrmSearchSheet.resx">
+    <EmbeddedResource Include="Product\Sheets\FrmSearchSheet.resx">
       <DependentUpon>FrmSearchSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Widths\FrmAddWidth.resx">
+    <EmbeddedResource Include="Product\Widths\FrmAddWidth.resx">
       <DependentUpon>FrmAddWidth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Widths\FrmMaintainWidth.resx">
+    <EmbeddedResource Include="Product\Widths\FrmMaintainWidth.resx">
       <DependentUpon>FrmMaintainWidth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products\Widths\FrmSearchWidth.resx">
+    <EmbeddedResource Include="Product\Widths\FrmSearchWidth.resx">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\frmASale.resx">

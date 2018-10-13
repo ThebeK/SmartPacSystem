@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products
+﻿namespace MainSystem.Product
 {
     partial class FrmMaintainProductType
     {
@@ -74,7 +74,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(331, 34);
             this.label2.TabIndex = 59;
-            this.label2.Text = "Maintain Products Type";
+            this.label2.Text = "Maintain Product Type";
             // 
             // pictureBox1
             // 
@@ -107,7 +107,7 @@
             this.btnDeletePT.Name = "btnDeletePT";
             this.btnDeletePT.Size = new System.Drawing.Size(83, 61);
             this.btnDeletePT.TabIndex = 58;
-            this.btnDeletePT.Text = "Delete Products Type";
+            this.btnDeletePT.Text = "Delete Product Type";
             this.btnDeletePT.UseVisualStyleBackColor = false;
             // 
             // btnUpdatePT
@@ -119,7 +119,7 @@
             this.btnUpdatePT.Name = "btnUpdatePT";
             this.btnUpdatePT.Size = new System.Drawing.Size(90, 61);
             this.btnUpdatePT.TabIndex = 57;
-            this.btnUpdatePT.Text = "Update Products Type";
+            this.btnUpdatePT.Text = "Update Product Type";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
             // 
             // txtProductTypeDesc
@@ -139,7 +139,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 16);
             this.label1.TabIndex = 55;
-            this.label1.Text = "Products type description";
+            this.label1.Text = "Product type description";
             // 
             // FrmMaintainProductType
             // 

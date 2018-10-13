@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products
+﻿namespace MainSystem.Product
 {
     partial class FrmSearchProduct
     {
@@ -63,7 +63,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(316, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Please Specify Products Description";
+            this.label2.Text = "Please Specify Product Description";
             // 
             // panel1
             // 
@@ -108,7 +108,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(226, 34);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Search Products";
+            this.label13.Text = "Search Product";
             // 
             // btnMaintain
             // 
@@ -131,7 +131,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(354, 20);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Please specify valid Products Decription";
+            this.label3.Text = "Please specify valid Product Decription";
             this.label3.Visible = false;
             // 
             // dgvClientSearch

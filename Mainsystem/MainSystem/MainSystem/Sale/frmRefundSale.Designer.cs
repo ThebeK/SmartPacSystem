@@ -268,7 +268,7 @@
             this.groupBox2.Size = new System.Drawing.Size(528, 155);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Products for sale ";
+            this.groupBox2.Text = "Product for sale ";
             // 
             // dgvProdSale
             // 
@@ -315,7 +315,7 @@
             this.groupBox3.Size = new System.Drawing.Size(528, 200);
             this.groupBox3.TabIndex = 56;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Products Adjustments";
+            this.groupBox3.Text = "Product Adjustments";
             // 
             // txtSale
             // 
