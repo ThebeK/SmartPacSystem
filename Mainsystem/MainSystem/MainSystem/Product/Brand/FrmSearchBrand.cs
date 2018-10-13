@@ -210,7 +210,7 @@ namespace MainSystem.Products.Brand
         private void FrmSearchBrand_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sPDataSet.Product_Brand' table. You can move, or remove it, as needed.
-            this.product_BrandTableAdapter.Fill(this.sPDataSet.Product_Brand);
+          //  this.product_BrandTableAdapter.Fill(this.sPDataSet.Product_Brand);
             dgvBrand.DataSource = db.Product_Brand.ToList();
             //dgvBrand.Columns[2].Visible = false;
             dgvBrand.DefaultCellStyle.WrapMode = DataGridViewTriState.True;

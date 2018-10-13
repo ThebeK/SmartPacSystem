@@ -78,8 +78,7 @@ namespace MainSystem
 
                     Form1 ds = new Form1();
                     ds.ShowDialog();
-                    this.Activate();
-                    this.Show();
+                    
                 }
                 else
                 {
@@ -96,8 +95,7 @@ namespace MainSystem
             }
             Form1 qq = new Form1();
             qq.ShowDialog();
-            this.Activate();
-            this.Show();
+           
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -119,8 +117,16 @@ namespace MainSystem
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Admin.FrmAuthorization af = new Admin.FrmAuthorization();
-            af.ShowDialog();
+            Admin.FrmAuthorize au = new Admin.FrmAuthorize();
+            au.ShowDialog();
+            //Admin.FrmAuthorization af = new Admin.FrmAuthorization();
+            
+            //af.ShowDialog();
+            //af.Focus();
+            //this.Hide();
+            //this.Activate();
+            //this.Show();
+            //this.Dispose();
         }
         double opacity = 0.00;
         private void timer2_Tick(object sender, EventArgs e)
@@ -180,6 +186,17 @@ namespace MainSystem
         {
             DateTime datetime = DateTime.Now;
             this.lblTime.Text = datetime.ToString();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //FrmAuthorization fr = new FrmAuthorization();
+            
+            Admin.FrmAuthorization af = new Admin.FrmAuthorization();
+            af.Owner = this;
+            af.Show();
+            //af.ShowDialog();
+            //af.Focus();
         }
     }
 }

@@ -34,7 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbAccessLevelName = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAddProdType = new System.Windows.Forms.Button();
             this.txtErrorName = new System.Windows.Forms.Label();
@@ -51,12 +51,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.accessLevelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPDataSet = new MainSystem.SPDataSet();
+            this.accessLevelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.access_LevelTableAdapter = new MainSystem.SPDataSetTableAdapters.Access_LevelTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,13 +106,14 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(197, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 34);
+            this.label1.Size = new System.Drawing.Size(260, 34);
             this.label1.TabIndex = 55;
             this.label1.Text = "Add Users Profile";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.cbAccessLevelName);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.btnAddProdType);
             this.groupBox1.Controls.Add(this.txtErrorName);
@@ -131,13 +138,16 @@
             this.groupBox1.Text = "Users Profile";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // comboBox1
+            // cbAccessLevelName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(186, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 24);
-            this.comboBox1.TabIndex = 60;
+            this.cbAccessLevelName.DataSource = this.accessLevelBindingSource1;
+            this.cbAccessLevelName.DisplayMember = "Access_Level_Name";
+            this.cbAccessLevelName.FormattingEnabled = true;
+            this.cbAccessLevelName.Location = new System.Drawing.Point(186, 40);
+            this.cbAccessLevelName.Name = "cbAccessLevelName";
+            this.cbAccessLevelName.Size = new System.Drawing.Size(192, 24);
+            this.cbAccessLevelName.TabIndex = 60;
+            this.cbAccessLevelName.ValueMember = "Access_Level_Id";
             // 
             // pictureBox2
             // 
@@ -191,7 +201,7 @@
             this.btnAddUser.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAddUser.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAddUser.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAddUser.Location = new System.Drawing.Point(391, 283);
+            this.btnAddUser.Location = new System.Drawing.Point(387, 319);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(92, 44);
             this.btnAddUser.TabIndex = 44;
@@ -291,6 +301,34 @@
             this.label8.Text = "Confirm Password";
             this.label8.Visible = false;
             // 
+            // sPDataSet
+            // 
+            this.sPDataSet.DataSetName = "SPDataSet";
+            this.sPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accessLevelBindingSource1
+            // 
+            this.accessLevelBindingSource1.DataMember = "Access_Level";
+            this.accessLevelBindingSource1.DataSource = this.sPDataSet;
+            // 
+            // access_LevelTableAdapter
+            // 
+            this.access_LevelTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.button1.Location = new System.Drawing.Point(88, 318);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 47);
+            this.button1.TabIndex = 61;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +340,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddUser";
             this.Text = "FrmAddUser";
+            this.Load += new System.EventHandler(this.FrmAddUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -310,6 +349,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,6 +378,10 @@
         private System.Windows.Forms.BindingSource accessLevelBindingSource;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAddProdType;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAccessLevelName;
+        private SPDataSet sPDataSet;
+        private System.Windows.Forms.BindingSource accessLevelBindingSource1;
+        private SPDataSetTableAdapters.Access_LevelTableAdapter access_LevelTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }

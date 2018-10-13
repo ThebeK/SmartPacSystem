@@ -24,7 +24,7 @@ namespace MainSystem {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class SPDataSet : global::System.Data.DataSet {
         
-        private Product_BrandDataTable tableProduct_Brand;
+        private Access_LevelDataTable tableAccess_Level;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace MainSystem {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Product_Brand"] != null)) {
-                    base.Tables.Add(new Product_BrandDataTable(ds.Tables["Product_Brand"]));
+                if ((ds.Tables["Access_Level"] != null)) {
+                    base.Tables.Add(new Access_LevelDataTable(ds.Tables["Access_Level"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace MainSystem {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Product_BrandDataTable Product_Brand {
+        public Access_LevelDataTable Access_Level {
             get {
-                return this.tableProduct_Brand;
+                return this.tableAccess_Level;
             }
         }
         
@@ -152,8 +152,8 @@ namespace MainSystem {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Product_Brand"] != null)) {
-                    base.Tables.Add(new Product_BrandDataTable(ds.Tables["Product_Brand"]));
+                if ((ds.Tables["Access_Level"] != null)) {
+                    base.Tables.Add(new Access_LevelDataTable(ds.Tables["Access_Level"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace MainSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableProduct_Brand = ((Product_BrandDataTable)(base.Tables["Product_Brand"]));
+            this.tableAccess_Level = ((Access_LevelDataTable)(base.Tables["Access_Level"]));
             if ((initTable == true)) {
-                if ((this.tableProduct_Brand != null)) {
-                    this.tableProduct_Brand.InitVars();
+                if ((this.tableAccess_Level != null)) {
+                    this.tableAccess_Level.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace MainSystem {
             this.Namespace = "http://tempuri.org/SPDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableProduct_Brand = new Product_BrandDataTable();
-            base.Tables.Add(this.tableProduct_Brand);
+            this.tableAccess_Level = new Access_LevelDataTable();
+            base.Tables.Add(this.tableAccess_Level);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeProduct_Brand() {
+        private bool ShouldSerializeAccess_Level() {
             return false;
         }
         
@@ -270,23 +270,25 @@ namespace MainSystem {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Product_BrandRowChangeEventHandler(object sender, Product_BrandRowChangeEvent e);
+        public delegate void Access_LevelRowChangeEventHandler(object sender, Access_LevelRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Product_BrandDataTable : global::System.Data.TypedTableBase<Product_BrandRow> {
+        public partial class Access_LevelDataTable : global::System.Data.TypedTableBase<Access_LevelRow> {
             
-            private global::System.Data.DataColumn columnProduct_Brand_ID;
+            private global::System.Data.DataColumn columnAccess_Level_Id;
             
-            private global::System.Data.DataColumn columnProduct_Brand_Name;
+            private global::System.Data.DataColumn columnAccess_Level_Name;
+            
+            private global::System.Data.DataColumn columnRole_Id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Product_BrandDataTable() {
-                this.TableName = "Product_Brand";
+            public Access_LevelDataTable() {
+                this.TableName = "Access_Level";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +296,7 @@ namespace MainSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Product_BrandDataTable(global::System.Data.DataTable table) {
+            internal Access_LevelDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +313,32 @@ namespace MainSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Product_BrandDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Access_LevelDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Product_Brand_IDColumn {
+            public global::System.Data.DataColumn Access_Level_IdColumn {
                 get {
-                    return this.columnProduct_Brand_ID;
+                    return this.columnAccess_Level_Id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Product_Brand_NameColumn {
+            public global::System.Data.DataColumn Access_Level_NameColumn {
                 get {
-                    return this.columnProduct_Brand_Name;
+                    return this.columnAccess_Level_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Role_IdColumn {
+                get {
+                    return this.columnRole_Id;
                 }
             }
             
@@ -343,53 +353,54 @@ namespace MainSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Product_BrandRow this[int index] {
+            public Access_LevelRow this[int index] {
                 get {
-                    return ((Product_BrandRow)(this.Rows[index]));
+                    return ((Access_LevelRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Product_BrandRowChangeEventHandler Product_BrandRowChanging;
+            public event Access_LevelRowChangeEventHandler Access_LevelRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Product_BrandRowChangeEventHandler Product_BrandRowChanged;
+            public event Access_LevelRowChangeEventHandler Access_LevelRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Product_BrandRowChangeEventHandler Product_BrandRowDeleting;
+            public event Access_LevelRowChangeEventHandler Access_LevelRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Product_BrandRowChangeEventHandler Product_BrandRowDeleted;
+            public event Access_LevelRowChangeEventHandler Access_LevelRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddProduct_BrandRow(Product_BrandRow row) {
+            public void AddAccess_LevelRow(Access_LevelRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Product_BrandRow AddProduct_BrandRow(string Product_Brand_Name) {
-                Product_BrandRow rowProduct_BrandRow = ((Product_BrandRow)(this.NewRow()));
+            public Access_LevelRow AddAccess_LevelRow(string Access_Level_Name, int Role_Id) {
+                Access_LevelRow rowAccess_LevelRow = ((Access_LevelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Product_Brand_Name};
-                rowProduct_BrandRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowProduct_BrandRow);
-                return rowProduct_BrandRow;
+                        Access_Level_Name,
+                        Role_Id};
+                rowAccess_LevelRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAccess_LevelRow);
+                return rowAccess_LevelRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Product_BrandRow FindByProduct_Brand_ID(int Product_Brand_ID) {
-                return ((Product_BrandRow)(this.Rows.Find(new object[] {
-                            Product_Brand_ID})));
+            public Access_LevelRow FindByAccess_Level_Id(int Access_Level_Id) {
+                return ((Access_LevelRow)(this.Rows.Find(new object[] {
+                            Access_Level_Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Product_BrandDataTable cln = ((Product_BrandDataTable)(base.Clone()));
+                Access_LevelDataTable cln = ((Access_LevelDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,58 +408,61 @@ namespace MainSystem {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Product_BrandDataTable();
+                return new Access_LevelDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnProduct_Brand_ID = base.Columns["Product_Brand_ID"];
-                this.columnProduct_Brand_Name = base.Columns["Product_Brand_Name"];
+                this.columnAccess_Level_Id = base.Columns["Access_Level_Id"];
+                this.columnAccess_Level_Name = base.Columns["Access_Level_Name"];
+                this.columnRole_Id = base.Columns["Role_Id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnProduct_Brand_ID = new global::System.Data.DataColumn("Product_Brand_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduct_Brand_ID);
-                this.columnProduct_Brand_Name = new global::System.Data.DataColumn("Product_Brand_Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduct_Brand_Name);
+                this.columnAccess_Level_Id = new global::System.Data.DataColumn("Access_Level_Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccess_Level_Id);
+                this.columnAccess_Level_Name = new global::System.Data.DataColumn("Access_Level_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccess_Level_Name);
+                this.columnRole_Id = new global::System.Data.DataColumn("Role_Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRole_Id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnProduct_Brand_ID}, true));
-                this.columnProduct_Brand_ID.AutoIncrement = true;
-                this.columnProduct_Brand_ID.AutoIncrementSeed = -1;
-                this.columnProduct_Brand_ID.AutoIncrementStep = -1;
-                this.columnProduct_Brand_ID.AllowDBNull = false;
-                this.columnProduct_Brand_ID.ReadOnly = true;
-                this.columnProduct_Brand_ID.Unique = true;
-                this.columnProduct_Brand_Name.MaxLength = 2147483647;
+                                this.columnAccess_Level_Id}, true));
+                this.columnAccess_Level_Id.AutoIncrement = true;
+                this.columnAccess_Level_Id.AutoIncrementSeed = -1;
+                this.columnAccess_Level_Id.AutoIncrementStep = -1;
+                this.columnAccess_Level_Id.AllowDBNull = false;
+                this.columnAccess_Level_Id.ReadOnly = true;
+                this.columnAccess_Level_Id.Unique = true;
+                this.columnAccess_Level_Name.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Product_BrandRow NewProduct_BrandRow() {
-                return ((Product_BrandRow)(this.NewRow()));
+            public Access_LevelRow NewAccess_LevelRow() {
+                return ((Access_LevelRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Product_BrandRow(builder);
+                return new Access_LevelRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Product_BrandRow);
+                return typeof(Access_LevelRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Product_BrandRowChanged != null)) {
-                    this.Product_BrandRowChanged(this, new Product_BrandRowChangeEvent(((Product_BrandRow)(e.Row)), e.Action));
+                if ((this.Access_LevelRowChanged != null)) {
+                    this.Access_LevelRowChanged(this, new Access_LevelRowChangeEvent(((Access_LevelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -456,8 +470,8 @@ namespace MainSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Product_BrandRowChanging != null)) {
-                    this.Product_BrandRowChanging(this, new Product_BrandRowChangeEvent(((Product_BrandRow)(e.Row)), e.Action));
+                if ((this.Access_LevelRowChanging != null)) {
+                    this.Access_LevelRowChanging(this, new Access_LevelRowChangeEvent(((Access_LevelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -465,8 +479,8 @@ namespace MainSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Product_BrandRowDeleted != null)) {
-                    this.Product_BrandRowDeleted(this, new Product_BrandRowChangeEvent(((Product_BrandRow)(e.Row)), e.Action));
+                if ((this.Access_LevelRowDeleted != null)) {
+                    this.Access_LevelRowDeleted(this, new Access_LevelRowChangeEvent(((Access_LevelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -474,14 +488,14 @@ namespace MainSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Product_BrandRowDeleting != null)) {
-                    this.Product_BrandRowDeleting(this, new Product_BrandRowChangeEvent(((Product_BrandRow)(e.Row)), e.Action));
+                if ((this.Access_LevelRowDeleting != null)) {
+                    this.Access_LevelRowDeleting(this, new Access_LevelRowChangeEvent(((Access_LevelRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveProduct_BrandRow(Product_BrandRow row) {
+            public void RemoveAccess_LevelRow(Access_LevelRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -508,7 +522,7 @@ namespace MainSystem {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Product_BrandDataTable";
+                attribute2.FixedValue = "Access_LevelDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -552,54 +566,82 @@ namespace MainSystem {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Product_BrandRow : global::System.Data.DataRow {
+        public partial class Access_LevelRow : global::System.Data.DataRow {
             
-            private Product_BrandDataTable tableProduct_Brand;
+            private Access_LevelDataTable tableAccess_Level;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Product_BrandRow(global::System.Data.DataRowBuilder rb) : 
+            internal Access_LevelRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableProduct_Brand = ((Product_BrandDataTable)(this.Table));
+                this.tableAccess_Level = ((Access_LevelDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Product_Brand_ID {
+            public int Access_Level_Id {
                 get {
-                    return ((int)(this[this.tableProduct_Brand.Product_Brand_IDColumn]));
+                    return ((int)(this[this.tableAccess_Level.Access_Level_IdColumn]));
                 }
                 set {
-                    this[this.tableProduct_Brand.Product_Brand_IDColumn] = value;
+                    this[this.tableAccess_Level.Access_Level_IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Product_Brand_Name {
+            public string Access_Level_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableProduct_Brand.Product_Brand_NameColumn]));
+                        return ((string)(this[this.tableAccess_Level.Access_Level_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Product_Brand_Name\' in table \'Product_Brand\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Access_Level_Name\' in table \'Access_Level\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProduct_Brand.Product_Brand_NameColumn] = value;
+                    this[this.tableAccess_Level.Access_Level_NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProduct_Brand_NameNull() {
-                return this.IsNull(this.tableProduct_Brand.Product_Brand_NameColumn);
+            public int Role_Id {
+                get {
+                    try {
+                        return ((int)(this[this.tableAccess_Level.Role_IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Role_Id\' in table \'Access_Level\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccess_Level.Role_IdColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProduct_Brand_NameNull() {
-                this[this.tableProduct_Brand.Product_Brand_NameColumn] = global::System.Convert.DBNull;
+            public bool IsAccess_Level_NameNull() {
+                return this.IsNull(this.tableAccess_Level.Access_Level_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAccess_Level_NameNull() {
+                this[this.tableAccess_Level.Access_Level_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRole_IdNull() {
+                return this.IsNull(this.tableAccess_Level.Role_IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRole_IdNull() {
+                this[this.tableAccess_Level.Role_IdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -607,22 +649,22 @@ namespace MainSystem {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Product_BrandRowChangeEvent : global::System.EventArgs {
+        public class Access_LevelRowChangeEvent : global::System.EventArgs {
             
-            private Product_BrandRow eventRow;
+            private Access_LevelRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Product_BrandRowChangeEvent(Product_BrandRow row, global::System.Data.DataRowAction action) {
+            public Access_LevelRowChangeEvent(Access_LevelRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Product_BrandRow Row {
+            public Access_LevelRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -650,7 +692,7 @@ namespace MainSystem.SPDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Product_BrandTableAdapter : global::System.ComponentModel.Component {
+    public partial class Access_LevelTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -664,7 +706,7 @@ namespace MainSystem.SPDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Product_BrandTableAdapter() {
+        public Access_LevelTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -761,33 +803,41 @@ namespace MainSystem.SPDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Product_Brand";
-            tableMapping.ColumnMappings.Add("Product_Brand_ID", "Product_Brand_ID");
-            tableMapping.ColumnMappings.Add("Product_Brand_Name", "Product_Brand_Name");
+            tableMapping.DataSetTable = "Access_Level";
+            tableMapping.ColumnMappings.Add("Access_Level_Id", "Access_Level_Id");
+            tableMapping.ColumnMappings.Add("Access_Level_Name", "Access_Level_Name");
+            tableMapping.ColumnMappings.Add("Role_Id", "Role_Id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Product_Brand] WHERE (([Product_Brand_ID] = @Original_Product_" +
-                "Brand_ID))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Access_Level] WHERE (([Access_Level_Id] = @Original_Access_Level_Id) AND ((@IsNull_Access_Level_Name = 1 AND [Access_Level_Name] IS NULL) OR ([Access_Level_Name] = @Original_Access_Level_Name)) AND ((@IsNull_Role_Id = 1 AND [Role_Id] IS NULL) OR ([Role_Id] = @Original_Role_Id)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Product_Brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Brand_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Access_Level_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Access_Level_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Access_Level_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Role_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Role_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Product_Brand] ([Product_Brand_Name]) VALUES (@Product_Brand_N" +
-                "ame);\r\nSELECT Product_Brand_ID, Product_Brand_Name FROM Product_Brand WHERE (Pro" +
-                "duct_Brand_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Access_Level] ([Access_Level_Name], [Role_Id]) VALUES (@Access" +
+                "_Level_Name, @Role_Id);\r\nSELECT Access_Level_Id, Access_Level_Name, Role_Id FROM" +
+                " Access_Level WHERE (Access_Level_Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Brand_Name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Brand_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Access_Level_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Product_Brand] SET [Product_Brand_Name] = @Product_Brand_Name WHERE" +
-                " (([Product_Brand_ID] = @Original_Product_Brand_ID));\r\nSELECT Product_Brand_ID, " +
-                "Product_Brand_Name FROM Product_Brand WHERE (Product_Brand_ID = @Product_Brand_I" +
-                "D)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Access_Level] SET [Access_Level_Name] = @Access_Level_Name, [Role_Id] = @Role_Id WHERE (([Access_Level_Id] = @Original_Access_Level_Id) AND ((@IsNull_Access_Level_Name = 1 AND [Access_Level_Name] IS NULL) OR ([Access_Level_Name] = @Original_Access_Level_Name)) AND ((@IsNull_Role_Id = 1 AND [Role_Id] IS NULL) OR ([Role_Id] = @Original_Role_Id)));
+SELECT Access_Level_Id, Access_Level_Name, Role_Id FROM Access_Level WHERE (Access_Level_Id = @Access_Level_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Brand_Name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Brand_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Product_Brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Brand_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Brand_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Brand_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Access_Level_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Access_Level_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Access_Level_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Access_Level_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Role_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Role_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Access_Level_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Access_Level_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -803,7 +853,7 @@ namespace MainSystem.SPDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Product_Brand_ID, Product_Brand_Name FROM dbo.Product_Brand";
+            this._commandCollection[0].CommandText = "SELECT Access_Level_Id, Access_Level_Name, Role_Id FROM dbo.Access_Level";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -811,7 +861,7 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SPDataSet.Product_BrandDataTable dataTable) {
+        public virtual int Fill(SPDataSet.Access_LevelDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -824,9 +874,9 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SPDataSet.Product_BrandDataTable GetData() {
+        public virtual SPDataSet.Access_LevelDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SPDataSet.Product_BrandDataTable dataTable = new SPDataSet.Product_BrandDataTable();
+            SPDataSet.Access_LevelDataTable dataTable = new SPDataSet.Access_LevelDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -834,7 +884,7 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SPDataSet.Product_BrandDataTable dataTable) {
+        public virtual int Update(SPDataSet.Access_LevelDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -842,7 +892,7 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(SPDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Product_Brand");
+            return this.Adapter.Update(dataSet, "Access_Level");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -864,8 +914,24 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Product_Brand_ID) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Product_Brand_ID));
+        public virtual int Delete(int Original_Access_Level_Id, string Original_Access_Level_Name, global::System.Nullable<int> Original_Role_Id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Access_Level_Id));
+            if ((Original_Access_Level_Name == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Access_Level_Name));
+            }
+            if ((Original_Role_Id.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Role_Id.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -886,12 +952,18 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Product_Brand_Name) {
-            if ((Product_Brand_Name == null)) {
+        public virtual int Insert(string Access_Level_Name, global::System.Nullable<int> Role_Id) {
+            if ((Access_Level_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Product_Brand_Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Access_Level_Name));
+            }
+            if ((Role_Id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Role_Id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -913,15 +985,37 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Product_Brand_Name, int Original_Product_Brand_ID, int Product_Brand_ID) {
-            if ((Product_Brand_Name == null)) {
+        public virtual int Update(string Access_Level_Name, global::System.Nullable<int> Role_Id, int Original_Access_Level_Id, string Original_Access_Level_Name, global::System.Nullable<int> Original_Role_Id, int Access_Level_Id) {
+            if ((Access_Level_Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Product_Brand_Name));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Access_Level_Name));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_Product_Brand_ID));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Product_Brand_ID));
+            if ((Role_Id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Role_Id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Access_Level_Id));
+            if ((Original_Access_Level_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Access_Level_Name));
+            }
+            if ((Original_Role_Id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Role_Id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Access_Level_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -942,8 +1036,8 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Product_Brand_Name, int Original_Product_Brand_ID) {
-            return this.Update(Product_Brand_Name, Original_Product_Brand_ID, Original_Product_Brand_ID);
+        public virtual int Update(string Access_Level_Name, global::System.Nullable<int> Role_Id, int Original_Access_Level_Id, string Original_Access_Level_Name, global::System.Nullable<int> Original_Role_Id) {
+            return this.Update(Access_Level_Name, Role_Id, Original_Access_Level_Id, Original_Access_Level_Name, Original_Role_Id, Original_Access_Level_Id);
         }
     }
     
@@ -959,7 +1053,7 @@ namespace MainSystem.SPDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private Product_BrandTableAdapter _product_BrandTableAdapter;
+        private Access_LevelTableAdapter _access_LevelTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -981,12 +1075,12 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Product_BrandTableAdapter Product_BrandTableAdapter {
+        public Access_LevelTableAdapter Access_LevelTableAdapter {
             get {
-                return this._product_BrandTableAdapter;
+                return this._access_LevelTableAdapter;
             }
             set {
-                this._product_BrandTableAdapter = value;
+                this._access_LevelTableAdapter = value;
             }
         }
         
@@ -1009,9 +1103,9 @@ namespace MainSystem.SPDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._product_BrandTableAdapter != null) 
-                            && (this._product_BrandTableAdapter.Connection != null))) {
-                    return this._product_BrandTableAdapter.Connection;
+                if (((this._access_LevelTableAdapter != null) 
+                            && (this._access_LevelTableAdapter.Connection != null))) {
+                    return this._access_LevelTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1026,7 +1120,7 @@ namespace MainSystem.SPDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._product_BrandTableAdapter != null)) {
+                if ((this._access_LevelTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1040,12 +1134,12 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(SPDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._product_BrandTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Product_Brand.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._access_LevelTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Access_Level.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._product_BrandTableAdapter.Update(updatedRows));
+                    result = (result + this._access_LevelTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1059,11 +1153,11 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(SPDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._product_BrandTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Product_Brand.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._access_LevelTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Access_Level.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._product_BrandTableAdapter.Update(addedRows));
+                    result = (result + this._access_LevelTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1077,11 +1171,11 @@ namespace MainSystem.SPDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(SPDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._product_BrandTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Product_Brand.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._access_LevelTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Access_Level.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._product_BrandTableAdapter.Update(deletedRows));
+                    result = (result + this._access_LevelTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1124,8 +1218,8 @@ namespace MainSystem.SPDataSetTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._product_BrandTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._product_BrandTableAdapter.Connection) == false))) {
+            if (((this._access_LevelTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._access_LevelTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1161,13 +1255,13 @@ namespace MainSystem.SPDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._product_BrandTableAdapter != null)) {
-                    revertConnections.Add(this._product_BrandTableAdapter, this._product_BrandTableAdapter.Connection);
-                    this._product_BrandTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._product_BrandTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._product_BrandTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._product_BrandTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._product_BrandTableAdapter.Adapter);
+                if ((this._access_LevelTableAdapter != null)) {
+                    revertConnections.Add(this._access_LevelTableAdapter, this._access_LevelTableAdapter.Connection);
+                    this._access_LevelTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._access_LevelTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._access_LevelTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._access_LevelTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._access_LevelTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1228,9 +1322,9 @@ namespace MainSystem.SPDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._product_BrandTableAdapter != null)) {
-                    this._product_BrandTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._product_BrandTableAdapter]));
-                    this._product_BrandTableAdapter.Transaction = null;
+                if ((this._access_LevelTableAdapter != null)) {
+                    this._access_LevelTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._access_LevelTableAdapter]));
+                    this._access_LevelTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -45,7 +45,7 @@
             this.productBrandNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBrandBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sPDataSet = new MainSystem.SPDataSet();
-            this.product_BrandTableAdapter = new MainSystem.SPDataSetTableAdapters.Product_BrandTableAdapter();
+           // this.product_BrandTableAdapter = new MainSystem.SPDataSetTableAdapters.Product_BrandTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -221,7 +221,7 @@
             // 
             // product_BrandTableAdapter
             // 
-            this.product_BrandTableAdapter.ClearBeforeFill = true;
+          //  this.product_BrandTableAdapter.ClearBeforeFill = true;
             // 
             // FrmSearchBrand
             // 
@@ -269,7 +269,7 @@
         private System.Windows.Forms.Button button5;
         private SPDataSet sPDataSet;
         private System.Windows.Forms.BindingSource productBrandBindingSource;
-        private SPDataSetTableAdapters.Product_BrandTableAdapter product_BrandTableAdapter;
+        //private SPDataSetTableAdapters.Product_BrandTableAdapter product_BrandTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn productBrandIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productBrandNameDataGridViewTextBoxColumn;
     }

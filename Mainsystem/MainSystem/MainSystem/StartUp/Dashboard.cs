@@ -110,7 +110,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearchClient dd = new frmSearchClient();
+            frmSearchClient dd = new frmSearchClient("Maintain Clients");
             dd.ShowDialog();
         }
 
@@ -323,6 +323,15 @@ namespace MainSystem
             qq.ShowDialog();
             this.Show();
             this.Activate();
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DialogResult = DialogResult.No;
+                Close();
+            }
         }
     }
 }

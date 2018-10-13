@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\2K18\INF 370\Deliverable 8+9\SPSystem\Mainsystem\MainSystem\MainSystem\SP.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Thabang Monyamane\source\repos\SmartPacSystem\Mainsystem\MainSystem\MainSystem\SP.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

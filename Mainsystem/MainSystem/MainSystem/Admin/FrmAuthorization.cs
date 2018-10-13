@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,7 +20,12 @@ namespace MainSystem.Admin
         public FrmAuthorization()
         {
             InitializeComponent();
+            this.Opacity = 0;
+
+            timer1.Start();
+           
         }
+        SPEntities db = new SPEntities();
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -87,10 +94,81 @@ namespace MainSystem.Admin
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            Users.FrmResetPassword tt = new Users.FrmResetPassword();
-            tt.ShowDialog();
-            this.Show();
-            this.Activate();
+            string Hashb;
+            List<Active_User> myUser = new List<Active_User>();
+            try
+            {
+                myUser = db.Active_User.Where(someuser => someuser.Username == txtEmail.Text).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            try
+            {
+                Active_User emp = myUser[0];
+                clsGlobals.Userlogin = myUser[0];
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            db.SaveChanges();
+            try
+            {
+
+                SHA1CryptoServiceProvider sh = new SHA1CryptoServiceProvider();
+                UTF8Encoding utf8 = new UTF8Encoding();
+                string hash = BitConverter.ToString(sh.ComputeHash(utf8.GetBytes(txtPassword.Text)));
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=SP;Integrated Security=True");
+                SqlCommand cmd = new SqlCommand("select pass from Active_User where Username=@Username", con);
+                cmd.Parameters.AddWithValue("@Username", txtEmail.Text);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+
+                Hashb = dr[0].ToString();
+                con.Close();
+                if (txtEmail.Text == "")
+                {
+                    lbWarningEmail.Visible = true;
+                    //label4.Text = "Please Provide the username you wish to reset";
+
+                    //correct = false;
+                }
+                if (txtPassword.Text == "")
+                {
+                    lbWarningPassword.Visible = true;
+                    //label4.Text = "Please Provide the username you wish to reset";
+
+                    //correct = false;
+                }
+                if (hash == Hashb)
+                {
+                    MessageBox.Show("Authorization was successful");
+                    this.Dispose();
+                   Users.FrmResetPassword rs = new Users.FrmResetPassword(3);
+                    rs.ShowDialog();
+                    rs.Focus();
+
+                }
+                else
+                {
+                    MessageBox.Show("Authorization failed, please try again");
+                    lbWarningEmail.Visible = true;
+                    lbWarningPassword.Visible = true;
+                }
+
+            }
+            catch (InvalidOperationException ex)
+            {
+
+                MessageBox.Show("Error has occured:" + ex.Message);
+
+            }
         }
 
         private void FrmAuthorization_Leave(object sender, EventArgs e)
@@ -104,6 +182,51 @@ namespace MainSystem.Admin
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbWarningPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbWarningEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
