@@ -135,11 +135,10 @@ namespace MainSystem
                 }
                 else
                 {
-                    foreach (var item in search)
-                    {
-                        dgvClientSearch.DataSource = db.Load_Client().ToList();
+                    
+                        dgvClientSearch.DataSource = db.Load_Client().Where(o => o.Name.Contains(txtSearchclient.Text)).ToList();
 
-                    }
+                    
                 }
             }
             

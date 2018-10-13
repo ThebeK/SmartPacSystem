@@ -20,7 +20,7 @@ namespace MainSystem.Admin
         public FrmAuthorization()
         {
             InitializeComponent();
-            this.Opacity = 0;
+            //this.Opacity = 0;
 
             timer1.Start();
            
