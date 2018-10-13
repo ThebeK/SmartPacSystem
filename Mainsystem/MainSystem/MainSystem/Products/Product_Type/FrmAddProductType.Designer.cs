@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Product
+﻿namespace MainSystem.Products
 {
     partial class FrmAddProductType
     {
