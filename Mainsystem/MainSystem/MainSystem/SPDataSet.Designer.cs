@@ -844,7 +844,7 @@ SELECT Access_Level_Id, Access_Level_Name, Role_Id FROM Access_Level WHERE (Acce
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MainSystem.Properties.Settings.Default.SPConnectionString;
+           // this._connection.ConnectionString = global::MainSystem.Properties.Settings.Default.SPConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
