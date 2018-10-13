@@ -41,10 +41,12 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -249,11 +251,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SP.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="SPDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SPDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
@@ -538,58 +535,58 @@
     <Compile Include="Product\Length\FrmSearchLength.Designer.cs">
       <DependentUpon>FrmSearchLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmAddPackSize.cs">
+    <Compile Include="Product\Pack_Size\FrmAddPackSize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\PackSize\FrmAddPackSize.Designer.cs">
+    <Compile Include="Product\Pack_Size\FrmAddPackSize.Designer.cs">
       <DependentUpon>FrmAddPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmMaintainPackSize.cs">
+    <Compile Include="Product\Pack_Size\FrmMaintainPackSize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\PackSize\FrmMaintainPackSize.Designer.cs">
+    <Compile Include="Product\Pack_Size\FrmMaintainPackSize.Designer.cs">
       <DependentUpon>FrmMaintainPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmSearchPackSize.cs">
+    <Compile Include="Product\Pack_Size\FrmSearchPackSize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\PackSize\FrmSearchPackSize.Designer.cs">
+    <Compile Include="Product\Pack_Size\FrmSearchPackSize.Designer.cs">
       <DependentUpon>FrmSearchPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmAddSheet.cs">
+    <Compile Include="Product\Sheet\FrmAddSheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\Sheets\FrmAddSheet.Designer.cs">
+    <Compile Include="Product\Sheet\FrmAddSheet.Designer.cs">
       <DependentUpon>FrmAddSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmMaintainSheet.cs">
+    <Compile Include="Product\Sheet\FrmMaintainSheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\Sheets\FrmMaintainSheet.Designer.cs">
+    <Compile Include="Product\Sheet\FrmMaintainSheet.Designer.cs">
       <DependentUpon>FrmMaintainSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmSearchSheet.cs">
+    <Compile Include="Product\Sheet\FrmSearchSheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\Sheets\FrmSearchSheet.Designer.cs">
+    <Compile Include="Product\Sheet\FrmSearchSheet.Designer.cs">
       <DependentUpon>FrmSearchSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmAddWidth.cs">
+    <Compile Include="Product\Width\FrmAddWidth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\Widths\FrmAddWidth.Designer.cs">
+    <Compile Include="Product\Width\FrmAddWidth.Designer.cs">
       <DependentUpon>FrmAddWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmMaintainWidth.cs">
+    <Compile Include="Product\Width\FrmMaintainWidth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\Widths\FrmMaintainWidth.Designer.cs">
+    <Compile Include="Product\Width\FrmMaintainWidth.Designer.cs">
       <DependentUpon>FrmMaintainWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmSearchWidth.cs">
+    <Compile Include="Product\Width\FrmSearchWidth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product\Widths\FrmSearchWidth.Designer.cs">
+    <Compile Include="Product\Width\FrmSearchWidth.Designer.cs">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </Compile>
     <Compile Include="Sale\frmASale.cs">
@@ -840,31 +837,31 @@
     <EmbeddedResource Include="Product\Length\FrmSearchLength.resx">
       <DependentUpon>FrmSearchLength.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\PackSize\FrmAddPackSize.resx">
+    <EmbeddedResource Include="Product\Pack_Size\FrmAddPackSize.resx">
       <DependentUpon>FrmAddPackSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\PackSize\FrmMaintainPackSize.resx">
+    <EmbeddedResource Include="Product\Pack_Size\FrmMaintainPackSize.resx">
       <DependentUpon>FrmMaintainPackSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\PackSize\FrmSearchPackSize.resx">
+    <EmbeddedResource Include="Product\Pack_Size\FrmSearchPackSize.resx">
       <DependentUpon>FrmSearchPackSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\Sheets\FrmAddSheet.resx">
+    <EmbeddedResource Include="Product\Sheet\FrmAddSheet.resx">
       <DependentUpon>FrmAddSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\Sheets\FrmMaintainSheet.resx">
+    <EmbeddedResource Include="Product\Sheet\FrmMaintainSheet.resx">
       <DependentUpon>FrmMaintainSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\Sheets\FrmSearchSheet.resx">
+    <EmbeddedResource Include="Product\Sheet\FrmSearchSheet.resx">
       <DependentUpon>FrmSearchSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\Widths\FrmAddWidth.resx">
+    <EmbeddedResource Include="Product\Width\FrmAddWidth.resx">
       <DependentUpon>FrmAddWidth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\Widths\FrmMaintainWidth.resx">
+    <EmbeddedResource Include="Product\Width\FrmMaintainWidth.resx">
       <DependentUpon>FrmMaintainWidth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product\Widths\FrmSearchWidth.resx">
+    <EmbeddedResource Include="Product\Width\FrmSearchWidth.resx">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\frmASale.resx">
@@ -911,6 +908,8 @@
       <DependentUpon>FrmSearchVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <Fakes Include="Fakes\Microsoft.SqlServer.ConnectionInfo.fakes" />
+    <Fakes Include="Fakes\Microsoft.SqlServer.ConnectionInfoExtended.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -927,17 +926,6 @@
     </EntityDeploy>
     <None Include="SP.edmx.diagram">
       <DependentUpon>SP.edmx</DependentUpon>
-    </None>
-    <None Include="SPDataSet.xsc">
-      <DependentUpon>SPDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SPDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SPDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SPDataSet.xss">
-      <DependentUpon>SPDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -11,18 +11,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.PackSize
+namespace MainSystem.Products.Sheet
 {
-    public partial class FrmMaintainPackSize : Form
+    public partial class FrmAddSheet : Form
     {
-        int tempID;
-        public FrmMaintainPackSize(int x)
+        public FrmAddSheet()
         {
             InitializeComponent();
-            tempID = x;
         }
-        SPEntities db = new SPEntities();
-        bool correct = false;
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -94,79 +90,9 @@ namespace MainSystem.Products.PackSize
             Process.Start(@".\" + "AddProduct.pdf");
         }
 
-        private void FrmMaintainPackSize_Load(object sender, EventArgs e)
-        {
-            var query = db.Pack_Size.Where(co => co.Pack_Size_ID == tempID).FirstOrDefault();
-
-            txtProductSheetDesc.Text = query.Pack_Size_Description;
-        }
-
-        private void btnUpdateSheet_Click(object sender, EventArgs e)
+        private void FrmAddSheet_Load(object sender, EventArgs e)
         {
 
-            correct = true;
-            try
-            {
-                if (txtProductSheetDesc.Text == "")
-                {
-                    lblPackSi.Visible = true;
-                    //MessageBox.Show("Please Enter a product pack size");
-                    correct = false;
-                }
-
-
-                if (correct == true)
-                {
-
-                    var query = db.Pack_Size.Where(co => co.Pack_Size_ID == tempID).FirstOrDefault();
-
-                    query.Pack_Size_Description = txtProductSheetDesc.Text;
-
-                    db.SaveChanges();
-                    MessageBox.Show("Product Pack Size Successfully Updated");
-                    this.Close();
-                }
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Pack Size not updated");
-            }
-        }
-
-        private void btnDeleteSheet_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Would you like to delete this Product Pack Size?", "Delete Product Pack Size", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                try
-                {
-
-                    Pack_Size prodT2 = new Pack_Size();
-                    prodT2 = db.Pack_Size.Find(tempID);
-
-                    db.Pack_Size.Remove(prodT2);
-                    db.SaveChanges();
-
-                    int packSize = prodT2.Pack_Size_ID;
-                    string Pack_Size_Value = Convert.ToString(prodT2);
-                    MessageBox.Show("Pack Size Successfully Deleted");
-                    this.Close();
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Pack Size deleted");
-
-                }
-            }
-        }
-
-        private void txtProductSheetDesc_KeyPress(object sender, KeyPressEventArgs Event)
-        {
-            if (!char.IsControl(Event.KeyChar) && !char.IsDigit(Event.KeyChar))
-            {
-                Event.Handled = true;
-            }
         }
     }
 }

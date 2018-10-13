@@ -495,7 +495,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 16);
             this.label13.TabIndex = 32;
-            this.label13.Text = "Widths";
+            this.label13.Text = "Width";
             // 
             // cbxLength
             // 
@@ -537,7 +537,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 16);
             this.label11.TabIndex = 28;
-            this.label11.Text = "Sheets Number";
+            this.label11.Text = "Sheet Number";
             // 
             // cbxPackSize
             // 

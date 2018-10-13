@@ -11,16 +11,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.PackSize
+namespace MainSystem.Products.Pack_Size
 {
     public partial class FrmSearchPackSize : Form
     {
-        SPEntities db = new SPEntities();
-        string option;
-        public FrmSearchPackSize(string x)
+        public FrmSearchPackSize()
         {
             InitializeComponent();
-            option = x;
         }
         public sealed class UserActivityMonitor
         {
@@ -90,28 +87,10 @@ namespace MainSystem.Products.PackSize
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-
-                int val = Convert.ToInt32(dgvProductPS.CurrentRow.Cells[0].Value);
-
-                if (option == "Maintain Product Pack Size")
-                {
-                    FrmMaintainPackSize ff = new FrmMaintainPackSize(val);
-                    ff.ShowDialog();
-                    this.Activate();
-                    this.Close();
-
-                }
-
-            }
-
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Please specify your product pack size search details first");
-            }
-            
+            FrmMaintainPackSize ff = new FrmMaintainPackSize();
+            ff.ShowDialog();
+            this.Close();
+            this.Activate();
         }
 
         private void FrmSearchPackSize_Leave(object sender, EventArgs e)
@@ -126,85 +105,7 @@ namespace MainSystem.Products.PackSize
 
         private void FrmSearchPackSize_Load(object sender, EventArgs e)
         {
-            dgvProductPS.DataSource = db.Pack_Size.ToList();
-            dgvProductPS.Columns[2].Visible = false;
-            dgvProductPS.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dgvProductPS.Columns[1].HeaderText = "Pack Size";
-        }
-        public List<object> Get()
-        {
-            var details = (from a in db.Products
-                           join a1 in db.Pack_Size on a.Pack_Size_ID equals a1.Pack_Size_ID
 
-                           select new
-                           {
-                               a.Pack_Size_ID,
-                               a1.Pack_Size_Description
-
-                           }).ToList();
-
-            var retrurn = new List<object>();
-
-            foreach (var item in details)
-            {
-                if (item.Pack_Size_Description == txtSearchPS.Text)
-                {
-                    retrurn.Add(item);
-                }
-            }
-            return retrurn;
-        }
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            
-            try {
-                if (txtSearchPS.Text == "")
-                {
-                    lblPackSize.Visible = true;
-
-                    //MessageBox.Show("Error: No search details entered");
-
-                }
-                else if (txtSearchPS.Text != "")
-                {
-
-                    List<Pack_Size> PStype = db.Pack_Size.Where(o => o.Pack_Size_Description.ToLower().Contains(txtSearchPS.Text.ToLower())).ToList();
-
-
-                    if (PStype.Count == 0)
-                    {
-                        //groupBox1.Visible = true;
-                        MessageBox.Show("No Product Pack Size found");
-
-                    }
-
-                    else
-                    {
-                        foreach (var a in PStype)
-                        {
-                            dgvProductPS.DataSource = PStype.Select(col => new { col.Pack_Size_ID, col.Pack_Size_Description }).ToList();
-
-                            dgvProductPS.Columns[0].HeaderText = "Pack_Size_ID";
-                            dgvProductPS.Columns[1].HeaderText = "Pack_Size_Description";
-
-
-                            //groupBox1.Visible = true;
-
-                        }
-                    }
-                }
-            }
-            catch
-            {
-            }
-        }
-
-        private void txtSearchPS_KeyPress(object sender, KeyPressEventArgs Event)
-        {
-            if (!char.IsControl(Event.KeyChar) && !char.IsDigit(Event.KeyChar))
-            {
-                Event.Handled = true;
-            }
         }
     }
 }

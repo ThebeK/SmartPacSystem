@@ -11,16 +11,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.Widths
+namespace MainSystem.Products.Sheet
 {
-
-    public partial class FrmSearchWidth : Form
+    public partial class FrmSearchSheet : Form
     {
-        string option;
-        public FrmSearchWidth(string x)
+        public FrmSearchSheet()
         {
             InitializeComponent();
-            option = x;
         }
         public sealed class UserActivityMonitor
         {
@@ -90,31 +87,13 @@ namespace MainSystem.Products.Widths
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                int val = Convert.ToInt32(dgvWidth.CurrentRow.Cells[0].Value);
-
-                if (option == "Maintain Product Width")
-                {
-                    FrmMaintainWidth ff = new FrmMaintainWidth(val);
-                    ff.ShowDialog();
-
-                    this.Close();
-
-                }
-
-            }
-
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Please specify your product pack size search details first");
-            }
+            FrmMaintainSheet qw = new FrmMaintainSheet();
+            qw.ShowDialog();
             this.Show();
             this.Activate();
         }
 
-        private void FrmSearchWidth_Leave(object sender, EventArgs e)
+        private void FrmSearchSheet_Leave(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -124,7 +103,7 @@ namespace MainSystem.Products.Widths
             Process.Start(@".\" + "AddProduct.pdf");
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

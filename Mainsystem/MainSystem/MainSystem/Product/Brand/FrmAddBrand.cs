@@ -94,10 +94,5 @@ namespace MainSystem.Products.Brand
         {
 
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

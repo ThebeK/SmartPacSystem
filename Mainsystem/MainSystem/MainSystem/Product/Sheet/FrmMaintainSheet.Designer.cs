@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Sheets
+﻿namespace MainSystem.Products.Sheet
 {
     partial class FrmMaintainSheet
     {
@@ -83,9 +83,9 @@
             this.label2.Location = new System.Drawing.Point(63, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(238, 34);
+            this.label2.Size = new System.Drawing.Size(223, 34);
             this.label2.TabIndex = 24;
-            this.label2.Text = "Maintain Sheets";
+            this.label2.Text = "Maintain Sheet";
             // 
             // lblSheet
             // 
@@ -110,9 +110,8 @@
             this.btnDeletePT.Name = "btnDeletePT";
             this.btnDeletePT.Size = new System.Drawing.Size(116, 51);
             this.btnDeletePT.TabIndex = 26;
-            this.btnDeletePT.Text = "Delete Sheets Number";
+            this.btnDeletePT.Text = "Delete Sheet Number";
             this.btnDeletePT.UseVisualStyleBackColor = false;
-            this.btnDeletePT.Click += new System.EventHandler(this.btnDeletePT_Click);
             // 
             // btnUpdatePT
             // 
@@ -124,9 +123,8 @@
             this.btnUpdatePT.Name = "btnUpdatePT";
             this.btnUpdatePT.Size = new System.Drawing.Size(114, 51);
             this.btnUpdatePT.TabIndex = 25;
-            this.btnUpdatePT.Text = "Update Sheets Number\r\n";
+            this.btnUpdatePT.Text = "Update Sheet Number\r\n";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
-            this.btnUpdatePT.Click += new System.EventHandler(this.btnUpdatePT_Click);
             // 
             // txtProductTypeDesc
             // 
@@ -136,7 +134,6 @@
             this.txtProductTypeDesc.Name = "txtProductTypeDesc";
             this.txtProductTypeDesc.Size = new System.Drawing.Size(85, 30);
             this.txtProductTypeDesc.TabIndex = 24;
-            this.txtProductTypeDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductTypeDesc_KeyPress);
             // 
             // label1
             // 
@@ -146,9 +143,9 @@
             this.label1.Location = new System.Drawing.Point(23, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 16);
+            this.label1.Size = new System.Drawing.Size(168, 16);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Products Sheets Number";
+            this.label1.Text = "Products Sheet Number";
             // 
             // FrmMaintainSheet
             // 

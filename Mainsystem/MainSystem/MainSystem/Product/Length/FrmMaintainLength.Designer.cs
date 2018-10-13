@@ -120,7 +120,6 @@
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.Size = new System.Drawing.Size(55, 22);
             this.txtUnit.TabIndex = 38;
-            this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label2
             // 
@@ -144,7 +143,6 @@
             this.btnDeletePT.TabIndex = 36;
             this.btnDeletePT.Text = "Delete Products Length";
             this.btnDeletePT.UseVisualStyleBackColor = false;
-            this.btnDeletePT.Click += new System.EventHandler(this.btnDeletePT_Click);
             // 
             // btnUpdatePT
             // 
@@ -157,7 +155,6 @@
             this.btnUpdatePT.TabIndex = 35;
             this.btnUpdatePT.Text = "Update Products Length";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
-            this.btnUpdatePT.Click += new System.EventHandler(this.btnUpdatePT_Click);
             // 
             // txtWidthDesc
             // 
@@ -166,7 +163,6 @@
             this.txtWidthDesc.Name = "txtWidthDesc";
             this.txtWidthDesc.Size = new System.Drawing.Size(55, 22);
             this.txtWidthDesc.TabIndex = 34;
-            this.txtWidthDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidthDesc_KeyPress);
             // 
             // label1
             // 
@@ -200,7 +196,6 @@
             this.Name = "FrmMaintainLength";
             this.Text = "FrmMaintainLength";
             this.Load += new System.EventHandler(this.FrmMaintainLength_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmMaintainLength_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
