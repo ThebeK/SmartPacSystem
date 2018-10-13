@@ -96,10 +96,13 @@ namespace MainSystem.AccessLevel
                 string val = Convert.ToString(dgvAccesSearch.CurrentRow.Cells[0].Value);
                 if (selectedOption == "Maintain Access Level")
                 {
-                    AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
-                    ma.ShowDialog();
-                    this.Dispose();
-                    this.Activate();
+
+                    FrmMaintainAccessLevel MAS = new FrmMaintainAccessLevel(val);
+                    MAS.ShowDialog();
+                    //AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
+                    //ma.ShowDialog();
+                    //this.Dispose();
+                    //this.Activate();
                     
 
                     //this.Dispose();

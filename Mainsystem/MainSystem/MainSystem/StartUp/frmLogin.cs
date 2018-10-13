@@ -77,8 +77,11 @@ namespace MainSystem
                     MessageBox.Show("Login was successful");
                     
                     Form1 ds = new Form1();
-                    ds.ShowDialog();
                     
+                    ds.ShowDialog();
+                    this.Close();
+
+
                 }
                 else
                 {
@@ -194,6 +197,11 @@ namespace MainSystem
 
             af.ShowDialog();
             af.Focus();
+        }
+
+        private void frmLogin_Leave(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -19,6 +19,7 @@ namespace MainSystem.Users
         {
             InitializeComponent();
         }
+        SPEntities db = new SPEntities();
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -88,6 +89,11 @@ namespace MainSystem.Users
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmMaintainUser_Load(object sender, EventArgs e)
+        {
+            bindingSource1.DataSource = db.Access_Level.ToList();
         }
     }
 }

@@ -145,7 +145,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(197, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 34);
+            this.label1.Size = new System.Drawing.Size(325, 34);
             this.label1.TabIndex = 55;
             this.label1.Text = "Maintain Users Profile";
             // 
@@ -317,6 +317,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMaintainUser";
             this.Text = "FrmMaintainUser";
+            this.Load += new System.EventHandler(this.FrmMaintainUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accessLevelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
