@@ -212,10 +212,7 @@ namespace MainSystem
 
         private void maintainProductTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Products.FrmSearchProductType ee = new Products.FrmSearchProductType();
-            ee.ShowDialog();
-            this.Show();
-            this.Activate();
+            
         }
 
         private void notificationToolStripMenuItem_Click(object sender, EventArgs e)
