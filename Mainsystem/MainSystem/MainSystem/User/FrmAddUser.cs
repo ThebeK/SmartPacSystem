@@ -97,7 +97,7 @@ namespace MainSystem.Users
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            AccessLevel.FrmSearchAccessLevel rtt = new AccessLevel.FrmSearchAccessLevel("");
+            AccessLevel.FrmSearchAccessLevel rtt = new AccessLevel.FrmSearchAccessLevel("Maintain Access Level");
             rtt.ShowDialog();
             this.Show();
             this.Activate();
@@ -216,7 +216,7 @@ namespace MainSystem.Users
             using (SPEntities db = new SPEntities())
             {
 
-                accessLevelBindingSource.DataSource = db.Access_Level.ToList();
+                accessLevelBindingSource1.DataSource = db.Access_Level.ToList();
             }
         }
 

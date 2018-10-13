@@ -190,7 +190,7 @@ namespace MainSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
 
         }
 
@@ -226,7 +226,7 @@ namespace MainSystem
         private void maintainUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Users.FrmAddUser su = new Users.FrmAddUser();
+            Users.FrmMaintainUser su = new Users.FrmMaintainUser();
             su.ShowDialog();
             this.Show();
             this.Activate();
@@ -324,11 +324,18 @@ namespace MainSystem
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to logout?", "Close Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                DialogResult = DialogResult.No;
-                Close();
+                this.Close();
+                frmLogin ml = new frmLogin();
+                ml.ShowDialog();
+              
             }
+        }
+
+        private void Form1_Leave(object sender, EventArgs e)
+        {
+           
         }
     }
 }
