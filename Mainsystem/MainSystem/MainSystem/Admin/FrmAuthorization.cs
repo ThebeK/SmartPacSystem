@@ -23,6 +23,7 @@ namespace MainSystem.Admin
             this.Opacity = 0;
 
             timer1.Start();
+           
         }
         SPEntities db = new SPEntities();
         public sealed class UserActivityMonitor
@@ -181,6 +182,51 @@ namespace MainSystem.Admin
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbWarningPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbWarningEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

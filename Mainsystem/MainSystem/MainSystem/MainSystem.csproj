@@ -85,6 +85,12 @@
     <Compile Include="Active_User.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FrmAuthorize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmAuthorize.Designer.cs">
+      <DependentUpon>FrmAuthorize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Audit_Create_Delete.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -707,6 +713,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmAuthorization.resx">
       <DependentUpon>FrmAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FrmAuthorize.resx">
+      <DependentUpon>FrmAuthorize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmBackUp.resx">
       <DependentUpon>FrmBackUp.cs</DependentUpon>
