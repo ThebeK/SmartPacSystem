@@ -75,7 +75,7 @@ namespace MainSystem
                 if (hash == Hashb)
                 {
                     MessageBox.Show("Login was successful");
-
+                    
                     Form1 ds = new Form1();
                     ds.ShowDialog();
                     
@@ -121,6 +121,9 @@ namespace MainSystem
             
             af.ShowDialog();
             af.Focus();
+            af.BringToFront();
+            af.Activate();
+            
             //this.Activate();
             //this.Show();
             //this.Dispose();
