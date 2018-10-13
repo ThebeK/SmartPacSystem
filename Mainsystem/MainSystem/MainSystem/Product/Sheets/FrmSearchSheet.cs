@@ -11,14 +11,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.Brand
+namespace MainSystem.Products.Sheets
 {
-    public partial class FrmAddBrand : Form
+    public partial class FrmSearchSheet : Form
     {
-        string option;
         SPEntities db = new SPEntities();
-        bool correct = false;
-        public FrmAddBrand(string x)
+        string option;
+        public FrmSearchSheet(string x)
         {
             InitializeComponent();
             option = x;
@@ -89,79 +88,122 @@ namespace MainSystem.Products.Brand
             this.Close();
         }
 
+        private void btnMaintain_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int val = Convert.ToInt32(dgvProductSheet.CurrentRow.Cells[0].Value);
+
+                if (option == "Maintain Product Sheet Number")
+                {
+                    FrmMaintainSheet ff = new FrmMaintainSheet(val);
+                    ff.ShowDialog();
+                    
+                    this.Activate();
+
+                    this.Close();
+
+                }
+
+            }
+
+            catch (NullReferenceException)
+            {
+                //MessageBox.Show("Please specify your product sheet number search details first");
+            }
+            
+        }
+
+        private void FrmSearchSheet_Leave(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             Process.Start(@".\" + "AddProduct.pdf");
         }
-        public bool ValidateIfBrandExists(string brandNAME)
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            bool Check = false;
-            foreach (var item in db.Product_Brand)
+
+        }
+
+        private void FrmSearchSheet_Load(object sender, EventArgs e)
+        {
+            dgvProductSheet.DataSource = db.Sheets.ToList();
+            dgvProductSheet.Columns[2].Visible = false;
+            dgvProductSheet.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvProductSheet.Columns[1].HeaderText = "Sheet_No";
+        }
+        public List<object> Get()
+        {
+            var details = (from a in db.Products
+                           join a1 in db.Sheets on a.Sheet_ID equals a1.Sheet_ID
+
+                           select new
+                           {
+                               a.Sheet_ID,
+                               a1.Number_Of_Sheet
+
+                           }).ToList();
+
+            var retrurn = new List<object>();
+
+            foreach (var item in details)
             {
-                if (item.Product_Brand_Name == brandNAME)
+                if (item.Number_Of_Sheet == Convert.ToInt32(txtSearchSheet.Text))
                 {
-                    Check = true;
-                    break;
+                    retrurn.Add(item);
                 }
             }
-            return Check;
-        }
-        private void FrmAddBrand_Load(object sender, EventArgs e)
-        {
-
+            return retrurn;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            try
+
+            if (txtSearchSheet.Text == "")
             {
-                correct = true;
-                Product_Brand prodB = new Product_Brand();
-                if (ValidateIfBrandExists(rtxtDescription.Text) == true)
+                label2.Visible = true;
+                //MessageBox.Show("Error: No search details entered");
+
+            }
+            else if (txtSearchSheet.Text != "")
+            {
+
+                List<Sheet> PStype = db.Sheets.Where(o => o.Number_Of_Sheet.ToString().Contains(txtSearchSheet.Text)).ToList();
+
+
+                if (PStype.Count == 0)
                 {
-                    MessageBox.Show("Product Brand exists");
-                    correct = false;
-                }
-               else if (rtxtDescription.Text == "")
-                {
-                    lblBrandDes.Visible = true;
-                    //essageBox.Show("Please Enter brand details");
-                    correct = false;
-                }
-
-                if (correct == true)
-                {
-                    prodB.Product_Brand_Name = rtxtDescription.Text;
-                    MessageBox.Show("Product Successfully Added");
-                    db.Product_Brand.Add(prodB);
-
-                    db.SaveChanges();
-
-                    int Product_Type_ID = prodB.Product_Brand_ID;
-                    string ProdT_value = Convert.ToString(prodB);
-                    //MessageBox.Show("Product Successfully Added");
-                    this.Close();
-
-
+                    //groupBox1.Visible = true;
+                    MessageBox.Show("No Product Pack Size found");
 
                 }
+
                 else
                 {
-                    MessageBox.Show("Please enter valid details");
+                    foreach (var a in PStype)
+                    {
+                        dgvProductSheet.DataSource = PStype.Select(col => new { col.Sheet_ID, col.Number_Of_Sheet }).ToList();
+
+                        dgvProductSheet.Columns[0].HeaderText = "Sheet_ID";
+                        dgvProductSheet.Columns[1].HeaderText = "Number_Of_Sheet";
+
+
+                        //groupBox1.Visible = true;
+
+                    }
                 }
-
-
-
-            }
-            catch (NullReferenceException)
-            {
-                //MessageBox.Show("Product Type Not Added");
             }
         }
 
-        private void rtxtDescription_KeyPress(object sender, KeyPressEventArgs Event)
+        private void txtSearchSheet_KeyPress(object sender, KeyPressEventArgs Event)
         {
-            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
+            if (!char.IsControl(Event.KeyChar) && !char.IsDigit(Event.KeyChar))
             {
                 Event.Handled = true;
             }

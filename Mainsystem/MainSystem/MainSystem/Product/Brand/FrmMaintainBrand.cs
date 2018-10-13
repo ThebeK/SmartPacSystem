@@ -15,10 +15,14 @@ namespace MainSystem.Products.Brand
 {
     public partial class FrmMaintainBrand : Form
     {
-        public FrmMaintainBrand()
+        int tempID;
+        public FrmMaintainBrand(int x)
         {
             InitializeComponent();
+            tempID = x;
         }
+        SPEntities db = new SPEntities();
+        bool correct = false;
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -93,6 +97,94 @@ namespace MainSystem.Products.Brand
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void FrmMaintainBrand_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var query = db.Product_Brand.Where(co => co.Product_Brand_ID == tempID).First();
+
+                txtBrandDesc.Text = query.Product_Brand_Name; //ERROR
+            }
+            catch 
+            {
+
+                
+            }
+        }
+
+        private void btnUpdatePT_Click(object sender, EventArgs e)
+        {
+            correct = true;
+            try
+            {
+                if (txtBrandDesc.Text == "")
+                {
+                    lblBrand.Visible = true;
+
+                    //MessageBox.Show("Please Enter a brand Description");
+                    correct = false;
+                }
+
+
+                if (correct == true)
+                {
+
+                    var query = db.Product_Brand.Where(co => co.Product_Brand_ID == tempID).FirstOrDefault();
+
+                    query.Product_Brand_Name = txtBrandDesc.Text;
+
+                    db.SaveChanges();
+                    MessageBox.Show("Product Type Successfully Updated");
+                    this.Close();
+                }
+            }
+            catch
+            {
+                //MessageBox.Show("Product type not updated");
+            }
+        }
+
+        private void btnDeletePT_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Would you like to delete this Product brand?", "Delete Product Brand", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+
+                    Product_Brand Brandtype = new Product_Brand();
+                    Brandtype = db.Product_Brand.Find(tempID);
+
+                    db.Product_Brand.Remove(Brandtype);
+                    db.SaveChanges();
+
+                    int BType = Convert.ToInt32(Brandtype.Product_Brand_ID);
+                    string prodType_Value = Convert.ToString(Brandtype);
+                    MessageBox.Show("Product brand Successfully Deleted");
+                    this.Close();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error: Product Brand was not deleted");
+
+                }
+            }
+        }
+
+        private void txtBrandDesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBrandDesc_KeyPress(object sender, KeyPressEventArgs Event)
+        {
+            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
+            {
+                Event.Handled = true;
+            }
         }
     }
 }

@@ -11,14 +11,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.Pack_Size
+namespace MainSystem.Products.Sheets
 {
-    public partial class FrmAddPackSize : Form
+    public partial class FrmMaintainSheet : Form
     {
-        public FrmAddPackSize()
+        int tempID;
+        public FrmMaintainSheet(int x)
         {
             InitializeComponent();
+            tempID = x;
         }
+        SPEntities db = new SPEntities();
+        bool correct = false;
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -90,9 +94,78 @@ namespace MainSystem.Products.Pack_Size
             Process.Start(@".\" + "AddProduct.pdf");
         }
 
-        private void FrmAddPackSize_Load(object sender, EventArgs e)
+        private void FrmMaintainSheet_Load(object sender, EventArgs e)
         {
+            var query = db.Sheets.Where(co => co.Sheet_ID == tempID).FirstOrDefault();
 
+            txtProductTypeDesc.Text = query.Number_Of_Sheet.ToString();
+        }
+
+        private void btnDeletePT_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Would you like to delete this Sheet Number?", "Delete Product Sheet Number", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+
+                    Sheet prodT2 = new Sheet();
+                    prodT2 = db.Sheets.Find(tempID);
+
+                    db.Sheets.Remove(prodT2);
+                    db.SaveChanges();
+
+                    int Sheets = prodT2.Sheet_ID;
+                    string sheet_Value = Convert.ToString(prodT2);
+                    MessageBox.Show("Product Sheet Successfully Deleted");
+                    this.Close();
+
+                }
+                catch (Exception)
+                {
+                    //MessageBox.Show("Error: Sheet was not deleted");
+
+                }
+            }
+        }
+
+        private void btnUpdatePT_Click(object sender, EventArgs e)
+        {
+            correct = true;
+            try
+            {
+                if (txtProductTypeDesc.Text == "")
+                {
+                    lblSheet.Visible = true;
+                    //MessageBox.Show("Please Enter a product sheet number");
+                    correct = false;
+                }
+
+
+                if (correct == true)
+                {
+
+                    var query = db.Sheets.Where(co => co.Sheet_ID == tempID).FirstOrDefault();
+
+                    query.Number_Of_Sheet = Convert.ToInt32(txtProductTypeDesc.Text);
+
+                    db.SaveChanges();
+                    MessageBox.Show("Product Sheet Number Successfully Updated");
+                    this.Close();
+                }
+            }
+            catch (NullReferenceException)
+            {
+                //MessageBox.Show("Sheet Number not updated");
+            }
+        }
+
+        private void txtProductTypeDesc_KeyPress(object sender, KeyPressEventArgs Event)
+        {
+            if (!char.IsControl(Event.KeyChar) && !char.IsDigit(Event.KeyChar))
+            {
+                Event.Handled = true;
+            }
         }
     }
 }

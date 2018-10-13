@@ -15,9 +15,12 @@ namespace MainSystem.Products
 {
     public partial class FrmSearchProduct : Form
     {
-        public FrmSearchProduct()
+        SPEntities db = new SPEntities();
+        string option;
+        public FrmSearchProduct(string x)
         {
             InitializeComponent();
+            option = x;
         }
         public sealed class UserActivityMonitor
         {
@@ -97,7 +100,109 @@ namespace MainSystem.Products
 
         private void FrmSearchProduct_Load(object sender, EventArgs e)
         {
+            dgvClientSearch.DataSource = db.Widths.ToList();
+            dgvClientSearch.Columns[3].Visible = false;
+            dgvClientSearch.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvClientSearch.Columns[2].HeaderText = "Unit";
+        }
+        public List<object> Get()
+        {
+            var details = (from a in db.Products
+                           join a1 in db.Widths on a.Width_ID equals a1.Width_ID
 
+                           select new
+                           {
+                               a.Width_ID,
+                               a1.Width_Size,
+                               a1.Width_Measurement_Unit
+
+                           }).ToList();
+
+            var retrurn = new List<object>();
+
+            foreach (var item in details)
+            {
+                if (item.Width_Size == Convert.ToInt32(txtSearchSale.Text))
+                {
+                    retrurn.Add(item);
+                }
+            }
+            return retrurn;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSearchSale.Text == "")
+                {
+                    label3.Visible = true;
+                    //MessageBox.Show("Error: No search details entered");
+
+                }
+                else if (txtSearchSale.Text != "")
+                {
+                    //FIX
+                    List<Width> PStype = db.Widths.Where(o => o.Width_Size.ToString().Contains(txtSearchSale.Text.ToLower())).ToList();
+
+
+                    if (PStype.Count == 0)
+                    {
+                        //groupBox1.Visible = true;
+                        MessageBox.Show("No Product Width found");
+
+                    }
+
+                    else
+                    {
+                        foreach (var a in PStype)
+                        {
+                            dgvClientSearch.DataSource = PStype.Select(col => new { col.Width_ID, col.Width_Measurement_Unit, col.Width_Size }).ToList();
+
+                            dgvClientSearch.Columns[0].HeaderText = "Width_ID";
+                            dgvClientSearch.Columns[1].HeaderText = "Width_Measurement_Unit";
+                            dgvClientSearch.Columns[2].HeaderText = "Width_Size";
+
+
+                            //groupBox1.Visible = true;
+
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void btnMaintain_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int val = Convert.ToInt32(dgvClientSearch.CurrentRow.Cells[0].Value);
+
+                if (option == "Maintain Product")
+                {
+                    FrmMaintainProduct ff = new FrmMaintainProduct(val);
+                    ff.ShowDialog();
+
+                    this.Close();
+
+                }
+
+            }
+
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Please specify your product pack size search details first");
+            }
+        }
+
+        private void txtSearchSale_KeyPress(object sender, KeyPressEventArgs Event)
+        {
+            if (!char.IsControl(Event.KeyChar) && !char.IsDigit(Event.KeyChar))
+            {
+                Event.Handled = true;
+            }
         }
     }
 }

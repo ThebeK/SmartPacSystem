@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -40,11 +41,18 @@
             this.lblSearchBrand = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvBrand = new System.Windows.Forms.DataGridView();
+            this.productBrandIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBrandNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBrandBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPDataSet = new MainSystem.SPDataSet();
+            this.product_BrandTableAdapter = new MainSystem.SPDataSetTableAdapters.Product_BrandTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBrandBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +107,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 287);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lbl
             // 
@@ -143,6 +152,7 @@
             this.txtSearchBrand.Name = "txtSearchBrand";
             this.txtSearchBrand.Size = new System.Drawing.Size(199, 27);
             this.txtSearchBrand.TabIndex = 56;
+            this.txtSearchBrand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchBrand_KeyPress);
             // 
             // lblSearchBrand
             // 
@@ -167,6 +177,7 @@
             this.btnSearch.TabIndex = 57;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvBrand
             // 
@@ -174,11 +185,43 @@
             this.dgvBrand.AllowUserToDeleteRows = false;
             this.dgvBrand.AllowUserToResizeColumns = false;
             this.dgvBrand.AllowUserToResizeRows = false;
+            this.dgvBrand.AutoGenerateColumns = false;
             this.dgvBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBrand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productBrandIDDataGridViewTextBoxColumn,
+            this.productBrandNameDataGridViewTextBoxColumn});
+            this.dgvBrand.DataSource = this.productBrandBindingSource;
             this.dgvBrand.Location = new System.Drawing.Point(21, 96);
             this.dgvBrand.Name = "dgvBrand";
-            this.dgvBrand.Size = new System.Drawing.Size(262, 126);
+            this.dgvBrand.Size = new System.Drawing.Size(240, 126);
             this.dgvBrand.TabIndex = 55;
+            // 
+            // productBrandIDDataGridViewTextBoxColumn
+            // 
+            this.productBrandIDDataGridViewTextBoxColumn.DataPropertyName = "Product_Brand_ID";
+            this.productBrandIDDataGridViewTextBoxColumn.HeaderText = "Product_Brand_ID";
+            this.productBrandIDDataGridViewTextBoxColumn.Name = "productBrandIDDataGridViewTextBoxColumn";
+            this.productBrandIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productBrandNameDataGridViewTextBoxColumn
+            // 
+            this.productBrandNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Brand_Name";
+            this.productBrandNameDataGridViewTextBoxColumn.HeaderText = "Product_Brand_Name";
+            this.productBrandNameDataGridViewTextBoxColumn.Name = "productBrandNameDataGridViewTextBoxColumn";
+            // 
+            // productBrandBindingSource
+            // 
+            this.productBrandBindingSource.DataMember = "Product_Brand";
+            this.productBrandBindingSource.DataSource = this.sPDataSet;
+            // 
+            // sPDataSet
+            // 
+            this.sPDataSet.DataSetName = "SPDataSet";
+            this.sPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // product_BrandTableAdapter
+            // 
+            this.product_BrandTableAdapter.ClearBeforeFill = true;
             // 
             // FrmSearchBrand
             // 
@@ -194,6 +237,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSearchBrand";
             this.Text = "FrmSearchBrand";
+            this.Load += new System.EventHandler(this.FrmSearchBrand_Load);
             this.Leave += new System.EventHandler(this.FrmSearchBrand_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -203,6 +247,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBrandBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +267,10 @@
         private System.Windows.Forms.DataGridView dgvBrand;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
+        private SPDataSet sPDataSet;
+        private System.Windows.Forms.BindingSource productBrandBindingSource;
+        private SPDataSetTableAdapters.Product_BrandTableAdapter product_BrandTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productBrandIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productBrandNameDataGridViewTextBoxColumn;
     }
 }
