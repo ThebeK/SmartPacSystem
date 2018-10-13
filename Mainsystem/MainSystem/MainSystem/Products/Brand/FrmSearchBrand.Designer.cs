@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Brand
+﻿namespace MainSystem.Product.Brand
 {
     partial class FrmSearchBrand
     {

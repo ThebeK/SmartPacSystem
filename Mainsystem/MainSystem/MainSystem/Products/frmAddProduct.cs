@@ -141,12 +141,15 @@ namespace MainSystem
 
         private void btnAddPackSize_Click(object sender, EventArgs e)
         {
-          
+            Products.PackSize.FrmAddPackSize wq = new Products.PackSize.FrmAddPackSize();
+            wq.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Products.Pack_Size.FrmSearchPackSize wq = new Products.Pack_Size.FrmSearchPackSize();
+            Products.PackSize.FrmSearchPackSize wq = new Products.PackSize.FrmSearchPackSize();
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -170,12 +173,18 @@ namespace MainSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Products.Width.FrmAddWidth wq = new Products.Width.FrmAddWidth();
+            wq.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            
+            Products.Width.FrmSearchWidth wq = new Products.Width.FrmSearchWidth();
+            wq.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void frmAddProduct_Load(object sender, EventArgs e)

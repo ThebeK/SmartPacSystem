@@ -45,13 +45,10 @@
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -280,6 +277,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SPDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -419,15 +421,21 @@
     <Compile Include="Reports\frmAuditLog.Designer.cs">
       <DependentUpon>frmAuditLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Brand\FrmAddBrand.cs" />
+    <Compile Include="Product\Brand\FrmAddBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Brand\FrmAddBrand.Designer.cs">
       <DependentUpon>FrmAddBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Brand\FrmMaintainBrand.cs" />
+    <Compile Include="Product\Brand\FrmMaintainBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Brand\FrmMaintainBrand.Designer.cs">
       <DependentUpon>FrmMaintainBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Brand\FrmSearchBrand.cs" />
+    <Compile Include="Product\Brand\FrmSearchBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Brand\FrmSearchBrand.Designer.cs">
       <DependentUpon>FrmSearchBrand.cs</DependentUpon>
     </Compile>
@@ -509,89 +517,87 @@
     <Compile Include="Order\FrmView.Designer.cs">
       <DependentUpon>FrmView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Product_Type\FrmAddProductType.cs" />
+    <Compile Include="Product\Product_Type\FrmAddProductType.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Product_Type\FrmAddProductType.Designer.cs">
       <DependentUpon>FrmAddProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\FrmMaintainProduct.cs" />
+    <Compile Include="Product\FrmMaintainProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\FrmMaintainProduct.Designer.cs">
       <DependentUpon>FrmMaintainProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Product_Type\FrmMaintainProductType.cs" />
+    <Compile Include="Product\Product_Type\FrmMaintainProductType.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Product_Type\FrmMaintainProductType.Designer.cs">
       <DependentUpon>FrmMaintainProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\FrmSearchProduct.cs" />
+    <Compile Include="Product\FrmSearchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\FrmSearchProduct.Designer.cs">
       <DependentUpon>FrmSearchProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Product_Type\FrmSearchProductType.cs" />
+    <Compile Include="Product\Product_Type\FrmSearchProductType.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Product_Type\FrmSearchProductType.Designer.cs">
       <DependentUpon>FrmSearchProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Length\FrmAddLength.cs" />
+    <Compile Include="Product\Length\FrmAddLength.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Length\FrmAddLength.Designer.cs">
       <DependentUpon>FrmAddLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Length\FrmMaintainLength.cs" />
+    <Compile Include="Product\Length\FrmMaintainLength.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Length\FrmMaintainLength.Designer.cs">
       <DependentUpon>FrmMaintainLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Length\FrmSearchLength.cs" />
+    <Compile Include="Product\Length\FrmSearchLength.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Product\Length\FrmSearchLength.Designer.cs">
       <DependentUpon>FrmSearchLength.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmAddPackSize.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\PackSize\FrmAddPackSize.cs" />
     <Compile Include="Product\PackSize\FrmAddPackSize.Designer.cs">
       <DependentUpon>FrmAddPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmMaintainPackSize.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\PackSize\FrmMaintainPackSize.cs" />
     <Compile Include="Product\PackSize\FrmMaintainPackSize.Designer.cs">
       <DependentUpon>FrmMaintainPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\PackSize\FrmSearchPackSize.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\PackSize\FrmSearchPackSize.cs" />
     <Compile Include="Product\PackSize\FrmSearchPackSize.Designer.cs">
       <DependentUpon>FrmSearchPackSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmAddSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Sheets\FrmAddSheet.cs" />
     <Compile Include="Product\Sheets\FrmAddSheet.Designer.cs">
       <DependentUpon>FrmAddSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmMaintainSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Sheets\FrmMaintainSheet.cs" />
     <Compile Include="Product\Sheets\FrmMaintainSheet.Designer.cs">
       <DependentUpon>FrmMaintainSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Sheets\FrmSearchSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Sheets\FrmSearchSheet.cs" />
     <Compile Include="Product\Sheets\FrmSearchSheet.Designer.cs">
       <DependentUpon>FrmSearchSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmAddWidth.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Widths\FrmAddWidth.cs" />
     <Compile Include="Product\Widths\FrmAddWidth.Designer.cs">
       <DependentUpon>FrmAddWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmMaintainWidth.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Widths\FrmMaintainWidth.cs" />
     <Compile Include="Product\Widths\FrmMaintainWidth.Designer.cs">
       <DependentUpon>FrmMaintainWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product\Widths\FrmSearchWidth.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Product\Widths\FrmSearchWidth.cs" />
     <Compile Include="Product\Widths\FrmSearchWidth.Designer.cs">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </Compile>
@@ -931,6 +937,17 @@
     <None Include="SP.edmx.diagram">
       <DependentUpon>SP.edmx</DependentUpon>
     </None>
+    <None Include="SPDataSet.xsc">
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPDataSet.xss">
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -974,7 +991,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

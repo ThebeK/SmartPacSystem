@@ -90,22 +90,45 @@ namespace MainSystem.AccessLevel
         string selectedOption;
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-
-            string val = Convert.ToString(dgvAccesSearch.CurrentRow.Cells[0].Value);
-
-
-
-            if (selectedOption == "Maintain Access Level")
+            try
             {
-                AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
-                this.Dispose();
+
+                string val = Convert.ToString(dgvAccesSearch.CurrentRow.Cells[0].Value);
+                if (selectedOption == "Maintain Access Level")
+                {
+                    AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
                     ma.ShowDialog();
+                    this.Dispose();
+                    this.Activate();
+                    
+
+                    //this.Dispose();
+
+
+
+                }
+
+            }
+
+            catch (NullReferenceException)
+            {
+                //MessageBox.Show("Please specify your product sheet number search details first");
+            }
+            //string val = Convert.ToString(dgvAccesSearch.CurrentRow.Cells[0].Value);
+
+
+
+            //if (selectedOption == "Maintain Access Level")
+            //{
+            //    AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
+            //    this.Dispose();
+            //        ma.ShowDialog();
                
-                //this.Dispose();
+            //    //this.Dispose();
                 
 
 
-            }
+            //}
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -174,7 +197,7 @@ namespace MainSystem.AccessLevel
            
             toolTip1.SetToolTip(this.btnSearch, "Click to search access level");
             toolTip1.SetToolTip(this.btnMaintain, "Click to delete or update access level");
-            var query = db.Access_Level.Where(co => co.Access_Level_Id == tempid).First();
+            //var query = db.Access_Level.Where(co => co.Access_Level_Id == tempid).First();
             //txtSearchAccess
             //foreach (var a in Retrieveaccess)
             //{
