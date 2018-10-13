@@ -119,6 +119,7 @@ namespace MainSystem
         {
             Admin.FrmAuthorization au = new Admin.FrmAuthorization();
             au.ShowDialog();
+            
             //Admin.FrmAuthorization af = new Admin.FrmAuthorization();
             
             //af.ShowDialog();
@@ -193,7 +194,7 @@ namespace MainSystem
             //FrmAuthorization fr = new FrmAuthorization();
             
             Admin.FrmAuthorization af = new Admin.FrmAuthorization();
-            af.Owner = this;
+            //af.Owner = this;
             af.Show();
             //af.ShowDialog();
             //af.Focus();
