@@ -109,7 +109,7 @@ namespace MainSystem
 
         private void btnAddBrand_Click(object sender, EventArgs e)
         {
-            Products.Brand.FrmAddBrand wq = new Products.Brand.FrmAddBrand("");
+            Products.Brand.FrmAddBrand wq = new Products.Brand.FrmAddBrand();
             wq.ShowDialog();
             this.Show();
             this.Activate();

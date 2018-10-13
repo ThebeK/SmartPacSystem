@@ -128,7 +128,7 @@
             this.rtxtDescription.Size = new System.Drawing.Size(277, 67);
             this.rtxtDescription.TabIndex = 55;
             this.rtxtDescription.Text = "";
-            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
+            //this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
             // 
             // FrmAddBrand
             // 
