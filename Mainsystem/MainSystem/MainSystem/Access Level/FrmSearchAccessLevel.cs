@@ -15,8 +15,9 @@ namespace MainSystem.AccessLevel
 {
     public partial class FrmSearchAccessLevel : Form
     {
-        public FrmSearchAccessLevel(string option)
+        public FrmSearchAccessLevel(string option )
         {
+           
             if (option == "Maintain Access Level")
             {
                 selectedOption = "Maintain Access Level";
@@ -97,6 +98,7 @@ namespace MainSystem.AccessLevel
             if (selectedOption == "Maintain Access Level")
             {
                 AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
+                this.Dispose();
                     ma.ShowDialog();
                
                 //this.Dispose();
@@ -153,7 +155,18 @@ namespace MainSystem.AccessLevel
         {
 
         }
+        int tempid=0;
+        public List<Access_Level> Retrieveaccess()
+        {
+            List<Access_Level> list = new List<Access_Level>();
 
+            foreach (var item in db.Access_Level)
+            {
+                list.Add(item);
+            }
+
+            return list;
+        }
         private void FrmSearchAccessLevel_Load(object sender, EventArgs e)
         {
             //tips
@@ -161,7 +174,14 @@ namespace MainSystem.AccessLevel
            
             toolTip1.SetToolTip(this.btnSearch, "Click to search access level");
             toolTip1.SetToolTip(this.btnMaintain, "Click to delete or update access level");
+            var query = db.Access_Level.Where(co => co.Access_Level_Id == tempid).First();
+            //txtSearchAccess
+            //foreach (var a in Retrieveaccess)
+            //{
+               
+               
 
+            //}
         }
 
         private void FrmSearchAccessLevel_Leave(object sender, EventArgs e)
