@@ -11,11 +11,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainSystem.Products.Brand
+namespace MainSystem.Products.Width
 {
-    public partial class FrmSearchBrand : Form
+    public partial class FrmSearchWidth : Form
     {
-        public FrmSearchBrand()
+        public FrmSearchWidth()
         {
             InitializeComponent();
         }
@@ -87,14 +87,13 @@ namespace MainSystem.Products.Brand
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-            Brand.FrmMaintainBrand ww = new Brand.FrmMaintainBrand();
-            ww.ShowDialog();
+            FrmMaintainWidth dd = new FrmMaintainWidth();
+            dd.ShowDialog();
             this.Show();
             this.Activate();
-
         }
 
-        private void FrmSearchBrand_Leave(object sender, EventArgs e)
+        private void FrmSearchWidth_Leave(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -105,11 +104,6 @@ namespace MainSystem.Products.Brand
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }
