@@ -137,6 +137,7 @@
             this.txtMeasurement.Size = new System.Drawing.Size(82, 22);
             this.txtMeasurement.TabIndex = 45;
             this.txtMeasurement.Text = "";
+            this.txtMeasurement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMeasurement_KeyPress);
             // 
             // label1
             // 
@@ -160,6 +161,7 @@
             this.btnAdd.TabIndex = 43;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -179,6 +181,7 @@
             this.txtLengthDescription.Size = new System.Drawing.Size(82, 22);
             this.txtLengthDescription.TabIndex = 41;
             this.txtLengthDescription.Text = "";
+            this.txtLengthDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLengthDescription_KeyPress);
             // 
             // FrmAddLength
             // 
@@ -193,6 +196,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAddLength";
             this.Text = "FrmAddLength";
+            this.Load += new System.EventHandler(this.FrmAddLength_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

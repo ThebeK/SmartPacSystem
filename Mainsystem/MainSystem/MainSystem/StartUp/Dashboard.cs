@@ -110,7 +110,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearchClient dd = new frmSearchClient();
+            frmSearchClient dd = new frmSearchClient("Maintain Clients");
             dd.ShowDialog();
         }
 
@@ -196,7 +196,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Products.FrmSearchProduct qw = new Products.FrmSearchProduct();
+            Products.FrmSearchProduct qw = new Products.FrmSearchProduct("Maintain Product");
             qw.ShowDialog();
             this.Show();
             this.Activate();

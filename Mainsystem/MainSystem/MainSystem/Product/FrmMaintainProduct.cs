@@ -15,9 +15,11 @@ namespace MainSystem.Products
 {
     public partial class FrmMaintainProduct : Form
     {
-        public FrmMaintainProduct()
+        int tempID;
+        public FrmMaintainProduct(int x)
         {
             InitializeComponent();
+            tempID = x;
         }
         public sealed class UserActivityMonitor
         {
@@ -98,7 +100,7 @@ namespace MainSystem.Products
 
         private void btnAddBrand_Click(object sender, EventArgs e)
         {
-            Products.Brand.FrmAddBrand wq = new Products.Brand.FrmAddBrand();
+            Products.Brand.FrmAddBrand wq = new Products.Brand.FrmAddBrand("");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -106,7 +108,7 @@ namespace MainSystem.Products
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            Products.Brand.FrmSearchBrand wq = new Products.Brand.FrmSearchBrand();
+            Products.Brand.FrmSearchBrand wq = new Products.Brand.FrmSearchBrand("Maintain Product Brand");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -114,7 +116,7 @@ namespace MainSystem.Products
 
         private void btnAddPackSize_Click(object sender, EventArgs e)
         {
-            Products.Pack_Size.FrmAddPackSize wq = new Products.Pack_Size.FrmAddPackSize();
+            Products.PackSize.FrmAddPackSize wq = new Products.PackSize.FrmAddPackSize("Maintain Product Pack Size");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -122,7 +124,7 @@ namespace MainSystem.Products
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Products.Pack_Size.FrmSearchPackSize wq = new Products.Pack_Size.FrmSearchPackSize();
+            Products.PackSize.FrmSearchPackSize wq = new Products.PackSize.FrmSearchPackSize("Maintain Product Pack Size");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -130,7 +132,7 @@ namespace MainSystem.Products
 
         private void btnAddSheetNumber_Click(object sender, EventArgs e)
         {
-            Products.Sheet.FrmAddSheet wq = new Products.Sheet.FrmAddSheet();
+            Products.Sheets.FrmAddSheet wq = new Products.Sheets.FrmAddSheet("Maintain Product Sheet Number");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -138,7 +140,7 @@ namespace MainSystem.Products
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Products.Sheet.FrmSearchSheet wq = new Products.Sheet.FrmSearchSheet();
+            Products.Sheets.FrmSearchSheet wq = new Products.Sheets.FrmSearchSheet("Maintain Product Sheet Number");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -146,7 +148,7 @@ namespace MainSystem.Products
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Products.Width.FrmAddWidth wq = new Products.Width.FrmAddWidth();
+            Products.Widths.FrmAddWidth wq = new Products.Widths.FrmAddWidth("Maintain Product Width");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -154,7 +156,7 @@ namespace MainSystem.Products
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Products.Width.FrmSearchWidth wq = new Products.Width.FrmSearchWidth();
+            Products.Widths.FrmSearchWidth wq = new Products.Widths.FrmSearchWidth("Maintain Product Width");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -170,7 +172,7 @@ namespace MainSystem.Products
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Products.Length.FrmSearchLength wq = new Products.Length.FrmSearchLength();
+            Products.Length.FrmSearchLength wq = new Products.Length.FrmSearchLength("");
             wq.ShowDialog();
             this.Show();
             this.Activate();
@@ -189,14 +191,19 @@ namespace MainSystem.Products
             toolTip1.SetToolTip(this.cbxLength, "Select Products Length");
             toolTip1.SetToolTip(this.cbxPackSize, "Select Number of packs");
             toolTip1.SetToolTip(this.cbxprodT, "Select product type");
-            toolTip1.SetToolTip(this.cbxWidth, "Select Width size");
-            toolTip1.SetToolTip(this.cbxSheet, "Select Sheet");
+            toolTip1.SetToolTip(this.cbxWidth, "Select Widths size");
+            toolTip1.SetToolTip(this.cbxSheet, "Select Sheets");
             toolTip1.SetToolTip(this.btnUpdate, "Click to edit product");
             toolTip1.SetToolTip(this.btnDelete, "Click to delete product");
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -135,7 +135,7 @@ namespace MainSystem.StartUp
                     {
                         Server dbServer = new Server(new ServerConnection(txtServer.Text/*, txtUsername.Text, txtPassword.Text*/));
                         Microsoft.SqlServer.Management.Smo.Restore dbRestore = new Microsoft.SqlServer.Management.Smo.Restore() { Action = RestoreActionType.Database, Database = txtDatabase.Text };
-
+                       
                         dbRestore.Devices.AddDevice(GET_BAK.FileName, DeviceType.File);
                         dbRestore.PercentComplete += DbRestore_PercentComplete;
                         dbRestore.Complete += DbRestore_Complete;
