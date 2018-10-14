@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,9 +86,83 @@ namespace MainSystem.Admin
         {
             this.Close();
         }
+        private void DbBack_Complete(object sender, ServerMessageEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                lbStatus.Invoke((MethodInvoker)delegate
+                {
+                    lbStatus.Text = e.Error.Message;
+                });
+            }
+        }
+        private void DbBack_PercentComplete(object sender, PercentCompleteEventArgs e)
+        {
+            progressBar1.Invoke((MethodInvoker)delegate
+            {
+                progressBar1.Value = e.Percent;
+                progressBar1.Update();
+            });
 
+            lbPercentage.Invoke((MethodInvoker)delegate
+            {
+                lbPercentage.Text = $"{e.Percent}%";
+            });
+
+        }
         private void button2_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog GET_BAK = new OpenFileDialog())
+            {
+                GET_BAK.InitialDirectory = @"C:\";
+                GET_BAK.RestoreDirectory = true;
+                GET_BAK.Title = "Employee Documents";
+                GET_BAK.Multiselect = false;
+                GET_BAK.CheckFileExists = true;
+                GET_BAK.CheckPathExists = true;
+                GET_BAK.DefaultExt = "bak";
+                GET_BAK.Filter = "bak File (*.bak)|*.bak";
+                GET_BAK.FilterIndex = 1;
+                if (GET_BAK.ShowDialog() == DialogResult.OK)
+                {
+
+
+
+                    progressBar1.Value = 0;
+
+                    try
+                    {
+                        Server dbServer = new Server(new ServerConnection(txtServer.Text/*, txtUsername.Text, txtPassword.Text*/));
+
+                        dbServer.KillDatabase(txtDatabase.Text);
+                        //dbServer.ConnectionContext.Disconnect();
+                        //Disable automatic disconnection.   
+                        //dbServer.ConnectionContext.AutoDisconnectMode = AutoDisconnectMode.NoAutoDisconnect;
+                        ////Connect to the local, default instance of SQL Server.   
+                        //dbServer.ConnectionContext.Connect();
+                        ////The actual connection is made when a property is retrieved.   
+                        //Console.WriteLine(dbServer.Information.Version);
+                        ////Disconnect explicitly.   
+                        //dbServer.ConnectionContext.Disconnect();
+                        Microsoft.SqlServer.Management.Smo.Restore dbRestore = new Microsoft.SqlServer.Management.Smo.Restore() { Action = RestoreActionType.Database, Database = txtDatabase.Text };
+
+                        dbRestore.Devices.AddDevice(GET_BAK.FileName, DeviceType.File);
+                        dbRestore.PercentComplete += DbRestore_PercentComplete;
+                        dbRestore.Complete += DbRestore_Complete;
+
+                        dbRestore.SqlRestore(dbServer);
+
+                        MessageBox.Show("Restoration successful");
+                        //this.Close();
+                    }
+
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "Messsage", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -96,7 +172,60 @@ namespace MainSystem.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
+            progressBar1.Value = 0;
+            try
+            {
+                Server dbServer = new Server(new ServerConnection(txtServer.Text/*, txtUsername.Text, txtPassword.Text*/));
+                Backup dbBackup = new Backup() { Action = BackupActionType.Database, Database = txtDatabase.Text };
+                SaveFileDialog dl = new SaveFileDialog();
 
+                dl.Filter = "File Type (*.bak)|*.bak";
+                dl.DefaultExt = "bak";
+                if (dl.ShowDialog() == DialogResult.OK)
+                {
+
+                    dbBackup.Devices.AddDevice(dl.FileName, DeviceType.File);
+                    dbBackup.Initialize = true;
+                    dbBackup.PercentComplete += DbBack_PercentComplete;
+                    dbBackup.Complete += DbBack_Complete;
+                    dbBackup.SqlBackupAsync(dbServer);
+
+                    MessageBox.Show("Back up successful");
+                    //this.Close();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Messsage", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void DbRestore_PercentComplete(object sender, PercentCompleteEventArgs e)
+        {
+
+
+            progressBar1.Invoke((MethodInvoker)delegate
+            {
+                progressBar1.Value = e.Percent;
+                progressBar1.Update();
+            });
+
+            lbPercentage.Invoke((MethodInvoker)delegate
+            {
+                lbPercentage.Text = $"{e.Percent}%";
+            });
+        }
+
+        private void DbRestore_Complete(object sender, ServerMessageEventArgs e)
+        {
+
+            if (e.Error != null)
+            {
+                lbStatus.Invoke((MethodInvoker)delegate
+                {
+                    lbStatus.Text = e.Error.Message;
+                });
+            }
         }
     }
 }

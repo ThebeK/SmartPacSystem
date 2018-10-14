@@ -259,11 +259,11 @@ namespace MainSystem.Users
             try
             {
 
-                string val = Convert.ToString(dgvClientSearch.CurrentRow.Cells[0].Value);
+                int val = Convert.ToInt32(dgvClientSearch.CurrentRow.Cells[0].Value);
                 if (selectedOption == "Maintain User")
                 {
 
-                    FrmMaintainUser MAu = new FrmMaintainUser(val);
+                    FrmMaintainUser MAu = new FrmMaintainUser(7);
                     MAu.ShowDialog();
                    // AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
                     //ma.ShowDialog();

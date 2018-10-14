@@ -16,11 +16,12 @@ namespace MainSystem.Users
     public partial class FrmMaintainUser : Form
     {
         int AccessIds;
-        public FrmMaintainUser(string valUE)
+        public FrmMaintainUser(int valUE)
         {
-            AccessIds = Convert.ToInt32(valUE);
+            
 
             InitializeComponent();
+            AccessIds = valUE;
         }
         SPEntities db = new SPEntities();
 
@@ -97,27 +98,29 @@ namespace MainSystem.Users
 
         private void FrmMaintainUser_Load(object sender, EventArgs e)
         {
+            using (SPEntities db = new SPEntities())
+            {
+
+                accessLevelBindingSource1.DataSource = db.Access_Level.ToList();
+            }
+            cbAccessLevelName.DataSource = db.Access_Level.ToList();
             var query = db.Active_User.Where(co => co.Active_User_Id == AccessIds).FirstOrDefault();
 
             txtUsername.Text = query.Username;
             txtPassword.Text = query.pass;
             txtConfirmPassword.Text = query.pass;
 
-            var query1 = db.Access_Level.Where(co => co.Access_Level_Id == query.Active_User_Id).FirstOrDefault();
+            var query1 = db.Access_Level.Where(co => co.Access_Level_Id == query.Access).FirstOrDefault();
 
             cbAccessLevelName.Text = query1.Access_Level_Name;
-            cbAccessLevelName.DataSource = db.Access_Level.ToList();
+            
             //cbAccessLevelName.ValueMember = "Access_Level_Name";
 
             //var query = db.Access_Level.Where(co => co.Access_Level_Id == AccessIds).FirstOrDefault();
             //var mark = db.User_Role.Where(co => co.User_Role_Id == query.Access_Level_Id).FirstOrDefault();
 
 
-            using (SPEntities db = new SPEntities())
-            {
-
-                accessLevelBindingSource1.DataSource = db.Access_Level.ToList();
-            }
+            
 
         }
     }

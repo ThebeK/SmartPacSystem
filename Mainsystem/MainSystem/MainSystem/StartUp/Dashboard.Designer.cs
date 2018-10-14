@@ -488,7 +488,7 @@
             this.maintainUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainUserToolStripMenuItem.Name = "maintainUserToolStripMenuItem";
             this.maintainUserToolStripMenuItem.Size = new System.Drawing.Size(357, 32);
-            this.maintainUserToolStripMenuItem.Text = "Maintain Users";
+            this.maintainUserToolStripMenuItem.Text = "Serach Users";
             this.maintainUserToolStripMenuItem.Click += new System.EventHandler(this.maintainUserToolStripMenuItem_Click);
             // 
             // employeeToolStripMenuItem
@@ -610,6 +610,7 @@
             this.addVehicleToolStripMenuItem.Name = "addVehicleToolStripMenuItem";
             this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(304, 32);
             this.addVehicleToolStripMenuItem.Text = "Add Vehicles";
+            this.addVehicleToolStripMenuItem.Click += new System.EventHandler(this.addVehicleToolStripMenuItem_Click);
             // 
             // maintainVehicleToolStripMenuItem
             // 
@@ -618,6 +619,7 @@
             this.maintainVehicleToolStripMenuItem.Name = "maintainVehicleToolStripMenuItem";
             this.maintainVehicleToolStripMenuItem.Size = new System.Drawing.Size(304, 32);
             this.maintainVehicleToolStripMenuItem.Text = "Maintain Vehicles";
+            this.maintainVehicleToolStripMenuItem.Click += new System.EventHandler(this.maintainVehicleToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 

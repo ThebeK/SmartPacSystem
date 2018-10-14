@@ -81,7 +81,8 @@ namespace MainSystem
         }
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            StartUp.frmHelp GG = new StartUp.frmHelp();
+            GG.ShowDialog();
         }
 
         private void makeSaleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -392,6 +393,19 @@ namespace MainSystem
         private void Form1_Leave(object sender, EventArgs e)
         {
            
+        }
+
+        private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehicles.FrmAddVehicle av = new Vehicles.FrmAddVehicle("Maintain Vehicle");
+            av.ShowDialog();
+
+        }
+
+        private void maintainVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehicles.FrmSearchVehicle sv = new Vehicles.FrmSearchVehicle("Maintain Vehicle");
+            sv.ShowDialog();
         }
     }
 }
