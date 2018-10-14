@@ -182,17 +182,17 @@ namespace MainSystem.AccessLevel
 
         }
         int tempid=0;
-        public List<Access_Level> Retrieveaccess()
-        {
-            List<Access_Level> list = new List<Access_Level>();
+        //public List<Access_Level> Retrieveaccess()
+        //{
+        //    List<Access_Level> list = new List<Access_Level>();
 
-            foreach (var item in db.Access_Level)
-            {
-                list.Add(item);
-            }
+        //    foreach (var item in db.Access_Level)
+        //    {
+        //        list.Add(item);
+        //    }
 
-            return list;
-        }
+        //    return list;
+        //}
         private void FrmSearchAccessLevel_Load(object sender, EventArgs e)
         {
             //tips

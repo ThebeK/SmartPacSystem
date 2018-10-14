@@ -17,10 +17,16 @@ namespace MainSystem.Users
 {
     public partial class FrmAddUser : Form
     {
-        public FrmAddUser()
+        public FrmAddUser(string option)
         {
+            if (option == "Maintain Access Level")
+            {
+                selectedOption = "Maintain Access Level";
+
+            }
             InitializeComponent();
         }
+        SPEntities db = new SPEntities();
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -94,14 +100,36 @@ namespace MainSystem.Users
             this.Show();
             this.Activate();
         }
-
+        string selectedOption;
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            AccessLevel.FrmSearchAccessLevel rtt = new AccessLevel.FrmSearchAccessLevel("Maintain Access Level");
-            rtt.ShowDialog();
-            this.Show();
-            this.Activate();
-        }
+            try
+            {
+
+                string val = Convert.ToString(cbAccessLevelName.SelectedValue);
+                if (selectedOption == "Maintain Access Level")
+                {
+
+                    AccessLevel.FrmMaintainAccessLevel MAS = new AccessLevel.FrmMaintainAccessLevel(val);
+                    MAS.ShowDialog();
+                    //AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
+                    //ma.ShowDialog();
+                    //this.Dispose();
+                    //this.Activate();
+
+
+                    //this.Dispose();
+
+
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                //MessageBox.Show("Please specify your product sheet number search details first");
+            }
+
+        } 
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {

@@ -85,7 +85,14 @@ namespace MainSystem.Admin
 
         private void btnSendsms_Click(object sender, EventArgs e)
         {
+            int val = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
+            if (option == "Maintain Notification")
+            {
+                frmPublishSms myform = new frmPublishSms(val);
+                myform.ShowDialog();
+                dataGridView1.DataSource = db.Email_Notice_Template.ToList();
+            }
         }
     }
 }
