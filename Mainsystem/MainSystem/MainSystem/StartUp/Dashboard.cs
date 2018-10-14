@@ -132,7 +132,7 @@ namespace MainSystem
 
         private void searchUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Users.FrmAddUser a2 = new Users.FrmAddUser();
+            Users.FrmAddUser a2 = new Users.FrmAddUser("Maintain Access Level");
             a2.ShowDialog();
 
 
@@ -140,7 +140,7 @@ namespace MainSystem
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccessLevel.FrmSearchAccessLevel qw = new AccessLevel.FrmSearchAccessLevel("");
+            AccessLevel.FrmSearchAccessLevel qw = new AccessLevel.FrmSearchAccessLevel("Maintain Access Level");
             qw.ShowDialog();
 
 
@@ -187,11 +187,64 @@ namespace MainSystem
             this.Show();
             this.Activate();
         }
+        private void LoadAccess()
+        {
 
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Admin_Role)
+            {
+                administrationToolStripMenuItem.Visible = false;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Client_Role)
+            {
+                clientToolStripMenuItem.Visible = false;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Client_Order_Role)
+            {
+                purchaseOrderToolStripMenuItem.Visible = false;
+                supplierOrderToolStripMenuItem.Visible = true;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Employee_Role)
+            {
+                employeeToolStripMenuItem.Visible = false;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Product_Role)
+            {
+                productToolStripMenuItem.Visible = false;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Reports_Role)
+            {
+                reportsToolStripMenuItem.Visible = false;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Supplier_Order_Role)
+            {
+                supplierOrderToolStripMenuItem.Visible = false;
+                purchaseOrderToolStripMenuItem.Visible = true;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Supplier_Order_Role && !clsGlobals.Userlogin.Access_Level.User_Role.Client_Order_Role)
+            {
+                supplierOrderToolStripMenuItem.Visible = false;
+                purchaseOrderToolStripMenuItem.Visible = false;
+                orderToolStripMenuItem.Visible = false;
+
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.User_And_Access_Level_Role)
+            {
+                userAccessLevelToolStripMenuItem.Visible = false;
+
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Vehicle_Role)
+            {
+                vehicleToolStripMenuItem.Visible = false;
+            }
+            if (!clsGlobals.Userlogin.Access_Level.User_Role.Sale_Role)
+            {
+                saleToolStripMenuItem.Visible = false;
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-           
 
+            LoadAccess();
         }
 
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -217,7 +270,7 @@ namespace MainSystem
 
         private void notificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("Maintain Notification");
+            Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("Publish Email");
             ff.ShowDialog();
             this.Show();
             this.Activate();
@@ -226,10 +279,13 @@ namespace MainSystem
         private void maintainUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Users.FrmMaintainUser su = new Users.FrmMaintainUser();
+            Users.FrmSearchUser su = new Users.FrmSearchUser("Maintain User");
             su.ShowDialog();
-            this.Show();
-            this.Activate();
+            
+            //Users.FrmMaintainUser su = new Users.FrmMaintainUser();
+            //su.ShowDialog();
+            //this.Show();
+            //this.Activate();
         }
 
         private void generatePurchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)

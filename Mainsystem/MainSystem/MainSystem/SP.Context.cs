@@ -287,5 +287,10 @@ namespace MainSystem
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<Load_Purchase_Order_1_Result> Load_Purchase_Order_1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Purchase_Order_1_Result>("Load_Purchase_Order_1");
+        }
     }
 }

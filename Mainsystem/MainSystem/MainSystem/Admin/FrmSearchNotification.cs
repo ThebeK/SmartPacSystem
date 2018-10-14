@@ -74,7 +74,7 @@ namespace MainSystem.Admin
         {
             int val = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-            if (option == "Maintain Notification")
+            if (option == "Publish Email")
             {
                 FrmPublishEmail myform = new FrmPublishEmail(val);
                 myform.ShowDialog();
@@ -85,7 +85,14 @@ namespace MainSystem.Admin
 
         private void btnSendsms_Click(object sender, EventArgs e)
         {
+            int val = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
+            if (option == "Publish Email")
+            {
+                frmPunblblishSms myform = new frmPunblblishSms(val);
+                myform.ShowDialog();
+                dataGridView1.DataSource = db.Email_Notice_Template.ToList();
+            }
         }
     }
 }
