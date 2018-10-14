@@ -113,6 +113,7 @@
             // btnMaintain
             // 
             this.btnMaintain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnMaintain.Enabled = false;
             this.btnMaintain.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
             this.btnMaintain.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.btnMaintain.Location = new System.Drawing.Point(749, 326);

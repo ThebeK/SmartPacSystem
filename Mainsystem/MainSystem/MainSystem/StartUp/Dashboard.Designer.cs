@@ -488,7 +488,7 @@
             this.maintainUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainUserToolStripMenuItem.Name = "maintainUserToolStripMenuItem";
             this.maintainUserToolStripMenuItem.Size = new System.Drawing.Size(357, 32);
-            this.maintainUserToolStripMenuItem.Text = "Maintain Users";
+            this.maintainUserToolStripMenuItem.Text = "Serach Users";
             this.maintainUserToolStripMenuItem.Click += new System.EventHandler(this.maintainUserToolStripMenuItem_Click);
             // 
             // employeeToolStripMenuItem
