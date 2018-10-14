@@ -15,9 +15,20 @@ namespace MainSystem
 {
     public partial class frmMaintainClient : Form
     {
-        public frmMaintainClient()
+        int ClientID;
+        string ID;
+        public frmMaintainClient(string client, string x)
         {
+            ID = x;
+            ClientID = Convert.ToInt32(client);
             InitializeComponent();
+            SPEntities db = new SPEntities();
+            Credit_Approval NewCA = new Credit_Approval();
+            Credit_Return NewReturn = new Credit_Return();
+            Province NewProv = new Province();
+            Client newClient = new Client();
+            byte[] FileData;
+            string FName;
         }
         public SPEntities db = new SPEntities();
         byte[] FileData;
@@ -97,10 +108,85 @@ namespace MainSystem
         {
             this.Close();
         }
-
+        bool correct;
         private void button2_Click(object sender, EventArgs e)
         {
+            if (txtName.Text == "" || txtVatRegNum.Text == "" || txtTelephone.Text == "" || txtFaxNumber.Text == "" || txtEmailAdd.Text == "" || txtPhysicalAdd.Text == "")
+            {
+                MessageBox.Show("Please enter all fields!");
+                correct = false;
+            }
 
+
+            DialogResult dialogResult = MessageBox.Show("Would you like to update the client Information ?", "Update Template", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                if (correct == true)
+                {
+                    try
+                    {
+                        if (correct == true)
+                        {
+                            var query = db.Clients.Where(co => co.Client_ID == ClientID).FirstOrDefault();
+                            var query1 = db.Provinces.Where(co => co.Province_Id == query.Province_Id).FirstOrDefault();
+                            var query2 = db.Cities.Where(co => co.City_Id == query.City_Id).FirstOrDefault();
+                            var query3 = db.Credit_Approval.Where(co => co.Credit_Approval_ID == query.Credit_Approval_ID).FirstOrDefault();
+                            var query4 = db.Credit_Status.Where(co => co.Credit_Status_ID == query.Credit_Approval_ID).FirstOrDefault();
+                            var query5 = db.Client_Account_Status.Where(co => co.Account_Status_ID == query3.Credit_Approval_ID).FirstOrDefault();
+
+                            Client NewCllient = new Client();
+                            Credit_Approval NewCA = new Credit_Approval();
+                            City newCity = new City();
+                            Credit_Status crStatus = new Credit_Status();
+                            Client_Account_Status cAS = new Client_Account_Status();
+                            Province NewProv = new Province();
+
+                            NewCllient = db.Clients.Where(co => co.Client_ID == ClientID).FirstOrDefault();
+                            NewCA = db.Credit_Approval.Where(co => co.Credit_Approval_ID == query3.Credit_Approval_ID).FirstOrDefault();
+                            newCity = db.Cities.Where(co => co.City_Id == query.City_Id).FirstOrDefault();
+                            crStatus = db.Credit_Status.Where(co => co.Credit_Status_ID == query.Credit_Approval_ID).FirstOrDefault();
+                            cAS = db.Client_Account_Status.Where(co => co.Account_Status_ID == query.Credit_Approval_ID).FirstOrDefault();
+
+
+                            query.Client_Name = txtName.Text;
+                            query.Client_VAT_Reg_Number = txtVatRegNum.Text;
+                            query.Client_Telephone = "+27" + txtTelephone.Text;
+                            query.Client_Fax_Number = txtFaxNumber.Text;
+                            query.Physical_Address = txtPhysicalAdd.Text;
+                            query.Client_Email_Address = txtEmailAdd.Text;
+
+                            query1.Province_Name = cbxProvince.Text;
+                            query2.City_Name = cbxCity.Text;
+                            query3.Credit_Approval_Amount = Convert.ToDecimal(txtCreditAmount.Text);
+
+                            if (query3.Credit_Status_ID == null)
+                            {
+                                cbxCreditStatus.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cbxCreditStatus.Text = query4.Credit_Status_Description;
+
+                            }
+                            NewCA.Credit_Approval_ID = crStatus.Credit_Status_ID;
+                            query5.Account_Status_Description = cbxCreditStatus.Text;
+
+
+                            query3.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
+
+                            db.SaveChanges();
+                            MessageBox.Show("Client Has been updated succesfully");
+                            this.Close();
+
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Error has occured, and template was not updated successfully" + ex);
+                    }
+                }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -132,15 +218,115 @@ namespace MainSystem
             toolTip1.SetToolTip(this.btnDeleteClient, "Click to remove client");
             toolTip1.SetToolTip(this.btnUpdateClient, "Click to edit client");
             toolTip1.SetToolTip(this.btnDownload, "Click to obtain credit approval");
-
-            using (SPEntities db = new SPEntities())
+            Credit_Approval NewCA = new Credit_Approval();
+            try
             {
-                provinceBindingSource.DataSource = db.Provinces.ToList();
-                cityBindingSource.DataSource = db.Cities.ToList();
-                clientAccountStatusBindingSource.DataSource = db.Client_Account_Status.ToList();
-                creditStatusBindingSource.DataSource = db.Credit_Status.ToList();
-            }
 
+                NewCA = db.Credit_Approval.Find(Convert.ToInt32(ClientID));
+
+                int Approvalid;
+                Approvalid = Convert.ToInt32(NewCA.Credit_Approval_ID);
+                Credit_Approval ret = db.Credit_Approval.Find(Approvalid);
+
+                txtFilePath.Text = Convert.ToString(ret.Credit_Approval_Form);
+
+
+
+
+
+                var query = db.Clients.Where(co => co.Client_ID == ClientID).FirstOrDefault();
+                var query1 = db.Provinces.Where(co => co.Province_Id == query.Province_Id).FirstOrDefault();
+                var query2 = db.Cities.Where(co => co.City_Id == query.City_Id).FirstOrDefault();
+                var query3 = db.Credit_Approval.Where(co => co.Credit_Approval_ID == query.Credit_Approval_ID).FirstOrDefault();
+                var query4 = db.Credit_Status.Where(co => co.Credit_Status_ID == query3.Credit_Status_ID).FirstOrDefault();
+                var query5 = db.Client_Account_Status.Where(co => co.Account_Status_ID == query.Account_Status_ID).FirstOrDefault();
+
+
+                //var qu = db.Provinces.Select(x => x.Province_Name).ToList();
+                //txtProvince.DataSource = qu;
+                //txtProvince.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                //var qu1 = db.Cities.Select(x => x.City_Name).ToList();
+                //txtCity.DataSource = qu1;
+                //txtCity.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                //var qu2 = db.Credit_Status.Select(x => x.Credit_Status_Description).ToList();
+                //txtCreditSta.DataSource = qu2;
+                //txtCreditSta.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
+                //var qu3 = db.Client_Account_Status.Select(x => x.Account_Status_Description).ToList();
+                //txtAccountStatus.DataSource = qu3;
+                //txtAccountStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
+
+
+                txtName.Text = query.Client_Name;
+                txtVatRegNum.Text = query.Client_VAT_Reg_Number;
+                txtTelephone.Text = query.Client_Telephone;
+                txtFaxNumber.Text = query.Client_Fax_Number;
+                txtEmailAdd.Text = query.Client_Email_Address;
+                txtPhysicalAdd.Text = query.Physical_Address;
+
+                cbxProvince.Text = query1.Province_Name;
+                cbxCity.Text = query2.City_Name;
+                if (query3.Credit_Status_ID == null)
+                {
+                    cbxCreditStatus.SelectedIndex = -1;
+                }
+                else
+                {
+                    cbxCreditStatus.Text = query4.Credit_Status_Description;
+                }
+
+                if (query3.Credit_Approval_Form == null)
+                {
+                    txtFilePath.Text = "";
+                    btnDownload.Visible = false;
+                }
+                else
+                {
+                    txtFilePath.Text = Convert.ToBase64String(query3.Credit_Approval_Form);
+                    btnDownload.Visible = true;
+                }
+
+                comboBox5.Text = query5.Account_Status_Description;
+
+                txtCreditAmount.Text = Convert.ToString(query3.Credit_Approval_Amount);
+
+
+                txtDateTimeDateOfCommencement.MinDate = Convert.ToDateTime(query3.Date_Of_Commencement);
+                comboBox5.Text = Convert.ToString(query.Client_Account_Status);
+
+                txtFilePath.Text = Convert.ToString(query3.Credit_Approval_Form);
+
+
+                //      NewCA = db.Credit_Approval.Find(Convert.ToInt32(CAid));
+                int CreditAppid;
+                CreditAppid = Convert.ToInt32(NewCA.Credit_Approval_ID);
+                //if (NewCA.Credit_Approval_Form == null)
+                //{
+                //    btnDownload.Visible = false;
+                //}
+
+                using (SPEntities db = new SPEntities())
+                {
+                    provinceBindingSource.DataSource = db.Provinces.ToList();
+                    cityBindingSource.DataSource = db.Cities.ToList();
+                    clientAccountStatusBindingSource.DataSource = db.Client_Account_Status.ToList();
+                    creditStatusBindingSource.DataSource = db.Credit_Status.ToList();
+                }
+
+
+            }
+            catch
+            {
+
+            }
+            }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -201,8 +201,8 @@ namespace MainSystem.Users
 
 
                         MessageBox.Show("User successfully registered!");
-
-
+                        this.Hide();
+                        this.Close();
 
                     }
 

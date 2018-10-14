@@ -375,7 +375,7 @@ namespace MainSystem
                 db.Audit_Create_Delete.Add(Current_Create3);
                 db.SaveChanges();
                 this.Close();
-
+                this.Hide();
                 //MessageBox.Show("Are you sure you want to add this client ?", "confirmation", MessageBoxButtons.YesNo);
                 //MessageBox.Show("Client details have been added successfully");
                 //MessageBox.Show("Client already exists on the system");

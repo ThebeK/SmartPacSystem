@@ -76,6 +76,7 @@ namespace MainSystem
             await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
             MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLogin rs = new frmLogin();
+            this.Hide();
             rs.ShowDialog();
             this.Close();
         }
@@ -110,7 +111,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearchClient dd = new frmSearchClient("Maintain Clients");
+            frmSearchClient dd = new frmSearchClient("Maintain Client");
             dd.ShowDialog();
         }
 
@@ -382,10 +383,12 @@ namespace MainSystem
         {
             if (MessageBox.Show("Are you sure you want to logout?", "Close Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                
                 frmLogin ml = new frmLogin();
+                this.Hide();
                 ml.ShowDialog();
-              
+                this.Close();
+
             }
         }
 

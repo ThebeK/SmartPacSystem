@@ -93,8 +93,16 @@ namespace MainSystem
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-            frmMaintainClient ff = new frmMaintainClient();
-            ff.ShowDialog();
+            string val = Convert.ToString(dgvClientSearch.CurrentRow.Cells[0].Value);
+
+
+            if (selectedOption == "Maintain Client")
+            {
+                frmMaintainClient frm1 = new frmMaintainClient(val, "Clients");
+
+                frm1.ShowDialog();
+
+            }
         }
 
         private void frmSearchClient_Load(object sender, EventArgs e)

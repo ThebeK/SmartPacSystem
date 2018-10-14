@@ -45,6 +45,7 @@
             this.btnDownload = new System.Windows.Forms.Button();
             this.txtCreditAmount = new System.Windows.Forms.TextBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.txtDateTimeDateOfCommencement = new System.Windows.Forms.DateTimePicker();
             this.cbxCreditStatus = new System.Windows.Forms.ComboBox();
+            this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,7 +62,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.cbxCity = new System.Windows.Forms.ComboBox();
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbxProvince = new System.Windows.Forms.ComboBox();
+            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPhysicalAdd = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -77,24 +81,20 @@
             this.txtEmailAdd = new System.Windows.Forms.TextBox();
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -263,6 +263,10 @@
             this.comboBox5.TabIndex = 23;
             this.comboBox5.ValueMember = "Account_Status_ID";
             // 
+            // clientAccountStatusBindingSource
+            // 
+            this.clientAccountStatusBindingSource.DataSource = typeof(MainSystem.Client_Account_Status);
+            // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -342,6 +346,10 @@
             this.cbxCreditStatus.Size = new System.Drawing.Size(186, 24);
             this.cbxCreditStatus.TabIndex = 18;
             this.cbxCreditStatus.ValueMember = "Credit_Status_ID";
+            // 
+            // creditStatusBindingSource
+            // 
+            this.creditStatusBindingSource.DataSource = typeof(MainSystem.Credit_Status);
             // 
             // label14
             // 
@@ -439,6 +447,10 @@
             this.cbxCity.TabIndex = 19;
             this.cbxCity.ValueMember = "City_Id";
             // 
+            // cityBindingSource
+            // 
+            this.cityBindingSource.DataSource = typeof(MainSystem.City);
+            // 
             // cbxProvince
             // 
             this.cbxProvince.DataSource = this.provinceBindingSource;
@@ -449,6 +461,10 @@
             this.cbxProvince.Size = new System.Drawing.Size(174, 21);
             this.cbxProvince.TabIndex = 17;
             this.cbxProvince.ValueMember = "Province_Id";
+            // 
+            // provinceBindingSource
+            // 
+            this.provinceBindingSource.DataSource = typeof(MainSystem.Province);
             // 
             // txtPhysicalAdd
             // 
@@ -551,6 +567,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(657, 580);
             this.panel2.TabIndex = 20;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -613,22 +630,6 @@
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.button2_Click);
             // 
-            // provinceBindingSource
-            // 
-            this.provinceBindingSource.DataSource = typeof(MainSystem.Province);
-            // 
-            // cityBindingSource
-            // 
-            this.cityBindingSource.DataSource = typeof(MainSystem.City);
-            // 
-            // creditStatusBindingSource
-            // 
-            this.creditStatusBindingSource.DataSource = typeof(MainSystem.Credit_Status);
-            // 
-            // clientAccountStatusBindingSource
-            // 
-            this.clientAccountStatusBindingSource.DataSource = typeof(MainSystem.Client_Account_Status);
-            // 
             // frmMaintainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,10 +651,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -661,10 +666,6 @@
             this.panel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

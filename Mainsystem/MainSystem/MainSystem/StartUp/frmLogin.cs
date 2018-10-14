@@ -77,7 +77,7 @@ namespace MainSystem
                     MessageBox.Show("Login was successful");
                     
                     Form1 ds = new Form1();
-                    
+                    this.Hide();
                     ds.ShowDialog();
                     this.Close();
 

@@ -98,7 +98,9 @@ namespace MainSystem.AccessLevel
                 {
 
                     FrmMaintainAccessLevel MAS = new FrmMaintainAccessLevel(val);
+                    this.Hide();
                     MAS.ShowDialog();
+                    this.Close();
                     //AccessLevel.FrmMaintainAccessLevel ma = new AccessLevel.FrmMaintainAccessLevel(val);
                     //ma.ShowDialog();
                     //this.Dispose();
