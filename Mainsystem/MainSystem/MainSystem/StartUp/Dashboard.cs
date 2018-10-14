@@ -82,7 +82,8 @@ namespace MainSystem
         }
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            StartUp.frmHelp GG = new StartUp.frmHelp();
+            GG.ShowDialog();
         }
 
         private void makeSaleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -271,7 +272,7 @@ namespace MainSystem
 
         private void notificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("Maintain Notification");
+            Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("Publish Email");
             ff.ShowDialog();
             this.Show();
             this.Activate();

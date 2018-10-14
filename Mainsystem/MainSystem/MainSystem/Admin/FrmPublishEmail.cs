@@ -110,7 +110,7 @@ namespace MainSystem.Admin
             
             using (SPEntities db = new SPEntities())
             {
-                clientBindingSource3.DataSource = db.Clients.ToList();
+                clientBindingSource8.DataSource = db.Clients.ToList();
             }
 
 
@@ -148,8 +148,8 @@ namespace MainSystem.Admin
                 DataGridViewRow row = dataGridView1.Rows[i];
                 if (Convert.ToBoolean(row.Cells["ColSelect"].Value))
                 {
-                    clientBindingSource7.Add((Client)row.DataBoundItem);
-                    clientBindingSource3.RemoveAt(row.Index);
+                    clientBindingSource9.Add((Client)row.DataBoundItem);
+                    clientBindingSource8.RemoveAt(row.Index);
 
                 }
             }
@@ -162,8 +162,8 @@ namespace MainSystem.Admin
                 DataGridViewRow row = dataGridView2.Rows[i];
                 if (Convert.ToBoolean(row.Cells["ColRight"].Value))
                 {
-                    clientBindingSource3.Add((Client)row.DataBoundItem);
-                    clientBindingSource7.RemoveAt(row.Index);
+                    clientBindingSource8.Add((Client)row.DataBoundItem);
+                    clientBindingSource9.RemoveAt(row.Index);
 
                 }
             }

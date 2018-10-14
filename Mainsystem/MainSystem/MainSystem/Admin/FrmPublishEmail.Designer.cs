@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ColRIght = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clientBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btndd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Client_Email_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clientBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -52,33 +52,38 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientEmailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
-            this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.clientBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.clientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.clientBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.clientBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientBindingSource8 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clientBindingSource9 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColRIght = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource9)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,11 +103,21 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Sans Unicode", 21.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label5.Location = new System.Drawing.Point(287, 9);
+            this.label5.Location = new System.Drawing.Point(128, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(398, 35);
+            this.label5.Size = new System.Drawing.Size(456, 35);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Publish Email Notification";
+            this.label5.Text = "Publish Notification Template";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
+            this.pictureBox1.Location = new System.Drawing.Point(1029, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 43);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button5
             // 
@@ -138,21 +153,15 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Client,
-            this.clientNameDataGridViewTextBoxColumn1,
-            this.clientEmailAddressDataGridViewTextBoxColumn,
+            this.clientIDDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
             this.ColRIght});
-            this.dataGridView2.DataSource = this.clientBindingSource7;
+            this.dataGridView2.DataSource = this.clientBindingSource9;
             this.dataGridView2.Location = new System.Drawing.Point(593, 41);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(413, 141);
+            this.dataGridView2.Size = new System.Drawing.Size(411, 141);
             this.dataGridView2.TabIndex = 62;
-            // 
-            // ColRIght
-            // 
-            this.ColRIght.HeaderText = "Select";
-            this.ColRIght.Name = "ColRIght";
-            this.ColRIght.Width = 70;
             // 
             // btnBack
             // 
@@ -210,27 +219,15 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clientNameDataGridViewTextBoxColumn,
-            this.Client_Email_Address,
+            this.clientIDDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.ColSelect});
-            this.dataGridView1.DataSource = this.clientBindingSource3;
+            this.dataGridView1.DataSource = this.clientBindingSource8;
             this.dataGridView1.Location = new System.Drawing.Point(45, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(378, 141);
+            this.dataGridView1.Size = new System.Drawing.Size(403, 141);
             this.dataGridView1.TabIndex = 57;
-            // 
-            // Client_Email_Address
-            // 
-            this.Client_Email_Address.DataPropertyName = "Client_Email_Address";
-            this.Client_Email_Address.HeaderText = "Email Address";
-            this.Client_Email_Address.Name = "Client_Email_Address";
-            this.Client_Email_Address.Width = 120;
-            // 
-            // ColSelect
-            // 
-            this.ColSelect.HeaderText = "Select";
-            this.ColSelect.Name = "ColSelect";
-            this.ColSelect.Width = 70;
             // 
             // groupBox3
             // 
@@ -345,60 +342,61 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Subject Line:\r\n\r\n";
             // 
-            // Client
+            // clientBindingSource8
             // 
-            this.Client.DataPropertyName = "Client_ID";
-            this.Client.HeaderText = "Client ID";
-            this.Client.Name = "Client";
+            this.clientBindingSource8.DataSource = typeof(MainSystem.Client);
             // 
-            // clientNameDataGridViewTextBoxColumn1
+            // clientIDDataGridViewTextBoxColumn
             // 
-            this.clientNameDataGridViewTextBoxColumn1.DataPropertyName = "Client_Name";
-            this.clientNameDataGridViewTextBoxColumn1.HeaderText = "Client Name";
-            this.clientNameDataGridViewTextBoxColumn1.Name = "clientNameDataGridViewTextBoxColumn1";
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "Client_ID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Client_ID";
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
             // 
-            // clientEmailAddressDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.clientEmailAddressDataGridViewTextBoxColumn.DataPropertyName = "Client_Email_Address";
-            this.clientEmailAddressDataGridViewTextBoxColumn.HeaderText = "Email Address";
-            this.clientEmailAddressDataGridViewTextBoxColumn.Name = "clientEmailAddressDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Client_Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Client_Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // clientBindingSource7
+            // dataGridViewTextBoxColumn2
             // 
-            this.clientBindingSource7.DataSource = typeof(MainSystem.Client);
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Client_Email_Address";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Client_Email_Address";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // clientNameDataGridViewTextBoxColumn
+            // ColSelect
             // 
-            this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name";
-            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Client_Name";
-            this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
-            this.clientNameDataGridViewTextBoxColumn.Width = 150;
+            this.ColSelect.HeaderText = "Select";
+            this.ColSelect.Name = "ColSelect";
+            this.ColSelect.Width = 70;
             // 
-            // clientBindingSource3
+            // clientBindingSource9
             // 
-            this.clientBindingSource3.DataSource = typeof(MainSystem.Client);
+            this.clientBindingSource9.DataSource = typeof(MainSystem.Client);
             // 
-            // pictureBox1
+            // clientIDDataGridViewTextBoxColumn1
             // 
-            this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox1.Location = new System.Drawing.Point(1029, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 43);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.clientIDDataGridViewTextBoxColumn1.DataPropertyName = "Client_ID";
+            this.clientIDDataGridViewTextBoxColumn1.HeaderText = "Client_ID";
+            this.clientIDDataGridViewTextBoxColumn1.Name = "clientIDDataGridViewTextBoxColumn1";
             // 
-            // clientBindingSource6
+            // dataGridViewTextBoxColumn3
             // 
-            this.clientBindingSource6.DataSource = typeof(MainSystem.Client);
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Client_Name";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Client_Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // clientBindingSource5
+            // dataGridViewTextBoxColumn4
             // 
-            this.clientBindingSource5.DataSource = typeof(MainSystem.Client);
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Client_Email_Address";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Client_Email_Address";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // clientBindingSource4
+            // ColRIght
             // 
-            this.clientBindingSource4.DataSource = typeof(MainSystem.Client);
+            this.ColRIght.HeaderText = "Select";
+            this.ColRIght.Name = "ColRIght";
+            this.ColRIght.Width = 70;
             // 
             // FrmPublishEmail
             // 
@@ -414,20 +412,22 @@
             this.Load += new System.EventHandler(this.FrmPublish_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -460,15 +460,22 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource clientBindingSource3;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Email_Address;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelect;
         private System.Windows.Forms.BindingSource clientBindingSource5;
         private System.Windows.Forms.BindingSource clientBindingSource4;
         private System.Windows.Forms.BindingSource clientBindingSource6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientEmailAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColRIght;
         private System.Windows.Forms.BindingSource clientBindingSource7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColRIght;
+        private System.Windows.Forms.BindingSource clientBindingSource9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColSelect;
+        private System.Windows.Forms.BindingSource clientBindingSource8;
     }
 }
