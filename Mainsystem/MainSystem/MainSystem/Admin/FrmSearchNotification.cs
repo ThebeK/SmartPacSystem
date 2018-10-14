@@ -82,6 +82,11 @@ namespace MainSystem.Admin
 
         }
 
+        private void btnSendsms_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void btnSendsms_Click(object sender, EventArgs e)
         //{
         //    int val = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);

@@ -136,17 +136,20 @@ namespace MainSystem.Vehicles
 
                 if (correct == true)
                 {
-
+                   
                     var query = db.Vehicles.Where(co => co.Vehicle_ID == tempID).FirstOrDefault();
 
                     query.Vehicle_Make = txtMake.Text;
                     query.Vehicle_Model = txtModel.Text;
                     query.Vehicle_Registration_Number = txtRegNo.Text;
                     query.VIN_Number = txtVIN.Text;
+                    query.Last_Serviced = dtpLastServiced.Value;
+                    query.Vehicle_Status_ID = Convert.ToInt32(cbxStatus.SelectedValue);
 
-                    var query2 = db.Vehicle_Status.Where(co => co.Vehicle_Status_ID == tempID).FirstOrDefault();
-                    query.Vehicle_Status_ID = query2.Vehicle_Status_ID;
-                    query.Vehicle_Status_ID = cbxStatus.SelectedIndex + 1;
+                    //var query2 = db.Vehicle_Status.Where(co => co.Vehicle_Status_ID == tempID).FirstOrDefault();
+                    //query.Vehicle_Status_ID = query2.Vehicle_Status_ID;
+                    //query.Vehicle_Status_ID = cbxStatus.SelectedIndex + 1;
+                    //query.Last_Serviced = dtpLastServiced.Value;
 
 
                     db.SaveChanges();
@@ -165,12 +168,17 @@ namespace MainSystem.Vehicles
             txtModel.Text = query.Vehicle_Model;
             txtRegNo.Text = query.Vehicle_Registration_Number;
             txtVIN.Text = query.VIN_Number;
+            dtpLastServiced.Value = Convert.ToDateTime(query.Last_Serviced);
+            cbxStatus.SelectedValue = query.Vehicle_Status_ID;
 
-            Vehicle vehicle = new Vehicle();
-            var quer1y = db.Vehicles.Where(co => co.Vehicle_ID == tempID).FirstOrDefault();
+            
+            //var quer1y = db.Vehicles.Where(co => co.Vehicle_ID == tempID).FirstOrDefault();
+            //Vehicle vehicle = new Vehicle();
+            //vehicle = db.Vehicles.Where(co => co.Vehicle_ID == tempID).First();
 
-            cbxStatus.DataSource = db.Vehicle_Status.ToList();
-            cbxStatus.ValueMember = "Vehicle_Status_Description";
+            //var newq= db.Vehicles.Where(co => co.Vehicle_ID == tempID).First();
+            //cbxStatus.DataSource = db.Vehicle_Status.ToList();
+            //cbxStatus.ValueMember = "Vehicle_Status_Description";
             
         }
 
@@ -187,6 +195,7 @@ namespace MainSystem.Vehicles
 
                     db.Vehicles.Remove(VehicleM);
                     db.SaveChanges();
+                   // db.SaveChangesAsync();
 
                     int vehM = Convert.ToInt32(VehicleM.Vehicle_ID);
                     string Vehicle_Value = Convert.ToString(VehicleM);

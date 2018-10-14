@@ -39,12 +39,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSendsms = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnPublish = new System.Windows.Forms.Button();
             this.btnMaintain = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnSendsms = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -183,6 +183,19 @@
             this.panel1.Size = new System.Drawing.Size(1272, 42);
             this.panel1.TabIndex = 0;
             // 
+            // btnSendsms
+            // 
+            this.btnSendsms.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSendsms.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSendsms.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnSendsms.Location = new System.Drawing.Point(1077, 3);
+            this.btnSendsms.Name = "btnSendsms";
+            this.btnSendsms.Size = new System.Drawing.Size(177, 33);
+            this.btnSendsms.TabIndex = 13;
+            this.btnSendsms.Text = "Publish SMS";
+            this.btnSendsms.UseVisualStyleBackColor = false;
+            this.btnSendsms.Click += new System.EventHandler(this.btnSendsms_Click);
+            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -244,19 +257,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1286, 606);
             this.tabControl1.TabIndex = 9;
-            // 
-            // btnSendsms
-            // 
-            this.btnSendsms.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSendsms.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSendsms.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnSendsms.Location = new System.Drawing.Point(1077, 3);
-            this.btnSendsms.Name = "btnSendsms";
-            this.btnSendsms.Size = new System.Drawing.Size(177, 33);
-            this.btnSendsms.TabIndex = 13;
-            this.btnSendsms.Text = "Publish SMS";
-            this.btnSendsms.UseVisualStyleBackColor = false;
-            //this.btnSendsms.Click += new System.EventHandler(this.btnSendsms_Click);
             // 
             // FrmSearchNotification
             // 
