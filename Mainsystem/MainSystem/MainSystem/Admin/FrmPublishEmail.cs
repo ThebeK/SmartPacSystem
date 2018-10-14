@@ -107,8 +107,7 @@ namespace MainSystem.Admin
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
 
-            //var r = db.Clients.ToList();
-            //dataGridView1.DataSource = r.Select(col => new { col.Client_ID, col.Client_Name, col.Client_Email_Address }).ToList();
+            
             using (SPEntities db = new SPEntities())
             {
                 clientBindingSource3.DataSource = db.Clients.ToList();
@@ -204,6 +203,10 @@ namespace MainSystem.Admin
                         {
 
                             int ID = Convert.ToInt32(row.Cells[dataGridView2.Columns["Client"].Index].Value);
+
+
+
+
 
                             var body = db.Email_Notice_Template.Where(co => co.Template_Id == val).FirstOrDefault();
                             var email = db.Clients.Where(co => co.Client_ID == ID).Select(x => x.Client_Email_Address).FirstOrDefault();
