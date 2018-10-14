@@ -393,5 +393,18 @@ namespace MainSystem
         {
            
         }
+
+        private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehicles.FrmAddVehicle av = new Vehicles.FrmAddVehicle("Maintain Vehicle");
+            av.ShowDialog();
+
+        }
+
+        private void maintainVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehicles.FrmSearchVehicle sv = new Vehicles.FrmSearchVehicle("Maintain Vehicle");
+            sv.ShowDialog();
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.dtpLastServiced = new System.Windows.Forms.DateTimePicker();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbxStatus = new System.Windows.Forms.ComboBox();
+            this.vehicleStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVIN = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleStatusBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
@@ -99,6 +101,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Update Vehicles";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblVIN
             // 
@@ -162,14 +165,22 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Delete Vehicles";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbxStatus
             // 
+            this.cbxStatus.DataSource = this.vehicleStatusBindingSource;
+            this.cbxStatus.DisplayMember = "Vehicle_Status_Description";
             this.cbxStatus.FormattingEnabled = true;
             this.cbxStatus.Location = new System.Drawing.Point(451, 135);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(160, 24);
             this.cbxStatus.TabIndex = 11;
+            this.cbxStatus.ValueMember = "Vehicle_Status_ID";
+            // 
+            // vehicleStatusBindingSource
+            // 
+            this.vehicleStatusBindingSource.DataSource = typeof(MainSystem.Vehicle_Status);
             // 
             // label7
             // 
@@ -279,6 +290,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(729, 69);
             this.panel1.TabIndex = 56;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button5
             // 
@@ -310,7 +322,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(226, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 34);
+            this.label1.Size = new System.Drawing.Size(263, 34);
             this.label1.TabIndex = 56;
             this.label1.Text = "Maintain Vehicles";
             // 
@@ -325,8 +337,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMaintainVehicle";
             this.Text = "FrmMaintainVehicle";
+            this.Load += new System.EventHandler(this.FrmMaintainVehicle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleStatusBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -361,5 +375,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource vehicleStatusBindingSource;
     }
 }

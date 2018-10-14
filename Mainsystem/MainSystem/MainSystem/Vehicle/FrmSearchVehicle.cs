@@ -15,9 +15,71 @@ namespace MainSystem.Vehicles
 {
     public partial class FrmSearchVehicle : Form
     {
-        public FrmSearchVehicle()
+        string option;
+        public FrmSearchVehicle(string x)
         {
             InitializeComponent();
+            option = x;
+        }
+
+        SPEntities db = new SPEntities();
+        public List<object> Get1()
+        {
+            var details = (from a in db.Vehicles
+                           join a1 in db.Vehicle_Status on a.Vehicle_Status_ID equals a1.Vehicle_Status_ID
+                           //where a.Vehicle_Make.ToUpper().Contains(y)
+                           select new
+                           {
+                               a.Vehicle_ID,
+
+                               a.Vehicle_Make,
+                               a.Vehicle_Model,
+                               a.Vehicle_Registration_Number,
+                               a1.Vehicle_Status_ID,
+                               a.VIN_Number,
+                               a.Last_Serviced,
+                               a.V_Number
+
+                           }).ToList();
+
+            var retrurn = new List<object>();
+
+            foreach (var item in details)
+            {
+                
+                    retrurn.Add(item);
+                
+            }
+            return retrurn;
+        }
+        public List<object> Get(string y)
+        {
+            var details = (from a in db.Vehicles
+                           join a1 in db.Vehicle_Status on a.Vehicle_Status_ID equals a1.Vehicle_Status_ID
+                           where a.Vehicle_Make.ToUpper().Contains(y)
+                           select new
+                           {
+                               a.Vehicle_ID,
+
+                               a.Vehicle_Make,
+                               a.Vehicle_Model,
+                               a.Vehicle_Registration_Number,
+                               a1.Vehicle_Status_Description,
+                               a.VIN_Number,
+                               a.Last_Serviced
+
+                           }).ToList();
+
+            var retrurn = new List<object>();
+
+            foreach (var item in details)
+            {
+                if (item.Vehicle_ID == Convert.ToInt32(txtSearchSale.Text))
+                {
+                    retrurn.Add(item);
+                }
+            }
+            return retrurn;
         }
         public sealed class UserActivityMonitor
         {
@@ -97,7 +159,85 @@ namespace MainSystem.Vehicles
 
         private void FrmSearchVehicle_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sPDataSet2.Vehicle' table. You can move, or remove it, as needed.
+            //this.vehicleTableAdapter1.Fill(this.sPDataSet2.Vehicle);
+            dgvClientSearch.DataSource = Get1();
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSearchSale.Text == "")
+                {
+                    label2.Visible = true;
+                    // MessageBox.Show("Error: No search details entered");
+
+                }
+                else if (txtSearchSale.Text != "")
+                {
+
+                    List<Vehicle> Vtype = db.Vehicles.Where(o => o.Vehicle_Make.Contains(txtSearchSale.Text)).ToList();
+                    // dgvVehicleSearch.DataSource = Get(txtSearchVehicle.Text);
+
+
+                    if (Vtype.Count == 0)
+                    {
+                        //groupBox1.Visible = true;
+                        MessageBox.Show("No Vehicle  found");
+
+                    }
+
+                    else
+                    {
+                        foreach (var a in Vtype)
+                        {
+
+                            dgvClientSearch.DataSource = Vtype.Select(col => new { col.Vehicle_ID, col.Vehicle_Make, col.Vehicle_Model, col.Vehicle_Registration_Number, col.Vehicle_Status.Vehicle_Status_Description, col.VIN_Number }).ToList();
+                            dgvClientSearch.DataSource = Vtype;
+                            dgvClientSearch.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                            dgvClientSearch.Columns[0].HeaderText = "Vehicle ID";
+                            dgvClientSearch.Columns[1].HeaderText = "Vehicle Make";
+                            dgvClientSearch.Columns[2].HeaderText = "Vehicle Model";
+                            dgvClientSearch.Columns[3].HeaderText = "Vehicle Registration Nunmber";
+                            dgvClientSearch.Columns[4].HeaderText = "Vehicle VIN Number";
+                            dgvClientSearch.Columns[5].HeaderText = "Last Serviced";
+                            dgvClientSearch.Columns[6].HeaderText = "Vehicle Status";
+                            dgvClientSearch.Columns[7].HeaderText = "Vehicle Number";
+
+
+
+                            //groupBox1.Visible = true;
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void btnMaintain_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int val = Convert.ToInt32(dgvClientSearch.CurrentRow.Cells[0].Value);
+
+                if (option == "Maintain Vehicle")
+                {
+                    FrmMaintainVehicle form1 = new FrmMaintainVehicle(val);
+                    form1.ShowDialog();
+
+                    this.Close();
+
+                }
+
+            }
+
+            catch (NullReferenceException)
+            {
+                //MessageBox.Show("Please specify your vehicle search details first");
+            }
         }
     }
 }

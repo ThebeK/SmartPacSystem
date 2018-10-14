@@ -256,7 +256,7 @@
             this.btnSendsms.TabIndex = 13;
             this.btnSendsms.Text = "Publish SMS";
             this.btnSendsms.UseVisualStyleBackColor = false;
-            this.btnSendsms.Click += new System.EventHandler(this.btnSendsms_Click);
+            //this.btnSendsms.Click += new System.EventHandler(this.btnSendsms_Click);
             // 
             // FrmSearchNotification
             // 

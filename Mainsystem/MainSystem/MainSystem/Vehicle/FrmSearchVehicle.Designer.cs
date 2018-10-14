@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,10 +40,33 @@
             this.dgvClientSearch = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchSale = new System.Windows.Forms.TextBox();
+            //this.sPDataSet = new MainSystem.SPDataSet();
+            this.vehicleStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.vehicle_StatusTableAdapter = new MainSystem.SPDataSetTableAdapters.Vehicle_StatusTableAdapter();
+            //this.sPDataSet1 = new MainSystem.SPDataSet1();
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.vehicleTableAdapter = new MainSystem.SPDataSet1TableAdapters.VehicleTableAdapter();
+            //this.sPDataSet2 = new MainSystem.SPDataSet2();
+            this.vehicleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            //this.vehicleTableAdapter1 = new MainSystem.SPDataSet2TableAdapters.VehicleTableAdapter();
+            this.vehicleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleRegistrationNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleMakeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleModelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vINNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastServicedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleStatusIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientSearch)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleStatusBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -61,7 +85,7 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(259, 20);
+            this.label2.Size = new System.Drawing.Size(268, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Specify Vehicles make";
             // 
@@ -106,7 +130,7 @@
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label13.Location = new System.Drawing.Point(277, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(220, 34);
+            this.label13.Size = new System.Drawing.Size(235, 34);
             this.label13.TabIndex = 25;
             this.label13.Text = "Search Vehicles";
             // 
@@ -121,6 +145,7 @@
             this.btnMaintain.TabIndex = 33;
             this.btnMaintain.Text = "Maintain";
             this.btnMaintain.UseVisualStyleBackColor = false;
+            this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
             // 
             // label3
             // 
@@ -129,14 +154,25 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(352, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 20);
+            this.label3.Size = new System.Drawing.Size(315, 20);
             this.label3.TabIndex = 32;
             this.label3.Text = "Please specify valid Vehicles make";
             this.label3.Visible = false;
             // 
             // dgvClientSearch
             // 
+            this.dgvClientSearch.AutoGenerateColumns = false;
             this.dgvClientSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.vehicleIDDataGridViewTextBoxColumn,
+            this.vehicleRegistrationNumberDataGridViewTextBoxColumn,
+            this.vehicleMakeDataGridViewTextBoxColumn,
+            this.vehicleModelDataGridViewTextBoxColumn,
+            this.vINNumberDataGridViewTextBoxColumn,
+            this.lastServicedDataGridViewTextBoxColumn,
+            this.vehicleStatusIDDataGridViewTextBoxColumn,
+            this.vNumberDataGridViewTextBoxColumn});
+            this.dgvClientSearch.DataSource = this.vehicleBindingSource1;
             this.dgvClientSearch.Location = new System.Drawing.Point(351, 136);
             this.dgvClientSearch.Name = "dgvClientSearch";
             this.dgvClientSearch.Size = new System.Drawing.Size(414, 150);
@@ -153,6 +189,7 @@
             this.btnSearch.TabIndex = 30;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchSale
             // 
@@ -160,6 +197,98 @@
             this.txtSearchSale.Name = "txtSearchSale";
             this.txtSearchSale.Size = new System.Drawing.Size(387, 20);
             this.txtSearchSale.TabIndex = 29;
+            // 
+            // sPDataSet
+            // 
+            //this.sPDataSet.DataSetName = "SPDataSet";
+            //this.sPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehicleStatusBindingSource
+            // 
+            this.vehicleStatusBindingSource.DataMember = "Vehicle_Status";
+            //this.vehicleStatusBindingSource.DataSource = this.sPDataSet;
+            // 
+            // vehicle_StatusTableAdapter
+            // 
+            //this.vehicle_StatusTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPDataSet1
+            // 
+            //this.sPDataSet1.DataSetName = "SPDataSet1";
+            //this.sPDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "Vehicle";
+            //this.vehicleBindingSource.DataSource = this.sPDataSet1;
+            // 
+            // vehicleTableAdapter
+            // 
+            //this.vehicleTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPDataSet2
+            // 
+            //this.sPDataSet2.DataSetName = "SPDataSet2";
+            //this.sPDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehicleBindingSource1
+            // 
+            this.vehicleBindingSource1.DataMember = "Vehicle";
+            //this.vehicleBindingSource1.DataSource = this.sPDataSet2;
+            // 
+            // vehicleTableAdapter1
+            // 
+            //this.vehicleTableAdapter1.ClearBeforeFill = true;
+            // 
+            // vehicleIDDataGridViewTextBoxColumn
+            // 
+            this.vehicleIDDataGridViewTextBoxColumn.DataPropertyName = "Vehicle_ID";
+            this.vehicleIDDataGridViewTextBoxColumn.HeaderText = "Vehicle_ID";
+            this.vehicleIDDataGridViewTextBoxColumn.Name = "vehicleIDDataGridViewTextBoxColumn";
+            this.vehicleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vehicleRegistrationNumberDataGridViewTextBoxColumn
+            // 
+            this.vehicleRegistrationNumberDataGridViewTextBoxColumn.DataPropertyName = "Vehicle_Registration_Number";
+            this.vehicleRegistrationNumberDataGridViewTextBoxColumn.HeaderText = "Vehicle_Registration_Number";
+            this.vehicleRegistrationNumberDataGridViewTextBoxColumn.Name = "vehicleRegistrationNumberDataGridViewTextBoxColumn";
+            // 
+            // vehicleMakeDataGridViewTextBoxColumn
+            // 
+            this.vehicleMakeDataGridViewTextBoxColumn.DataPropertyName = "Vehicle_Make";
+            this.vehicleMakeDataGridViewTextBoxColumn.HeaderText = "Vehicle_Make";
+            this.vehicleMakeDataGridViewTextBoxColumn.Name = "vehicleMakeDataGridViewTextBoxColumn";
+            // 
+            // vehicleModelDataGridViewTextBoxColumn
+            // 
+            this.vehicleModelDataGridViewTextBoxColumn.DataPropertyName = "Vehicle_Model";
+            this.vehicleModelDataGridViewTextBoxColumn.HeaderText = "Vehicle_Model";
+            this.vehicleModelDataGridViewTextBoxColumn.Name = "vehicleModelDataGridViewTextBoxColumn";
+            // 
+            // vINNumberDataGridViewTextBoxColumn
+            // 
+            this.vINNumberDataGridViewTextBoxColumn.DataPropertyName = "VIN_Number";
+            this.vINNumberDataGridViewTextBoxColumn.HeaderText = "VIN_Number";
+            this.vINNumberDataGridViewTextBoxColumn.Name = "vINNumberDataGridViewTextBoxColumn";
+            // 
+            // lastServicedDataGridViewTextBoxColumn
+            // 
+            this.lastServicedDataGridViewTextBoxColumn.DataPropertyName = "Last_Serviced";
+            this.lastServicedDataGridViewTextBoxColumn.HeaderText = "Last_Serviced";
+            this.lastServicedDataGridViewTextBoxColumn.Name = "lastServicedDataGridViewTextBoxColumn";
+            // 
+            // vehicleStatusIDDataGridViewTextBoxColumn
+            // 
+            this.vehicleStatusIDDataGridViewTextBoxColumn.DataPropertyName = "Vehicle_Status_ID";
+            this.vehicleStatusIDDataGridViewTextBoxColumn.HeaderText = "Vehicle_Status_ID";
+            this.vehicleStatusIDDataGridViewTextBoxColumn.Name = "vehicleStatusIDDataGridViewTextBoxColumn";
+            // 
+            // vNumberDataGridViewTextBoxColumn
+            // 
+            this.vNumberDataGridViewTextBoxColumn.DataPropertyName = "V_Number";
+            this.vNumberDataGridViewTextBoxColumn.HeaderText = "V_Number";
+            this.vNumberDataGridViewTextBoxColumn.Name = "vNumberDataGridViewTextBoxColumn";
+            this.vNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmSearchVehicle
             // 
@@ -185,6 +314,12 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientSearch)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleStatusBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +338,22 @@
         private System.Windows.Forms.DataGridView dgvClientSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchSale;
+        //private SPDataSet sPDataSet;
+        private System.Windows.Forms.BindingSource vehicleStatusBindingSource;
+        //private SPDataSetTableAdapters.Vehicle_StatusTableAdapter vehicle_StatusTableAdapter;
+        //private SPDataSet1 sPDataSet1;
+        private System.Windows.Forms.BindingSource vehicleBindingSource;
+        //private SPDataSet1TableAdapters.VehicleTableAdapter vehicleTableAdapter;
+        //private SPDataSet2 sPDataSet2;
+        private System.Windows.Forms.BindingSource vehicleBindingSource1;
+        //private SPDataSet2TableAdapters.VehicleTableAdapter vehicleTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleRegistrationNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleMakeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleModelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vINNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastServicedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleStatusIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vNumberDataGridViewTextBoxColumn;
     }
 }
