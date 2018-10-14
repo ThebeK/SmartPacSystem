@@ -591,19 +591,19 @@
             // 
             // provinceBindingSource
             // 
-            this.provinceBindingSource.DataSource = typeof(MainSystem.Province);
+            //this.provinceBindingSource.DataSource = typeof(Province);
             // 
             // cityBindingSource
             // 
-            this.cityBindingSource.DataSource = typeof(MainSystem.City);
+            //this.cityBindingSource.DataSource = typeof(City);
             // 
             // creditStatusBindingSource
             // 
-            this.creditStatusBindingSource.DataSource = typeof(MainSystem.Credit_Status);
+            //this.creditStatusBindingSource.DataSource = typeof(Credit_Status);
             // 
             // clientAccountStatusBindingSource
             // 
-            this.clientAccountStatusBindingSource.DataSource = typeof(MainSystem.Client_Account_Status);
+            //this.clientAccountStatusBindingSource.DataSource = typeof(Client_Account_Status);
             // 
             // frmAddClient
             // 

@@ -746,6 +746,12 @@
     <Compile Include="Vehicle_Status.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Viewpdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewpdf.Designer.cs">
+      <DependentUpon>Viewpdf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Width.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -975,6 +981,9 @@
     <EmbeddedResource Include="Vehicle\FrmSearchVehicle.resx">
       <DependentUpon>FrmSearchVehicle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viewpdf.resx">
+      <DependentUpon>Viewpdf.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Client.datasource" />
     <None Include="Get_Credit_Return_Line_Result.datasource" />
@@ -1043,7 +1052,25 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

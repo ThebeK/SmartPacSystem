@@ -16,6 +16,9 @@ namespace MainSystem
 {
     public partial class frmAddClient : Form
     {
+        private System.Threading.Timer mTimer;
+        private int mDialogCount;
+        private EventHandler handler;
         public frmAddClient()
         {
             InitializeComponent();
@@ -81,6 +84,7 @@ namespace MainSystem
             await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
             MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLogin rs = new frmLogin();
+            this.Hide();
             rs.ShowDialog();
             this.Close();
         }
@@ -216,7 +220,10 @@ namespace MainSystem
 
         private void btnViewCreditApproval_Click(object sender, EventArgs e)
         {
-
+            Viewpdf vp = new Viewpdf();
+            vp.ShowDialog();
+            
+            
         }
 
         private void txtCreditAmount_TextChanged(object sender, EventArgs e)
@@ -243,7 +250,8 @@ namespace MainSystem
         {
 
         }
-
+        
+        public static string setvalue = "";
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             try
@@ -267,7 +275,7 @@ namespace MainSystem
                         File.ReadAllBytes(FName);
                         txtFilePath.Text = Get_PDF.FileName;
                         MessageBox.Show("Browse was successful");
-
+                        setvalue = Get_PDF.FileName;
                     }
                 }
 
