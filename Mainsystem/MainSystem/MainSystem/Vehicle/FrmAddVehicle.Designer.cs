@@ -52,10 +52,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.sPDataSet = new MainSystem.SPDataSet();
+            this.vehicleStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.vehicle_StatusTableAdapter = new MainSystem.SPDataSetTableAdapters.Vehicle_StatusTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleStatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,7 +104,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(226, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 34);
+            this.label1.Size = new System.Drawing.Size(198, 34);
             this.label1.TabIndex = 56;
             this.label1.Text = "Add Vehicles";
             // 
@@ -165,14 +170,18 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbxStatus
             // 
+            this.cbxStatus.DataSource = this.vehicleStatusBindingSource;
+            this.cbxStatus.DisplayMember = "Vehicle_Status_Description";
             this.cbxStatus.FormattingEnabled = true;
             this.cbxStatus.Location = new System.Drawing.Point(451, 135);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(160, 24);
             this.cbxStatus.TabIndex = 11;
+            this.cbxStatus.ValueMember = "Vehicle_Status_ID";
             // 
             // label7
             // 
@@ -201,6 +210,7 @@
             this.txtVIN.Name = "txtVIN";
             this.txtVIN.Size = new System.Drawing.Size(160, 27);
             this.txtVIN.TabIndex = 7;
+            this.txtVIN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVIN_KeyPress);
             // 
             // label5
             // 
@@ -218,6 +228,7 @@
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(160, 27);
             this.txtModel.TabIndex = 5;
+            this.txtModel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModel_KeyPress);
             // 
             // label4
             // 
@@ -235,6 +246,7 @@
             this.txtMake.Name = "txtMake";
             this.txtMake.Size = new System.Drawing.Size(160, 27);
             this.txtMake.TabIndex = 3;
+            this.txtMake.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMake_KeyPress);
             // 
             // label3
             // 
@@ -249,7 +261,7 @@
             // txtRegNo
             // 
             this.txtRegNo.Location = new System.Drawing.Point(173, 23);
-            this.txtRegNo.MaxLength = 6;
+            this.txtRegNo.MaxLength = 8;
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(160, 27);
             this.txtRegNo.TabIndex = 1;
@@ -293,6 +305,20 @@
             this.groupBox1.Text = "Vehicles Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // sPDataSet
+            // 
+            //this.sPDataSet.DataSetName = "SPDataSet";
+            //this.sPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehicleStatusBindingSource
+            // 
+            this.vehicleStatusBindingSource.DataMember = "Vehicle_Status";
+            //this.vehicleStatusBindingSource.DataSource = this.sPDataSet;
+            // 
+            // vehicle_StatusTableAdapter
+            // 
+            //this.vehicle_StatusTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmAddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,12 +330,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddVehicle";
             this.Text = "FrmAddVehicle";
+            this.Load += new System.EventHandler(this.FrmAddVehicle_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +368,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        //private SPDataSet sPDataSet;
+        private System.Windows.Forms.BindingSource vehicleStatusBindingSource;
+        //private SPDataSetTableAdapters.Vehicle_StatusTableAdapter vehicle_StatusTableAdapter;
     }
 }

@@ -973,6 +973,7 @@
     <None Include="SP.edmx.diagram">
       <DependentUpon>SP.edmx</DependentUpon>
     </None>
+    <None Include="Vehicle_Status.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
