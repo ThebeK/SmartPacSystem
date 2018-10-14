@@ -4,89 +4,100 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using ZXing;
 
-namespace MainSystem.Order
+namespace MainSystem
 {
-    public partial class FrmScanQR : Form
+    public partial class frmScanQR : Form
     {
-        public FrmScanQR()
+        public frmScanQR()
         {
             InitializeComponent();
         }
-        public sealed class UserActivityMonitor
+
+        private FilterInfoCollection CaptureDevice;
+        private VideoCaptureDevice FinalFrame;
+
+        private string id;
+
+        public string DecodeID
         {
-            /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
-            /// <returns>The time of the last user activity.</returns>
+            get { return id; }
+            set { id = value; }
+        }
 
-            public DateTime LastActivity => DateTime.Now - this.InactivityPeriod;
+        
+        private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            pictureBox1.Image = (Image)eventArgs.Frame.Clone();
+        }
 
-            /// <summary>The amount of time for which the user has been inactive (no mouse activity or key press).</summary>
-
-            public TimeSpan InactivityPeriod
+        private void frmScanQR_Load(object sender, EventArgs e)
+        {
+            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo device in CaptureDevice)
             {
-                get
+                comboBox1.Items.Add(device.Name);
+            }
+            comboBox1.SelectedIndex = -1;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FinalFrame != null)
+            {
+                FinalFrame.Stop();
+
+
+            }
+            FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
+            FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
+            FinalFrame.Start();
+            timer1.Start();
+        }
+
+        private void frmScanQR_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            BarcodeReader reader = new BarcodeReader();
+
+            try
+            {
+                Result result = reader.Decode((Bitmap)pictureBox1.Image);
+                timer1.Stop();
+                string decoded = result.ToString().Trim();
+
+                MessageBox.Show("Success");
+                DecodeID=decoded;
+                if (FinalFrame.IsRunning == true)
                 {
-                    var lastInputInfo = new LastInputInfo();
-                    lastInputInfo.CbSize = Marshal.SizeOf(lastInputInfo);
-                    GetLastInputInfo(ref lastInputInfo);
-                    uint elapsedMilliseconds = (uint)Environment.TickCount - lastInputInfo.DwTime;
-                    elapsedMilliseconds = Math.Min(elapsedMilliseconds, int.MaxValue);
-                    return TimeSpan.FromMilliseconds(elapsedMilliseconds);
+                    FinalFrame.Stop();
+                    this.Dispose();
+                    pictureBox1.Image = null;
+                    comboBox1.SelectedIndex = -1;
+                    
                 }
             }
-
-            public async Task WaitForInactivity(TimeSpan inactivityThreshold, TimeSpan checkInterval, CancellationToken cancel)
+            catch (Exception)
             {
-                while (true)
-                {
-                    await Task.Delay(checkInterval, cancel);
-
-                    if (InactivityPeriod > inactivityThreshold)
-                        return;
-                }
+                timer1.Start();
+                //timer1.Stop();
+                //MessageBox.Show("No code detected");
             }
-
-            // ReSharper disable UnaccessedField.Local
-            /// <summary>Struct used by Windows API function GetLastInputInfo()</summary>
-
-            struct LastInputInfo
-            {
-#pragma warning disable 649
-                public int CbSize;
-                public uint DwTime;
-#pragma warning restore 649
-            }
-
-            // ReSharper restore UnaccessedField.Local
-
-            [DllImport("user32.dll")]
-            [return: MarshalAs(UnmanagedType.Bool)]
-            static extern bool GetLastInputInfo(ref LastInputInfo plii);
-        }
-        readonly UserActivityMonitor _monitor = new UserActivityMonitor();
-
-        protected override async void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
-            MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            frmLogin rs = new frmLogin();
-            rs.ShowDialog();
-            this.Close();
-        }
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
-        private void FrmScanQR_Load(object sender, EventArgs e)
+        private void btnScan_Click(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
     }
 }
