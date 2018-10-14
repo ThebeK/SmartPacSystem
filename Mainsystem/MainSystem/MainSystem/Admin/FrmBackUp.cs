@@ -93,5 +93,10 @@ namespace MainSystem.Admin
         {
             Process.Start(@".\" + "BackupRestore.pdf");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
