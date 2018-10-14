@@ -244,6 +244,12 @@
     <Compile Include="Order\frmPOLine.Designer.cs">
       <DependentUpon>frmPOLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSearchPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchPO.Designer.cs">
+      <DependentUpon>frmSearchPO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pack_Size.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -806,6 +812,9 @@
     <EmbeddedResource Include="Order\frmPOLine.resx">
       <DependentUpon>frmPOLine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchPO.resx">
+      <DependentUpon>frmSearchPO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartUp\FrmFirstTimeStartup.resx">
       <DependentUpon>FrmFirstTimeStartup.cs</DependentUpon>
     </EmbeddedResource>
@@ -977,6 +986,8 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Client.datasource" />
+    <None Include="Get_Credit_Return_Line_Result.datasource" />
+    <None Include="Load_Credit_Return_Result.datasource" />
     <None Include="Load_Purcase_Order_Line_Result.datasource" />
     <None Include="Load_Purchase_Order_1_Result.datasource" />
     <None Include="Load_Purchase_Order_Result.datasource" />

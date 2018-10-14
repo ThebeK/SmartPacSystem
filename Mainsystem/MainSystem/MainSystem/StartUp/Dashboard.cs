@@ -333,10 +333,10 @@ namespace MainSystem
 
         private void generateCreditRetunrToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Order.FrmCreditReturn tgv = new Order.FrmCreditReturn();
-            tgv.ShowDialog();
-            this.Show();
-            this.Activate();
+            Order.frmSearchPO tgv = new Order.frmSearchPO();
+            //tgv.ShowDialog();
+            tgv.Show();
+            //this.Activate();
         }
 
         private void generatePurchaseOrderToolStripMenuItem1_Click(object sender, EventArgs e)
