@@ -45,10 +45,10 @@
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -243,6 +243,12 @@
     </Compile>
     <Compile Include="Order\frmPOLine.Designer.cs">
       <DependentUpon>frmPOLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchPO.Designer.cs">
+      <DependentUpon>frmSearchPO.cs</DependentUpon>
     </Compile>
     <Compile Include="Pack_Size.cs">
       <DependentUpon>SP.tt</DependentUpon>
@@ -800,6 +806,9 @@
     <EmbeddedResource Include="Order\frmPOLine.resx">
       <DependentUpon>frmPOLine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchPO.resx">
+      <DependentUpon>frmSearchPO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartUp\FrmFirstTimeStartup.resx">
       <DependentUpon>FrmFirstTimeStartup.cs</DependentUpon>
     </EmbeddedResource>
@@ -968,6 +977,8 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Client.datasource" />
+    <None Include="Get_Credit_Return_Line_Result.datasource" />
+    <None Include="Load_Credit_Return_Result.datasource" />
     <None Include="Load_Purcase_Order_Line_Result.datasource" />
     <None Include="Load_Purchase_Order_1_Result.datasource" />
     <None Include="Load_Purchase_Order_Result.datasource" />
