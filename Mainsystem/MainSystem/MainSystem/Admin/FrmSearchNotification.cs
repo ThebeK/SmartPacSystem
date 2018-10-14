@@ -89,8 +89,8 @@ namespace MainSystem.Admin
 
             if (option == "Maintain Notification")
             {
-                frmPublishSms myform = new frmPublishSms(val);
-                myform.ShowDialog();
+                //frmPublishSms myform = new frmPublishSms(val);
+                //myform.ShowDialog();
                 dataGridView1.DataSource = db.Email_Notice_Template.ToList();
             }
         }
