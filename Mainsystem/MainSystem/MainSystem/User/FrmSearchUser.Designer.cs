@@ -61,7 +61,7 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 20);
+            this.label2.Size = new System.Drawing.Size(246, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Specify Users Name";
             // 
@@ -106,7 +106,7 @@
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label13.Location = new System.Drawing.Point(277, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(181, 34);
+            this.label13.Size = new System.Drawing.Size(196, 34);
             this.label13.TabIndex = 25;
             this.label13.Text = "Search Users";
             // 
@@ -121,6 +121,7 @@
             this.btnMaintain.TabIndex = 33;
             this.btnMaintain.Text = "Maintain";
             this.btnMaintain.UseVisualStyleBackColor = false;
+            this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
             // 
             // label3
             // 
@@ -129,7 +130,7 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(352, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(284, 20);
+            this.label3.Size = new System.Drawing.Size(293, 20);
             this.label3.TabIndex = 32;
             this.label3.Text = "Please specify valid Users Name";
             this.label3.Visible = false;
@@ -141,6 +142,7 @@
             this.dgvClientSearch.Name = "dgvClientSearch";
             this.dgvClientSearch.Size = new System.Drawing.Size(414, 150);
             this.dgvClientSearch.TabIndex = 31;
+            this.dgvClientSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientSearch_CellContentClick);
             // 
             // btnSearch
             // 
@@ -153,6 +155,7 @@
             this.btnSearch.TabIndex = 30;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchSale
             // 

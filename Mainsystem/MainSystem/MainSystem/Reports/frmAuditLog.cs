@@ -82,13 +82,13 @@ namespace MainSystem
         }
         private void btnAddProdType_Click(object sender, EventArgs e)
         {
-            Users.FrmAddUser rr = new Users.FrmAddUser();
+            Users.FrmAddUser rr = new Users.FrmAddUser("Maintain Access Level");
             rr.ShowDialog();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Users.FrmSearchUser rr = new Users.FrmSearchUser();
+            Users.FrmSearchUser rr = new Users.FrmSearchUser("Maintain Access Level");
             rr.ShowDialog();
         }
 

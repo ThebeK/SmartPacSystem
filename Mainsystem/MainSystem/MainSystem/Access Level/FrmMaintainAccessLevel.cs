@@ -91,7 +91,6 @@ namespace MainSystem.AccessLevel
             toolTip1.SetToolTip(this.txtAccessName, "Please enter access name");
             toolTip1.SetToolTip(this.btnDelete, "Click to remove access level");
             toolTip1.SetToolTip(this.btnUpdate, "Click to edit access level");
-
             var query = db.Access_Level.Where(co => co.Access_Level_Id == AccessId).FirstOrDefault();
             var mark = db.User_Role.Where(co => co.User_Role_Id == query.Access_Level_Id).FirstOrDefault();
 
@@ -108,7 +107,7 @@ namespace MainSystem.AccessLevel
             cbxSaleScreen.Checked = query.User_Role.Sale_Role;
             cbxVehicleScreen.Checked = query.User_Role.Vehicle_Role;
 
-          
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
