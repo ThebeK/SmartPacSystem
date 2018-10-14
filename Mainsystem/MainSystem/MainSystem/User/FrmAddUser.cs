@@ -85,6 +85,7 @@ namespace MainSystem.Users
             await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
             MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLogin rs = new frmLogin();
+            this.Hide();
             rs.ShowDialog();
             this.Close();
         }
@@ -198,11 +199,33 @@ namespace MainSystem.Users
                             MessageBox.Show("" + ex);
                         }
 
-
+                        Active_User newuser = new Active_User();
 
                         MessageBox.Show("User successfully registered!");
                         this.Hide();
                         this.Close();
+                        //Audit Log
+                        int accessidz = newuser.Active_User_Id;
+                        string user_Value = Convert.ToString(newuser);
+
+                        Audit_Log Current_Audit6 = new Audit_Log();
+                        Current_Audit6.Table_Name = "User";
+                        // Current_Audit3.Users_Id = Globals.Users_Id;
+                        Current_Audit6.Date_Time = DateTime.Now;
+                        db.Audit_Log.Add(Current_Audit6);
+                        db.SaveChanges();
+                        int Log_ID6 = Current_Audit6.Audit_Log_Id;
+
+
+                        Audit_Create_Delete Current_Create6 = new Audit_Create_Delete();
+                        Current_Create6.Audit_Log_Id = Log_ID6;
+                        Current_Create6.Created = true;
+                        Current_Create6.PK_Row_Effected = accessidz;
+                        Current_Create6.Value = user_Value;
+                        db.Audit_Create_Delete.Add(Current_Create6);
+                        db.SaveChanges();
+                        this.Close();
+                        this.Hide();
 
                     }
 
