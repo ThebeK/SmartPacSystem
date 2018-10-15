@@ -13,6 +13,7 @@ namespace MainSystem
 {
     class clsGlobals
     {
+        public static int saleID = 0;
         public static User_Role LoggedinUser;
         public static Active_User Userlogin;
 

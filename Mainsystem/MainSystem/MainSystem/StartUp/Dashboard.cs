@@ -96,7 +96,7 @@ namespace MainSystem
 
         private void searchSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearchSale ab = new frmSearchSale();
+            frmSearchSale ab = new frmSearchSale(0);
             ab.ShowDialog();
             
             this.Show();

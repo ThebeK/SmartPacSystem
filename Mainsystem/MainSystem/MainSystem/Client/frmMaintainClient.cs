@@ -113,6 +113,8 @@ namespace MainSystem
         bool correct;
         private void button2_Click(object sender, EventArgs e)
         {
+            correct = true;
+
             if (txtName.Text == "" || txtVatRegNum.Text == "" || txtTelephone.Text == "" || txtFaxNumber.Text == "" || txtEmailAdd.Text == "" || txtPhysicalAdd.Text == "")
             {
                 MessageBox.Show("Please enter all fields!");

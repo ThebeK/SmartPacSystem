@@ -312,6 +312,20 @@
     <Compile Include="Sale.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sales\frmASale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frmASale.designer.cs">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frmReport.designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SaleLine.cs" />
+    <Compile Include="Sales\SaleReturn.cs" />
     <Compile Include="Sales_Order_line.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -661,22 +675,16 @@
     <Compile Include="Product\Widths\FrmSearchWidth.Designer.cs">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\frmASale.cs">
+    <Compile Include="Sales\frmRefundSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\frmASale.Designer.cs">
-      <DependentUpon>frmASale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sale\frmRefundSale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sale\frmRefundSale.Designer.cs">
+    <Compile Include="Sales\frmRefundSale.Designer.cs">
       <DependentUpon>frmRefundSale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\frmSearchSale.cs">
+    <Compile Include="Sales\frmSearchSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\frmSearchSale.Designer.cs">
+    <Compile Include="Sales\frmSearchSale.Designer.cs">
       <DependentUpon>frmSearchSale.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -834,6 +842,12 @@
     <EmbeddedResource Include="frmSearchPO.resx">
       <DependentUpon>frmSearchPO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sales\frmASale.resx">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartUp\FrmFirstTimeStartup.resx">
       <DependentUpon>FrmFirstTimeStartup.cs</DependentUpon>
     </EmbeddedResource>
@@ -957,13 +971,10 @@
     <EmbeddedResource Include="Product\Widths\FrmSearchWidth.resx">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\frmASale.resx">
-      <DependentUpon>frmASale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sale\frmRefundSale.resx">
+    <EmbeddedResource Include="Sales\frmRefundSale.resx">
       <DependentUpon>frmRefundSale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\frmSearchSale.resx">
+    <EmbeddedResource Include="Sales\frmSearchSale.resx">
       <DependentUpon>frmSearchSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -1015,6 +1026,7 @@
     <None Include="Pack_Size.datasource" />
     <None Include="pLength.datasource" />
     <None Include="Ply.datasource" />
+    <None Include="Product.datasource" />
     <None Include="Product_Brand.datasource" />
     <None Include="Product_Type.datasource" />
     <None Include="Properties\Settings.settings">

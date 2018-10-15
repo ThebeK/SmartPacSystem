@@ -39,7 +39,7 @@
             this.btnRefundSale = new System.Windows.Forms.Button();
             this.txtSearchSale = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSale = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchSale)).BeginInit();
@@ -160,17 +160,18 @@
             this.btnSearch.TabIndex = 11;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // label3
+            // lblSale
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(247, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(244, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Please specify valid SaleID";
-            this.label3.Visible = false;
+            this.lblSale.AutoSize = true;
+            this.lblSale.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSale.Location = new System.Drawing.Point(247, 79);
+            this.lblSale.Name = "lblSale";
+            this.lblSale.Size = new System.Drawing.Size(244, 20);
+            this.lblSale.TabIndex = 12;
+            this.lblSale.Text = "Please specify valid SaleID";
+            this.lblSale.Visible = false;
             // 
             // frmSearchSale
             // 
@@ -178,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(948, 351);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSale);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchSale);
             this.Controls.Add(this.panel1);
@@ -213,7 +214,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearchSale;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSale;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnRefundSale;

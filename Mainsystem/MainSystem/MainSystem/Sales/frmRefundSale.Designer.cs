@@ -47,9 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvProdSale = new System.Windows.Forms.DataGridView();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dgvProdAdjustment = new System.Windows.Forms.DataGridView();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtSale = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -58,8 +58,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDQuantity)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdSale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdAdjustment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,6 +190,7 @@
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // numUDQuantity
             // 
@@ -257,11 +258,12 @@
             this.button2.TabIndex = 61;
             this.button2.Text = "Proceed";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.dgvProdSale);
+            this.groupBox2.Controls.Add(this.dgv1);
             this.groupBox2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(140, 120);
             this.groupBox2.Name = "groupBox2";
@@ -270,19 +272,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Products for sale ";
             // 
-            // dgvProdSale
+            // dgv1
             // 
-            this.dgvProdSale.AllowUserToAddRows = false;
-            this.dgvProdSale.AllowUserToDeleteRows = false;
-            this.dgvProdSale.AllowUserToResizeColumns = false;
-            this.dgvProdSale.AllowUserToResizeRows = false;
-            this.dgvProdSale.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProdSale.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvProdSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdSale.Location = new System.Drawing.Point(31, 23);
-            this.dgvProdSale.Name = "dgvProdSale";
-            this.dgvProdSale.Size = new System.Drawing.Size(481, 124);
-            this.dgvProdSale.TabIndex = 3;
+            this.dgv1.AllowUserToAddRows = false;
+            this.dgv1.AllowUserToDeleteRows = false;
+            this.dgv1.AllowUserToResizeColumns = false;
+            this.dgv1.AllowUserToResizeRows = false;
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(31, 23);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(481, 124);
+            this.dgv1.TabIndex = 3;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
+            this.dgv1.SelectionChanged += new System.EventHandler(this.dgv1_SelectionChanged);
             // 
             // btnDelete
             // 
@@ -294,21 +298,22 @@
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Remove";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // dgvProdAdjustment
+            // dgv2
             // 
-            this.dgvProdAdjustment.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvProdAdjustment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdAdjustment.Location = new System.Drawing.Point(22, 24);
-            this.dgvProdAdjustment.Name = "dgvProdAdjustment";
-            this.dgvProdAdjustment.Size = new System.Drawing.Size(481, 133);
-            this.dgvProdAdjustment.TabIndex = 3;
+            this.dgv2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Location = new System.Drawing.Point(22, 24);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.Size = new System.Drawing.Size(481, 133);
+            this.dgv2.TabIndex = 3;
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.btnDelete);
-            this.groupBox3.Controls.Add(this.dgvProdAdjustment);
+            this.groupBox3.Controls.Add(this.dgv2);
             this.groupBox3.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(140, 281);
             this.groupBox3.Name = "groupBox3";
@@ -343,6 +348,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRefundSale";
             this.Text = "frmRefundSale";
+            this.Load += new System.EventHandler(this.frmRefundSale_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -352,8 +358,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDQuantity)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdSale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdAdjustment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -380,9 +386,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvProdSale;
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridView dgvProdAdjustment;
+        private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtSale;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -377,9 +377,9 @@
             this.btnDownload.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDownload.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDownload.Location = new System.Drawing.Point(1006, 518);
+            this.btnDownload.Location = new System.Drawing.Point(1065, 500);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(238, 27);
+            this.btnDownload.Size = new System.Drawing.Size(169, 62);
             this.btnDownload.TabIndex = 25;
             this.btnDownload.Text = "Download credit approval";
             this.btnDownload.UseVisualStyleBackColor = false;
@@ -391,7 +391,7 @@
             this.btnDeleteClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDeleteClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDeleteClient.Location = new System.Drawing.Point(827, 518);
+            this.btnDeleteClient.Location = new System.Drawing.Point(888, 518);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(157, 27);
             this.btnDeleteClient.TabIndex = 17;
@@ -624,7 +624,7 @@
             this.btnUpdateClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnUpdateClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnUpdateClient.Location = new System.Drawing.Point(632, 518);
+            this.btnUpdateClient.Location = new System.Drawing.Point(681, 518);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(170, 27);
             this.btnUpdateClient.TabIndex = 22;
