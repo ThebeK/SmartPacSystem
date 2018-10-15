@@ -184,11 +184,35 @@
     <Compile Include="Employee.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Employee\FrmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\FrmAddEmployee.designer.cs">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\FrmMaintainEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\FrmMaintainEmployee.designer.cs">
+      <DependentUpon>FrmMaintainEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee_Logsheet.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee_Type.cs">
       <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmCamera.designer.cs">
+      <DependentUpon>frmCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\FrmMaintainCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\FrmMaintainCamera.designer.cs">
+      <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </Compile>
     <Compile Include="GetAddress_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
@@ -220,6 +244,7 @@
     <Compile Include="Get_Credit_Return_Line_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Load_Client_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -366,12 +391,6 @@
       <DependentUpon>FrmUpdateCompanyInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="clsGlobals.cs" />
-    <Compile Include="Employee\FrmAddEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\FrmAddEmployee.Designer.cs">
-      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="Employee\FrmAddEmployeeType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,12 +402,6 @@
     </Compile>
     <Compile Include="Employee\FrmEmployeeSignInSignOut.Designer.cs">
       <DependentUpon>FrmEmployeeSignInSignOut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\FrmMaintainEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\FrmMaintainEmployee.Designer.cs">
-      <DependentUpon>FrmMaintainEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee\FrmMaintainEmployeeType.cs">
       <SubType>Form</SubType>
@@ -809,6 +822,12 @@
     <EmbeddedResource Include="Employee\FrmSearchEmployeeType.resx">
       <DependentUpon>FrmSearchEmployeeType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmCamera.resx">
+      <DependentUpon>frmCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\FrmMaintainCamera.resx">
+      <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Order\frmPOLine.resx">
       <DependentUpon>frmPOLine.cs</DependentUpon>
     </EmbeddedResource>
@@ -986,6 +1005,7 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Client.datasource" />
+    <None Include="Employee_Type.datasource" />
     <None Include="Get_Credit_Return_Line_Result.datasource" />
     <None Include="Load_Credit_Return_Result.datasource" />
     <None Include="Load_Purcase_Order_Line_Result.datasource" />

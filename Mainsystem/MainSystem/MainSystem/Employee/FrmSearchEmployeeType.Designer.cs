@@ -63,7 +63,7 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 20);
+            this.label2.Size = new System.Drawing.Size(391, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Specify Employees Type Description";
             // 
@@ -109,7 +109,7 @@
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label13.Location = new System.Drawing.Point(277, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(329, 34);
+            this.label13.Size = new System.Drawing.Size(344, 34);
             this.label13.TabIndex = 25;
             this.label13.Text = "Search Employees Type";
             // 
@@ -133,7 +133,7 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(434, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(429, 20);
+            this.label3.Size = new System.Drawing.Size(438, 20);
             this.label3.TabIndex = 32;
             this.label3.Text = "Please specify valid Employees Type Description";
             this.label3.Visible = false;
@@ -141,9 +141,9 @@
             // dgvClientSearch
             // 
             this.dgvClientSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientSearch.Location = new System.Drawing.Point(433, 139);
+            this.dgvClientSearch.Location = new System.Drawing.Point(480, 138);
             this.dgvClientSearch.Name = "dgvClientSearch";
-            this.dgvClientSearch.Size = new System.Drawing.Size(414, 150);
+            this.dgvClientSearch.Size = new System.Drawing.Size(245, 150);
             this.dgvClientSearch.TabIndex = 31;
             // 
             // btnSearch
@@ -157,6 +157,7 @@
             this.btnSearch.TabIndex = 30;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchEmployeeType
             // 
@@ -164,6 +165,7 @@
             this.txtSearchEmployeeType.Name = "txtSearchEmployeeType";
             this.txtSearchEmployeeType.Size = new System.Drawing.Size(387, 20);
             this.txtSearchEmployeeType.TabIndex = 29;
+            this.txtSearchEmployeeType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchEmployeeType_KeyPress);
             // 
             // FrmSearchEmployeeType
             // 
