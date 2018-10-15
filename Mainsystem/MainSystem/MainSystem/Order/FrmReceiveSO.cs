@@ -63,14 +63,14 @@ namespace MainSystem
         {
 
 
-            newBOL = new Backorder_Line()
-            {
-                Quantity_Received = Convert.ToInt32(textBox3.Text),
-                Supplier_Order_Line_ID = Convert.ToInt32(textBox2.Text),
-                Supplier_Backorder_ID = newBO.Supplier_Backorder_Id
-            };
-            db.Backorder_Line.Add(newBOL);
-            db.SaveChanges();
+            //newBOL = new Backorder_Line()
+            //{
+            //    Quantity_Received = Convert.ToInt32(textBox3.Text),
+            //    Supplier_Order_Line_ID = Convert.ToInt32(textBox2.Text),
+            //    Supplier_Backorder_ID = newBO.Supplier_Backorder_Id
+            //};
+            //db.Backorder_Line.Add(newBOL);
+            //db.SaveChanges();
             //dataGridView2.DataSource = db.GetBOL(newBO.Supplier_Backorder_Id).ToList();
 
         }
@@ -88,9 +88,9 @@ namespace MainSystem
 
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow r = this.dataGridView2.Rows[e.RowIndex];
+            //DataGridViewRow r = this.dataGridView2.Rows[e.RowIndex];
 
-            textBox2.Text = r.Cells[0].Value.ToString();
+            //textBox2.Text = r.Cells[0].Value.ToString();
 
         }
 
@@ -101,8 +101,33 @@ namespace MainSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            
 
+            
+
+                
+
+
+
+
+            
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                string product = r.Cells[1].Value.ToString();
+                var q = db.Products.Where(x => x.Product_Description == product).First();
+                int w = Convert.ToInt32(q.Available_Quantity);
+
+                q.Available_Quantity += Convert.ToInt32(r.Cells[2].Value);
+                db.SaveChanges();
+
+
+            }
+            tabControl1.SelectedIndex = 1;
             List<SOSummary> mylist = new List<SOSummary>();
             DataGridViewRow row = new DataGridViewRow();
             dataGridView3.Rows.Clear();
@@ -113,18 +138,19 @@ namespace MainSystem
 
                 if (Convert.ToInt32(dataGridView1.Rows[i].Cells["received"].Value) == 1)
                 {
-                    //row = (DataGridViewRow)dataGridView1.Rows[i].Clone();
-                    //int intColIndex = 0;
-                    //foreach (DataGridViewCell cell in dataGridView1.Rows[i].Cells)
-                    //{
-                    //    row.Cells[intColIndex].Value = cell.Value;
-                    //    intColIndex++;
-                    //}
+                    row = (DataGridViewRow)dataGridView1.Rows[i].Clone();
+                    int intColIndex = 0;
+                    foreach (DataGridViewCell cell in dataGridView1.Rows[i].Cells)
+                    {
+                        row.Cells[intColIndex].Value = cell.Value;
+                        intColIndex++;
+                    }
 
-                    //dataGridView2.Rows.Add(row);
+                    dataGridView2.Rows.Add(row);
+                    dataGridView2.AllowUserToAddRows = false;
+                    dataGridView2.Refresh();
 
-                    //dataGridView2.AllowUserToAddRows = false;
-                    //dataGridView2.Refresh();
+
 
                 }
                 else if (Convert.ToInt32(dataGridView1.Rows[i].Cells["received"].Value) == 0)
@@ -139,28 +165,17 @@ namespace MainSystem
 
                     dataGridView3.Rows.Add(row);
 
-                    //dataGridView3.AllowUserToAddRows = false;
+                    dataGridView3.AllowUserToAddRows = false;
                     dataGridView3.Refresh();
-
+                    
                 }
 
 
 
 
             }
-            foreach (DataGridViewRow item in dataGridView1.Rows)
-            {
-                SOSummary sos = new SOSummary();
-                sos.LineID = Convert.ToInt32(item.Cells[0].Value);
-                sos.Product = item.Cells[1].Value.ToString();
-                sos.Qty = Convert.ToInt32(item.Cells[2].Value);
-                sos.SONumbuer = item.Cells[3].Value.ToString();
-                sos.Received = Convert.ToInt32(item.Cells[4].Value);
-                mylist.Add(sos);
-            }
+            
 
-            newBO.Backorder_Date = DateTime.Today;
-            db.Supplier_Backorder.Add(newBO);
         }
     }
 }
