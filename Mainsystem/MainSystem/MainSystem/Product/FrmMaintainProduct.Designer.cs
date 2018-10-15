@@ -600,6 +600,7 @@
             // 
             // txtQuantity
             // 
+            this.txtQuantity.Enabled = false;
             this.txtQuantity.Location = new System.Drawing.Point(167, 89);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(140, 27);

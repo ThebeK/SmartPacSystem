@@ -218,6 +218,30 @@
     <Compile Include="Employee\FrmMaintainCamera.designer.cs">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmASale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmASale.designer.cs">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRefundSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRefundSale.designer.cs">
+      <DependentUpon>frmRefundSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchSale.designer.cs">
+      <DependentUpon>frmSearchSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchSO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +346,8 @@
     <Compile Include="Sale.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="SaleLine.cs" />
+    <Compile Include="SaleReturn.cs" />
     <Compile Include="Sales_Order_line.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -678,24 +704,6 @@
     <Compile Include="Product\Widths\FrmSearchWidth.Designer.cs">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\frmASale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sale\frmASale.Designer.cs">
-      <DependentUpon>frmASale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sale\frmRefundSale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sale\frmRefundSale.Designer.cs">
-      <DependentUpon>frmRefundSale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sale\frmSearchSale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sale\frmSearchSale.Designer.cs">
-      <DependentUpon>frmSearchSale.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartUp\frmHelp.cs">
@@ -845,6 +853,18 @@
     <EmbeddedResource Include="Employee\FrmMaintainCamera.resx">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmASale.resx">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRefundSale.resx">
+      <DependentUpon>frmRefundSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchSale.resx">
+      <DependentUpon>frmSearchSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSearchSO.resx">
       <DependentUpon>frmSearchSO.cs</DependentUpon>
     </EmbeddedResource>
@@ -980,15 +1000,6 @@
     <EmbeddedResource Include="Product\Widths\FrmSearchWidth.resx">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\frmASale.resx">
-      <DependentUpon>frmASale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sale\frmRefundSale.resx">
-      <DependentUpon>frmRefundSale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sale\frmSearchSale.resx">
-      <DependentUpon>frmSearchSale.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1036,6 +1047,7 @@
     <None Include="Load_Purchase_Order_Result.datasource" />
     <None Include="Load_Supplier_Order_Result1.datasource" />
     <None Include="packages.config" />
+    <None Include="Product1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1114,6 +1126,9 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sale\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

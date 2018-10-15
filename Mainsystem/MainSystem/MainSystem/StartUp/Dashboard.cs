@@ -98,7 +98,7 @@ namespace MainSystem
         {
             frmSearchSale ab = new frmSearchSale(0);
             ab.ShowDialog();
-            
+
             this.Show();
             this.Activate();
 
