@@ -185,6 +185,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.BackColor = System.Drawing.Color.Silver;
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(12, 119);
             this.treeView1.Name = "treeView1";

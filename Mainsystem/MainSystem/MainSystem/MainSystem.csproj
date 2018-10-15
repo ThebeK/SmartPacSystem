@@ -45,10 +45,10 @@
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -74,7 +74,11 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -214,6 +218,12 @@
     <Compile Include="Employee\FrmMaintainCamera.designer.cs">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSearchSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchSO.Designer.cs">
+      <DependentUpon>frmSearchSO.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetAddress_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -312,20 +322,6 @@
     <Compile Include="Sale.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Sales\frmASale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sales\frmASale.designer.cs">
-      <DependentUpon>frmASale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sales\frmReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sales\frmReport.designer.cs">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sales\SaleLine.cs" />
-    <Compile Include="Sales\SaleReturn.cs" />
     <Compile Include="Sales_Order_line.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -335,6 +331,13 @@
     <Compile Include="Sheet.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="SmartPacDash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmartPacDash.designer.cs">
+      <DependentUpon>SmartPacDash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SOSummary.cs" />
     <Compile Include="SP.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -675,16 +678,22 @@
     <Compile Include="Product\Widths\FrmSearchWidth.Designer.cs">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales\frmRefundSale.cs">
+    <Compile Include="Sale\frmASale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sales\frmRefundSale.Designer.cs">
+    <Compile Include="Sale\frmASale.Designer.cs">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\frmRefundSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\frmRefundSale.Designer.cs">
       <DependentUpon>frmRefundSale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales\frmSearchSale.cs">
+    <Compile Include="Sale\frmSearchSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sales\frmSearchSale.Designer.cs">
+    <Compile Include="Sale\frmSearchSale.Designer.cs">
       <DependentUpon>frmSearchSale.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -836,17 +845,17 @@
     <EmbeddedResource Include="Employee\FrmMaintainCamera.resx">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchSO.resx">
+      <DependentUpon>frmSearchSO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Order\frmPOLine.resx">
       <DependentUpon>frmPOLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchPO.resx">
       <DependentUpon>frmSearchPO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sales\frmASale.resx">
-      <DependentUpon>frmASale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sales\frmReport.resx">
-      <DependentUpon>frmReport.cs</DependentUpon>
+    <EmbeddedResource Include="SmartPacDash.resx">
+      <DependentUpon>SmartPacDash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartUp\FrmFirstTimeStartup.resx">
       <DependentUpon>FrmFirstTimeStartup.cs</DependentUpon>
@@ -971,10 +980,13 @@
     <EmbeddedResource Include="Product\Widths\FrmSearchWidth.resx">
       <DependentUpon>FrmSearchWidth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sales\frmRefundSale.resx">
+    <EmbeddedResource Include="Sale\frmASale.resx">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\frmRefundSale.resx">
       <DependentUpon>frmRefundSale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sales\frmSearchSale.resx">
+    <EmbeddedResource Include="Sale\frmSearchSale.resx">
       <DependentUpon>frmSearchSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -1022,13 +1034,8 @@
     <None Include="Load_Purcase_Order_Line_Result.datasource" />
     <None Include="Load_Purchase_Order_1_Result.datasource" />
     <None Include="Load_Purchase_Order_Result.datasource" />
+    <None Include="Load_Supplier_Order_Result1.datasource" />
     <None Include="packages.config" />
-    <None Include="Pack_Size.datasource" />
-    <None Include="pLength.datasource" />
-    <None Include="Ply.datasource" />
-    <None Include="Product.datasource" />
-    <None Include="Product_Brand.datasource" />
-    <None Include="Product_Type.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1042,12 +1049,10 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SP.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Sheet.datasource" />
     <None Include="SP.edmx.diagram">
       <DependentUpon>SP.edmx</DependentUpon>
     </None>
     <None Include="Vehicle_Status.datasource" />
-    <None Include="Width.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
