@@ -59,7 +59,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnViewCreditApproval = new System.Windows.Forms.Button();
             this.txtCreditAmount = new System.Windows.Forms.TextBox();
             this.cbxAccountStatus = new System.Windows.Forms.ComboBox();
             this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,6 +73,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnViewCreditApproval = new System.Windows.Forms.Button();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
@@ -393,6 +393,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnAddClient);
+            this.groupBox5.Controls.Add(this.btnViewCreditApproval);
             this.groupBox5.Controls.Add(this.txtCreditAmount);
             this.groupBox5.Controls.Add(this.cbxAccountStatus);
             this.groupBox5.Controls.Add(this.label16);
@@ -406,25 +408,11 @@
             this.groupBox5.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox5.Location = new System.Drawing.Point(663, 65);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(613, 389);
+            this.groupBox5.Size = new System.Drawing.Size(613, 548);
             this.groupBox5.TabIndex = 16;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Credit Approval Information";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
-            // 
-            // btnViewCreditApproval
-            // 
-            this.btnViewCreditApproval.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnViewCreditApproval.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnViewCreditApproval.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewCreditApproval.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnViewCreditApproval.Location = new System.Drawing.Point(975, 528);
-            this.btnViewCreditApproval.Name = "btnViewCreditApproval";
-            this.btnViewCreditApproval.Size = new System.Drawing.Size(207, 46);
-            this.btnViewCreditApproval.TabIndex = 17;
-            this.btnViewCreditApproval.Text = "View Credit Approval";
-            this.btnViewCreditApproval.UseVisualStyleBackColor = false;
-            this.btnViewCreditApproval.Click += new System.EventHandler(this.btnViewCreditApproval_Click);
             // 
             // txtCreditAmount
             // 
@@ -570,15 +558,29 @@
             this.label11.Text = "Credit Approval Amount:";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
+            // btnViewCreditApproval
+            // 
+            this.btnViewCreditApproval.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnViewCreditApproval.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnViewCreditApproval.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewCreditApproval.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnViewCreditApproval.Location = new System.Drawing.Point(337, 470);
+            this.btnViewCreditApproval.Name = "btnViewCreditApproval";
+            this.btnViewCreditApproval.Size = new System.Drawing.Size(207, 46);
+            this.btnViewCreditApproval.TabIndex = 17;
+            this.btnViewCreditApproval.Text = "View Credit Approval";
+            this.btnViewCreditApproval.UseVisualStyleBackColor = false;
+            this.btnViewCreditApproval.Click += new System.EventHandler(this.btnViewCreditApproval_Click);
+            // 
             // btnAddClient
             // 
             this.btnAddClient.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAddClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAddClient.Location = new System.Drawing.Point(805, 528);
+            this.btnAddClient.Location = new System.Drawing.Point(107, 470);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(145, 49);
+            this.btnAddClient.Size = new System.Drawing.Size(145, 46);
             this.btnAddClient.TabIndex = 18;
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.UseVisualStyleBackColor = false;
@@ -594,14 +596,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1276, 625);
-            this.Controls.Add(this.btnViewCreditApproval);
-            this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddClient";
             this.Text = "frmAddClient";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAddClient_Load);
             this.panel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

@@ -246,7 +246,19 @@ namespace MainSystem
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            
             LoadAccess();
+
+            SmartPacDash Dash = new SmartPacDash(0);
+
+            Dash.TopLevel = false;
+            Dash.AutoScroll = true;
+            this.panel1.Controls.Add(Dash);
+            Dash.BringToFront();
+            Dash.Dock = DockStyle.Fill;
+            Dash.Show();
+
+            label1.Text = "Logged in as: " + frmLogin.setvalue;
         }
 
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -409,6 +421,22 @@ namespace MainSystem
         {
             Vehicles.FrmSearchVehicle sv = new Vehicles.FrmSearchVehicle("Maintain Vehicle");
             sv.ShowDialog();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SmartPacDash f = new SmartPacDash(0);
+            f.TopLevel = false;
+            f.AutoScroll = true;
+            this.panel1.Controls.Add(f);
+            f.BringToFront();
+            f.Dock = DockStyle.Fill;
+            f.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

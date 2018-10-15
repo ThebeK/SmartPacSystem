@@ -36,11 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvClientSearch = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearchclient = new System.Windows.Forms.TextBox();
-            this.btnMaintain = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vATRegistrationNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +49,11 @@
             this.creditAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadClientResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearchclient = new System.Windows.Forms.TextBox();
+            this.btnMaintain = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -152,53 +152,6 @@
             this.dgvClientSearch.TabIndex = 2;
             this.dgvClientSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientSearch_CellContentClick);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(191, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(297, 20);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Please specify valid Client Name";
-            this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnSearch.Location = new System.Drawing.Point(888, 57);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(98, 27);
-            this.btnSearch.TabIndex = 14;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearchclient
-            // 
-            this.txtSearchclient.Location = new System.Drawing.Point(190, 57);
-            this.txtSearchclient.Name = "txtSearchclient";
-            this.txtSearchclient.Size = new System.Drawing.Size(692, 20);
-            this.txtSearchclient.TabIndex = 13;
-            this.txtSearchclient.TextChanged += new System.EventHandler(this.txtSearchSale_TextChanged);
-            // 
-            // btnMaintain
-            // 
-            this.btnMaintain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMaintain.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.btnMaintain.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMaintain.Location = new System.Drawing.Point(931, 356);
-            this.btnMaintain.Name = "btnMaintain";
-            this.btnMaintain.Size = new System.Drawing.Size(98, 27);
-            this.btnMaintain.TabIndex = 16;
-            this.btnMaintain.Text = "Maintain";
-            this.btnMaintain.UseVisualStyleBackColor = false;
-            this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -275,6 +228,53 @@
             // 
             this.loadClientResultBindingSource.DataSource = typeof(MainSystem.Load_Client_Result);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(191, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(297, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Please specify valid Client Name";
+            this.label3.Visible = false;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnSearch.Location = new System.Drawing.Point(888, 57);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(98, 27);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearchclient
+            // 
+            this.txtSearchclient.Location = new System.Drawing.Point(190, 57);
+            this.txtSearchclient.Name = "txtSearchclient";
+            this.txtSearchclient.Size = new System.Drawing.Size(692, 20);
+            this.txtSearchclient.TabIndex = 13;
+            this.txtSearchclient.TextChanged += new System.EventHandler(this.txtSearchSale_TextChanged);
+            // 
+            // btnMaintain
+            // 
+            this.btnMaintain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnMaintain.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMaintain.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnMaintain.Location = new System.Drawing.Point(931, 356);
+            this.btnMaintain.Name = "btnMaintain";
+            this.btnMaintain.Size = new System.Drawing.Size(98, 27);
+            this.btnMaintain.TabIndex = 16;
+            this.btnMaintain.Text = "Maintain";
+            this.btnMaintain.UseVisualStyleBackColor = false;
+            this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
+            // 
             // frmSearchClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +291,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSearchClient";
             this.Text = "frmSearchClient";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSearchClient_Load);
             this.Leave += new System.EventHandler(this.frmSearchClient_Leave);
             this.panel1.ResumeLayout(false);

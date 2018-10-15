@@ -35,7 +35,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTelephone = new System.Windows.Forms.TextBox();
@@ -103,11 +102,10 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(657, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(599, 55);
+            this.panel1.Size = new System.Drawing.Size(662, 55);
             this.panel1.TabIndex = 19;
             // 
             // pictureBox2
@@ -153,17 +151,6 @@
             this.button5.TabIndex = 25;
             this.button5.Text = "?";
             this.button5.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label9.Location = new System.Drawing.Point(600, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 34);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Add Client";
             // 
             // label1
             // 
@@ -377,7 +364,7 @@
             this.btnDownload.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDownload.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDownload.Location = new System.Drawing.Point(1006, 518);
+            this.btnDownload.Location = new System.Drawing.Point(1037, 518);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(238, 27);
             this.btnDownload.TabIndex = 25;
@@ -391,7 +378,7 @@
             this.btnDeleteClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDeleteClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDeleteClient.Location = new System.Drawing.Point(827, 518);
+            this.btnDeleteClient.Location = new System.Drawing.Point(858, 518);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(157, 27);
             this.btnDeleteClient.TabIndex = 17;
@@ -624,7 +611,7 @@
             this.btnUpdateClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnUpdateClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnUpdateClient.Location = new System.Drawing.Point(632, 518);
+            this.btnUpdateClient.Location = new System.Drawing.Point(663, 518);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(170, 27);
             this.btnUpdateClient.TabIndex = 22;
@@ -637,7 +624,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1256, 580);
+            this.ClientSize = new System.Drawing.Size(1319, 580);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnUpdateClient);
@@ -647,9 +634,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMaintainClient";
             this.Text = "frmMaintainClient";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMaintainClient_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -678,7 +665,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTelephone;
