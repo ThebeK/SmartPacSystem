@@ -4,84 +4,163 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using System.Net.Mail;
+using MainSystem;
 
-namespace MainSystem.Order
+namespace MainSystem
 {
-    public partial class FrmReceiveSO : Form
+    public partial class frmReceiveSO : Form
     {
-        public FrmReceiveSO()
+        
+        
+        public frmReceiveSO()
         {
             InitializeComponent();
         }
-        public sealed class UserActivityMonitor
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
-            /// <returns>The time of the last user activity.</returns>
 
-            public DateTime LastActivity => DateTime.Now - this.InactivityPeriod;
-
-            /// <summary>The amount of time for which the user has been inactive (no mouse activity or key press).</summary>
-
-            public TimeSpan InactivityPeriod
-            {
-                get
-                {
-                    var lastInputInfo = new LastInputInfo();
-                    lastInputInfo.CbSize = Marshal.SizeOf(lastInputInfo);
-                    GetLastInputInfo(ref lastInputInfo);
-                    uint elapsedMilliseconds = (uint)Environment.TickCount - lastInputInfo.DwTime;
-                    elapsedMilliseconds = Math.Min(elapsedMilliseconds, int.MaxValue);
-                    return TimeSpan.FromMilliseconds(elapsedMilliseconds);
-                }
-            }
-
-            public async Task WaitForInactivity(TimeSpan inactivityThreshold, TimeSpan checkInterval, CancellationToken cancel)
-            {
-                while (true)
-                {
-                    await Task.Delay(checkInterval, cancel);
-
-                    if (InactivityPeriod > inactivityThreshold)
-                        return;
-                }
-            }
-
-            // ReSharper disable UnaccessedField.Local
-            /// <summary>Struct used by Windows API function GetLastInputInfo()</summary>
-
-            struct LastInputInfo
-            {
-#pragma warning disable 649
-                public int CbSize;
-                public uint DwTime;
-#pragma warning restore 649
-            }
-
-            // ReSharper restore UnaccessedField.Local
-
-            [DllImport("user32.dll")]
-            [return: MarshalAs(UnmanagedType.Bool)]
-            static extern bool GetLastInputInfo(ref LastInputInfo plii);
         }
-        readonly UserActivityMonitor _monitor = new UserActivityMonitor();
 
-        protected override async void OnLoad(EventArgs e)
+        private void frmReceiveSO_Load(object sender, EventArgs e)
         {
-            base.OnLoad(e);
-            await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
-            MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            frmLogin rs = new frmLogin();
-            rs.ShowDialog();
-            this.Close();
+            
+            
+            
+            
         }
-        private void FrmReceiveSO_Load(object sender, EventArgs e)
+        SPEntities db = new SPEntities();
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                button4.Enabled = false;
+                frmScanQR scanQR = new frmScanQR();
+                scanQR.Dock = DockStyle.Fill;
+                scanQR.BringToFront();
+                scanQR.ShowDialog();
+                textBox1.Text = scanQR.DecodeID;
+                var q = db.Supplier_Order.Where(so => so.SO_Number == textBox1.Text).FirstOrDefault();
+                dataGridView1.DataSource = db.GetSOL(q.Supplier_Order_Id).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+        Supplier_Backorder newBO = new Supplier_Backorder();
+        
+        Backorder_Line newBOL; 
+        private void button5_Click(object sender, EventArgs e)
         {
 
+
+            newBOL = new Backorder_Line()
+            {
+                Quantity_Received = Convert.ToInt32(textBox3.Text),
+                Supplier_Order_Line_ID = Convert.ToInt32(textBox2.Text),
+                Supplier_Backorder_ID = newBO.Supplier_Backorder_Id
+            };
+            db.Backorder_Line.Add(newBOL);
+            db.SaveChanges();
+            //dataGridView2.DataSource = db.GetBOL(newBO.Supplier_Backorder_Id).ToList();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmSearchSO f = new frmSearchSO();
+            f.ShowDialog();
+            textBox1.Text = frmSearchSO.sonum;
+            f.Close();
+            var q = db.Supplier_Order.Where(so => so.SO_Number == textBox1.Text).FirstOrDefault();
+            dataGridView1.DataSource = db.GetSOL(q.Supplier_Order_Id).ToList();
+
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = this.dataGridView2.Rows[e.RowIndex];
+
+            textBox2.Text = r.Cells[0].Value.ToString();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+
+            List<SOSummary> mylist = new List<SOSummary>();
+            DataGridViewRow row = new DataGridViewRow();
+            dataGridView3.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+
+
+                if (Convert.ToInt32(dataGridView1.Rows[i].Cells["received"].Value) == 1)
+                {
+                    //row = (DataGridViewRow)dataGridView1.Rows[i].Clone();
+                    //int intColIndex = 0;
+                    //foreach (DataGridViewCell cell in dataGridView1.Rows[i].Cells)
+                    //{
+                    //    row.Cells[intColIndex].Value = cell.Value;
+                    //    intColIndex++;
+                    //}
+
+                    //dataGridView2.Rows.Add(row);
+
+                    //dataGridView2.AllowUserToAddRows = false;
+                    //dataGridView2.Refresh();
+
+                }
+                else if (Convert.ToInt32(dataGridView1.Rows[i].Cells["received"].Value) == 0)
+                {
+                    row = (DataGridViewRow)dataGridView1.Rows[i].Clone();
+                    int intColIndex = 0;
+                    foreach (DataGridViewCell cell in dataGridView1.Rows[i].Cells)
+                    {
+                        row.Cells[intColIndex].Value = cell.Value;
+                        intColIndex++;
+                    }
+
+                    dataGridView3.Rows.Add(row);
+
+                    //dataGridView3.AllowUserToAddRows = false;
+                    dataGridView3.Refresh();
+
+                }
+
+
+
+
+            }
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                SOSummary sos = new SOSummary();
+                sos.LineID = Convert.ToInt32(item.Cells[0].Value);
+                sos.Product = item.Cells[1].Value.ToString();
+                sos.Qty = Convert.ToInt32(item.Cells[2].Value);
+                sos.SONumbuer = item.Cells[3].Value.ToString();
+                sos.Received = Convert.ToInt32(item.Cells[4].Value);
+                mylist.Add(sos);
+            }
+
+            newBO.Backorder_Date = DateTime.Today;
+            db.Supplier_Backorder.Add(newBO);
         }
     }
 }

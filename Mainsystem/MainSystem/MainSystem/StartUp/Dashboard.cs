@@ -329,7 +329,7 @@ namespace MainSystem
 
         private void generateDeliveryRouteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Order.FrmRoutePlan gg = new Order.FrmRoutePlan();
+            frmRoutePlan gg = new frmRoutePlan();
             gg.ShowDialog();
             this.Show();
             this.Activate();
@@ -355,7 +355,7 @@ namespace MainSystem
         {
             try
             {
-                Order.FrmReceiveSO f = new Order.FrmReceiveSO();
+                frmReceiveSO f = new frmReceiveSO();
                 f.ShowDialog();
                 this.Show();
                 this.Activate();
