@@ -15,9 +15,28 @@ namespace MainSystem.Employees
 {
     public partial class FrmAddEmployeeType : Form
     {
-        public FrmAddEmployeeType()
+        string option;
+        public FrmAddEmployeeType(string x)
         {
             InitializeComponent();
+            option = x;
+        }
+
+        SPEntities db = new SPEntities();
+        bool correct = false;
+
+        public bool ValidateIfEmployeeTypeExists(string EmployeeTypeDescription)
+        {
+            bool Check = false;
+            foreach (var item in db.Employee_Type)
+            {
+                if (item.Employees_Type_Description == EmployeeTypeDescription)
+                {
+                    Check = true;
+                    break;
+                }
+            }
+            return Check;
         }
         public sealed class UserActivityMonitor
         {
@@ -95,6 +114,69 @@ namespace MainSystem.Employees
             toolTip1.SetToolTip(this.rtxtDescription, "Enter Employees Type/Role");
             toolTip1.SetToolTip(this.btnAdd, "Click to add Employees Type/Role");
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            correct = true;
+            Employee_Type EmT = new Employee_Type();
+
+            try
+            {
+
+                foreach (var item in db.Employee_Type)
+                {
+                    if (item.Employees_Type_Description == rtxtDescription.Text)
+                    {
+                        MessageBox.Show("Employee Type already exists");
+                        correct = false;
+                    }
+                }
+                //if (ValidateIfEmployeeTypeExists(rtxtDescription.Text) == true)
+                //{
+                //    MessageBox.Show("Employee Type already exists");
+                //    correct = false;
+                //}
+
+
+
+                if (rtxtDescription.Text == "")
+                {
+                    lblDescription.Visible = true;
+                    //MessageBox.Show("Please Enter Employee type details");
+                    correct = false;
+                }
+
+                else if (rtxtDescription.Text == "")
+                {
+                    lblDescription.Visible = true;
+                    // MessageBox.Show("Please Enter Employee type details");
+                    correct = false;
+                }
+                else
+                {
+                    correct = true;
+                    EmT.Employees_Type_Description = rtxtDescription.Text;
+                    //EmT.Employees_Type1 = txtEmployeeType.Text;
+
+
+                    db.Employee_Type.Add(EmT);
+
+                    db.SaveChanges();
+
+                    MessageBox.Show("Employee Type Added Successfully");
+                    this.Close();
+                }
+            }
+            catch { }
+        }
+
+        private void rtxtDescription_KeyPress(object sender, KeyPressEventArgs Event)
+        {
+            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
+            {
+                Event.Handled = true;
+            }
         }
     }
 }

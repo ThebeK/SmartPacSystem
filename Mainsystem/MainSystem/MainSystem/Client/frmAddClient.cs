@@ -321,6 +321,7 @@ namespace MainSystem
         {
             Client NewCllient = new Client();
             Credit_Approval NewCA = new Credit_Approval();
+            Credit_Approval Credit_Approval_Form = new Credit_Approval();
             City newCity = new City();
             Credit_Status crStatus = new Credit_Status();
             Client_Account_Status cAS = new Client_Account_Status();
@@ -330,9 +331,15 @@ namespace MainSystem
                 MessageBox.Show("Please enter all fields!");
             }
 
+
+            string path = AppDomain.CurrentDomain.BaseDirectory + "..\\Lopac\\Images\\";
             try
             {
-                NewCA.Credit_Approval_Form = FileData;
+
+
+                //  NewCA.Credit_Approval_Form = Convert.ToString(txtFilePath.Text);
+                // txtFilePath.Text = Convert.ToBase64String(NewCA.Credit_Approval_Form);
+                //  NewCA.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
                 NewCA.Credit_Status_ID = Convert.ToInt32(cbxCreditStatus.SelectedValue);
                 NewCA.Credit_Approval_Amount = Convert.ToInt32(txtCreditAmount.Text);
                 NewCA.Date_Of_Commencement = txtDateTimeDateOfCommencement.Value.Date;

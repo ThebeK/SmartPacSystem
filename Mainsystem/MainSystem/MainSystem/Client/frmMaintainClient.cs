@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MainSystem
 {
@@ -91,6 +92,7 @@ namespace MainSystem
             await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
             MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLogin rs = new frmLogin();
+            this.Hide();
             rs.ShowDialog();
             this.Close();
         }
@@ -117,7 +119,6 @@ namespace MainSystem
                 correct = false;
             }
 
-
             DialogResult dialogResult = MessageBox.Show("Would you like to update the client Information ?", "Update Template", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
                 if (correct == true)
@@ -130,7 +131,7 @@ namespace MainSystem
                             var query1 = db.Provinces.Where(co => co.Province_Id == query.Province_Id).FirstOrDefault();
                             var query2 = db.Cities.Where(co => co.City_Id == query.City_Id).FirstOrDefault();
                             var query3 = db.Credit_Approval.Where(co => co.Credit_Approval_ID == query.Credit_Approval_ID).FirstOrDefault();
-                            var query4 = db.Credit_Status.Where(co => co.Credit_Status_ID == query.Credit_Approval_ID).FirstOrDefault();
+                            var query4 = db.Credit_Status.Where(co => co.Credit_Status_ID == query3.Credit_Approval_ID).FirstOrDefault();
                             var query5 = db.Client_Account_Status.Where(co => co.Account_Status_ID == query3.Credit_Approval_ID).FirstOrDefault();
 
                             Client NewCllient = new Client();
@@ -164,14 +165,15 @@ namespace MainSystem
                             }
                             else
                             {
-                                cbxCreditStatus.Text = query4.Credit_Status_Description;
+                                query4.Credit_Status_Description = cbxCreditStatus.Text;
 
                             }
                             NewCA.Credit_Approval_ID = crStatus.Credit_Status_ID;
-                            query5.Account_Status_Description = cbxCreditStatus.Text;
+                            query5.Account_Status_Description = comboBox5.Text;
 
+                            query3.Credit_Approval_Form = FileData;
 
-                            query3.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
+                            //query3.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
 
                             db.SaveChanges();
                             MessageBox.Show("Client Has been updated succesfully");
@@ -188,6 +190,7 @@ namespace MainSystem
                     }
                 }
         }
+                    
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -310,6 +313,10 @@ namespace MainSystem
                 //    btnDownload.Visible = false;
                 //}
 
+
+
+
+
                 using (SPEntities db = new SPEntities())
                 {
                     provinceBindingSource.DataSource = db.Provinces.ToList();
@@ -328,6 +335,105 @@ namespace MainSystem
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                using (SaveFileDialog save_Document = new SaveFileDialog())
+                {
+                    string path = txtFilePath.Text;
+
+                    save_Document.InitialDirectory = @"C:\";
+                    save_Document.Title = "Client Documents";
+                    save_Document.Filter = "PDF Files (.pdf)|.pdf";
+                    save_Document.DefaultExt = "pdf";
+                    save_Document.AddExtension = false;
+
+                    if (save_Document.ShowDialog() == DialogResult.OK)
+                    {
+                        
+                        var q1 = db.Clients.Where(x => x.Client_ID == ClientID).First();
+                        var q = db.Credit_Approval.Where(co => co.Credit_Approval_ID == q1.Credit_Approval_ID).FirstOrDefault();
+
+                        byte[] input = q.Credit_Approval_Form;
+                        string result = System.Text.Encoding.UTF8.GetString(input);
+
+                        File.WriteAllBytes(save_Document.FileName, input);
+                        MessageBox.Show("FIle Downloaded Successfully");
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("" + ex);
+            }
+        }
+
+        private void btnDeleteClient_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Would you like to delete this customer?", "Title", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    //db = new Model2();
+                    //var query = db.Customers.Where(w => w.Customer_ID.ToString() == txtUserID.Text).FirstOrDefault();
+
+                    Client client = new Client();
+                    client = db.Clients.Find(Convert.ToInt32(ClientID));
+
+                    db.Clients.Remove(client);
+                    db.SaveChanges();
+                    MessageBox.Show("Customer Successfully Deleted");
+                    this.Close();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error: Customer was not deleted");
+                    //throw;
+                }
+            }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog Get_PDF = new OpenFileDialog())
+                {
+                    Get_PDF.InitialDirectory = @"C:\";
+                    Get_PDF.RestoreDirectory = true;
+                    Get_PDF.Title = "Employee Documents";
+                    Get_PDF.Multiselect = false;
+                    Get_PDF.CheckFileExists = true;
+                    Get_PDF.CheckPathExists = true;
+                    Get_PDF.DefaultExt = "pdf";
+                    Get_PDF.Filter = "PDF File (*.pdf)|*.pdf";
+                    Get_PDF.FilterIndex = 1;
+                    if (Get_PDF.ShowDialog() == DialogResult.OK)
+                    {
+
+                        FName = Get_PDF.FileName;
+                        FileData = File.ReadAllBytes(FName);
+                        File.ReadAllBytes(FName);
+                        txtFilePath.Text = Get_PDF.FileName;
+                        MessageBox.Show("Browse was successful");
+                     
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Whoops, something went wrong, please try again");
+            }
         }
     }
 }

@@ -259,5 +259,10 @@ namespace MainSystem.StartUp
                 MessageBox.Show("You have not selected a use case you want assistance with");
             }
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }

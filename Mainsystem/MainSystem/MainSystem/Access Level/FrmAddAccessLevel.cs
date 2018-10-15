@@ -81,6 +81,7 @@ namespace MainSystem.AccessLevel
             await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
             MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLogin rs = new frmLogin();
+            this.Hide();
             rs.ShowDialog();
             this.Close();
         }
@@ -127,6 +128,28 @@ namespace MainSystem.AccessLevel
                             
 
                             MessageBox.Show("Access level added successfully");
+                            //Audit Log
+                            int accessidz = NewAccess.Access_Level_Id;
+                            string access_Value = Convert.ToString(NewAccess);
+
+                            Audit_Log Current_Audit4 = new Audit_Log();
+                            Current_Audit4.Table_Name = "Access Level";
+                            // Current_Audit3.Users_Id = Globals.Users_Id;
+                            Current_Audit4.Date_Time = DateTime.Now;
+                            db.Audit_Log.Add(Current_Audit4);
+                            db.SaveChanges();
+                            int Log_ID4 = Current_Audit4.Audit_Log_Id;
+
+
+                            Audit_Create_Delete Current_Create4 = new Audit_Create_Delete();
+                            Current_Create4.Audit_Log_Id = Log_ID4;
+                            Current_Create4.Created = true;
+                            Current_Create4.PK_Row_Effected = accessidz;
+                            Current_Create4.Value = access_Value;
+                            db.Audit_Create_Delete.Add(Current_Create4);
+                            db.SaveChanges();
+                            this.Close();
+                            this.Hide();
                         }
                         else
                         {

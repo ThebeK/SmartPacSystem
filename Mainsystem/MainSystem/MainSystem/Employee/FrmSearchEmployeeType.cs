@@ -15,10 +15,14 @@ namespace MainSystem.Employees
 {
     public partial class FrmSearchEmployeeType : Form
     {
-        public FrmSearchEmployeeType()
+        string option;
+        public FrmSearchEmployeeType(string x)
         {
             InitializeComponent();
+            option = x;
         }
+        SPEntities db = new SPEntities();
+
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -87,8 +91,26 @@ namespace MainSystem.Employees
 
         private void btnMaintain_Click(object sender, EventArgs e)
         {
-            Employees.FrmMaintainEmployeeType gg = new Employees.FrmMaintainEmployeeType();
-            gg.ShowDialog();
+            try
+            {
+
+                int val = Convert.ToInt32(dgvClientSearch.CurrentRow.Cells[0].Value);
+
+                if (option == "Maintain Employee Type")
+                {
+                    FrmMaintainEmployeeType form1 = new FrmMaintainEmployeeType(val);
+                    form1.ShowDialog();
+
+                    this.Close();
+                    
+                }
+
+            }
+
+            catch 
+            {
+                // MessageBox.Show("please specify your employee type you want to search");
+            }
         }
 
         private void FrmSearchEmployeeType_Leave(object sender, EventArgs e)
@@ -106,11 +128,64 @@ namespace MainSystem.Employees
             toolTip1.SetToolTip(this.txtSearchEmployeeType, "Enter a Employees Type search criteria");
             toolTip1.SetToolTip(this.btnSearch, "Click to Search Employees Type/Role");
             toolTip1.SetToolTip(this.btnMaintain, "Click to edit or remove employee type");
+            dgvClientSearch.DataSource = db.Employee_Type.ToList();
+
+            dgvClientSearch.Columns[2].Visible = false;
+            //this.dgvClientSearch.Columns["Employee"].Visible = false;
+            dgvClientSearch.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvClientSearch.Columns[1].HeaderText = "Type/Role";
+            dgvClientSearch.Columns[0].HeaderText = "ID";
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearchEmployeeType.Text == "")
+            {
+                label3.Visible = true;
+
+                // MessageBox.Show("Error: No search details entered");
+
+            }
+            else if (txtSearchEmployeeType.Text != "")
+            {
+
+                List<Employee_Type> Etype = db.Employee_Type.Where(o => o.Employees_Type_Description.Contains(txtSearchEmployeeType.Text)).ToList();
+
+
+                if (Etype.Count == 0)
+                {
+                    //groupBox1.Visible = true;
+                    MessageBox.Show("No Employee type found");
+
+                }
+
+                else
+                {
+                    foreach (var a in Etype)
+                    {
+
+                        dgvClientSearch.DataSource = Etype.Select(col => new { col.Employee_Type_ID, col.Employees_Type_Description }).ToList();
+
+
+
+                        //groupBox1.Visible = true;
+                    }
+                }
+            }
+        }
+
+        private void txtSearchEmployeeType_KeyPress(object sender, KeyPressEventArgs Event)
+        {
+            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
+            {
+                Event.Handled = true;
+            }
         }
     }
 }

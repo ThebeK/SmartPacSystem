@@ -93,6 +93,7 @@ namespace MainSystem.Vehicles
             await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
             MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLogin rs = new frmLogin();
+            this.Hide();
             rs.ShowDialog();
             this.Close();
         }
@@ -167,7 +168,28 @@ namespace MainSystem.Vehicles
 
                     db.SaveChanges();
                     MessageBox.Show("Vehicles Added Successfully");
+                    //Audit Log
+                    int avehicle = vehicle.Vehicle_ID;
+                    string vehicle_Value = Convert.ToString(vehicle);
 
+                    Audit_Log Current_Audit5 = new Audit_Log();
+                    Current_Audit5.Table_Name = "Vehicle";
+                    // Current_Audit3.Users_Id = Globals.Users_Id;
+                    Current_Audit5.Date_Time = DateTime.Now;
+                    db.Audit_Log.Add(Current_Audit5);
+                    db.SaveChanges();
+                    int Log_ID5 = Current_Audit5.Audit_Log_Id;
+
+
+                    Audit_Create_Delete Current_Create5= new Audit_Create_Delete();
+                    Current_Create5.Audit_Log_Id = Log_ID5;
+                    Current_Create5.Created = true;
+                    Current_Create5.PK_Row_Effected = avehicle;
+                    Current_Create5.Value = vehicle_Value;
+                    db.Audit_Create_Delete.Add(Current_Create5);
+                    db.SaveChanges();
+                    this.Close();
+                    this.Hide();
                     this.Close();
                 }
 

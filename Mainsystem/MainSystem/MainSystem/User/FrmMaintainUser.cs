@@ -83,6 +83,7 @@ namespace MainSystem.Users
             await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
             MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLogin rs = new frmLogin();
+            this.Hide();
             rs.ShowDialog();
             this.Close();
         }
@@ -121,6 +122,11 @@ namespace MainSystem.Users
 
 
             
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
 
         }
     }

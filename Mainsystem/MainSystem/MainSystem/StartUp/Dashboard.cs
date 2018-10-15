@@ -168,7 +168,7 @@ namespace MainSystem
 
         private void addEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employees.FrmAddEmployeeType eew = new Employees.FrmAddEmployeeType();
+            Employees.FrmAddEmployeeType eew = new Employees.FrmAddEmployeeType("");
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -176,7 +176,7 @@ namespace MainSystem
 
         private void maintainEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employees.FrmSearchEmployeeType eew = new Employees.FrmSearchEmployeeType();
+            Employees.FrmSearchEmployeeType eew = new Employees.FrmSearchEmployeeType("Maintain Employee Type");
             eew.ShowDialog();
             this.Show();
             this.Activate();

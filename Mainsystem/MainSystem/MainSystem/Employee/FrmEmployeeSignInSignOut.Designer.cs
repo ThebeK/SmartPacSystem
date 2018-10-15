@@ -62,6 +62,11 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblTimeIn = new System.Windows.Forms.Label();
+            this.lblTimeOut = new System.Windows.Forms.Label();
+            this.lblLunchIn = new System.Windows.Forms.Label();
+            this.lblLunchOut = new System.Windows.Forms.Label();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +78,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,6 +90,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 47);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -92,7 +99,7 @@
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Location = new System.Drawing.Point(276, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 28);
+            this.label3.Size = new System.Drawing.Size(266, 28);
             this.label3.TabIndex = 29;
             this.label3.Text = "Employees Logsheet";
             // 
@@ -130,6 +137,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblLunchOut);
+            this.groupBox1.Controls.Add(this.lblLunchIn);
+            this.groupBox1.Controls.Add(this.lblTimeOut);
+            this.groupBox1.Controls.Add(this.lblTimeIn);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.btnAddProdType);
             this.groupBox1.Controls.Add(this.cbxEmployeeName);
@@ -183,7 +194,7 @@
             // cbxEmployeeName
             // 
             this.cbxEmployeeName.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.employeeLogsheetBindingSource, "Employee_Id", true));
-            this.cbxEmployeeName.DataSource = this.employeeBindingSource;
+            this.cbxEmployeeName.DataSource = this.employeeBindingSource1;
             this.cbxEmployeeName.DisplayMember = "Employee_Name";
             this.cbxEmployeeName.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEmployeeName.FormattingEnabled = true;
@@ -202,7 +213,7 @@
             this.label7.Location = new System.Drawing.Point(17, 40);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 20);
+            this.label7.Size = new System.Drawing.Size(159, 20);
             this.label7.TabIndex = 67;
             this.label7.Text = "Employees Name";
             // 
@@ -279,7 +290,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(283, -84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 28);
+            this.label1.Size = new System.Drawing.Size(266, 28);
             this.label1.TabIndex = 66;
             this.label1.Text = "Employees Logsheet";
             // 
@@ -360,6 +371,7 @@
             this.chbxLunchO.TabIndex = 61;
             this.chbxLunchO.Text = "lunch Out";
             this.chbxLunchO.UseVisualStyleBackColor = true;
+            this.chbxLunchO.CheckedChanged += new System.EventHandler(this.chbxLunchO_CheckedChanged);
             // 
             // chbxLunchIn
             // 
@@ -372,6 +384,7 @@
             this.chbxLunchIn.TabIndex = 60;
             this.chbxLunchIn.Text = "Lunch In";
             this.chbxLunchIn.UseVisualStyleBackColor = true;
+            this.chbxLunchIn.CheckedChanged += new System.EventHandler(this.chbxLunchIn_CheckedChanged);
             // 
             // chbxTimeOut
             // 
@@ -384,6 +397,7 @@
             this.chbxTimeOut.TabIndex = 59;
             this.chbxTimeOut.Text = "Time Out";
             this.chbxTimeOut.UseVisualStyleBackColor = true;
+            this.chbxTimeOut.CheckedChanged += new System.EventHandler(this.chbxTimeOut_CheckedChanged);
             // 
             // chbxTimeIN
             // 
@@ -396,6 +410,7 @@
             this.chbxTimeIN.TabIndex = 58;
             this.chbxTimeIN.Text = "Time In";
             this.chbxTimeIN.UseVisualStyleBackColor = true;
+            this.chbxTimeIN.CheckedChanged += new System.EventHandler(this.chbxTimeIN_CheckedChanged);
             // 
             // btnConfirm
             // 
@@ -409,6 +424,7 @@
             this.btnConfirm.TabIndex = 57;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // comboBox1
             // 
@@ -431,9 +447,57 @@
             this.label6.Location = new System.Drawing.Point(24, -32);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 20);
+            this.label6.Size = new System.Drawing.Size(159, 20);
             this.label6.TabIndex = 55;
             this.label6.Text = "Employees Name";
+            // 
+            // lblTimeIn
+            // 
+            this.lblTimeIn.AutoSize = true;
+            this.lblTimeIn.ForeColor = System.Drawing.Color.Red;
+            this.lblTimeIn.Location = new System.Drawing.Point(109, 92);
+            this.lblTimeIn.Name = "lblTimeIn";
+            this.lblTimeIn.Size = new System.Drawing.Size(142, 16);
+            this.lblTimeIn.TabIndex = 71;
+            this.lblTimeIn.Text = "Please tick time in";
+            this.lblTimeIn.Visible = false;
+            // 
+            // lblTimeOut
+            // 
+            this.lblTimeOut.AutoSize = true;
+            this.lblTimeOut.ForeColor = System.Drawing.Color.Red;
+            this.lblTimeOut.Location = new System.Drawing.Point(513, 83);
+            this.lblTimeOut.Name = "lblTimeOut";
+            this.lblTimeOut.Size = new System.Drawing.Size(152, 16);
+            this.lblTimeOut.TabIndex = 72;
+            this.lblTimeOut.Text = "Please tick time out";
+            this.lblTimeOut.Visible = false;
+            // 
+            // lblLunchIn
+            // 
+            this.lblLunchIn.AutoSize = true;
+            this.lblLunchIn.ForeColor = System.Drawing.Color.Red;
+            this.lblLunchIn.Location = new System.Drawing.Point(117, 202);
+            this.lblLunchIn.Name = "lblLunchIn";
+            this.lblLunchIn.Size = new System.Drawing.Size(150, 16);
+            this.lblLunchIn.TabIndex = 73;
+            this.lblLunchIn.Text = "Please tick lunch in";
+            this.lblLunchIn.Visible = false;
+            // 
+            // lblLunchOut
+            // 
+            this.lblLunchOut.AutoSize = true;
+            this.lblLunchOut.ForeColor = System.Drawing.Color.Red;
+            this.lblLunchOut.Location = new System.Drawing.Point(513, 202);
+            this.lblLunchOut.Name = "lblLunchOut";
+            this.lblLunchOut.Size = new System.Drawing.Size(160, 16);
+            this.lblLunchOut.TabIndex = 74;
+            this.lblLunchOut.Text = "Please tick lunch out";
+            this.lblLunchOut.Visible = false;
+            // 
+            // employeeBindingSource1
+            // 
+            this.employeeBindingSource1.DataSource = typeof(MainSystem.Employee);
             // 
             // FrmEmployeeSignInSignOut
             // 
@@ -464,6 +528,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,5 +568,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAddProdType;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblLunchOut;
+        private System.Windows.Forms.Label lblLunchIn;
+        private System.Windows.Forms.Label lblTimeOut;
+        private System.Windows.Forms.Label lblTimeIn;
+        private System.Windows.Forms.BindingSource employeeBindingSource1;
     }
 }
