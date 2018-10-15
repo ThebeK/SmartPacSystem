@@ -99,6 +99,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 287);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lbl
             // 
@@ -122,7 +123,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(332, 287);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnMaintain
             // 
@@ -143,6 +143,7 @@
             this.txtSearchBrand.Name = "txtSearchBrand";
             this.txtSearchBrand.Size = new System.Drawing.Size(199, 27);
             this.txtSearchBrand.TabIndex = 56;
+            this.txtSearchBrand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchBrand_KeyPress);
             // 
             // lblSearchBrand
             // 
@@ -195,6 +196,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSearchBrand";
             this.Text = "FrmSearchBrand";
+            this.Load += new System.EventHandler(this.FrmSearchBrand_Load);
             this.Leave += new System.EventHandler(this.FrmSearchBrand_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

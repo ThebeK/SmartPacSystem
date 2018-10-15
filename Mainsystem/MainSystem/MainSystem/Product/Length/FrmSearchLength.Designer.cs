@@ -103,7 +103,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(524, 257);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblSearch
             // 
@@ -127,6 +126,7 @@
             this.lbl.Size = new System.Drawing.Size(164, 16);
             this.lbl.TabIndex = 62;
             this.lbl.Text = "Please Specify Length";
+            this.lbl.Click += new System.EventHandler(this.lbl_Click);
             // 
             // btnMaintain
             // 
@@ -152,6 +152,7 @@
             this.btnSearch.TabIndex = 60;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchLength
             // 
@@ -159,6 +160,7 @@
             this.txtSearchLength.Name = "txtSearchLength";
             this.txtSearchLength.Size = new System.Drawing.Size(168, 27);
             this.txtSearchLength.TabIndex = 59;
+            this.txtSearchLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchLength_KeyPress);
             // 
             // dgvLength
             // 
@@ -185,6 +187,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSearchLength";
             this.Text = "FrmSearchLength";
+            this.Load += new System.EventHandler(this.FrmSearchLength_Load);
             this.Leave += new System.EventHandler(this.FrmSearchLength_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

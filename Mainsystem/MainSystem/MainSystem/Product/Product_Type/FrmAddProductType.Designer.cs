@@ -81,7 +81,7 @@
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Location = new System.Drawing.Point(69, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(266, 34);
+            this.label3.Size = new System.Drawing.Size(281, 34);
             this.label3.TabIndex = 58;
             this.label3.Text = "Add Products Type";
             // 
@@ -108,6 +108,7 @@
             this.btnAdd.TabIndex = 57;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -127,6 +128,7 @@
             this.rtxtDescription.Size = new System.Drawing.Size(243, 84);
             this.rtxtDescription.TabIndex = 55;
             this.rtxtDescription.Text = "";
+            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
             // 
             // FrmAddProductType
             // 
@@ -142,7 +144,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddProductType";
             this.Text = "FrmAddProductType";
-            this.Load += new System.EventHandler(this.FrmAddProductType_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

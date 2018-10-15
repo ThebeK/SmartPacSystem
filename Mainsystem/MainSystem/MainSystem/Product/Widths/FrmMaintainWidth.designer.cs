@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Width
+﻿namespace MainSystem.Products.Widths
 {
     partial class FrmMaintainWidth
     {
@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
             this.lblUnit = new System.Windows.Forms.Label();
             this.lblWidth = new System.Windows.Forms.Label();
             this.txtUnit = new System.Windows.Forms.TextBox();
@@ -86,21 +85,9 @@
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Location = new System.Drawing.Point(194, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(226, 34);
+            this.label3.Size = new System.Drawing.Size(241, 34);
             this.label3.TabIndex = 61;
-            this.label3.Text = "Maintain Width";
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnBack.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnBack.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnBack.Location = new System.Drawing.Point(67, 198);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(85, 47);
-            this.btnBack.TabIndex = 62;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
+            this.label3.Text = "Maintain Widths";
             // 
             // lblUnit
             // 
@@ -133,6 +120,7 @@
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.Size = new System.Drawing.Size(55, 22);
             this.txtUnit.TabIndex = 58;
+            this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label2
             // 
@@ -154,8 +142,9 @@
             this.btnDeletePT.Name = "btnDeletePT";
             this.btnDeletePT.Size = new System.Drawing.Size(138, 47);
             this.btnDeletePT.TabIndex = 56;
-            this.btnDeletePT.Text = "Delete Products Width";
+            this.btnDeletePT.Text = "Delete Products Widths";
             this.btnDeletePT.UseVisualStyleBackColor = false;
+            this.btnDeletePT.Click += new System.EventHandler(this.btnDeletePT_Click);
             // 
             // btnUpdatePT
             // 
@@ -166,8 +155,9 @@
             this.btnUpdatePT.Name = "btnUpdatePT";
             this.btnUpdatePT.Size = new System.Drawing.Size(141, 47);
             this.btnUpdatePT.TabIndex = 55;
-            this.btnUpdatePT.Text = "Update Products Width";
+            this.btnUpdatePT.Text = "Update Products Widths";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
+            this.btnUpdatePT.Click += new System.EventHandler(this.btnUpdatePT_Click);
             // 
             // txtWidthDesc
             // 
@@ -176,6 +166,7 @@
             this.txtWidthDesc.Name = "txtWidthDesc";
             this.txtWidthDesc.Size = new System.Drawing.Size(55, 22);
             this.txtWidthDesc.TabIndex = 54;
+            this.txtWidthDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidthDesc_KeyPress);
             // 
             // label1
             // 
@@ -184,9 +175,9 @@
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(103, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 53;
-            this.label1.Text = "Width";
+            this.label1.Text = "Widths";
             // 
             // FrmMaintainWidth
             // 
@@ -194,7 +185,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(586, 285);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblUnit);
             this.Controls.Add(this.lblWidth);
             this.Controls.Add(this.txtUnit);
@@ -220,7 +210,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblUnit;
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.TextBox txtUnit;

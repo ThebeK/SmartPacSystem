@@ -34,7 +34,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.cbxCity = new System.Windows.Forms.ComboBox();
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbxProvince = new System.Windows.Forms.ComboBox();
+            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPhysicalAdd = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,6 +62,7 @@
             this.btnViewCreditApproval = new System.Windows.Forms.Button();
             this.txtCreditAmount = new System.Windows.Forms.TextBox();
             this.cbxAccountStatus = new System.Windows.Forms.ComboBox();
+            this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -67,27 +70,24 @@
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.txtDateTimeDateOfCommencement = new System.Windows.Forms.DateTimePicker();
             this.cbxCreditStatus = new System.Windows.Forms.ComboBox();
+            this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -393,7 +393,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnViewCreditApproval);
             this.groupBox5.Controls.Add(this.txtCreditAmount);
             this.groupBox5.Controls.Add(this.cbxAccountStatus);
             this.groupBox5.Controls.Add(this.label16);
@@ -419,9 +418,9 @@
             this.btnViewCreditApproval.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnViewCreditApproval.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewCreditApproval.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnViewCreditApproval.Location = new System.Drawing.Point(142, 334);
+            this.btnViewCreditApproval.Location = new System.Drawing.Point(913, 461);
             this.btnViewCreditApproval.Name = "btnViewCreditApproval";
-            this.btnViewCreditApproval.Size = new System.Drawing.Size(207, 27);
+            this.btnViewCreditApproval.Size = new System.Drawing.Size(207, 41);
             this.btnViewCreditApproval.TabIndex = 17;
             this.btnViewCreditApproval.Text = "View Credit Approval";
             this.btnViewCreditApproval.UseVisualStyleBackColor = false;
@@ -482,7 +481,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.LightGray;
-            this.label15.Location = new System.Drawing.Point(-35, 36);
+            this.label15.Location = new System.Drawing.Point(14, 29);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 16);
             this.label15.TabIndex = 9;
@@ -495,7 +494,7 @@
             this.btnBrowse.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnBrowse.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnBrowse.Location = new System.Drawing.Point(281, 65);
+            this.btnBrowse.Location = new System.Drawing.Point(338, 65);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(99, 27);
             this.btnBrowse.TabIndex = 8;
@@ -506,7 +505,7 @@
             // txtFilePath
             // 
             this.txtFilePath.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtFilePath.Location = new System.Drawing.Point(61, 31);
+            this.txtFilePath.Location = new System.Drawing.Point(118, 26);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(319, 27);
             this.txtFilePath.TabIndex = 7;
@@ -577,9 +576,9 @@
             this.btnAddClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAddClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAddClient.Location = new System.Drawing.Point(961, 469);
+            this.btnAddClient.Location = new System.Drawing.Point(732, 461);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(145, 35);
+            this.btnAddClient.Size = new System.Drawing.Size(145, 41);
             this.btnAddClient.TabIndex = 18;
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.UseVisualStyleBackColor = false;
@@ -589,28 +588,13 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
-            // provinceBindingSource
-            // 
-            //this.provinceBindingSource.DataSource = typeof(Province);
-            // 
-            // cityBindingSource
-            // 
-            //this.cityBindingSource.DataSource = typeof(City);
-            // 
-            // creditStatusBindingSource
-            // 
-            //this.creditStatusBindingSource.DataSource = typeof(Credit_Status);
-            // 
-            // clientAccountStatusBindingSource
-            // 
-            //this.clientAccountStatusBindingSource.DataSource = typeof(Client_Account_Status);
-            // 
             // frmAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1276, 625);
+            this.Controls.Add(this.btnViewCreditApproval);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.panel2);
@@ -622,6 +606,8 @@
             this.panel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -631,12 +617,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

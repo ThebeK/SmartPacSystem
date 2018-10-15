@@ -104,7 +104,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(309, 180);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblUnit
             // 
@@ -137,6 +136,7 @@
             this.txtMeasurement.Size = new System.Drawing.Size(82, 22);
             this.txtMeasurement.TabIndex = 45;
             this.txtMeasurement.Text = "";
+            this.txtMeasurement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMeasurement_KeyPress);
             // 
             // label1
             // 
@@ -160,6 +160,7 @@
             this.btnAdd.TabIndex = 43;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -179,6 +180,7 @@
             this.txtLengthDescription.Size = new System.Drawing.Size(82, 22);
             this.txtLengthDescription.TabIndex = 41;
             this.txtLengthDescription.Text = "";
+            this.txtLengthDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLengthDescription_KeyPress);
             // 
             // FrmAddLength
             // 

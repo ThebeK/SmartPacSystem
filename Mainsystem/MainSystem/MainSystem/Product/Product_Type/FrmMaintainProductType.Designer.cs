@@ -72,7 +72,7 @@
             this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label2.Location = new System.Drawing.Point(27, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(331, 34);
+            this.label2.Size = new System.Drawing.Size(346, 34);
             this.label2.TabIndex = 59;
             this.label2.Text = "Maintain Products Type";
             // 
@@ -109,6 +109,7 @@
             this.btnDeletePT.TabIndex = 58;
             this.btnDeletePT.Text = "Delete Products Type";
             this.btnDeletePT.UseVisualStyleBackColor = false;
+            this.btnDeletePT.Click += new System.EventHandler(this.btnDeletePT_Click);
             // 
             // btnUpdatePT
             // 
@@ -121,6 +122,7 @@
             this.btnUpdatePT.TabIndex = 57;
             this.btnUpdatePT.Text = "Update Products Type";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
+            this.btnUpdatePT.Click += new System.EventHandler(this.btnUpdatePT_Click);
             // 
             // txtProductTypeDesc
             // 
@@ -129,6 +131,7 @@
             this.txtProductTypeDesc.Name = "txtProductTypeDesc";
             this.txtProductTypeDesc.Size = new System.Drawing.Size(283, 43);
             this.txtProductTypeDesc.TabIndex = 56;
+            this.txtProductTypeDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductTypeDesc_KeyPress);
             // 
             // label1
             // 
@@ -137,7 +140,7 @@
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(51, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 16);
+            this.label1.Size = new System.Drawing.Size(194, 16);
             this.label1.TabIndex = 55;
             this.label1.Text = "Products type description";
             // 

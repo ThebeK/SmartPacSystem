@@ -46,7 +46,9 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxLengths2 = new System.Windows.Forms.ComboBox();
+            this.pLengthBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.widthBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -66,30 +68,62 @@
             this.cbxLength = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbxSheet = new System.Windows.Forms.ComboBox();
+            this.sheetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.cbxPackSize = new System.Windows.Forms.ComboBox();
+            this.packSizeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.cbxPly = new System.Windows.Forms.ComboBox();
+            this.plyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.cbxprodT = new System.Windows.Forms.ComboBox();
+            this.productTypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.cbxbrand = new System.Windows.Forms.ComboBox();
+            this.productBrandBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.widthBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.pLengthBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pLengthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.widthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sheetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.packSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.plyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBrandBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLengthBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packSizeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plyBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBrandBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLengthBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLengthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packSizeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBrandBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -197,10 +231,11 @@
             this.groupBox1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(58, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(936, 430);
+            this.groupBox1.Size = new System.Drawing.Size(883, 430);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General Products Information";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtQuantity
             // 
@@ -208,6 +243,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(140, 27);
             this.txtQuantity.TabIndex = 64;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // btnAdd
             // 
@@ -220,6 +256,7 @@
             this.btnAdd.TabIndex = 63;
             this.btnAdd.Text = "Add Products";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblProdDescr
             // 
@@ -238,6 +275,7 @@
             this.txtImageName.Name = "txtImageName";
             this.txtImageName.Size = new System.Drawing.Size(140, 27);
             this.txtImageName.TabIndex = 59;
+            this.txtImageName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImageName_KeyPress);
             // 
             // label3
             // 
@@ -253,7 +291,7 @@
             // 
             // pbxImage
             // 
-            this.pbxImage.Location = new System.Drawing.Point(632, 283);
+            this.pbxImage.Location = new System.Drawing.Point(540, 283);
             this.pbxImage.Name = "pbxImage";
             this.pbxImage.Size = new System.Drawing.Size(232, 85);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -264,16 +302,17 @@
             // 
             this.btnBrowse.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnBrowse.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnBrowse.Location = new System.Drawing.Point(632, 218);
+            this.btnBrowse.Location = new System.Drawing.Point(540, 218);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(189, 30);
             this.btnBrowse.TabIndex = 56;
             this.btnBrowse.Text = "Browse for Products Image";
             this.btnBrowse.UseVisualStyleBackColor = false;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txtImage
             // 
-            this.txtImage.Location = new System.Drawing.Point(632, 254);
+            this.txtImage.Location = new System.Drawing.Point(538, 254);
             this.txtImage.Name = "txtImage";
             this.txtImage.Size = new System.Drawing.Size(232, 27);
             this.txtImage.TabIndex = 55;
@@ -284,6 +323,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(140, 27);
             this.txtPrice.TabIndex = 54;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // label4
             // 
@@ -298,6 +338,7 @@
             // 
             // cbxLengths2
             // 
+            this.cbxLengths2.DataSource = this.pLengthBindingSource1;
             this.cbxLengths2.DisplayMember = "Length_Size";
             this.cbxLengths2.FormattingEnabled = true;
             this.cbxLengths2.Location = new System.Drawing.Point(645, 124);
@@ -306,8 +347,13 @@
             this.cbxLengths2.TabIndex = 52;
             this.cbxLengths2.ValueMember = "Length_ID";
             // 
+            // pLengthBindingSource1
+            // 
+            this.pLengthBindingSource1.DataSource = typeof(MainSystem.pLength);
+            // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.widthBindingSource1;
             this.comboBox1.DisplayMember = "Width_Size";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(645, 172);
@@ -315,6 +361,10 @@
             this.comboBox1.Size = new System.Drawing.Size(54, 24);
             this.comboBox1.TabIndex = 51;
             this.comboBox1.ValueMember = "Width_ID";
+            // 
+            // widthBindingSource1
+            // 
+            this.widthBindingSource1.DataSource = typeof(MainSystem.Width);
             // 
             // pictureBox6
             // 
@@ -478,6 +528,7 @@
             // 
             // cbxWidth
             // 
+            this.cbxWidth.DataSource = this.widthBindingSource1;
             this.cbxWidth.DisplayMember = "Width_Measurement_Unit";
             this.cbxWidth.FormattingEnabled = true;
             this.cbxWidth.Location = new System.Drawing.Point(716, 172);
@@ -493,12 +544,13 @@
             this.label13.ForeColor = System.Drawing.Color.Silver;
             this.label13.Location = new System.Drawing.Point(492, 177);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 16);
+            this.label13.Size = new System.Drawing.Size(57, 16);
             this.label13.TabIndex = 32;
-            this.label13.Text = "Width";
+            this.label13.Text = "Widths";
             // 
             // cbxLength
             // 
+            this.cbxLength.DataSource = this.pLengthBindingSource1;
             this.cbxLength.DisplayMember = "Length_Measurement_Unit";
             this.cbxLength.FormattingEnabled = true;
             this.cbxLength.Location = new System.Drawing.Point(716, 123);
@@ -520,6 +572,7 @@
             // 
             // cbxSheet
             // 
+            this.cbxSheet.DataSource = this.sheetBindingSource1;
             this.cbxSheet.DisplayMember = "Number_Of_Sheet";
             this.cbxSheet.FormattingEnabled = true;
             this.cbxSheet.Location = new System.Drawing.Point(632, 76);
@@ -528,6 +581,10 @@
             this.cbxSheet.TabIndex = 29;
             this.cbxSheet.ValueMember = "Sheet_ID";
             // 
+            // sheetBindingSource1
+            // 
+            this.sheetBindingSource1.DataSource = typeof(MainSystem.Sheet);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -535,12 +592,13 @@
             this.label11.ForeColor = System.Drawing.Color.Silver;
             this.label11.Location = new System.Drawing.Point(492, 79);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 16);
+            this.label11.Size = new System.Drawing.Size(116, 16);
             this.label11.TabIndex = 28;
-            this.label11.Text = "Sheet Number";
+            this.label11.Text = "Sheets Number";
             // 
             // cbxPackSize
             // 
+            this.cbxPackSize.DataSource = this.packSizeBindingSource1;
             this.cbxPackSize.DisplayMember = "Pack_Size_Description";
             this.cbxPackSize.FormattingEnabled = true;
             this.cbxPackSize.Location = new System.Drawing.Point(632, 39);
@@ -548,6 +606,10 @@
             this.cbxPackSize.Size = new System.Drawing.Size(140, 24);
             this.cbxPackSize.TabIndex = 27;
             this.cbxPackSize.ValueMember = "Pack_Size_ID";
+            // 
+            // packSizeBindingSource1
+            // 
+            this.packSizeBindingSource1.DataSource = typeof(MainSystem.Pack_Size);
             // 
             // label10
             // 
@@ -562,6 +624,7 @@
             // 
             // cbxPly
             // 
+            this.cbxPly.DataSource = this.plyBindingSource1;
             this.cbxPly.DisplayMember = "Number_Of_Ply";
             this.cbxPly.FormattingEnabled = true;
             this.cbxPly.Location = new System.Drawing.Point(163, 287);
@@ -569,6 +632,10 @@
             this.cbxPly.Size = new System.Drawing.Size(140, 24);
             this.cbxPly.TabIndex = 25;
             this.cbxPly.ValueMember = "Ply_ID";
+            // 
+            // plyBindingSource1
+            // 
+            this.plyBindingSource1.DataSource = typeof(MainSystem.Ply);
             // 
             // label1
             // 
@@ -583,21 +650,33 @@
             // 
             // cbxprodT
             // 
+            this.cbxprodT.DataSource = this.productTypeBindingSource2;
             this.cbxprodT.DisplayMember = "Product_Type_Name";
             this.cbxprodT.FormattingEnabled = true;
-            this.cbxprodT.Location = new System.Drawing.Point(163, 200);
+            this.cbxprodT.Location = new System.Drawing.Point(163, 203);
             this.cbxprodT.Name = "cbxprodT";
             this.cbxprodT.Size = new System.Drawing.Size(140, 24);
             this.cbxprodT.TabIndex = 23;
             this.cbxprodT.ValueMember = "Product_Type_ID";
             // 
+            // productTypeBindingSource2
+            // 
+            this.productTypeBindingSource2.DataSource = typeof(MainSystem.Product_Type);
+            // 
             // cbxbrand
             // 
+            this.cbxbrand.DataSource = this.productBrandBindingSource1;
+            this.cbxbrand.DisplayMember = "Product_Brand_Name";
             this.cbxbrand.FormattingEnabled = true;
             this.cbxbrand.Location = new System.Drawing.Point(163, 245);
             this.cbxbrand.Name = "cbxbrand";
             this.cbxbrand.Size = new System.Drawing.Size(140, 24);
             this.cbxbrand.TabIndex = 22;
+            this.cbxbrand.ValueMember = "Product_Brand_ID";
+            // 
+            // productBrandBindingSource1
+            // 
+            this.productBrandBindingSource1.DataSource = typeof(MainSystem.Product_Brand);
             // 
             // label8
             // 
@@ -645,10 +724,51 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(163, 76);
+            this.txtDescription.Location = new System.Drawing.Point(173, 73);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(140, 27);
             this.txtDescription.TabIndex = 1;
+            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
+            // 
+            // widthBindingSource2
+            // 
+            this.widthBindingSource2.DataSource = typeof(MainSystem.Width);
+            // 
+            // pLengthBindingSource2
+            // 
+            this.pLengthBindingSource2.DataSource = typeof(MainSystem.pLength);
+            // 
+            // productTypeBindingSource1
+            // 
+            this.productTypeBindingSource1.DataSource = typeof(MainSystem.Product_Type);
+            // 
+            // pLengthBindingSource
+            // 
+            this.pLengthBindingSource.DataMember = "pLength";
+            // 
+            // widthBindingSource
+            // 
+            this.widthBindingSource.DataMember = "Width";
+            // 
+            // sheetBindingSource
+            // 
+            this.sheetBindingSource.DataMember = "Sheet";
+            // 
+            // packSizeBindingSource
+            // 
+            this.packSizeBindingSource.DataMember = "Pack_Size";
+            // 
+            // plyBindingSource
+            // 
+            this.plyBindingSource.DataMember = "Ply";
+            // 
+            // productTypeBindingSource
+            // 
+            this.productTypeBindingSource.DataMember = "Product_Type";
+            // 
+            // productBrandBindingSource
+            // 
+            this.productBrandBindingSource.DataMember = "Product_Brand";
             // 
             // frmAddProduct
             // 
@@ -669,12 +789,29 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLengthBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packSizeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plyBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBrandBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLengthBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLengthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packSizeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBrandBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -731,5 +868,30 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.ToolTip toolTip1;
+        //private SPDataSet sPDataSet;
+        private System.Windows.Forms.BindingSource productTypeBindingSource;
+        //private SPDataSetTableAdapters.Product_TypeTableAdapter product_TypeTableAdapter;
+        //private SPDataSet1 sPDataSet1;
+        private System.Windows.Forms.BindingSource productBrandBindingSource;
+        //private SPDataSet1TableAdapters.Product_BrandTableAdapter product_BrandTableAdapter;
+        private System.Windows.Forms.BindingSource plyBindingSource;
+        //private SPDataSetTableAdapters.PlyTableAdapter plyTableAdapter;
+        private System.Windows.Forms.BindingSource packSizeBindingSource;
+        //private SPDataSetTableAdapters.Pack_SizeTableAdapter pack_SizeTableAdapter;
+        private System.Windows.Forms.BindingSource sheetBindingSource;
+        //private SPDataSetTableAdapters.SheetTableAdapter sheetTableAdapter;
+        private System.Windows.Forms.BindingSource pLengthBindingSource;
+        //private SPDataSetTableAdapters.pLengthTableAdapter pLengthTableAdapter;
+        private System.Windows.Forms.BindingSource widthBindingSource;
+        private System.Windows.Forms.BindingSource pLengthBindingSource1;
+        private System.Windows.Forms.BindingSource widthBindingSource1;
+        private System.Windows.Forms.BindingSource widthBindingSource2;
+        private System.Windows.Forms.BindingSource pLengthBindingSource2;
+        private System.Windows.Forms.BindingSource sheetBindingSource1;
+        private System.Windows.Forms.BindingSource packSizeBindingSource1;
+        private System.Windows.Forms.BindingSource plyBindingSource1;
+        private System.Windows.Forms.BindingSource productTypeBindingSource1;
+        private System.Windows.Forms.BindingSource productBrandBindingSource1;
+        private System.Windows.Forms.BindingSource productTypeBindingSource2;
     }
 }

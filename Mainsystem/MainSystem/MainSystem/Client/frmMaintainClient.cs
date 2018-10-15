@@ -329,5 +329,20 @@ namespace MainSystem
         {
 
         }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

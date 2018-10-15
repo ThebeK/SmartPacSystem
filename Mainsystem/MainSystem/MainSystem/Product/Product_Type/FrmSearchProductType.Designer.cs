@@ -61,7 +61,7 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(364, 20);
+            this.label2.Size = new System.Drawing.Size(373, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Specify Products Type Description";
             // 
@@ -73,16 +73,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(902, 51);
+            this.panel1.Size = new System.Drawing.Size(941, 51);
             this.panel1.TabIndex = 34;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.button5.Location = new System.Drawing.Point(785, 3);
+            this.button5.Location = new System.Drawing.Point(825, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(47, 46);
             this.button5.TabIndex = 26;
@@ -93,7 +92,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox1.Location = new System.Drawing.Point(839, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(878, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 43);
             this.pictureBox1.TabIndex = 27;
@@ -107,7 +106,7 @@
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label13.Location = new System.Drawing.Point(277, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(303, 34);
+            this.label13.Size = new System.Drawing.Size(318, 34);
             this.label13.TabIndex = 25;
             this.label13.Text = "Search Products Type";
             // 
@@ -116,12 +115,13 @@
             this.btnMaintain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnMaintain.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
             this.btnMaintain.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMaintain.Location = new System.Drawing.Point(818, 329);
+            this.btnMaintain.Location = new System.Drawing.Point(792, 329);
             this.btnMaintain.Name = "btnMaintain";
             this.btnMaintain.Size = new System.Drawing.Size(98, 27);
             this.btnMaintain.TabIndex = 40;
             this.btnMaintain.Text = "Maintain";
             this.btnMaintain.UseVisualStyleBackColor = false;
+            this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
             // 
             // label3
             // 
@@ -130,7 +130,7 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(421, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(411, 20);
+            this.label3.Size = new System.Drawing.Size(420, 20);
             this.label3.TabIndex = 39;
             this.label3.Text = "Please specify valid Products Type Description";
             this.label3.Visible = false;
@@ -138,9 +138,9 @@
             // dgvClientSearch
             // 
             this.dgvClientSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientSearch.Location = new System.Drawing.Point(420, 139);
+            this.dgvClientSearch.Location = new System.Drawing.Point(484, 138);
             this.dgvClientSearch.Name = "dgvClientSearch";
-            this.dgvClientSearch.Size = new System.Drawing.Size(414, 150);
+            this.dgvClientSearch.Size = new System.Drawing.Size(270, 150);
             this.dgvClientSearch.TabIndex = 38;
             // 
             // btnSearch
@@ -148,26 +148,28 @@
             this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnSearch.Location = new System.Drawing.Point(818, 76);
+            this.btnSearch.Location = new System.Drawing.Point(804, 82);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(98, 27);
             this.btnSearch.TabIndex = 37;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchSale
             // 
-            this.txtSearchSale.Location = new System.Drawing.Point(425, 80);
+            this.txtSearchSale.Location = new System.Drawing.Point(416, 82);
             this.txtSearchSale.Name = "txtSearchSale";
             this.txtSearchSale.Size = new System.Drawing.Size(387, 20);
             this.txtSearchSale.TabIndex = 36;
+            this.txtSearchSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchSale_KeyPress);
             // 
             // FrmSearchProductType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(902, 456);
+            this.ClientSize = new System.Drawing.Size(941, 456);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnMaintain);
@@ -178,6 +180,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSearchProductType";
             this.Text = "FrmSearchProductType";
+            this.Load += new System.EventHandler(this.FrmSearchProductType_Load);
             this.Leave += new System.EventHandler(this.FrmSearchProductType_Leave);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

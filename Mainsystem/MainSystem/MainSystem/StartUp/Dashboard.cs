@@ -251,7 +251,7 @@ namespace MainSystem
 
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Products.FrmSearchProduct qw = new Products.FrmSearchProduct();
+            Products.FrmSearchProduct qw = new Products.FrmSearchProduct("Maintain Product");
             qw.ShowDialog();
             this.Show();
             this.Activate();
@@ -259,7 +259,7 @@ namespace MainSystem
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Products.FrmAddProductType ee = new Products.FrmAddProductType();
+            Products.FrmAddProductType ee = new Products.FrmAddProductType("Maintain Product T");
             ee.ShowDialog();
             this.Show();
             this.Activate();

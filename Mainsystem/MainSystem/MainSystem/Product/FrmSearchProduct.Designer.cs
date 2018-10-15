@@ -53,6 +53,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 414);
             this.panel2.TabIndex = 28;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -61,7 +62,7 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(316, 20);
+            this.label2.Size = new System.Drawing.Size(325, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Specify Products Description";
             // 
@@ -106,7 +107,7 @@
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label13.Location = new System.Drawing.Point(277, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(226, 34);
+            this.label13.Size = new System.Drawing.Size(241, 34);
             this.label13.TabIndex = 25;
             this.label13.Text = "Search Products";
             // 
@@ -121,6 +122,7 @@
             this.btnMaintain.TabIndex = 33;
             this.btnMaintain.Text = "Maintain";
             this.btnMaintain.UseVisualStyleBackColor = false;
+            this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
             // 
             // label3
             // 
@@ -129,7 +131,7 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(352, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 20);
+            this.label3.Size = new System.Drawing.Size(363, 20);
             this.label3.TabIndex = 32;
             this.label3.Text = "Please specify valid Products Decription";
             this.label3.Visible = false;
@@ -153,6 +155,7 @@
             this.btnSearch.TabIndex = 30;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchSale
             // 
@@ -160,6 +163,7 @@
             this.txtSearchSale.Name = "txtSearchSale";
             this.txtSearchSale.Size = new System.Drawing.Size(387, 20);
             this.txtSearchSale.TabIndex = 29;
+            this.txtSearchSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchSale_KeyPress);
             // 
             // FrmSearchProduct
             // 

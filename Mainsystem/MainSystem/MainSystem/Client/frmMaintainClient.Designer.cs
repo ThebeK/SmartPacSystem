@@ -109,6 +109,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(599, 55);
             this.panel1.TabIndex = 19;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox2
             // 
@@ -212,7 +213,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnDownload);
             this.groupBox5.Controls.Add(this.txtCreditAmount);
             this.groupBox5.Controls.Add(this.comboBox5);
             this.groupBox5.Controls.Add(this.label16);
@@ -237,12 +237,13 @@
             this.btnDownload.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDownload.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDownload.Location = new System.Drawing.Point(179, 334);
+            this.btnDownload.Location = new System.Drawing.Point(1002, 503);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(238, 27);
             this.btnDownload.TabIndex = 25;
             this.btnDownload.Text = "Download credit approval";
             this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // txtCreditAmount
             // 
@@ -317,6 +318,7 @@
             this.btnBrowse.TabIndex = 8;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = false;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txtFilePath
             // 
@@ -390,7 +392,7 @@
             this.btnDeleteClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDeleteClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDeleteClient.Location = new System.Drawing.Point(874, 493);
+            this.btnDeleteClient.Location = new System.Drawing.Point(839, 503);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(157, 27);
             this.btnDeleteClient.TabIndex = 17;
@@ -622,7 +624,7 @@
             this.btnUpdateClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnUpdateClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnUpdateClient.Location = new System.Drawing.Point(698, 493);
+            this.btnUpdateClient.Location = new System.Drawing.Point(663, 503);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(170, 27);
             this.btnUpdateClient.TabIndex = 22;
@@ -636,6 +638,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1256, 580);
+            this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnUpdateClient);
             this.Controls.Add(this.panel1);
