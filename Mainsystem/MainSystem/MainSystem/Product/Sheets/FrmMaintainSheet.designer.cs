@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Sheet
+﻿namespace MainSystem.Products.Sheets
 {
     partial class FrmMaintainSheet
     {
@@ -49,13 +49,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(413, 60);
+            this.panel1.Size = new System.Drawing.Size(475, 60);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox1.Location = new System.Drawing.Point(349, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(412, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 43);
             this.pictureBox1.TabIndex = 32;
@@ -67,7 +67,7 @@
             this.button5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.button5.Location = new System.Drawing.Point(296, 8);
+            this.button5.Location = new System.Drawing.Point(359, 8);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(47, 46);
             this.button5.TabIndex = 33;
@@ -83,9 +83,9 @@
             this.label2.Location = new System.Drawing.Point(63, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 34);
+            this.label2.Size = new System.Drawing.Size(238, 34);
             this.label2.TabIndex = 24;
-            this.label2.Text = "Maintain Sheet";
+            this.label2.Text = "Maintain Sheets";
             // 
             // lblSheet
             // 
@@ -110,8 +110,9 @@
             this.btnDeletePT.Name = "btnDeletePT";
             this.btnDeletePT.Size = new System.Drawing.Size(116, 51);
             this.btnDeletePT.TabIndex = 26;
-            this.btnDeletePT.Text = "Delete Sheet Number";
+            this.btnDeletePT.Text = "Delete Sheets Number";
             this.btnDeletePT.UseVisualStyleBackColor = false;
+            this.btnDeletePT.Click += new System.EventHandler(this.btnDeletePT_Click);
             // 
             // btnUpdatePT
             // 
@@ -123,17 +124,19 @@
             this.btnUpdatePT.Name = "btnUpdatePT";
             this.btnUpdatePT.Size = new System.Drawing.Size(114, 51);
             this.btnUpdatePT.TabIndex = 25;
-            this.btnUpdatePT.Text = "Update Sheet Number\r\n";
+            this.btnUpdatePT.Text = "Update Sheets Number\r\n";
             this.btnUpdatePT.UseVisualStyleBackColor = false;
+            this.btnUpdatePT.Click += new System.EventHandler(this.btnUpdatePT_Click);
             // 
             // txtProductTypeDesc
             // 
-            this.txtProductTypeDesc.Location = new System.Drawing.Point(192, 92);
+            this.txtProductTypeDesc.Location = new System.Drawing.Point(215, 92);
             this.txtProductTypeDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtProductTypeDesc.Multiline = true;
             this.txtProductTypeDesc.Name = "txtProductTypeDesc";
             this.txtProductTypeDesc.Size = new System.Drawing.Size(85, 30);
             this.txtProductTypeDesc.TabIndex = 24;
+            this.txtProductTypeDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductTypeDesc_KeyPress);
             // 
             // label1
             // 
@@ -143,16 +146,16 @@
             this.label1.Location = new System.Drawing.Point(23, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 16);
+            this.label1.Size = new System.Drawing.Size(184, 16);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Products Sheet Number";
+            this.label1.Text = "Products Sheets Number";
             // 
             // FrmMaintainSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(413, 226);
+            this.ClientSize = new System.Drawing.Size(475, 226);
             this.Controls.Add(this.lblSheet);
             this.Controls.Add(this.btnDeletePT);
             this.Controls.Add(this.btnUpdatePT);

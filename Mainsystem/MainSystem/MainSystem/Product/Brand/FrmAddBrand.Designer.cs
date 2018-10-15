@@ -108,7 +108,7 @@
             this.btnAdd.TabIndex = 57;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-          //  this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -128,7 +128,7 @@
             this.rtxtDescription.Size = new System.Drawing.Size(277, 67);
             this.rtxtDescription.TabIndex = 55;
             this.rtxtDescription.Text = "";
-            //this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
+            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
             // 
             // FrmAddBrand
             // 
@@ -144,7 +144,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddBrand";
             this.Text = "FrmAddBrand";
-            this.Load += new System.EventHandler(this.FrmAddBrand_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

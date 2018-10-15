@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Sheet
+﻿namespace MainSystem.Products.Sheets
 {
     partial class FrmAddSheet
     {
@@ -83,7 +83,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 34);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Add Sheet";
+            this.label1.Text = "Add Sheets";
             // 
             // lblSheet
             // 
@@ -108,6 +108,7 @@
             this.btnAdd.TabIndex = 34;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -128,6 +129,7 @@
             this.rtxtDescription.Size = new System.Drawing.Size(90, 26);
             this.rtxtDescription.TabIndex = 32;
             this.rtxtDescription.Text = "";
+            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
             // 
             // FrmAddSheet
             // 
@@ -145,7 +147,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAddSheet";
             this.Text = "FrmAddSheet";
-            this.Load += new System.EventHandler(this.FrmAddSheet_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -13,12 +13,15 @@ using System.Windows.Forms;
 
 namespace MainSystem
 {
-    public partial class frmRefundSale : Form
+    public partial class frmSearchSale : Form
     {
-        public frmRefundSale()
+        int tempID = 0;
+        public frmSearchSale(int x)
         {
             InitializeComponent();
+            tempID = x;
         }
+        SPEntities db = new SPEntities();
         public sealed class UserActivityMonitor
         {
             /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
@@ -80,18 +83,76 @@ namespace MainSystem
             rs.ShowDialog();
             this.Close();
         }
+        private void frmSearchSale_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefundSale_Click(object sender, EventArgs e)
+        {
+            frmRefundSale c = new frmRefundSale();
+            c.ShowDialog();
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frmSearchSale_Leave(object sender, EventArgs e)
         {
-            Process.Start(@".\" + "RefundSale.pdf");
+            this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
+            Process.Start(@".\" + "SearchSale.pdf");
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSearchSale.Text == "")
+                {
+                    lblSale.Visible = true;
+
+                    //MessageBox.Show("Error: No search details entered");
+
+                }
+                else if (txtSearchSale.Text != "")
+                {
+                    int SaleID = Convert.ToInt32(txtSearchSale.Text);
+                    //List<Sale> Etype = db.Sales.Where(o => o.Sale_Id.ToString().Contains(txtSearchSale.Text));
+                    int ID = Convert.ToInt32(txtSearchSale.Text);
+
+                    var details = (from a in db.Sales
+                                   where a.Sale_Id == ID
+                                   select new
+                                   {
+                                       a.Sale_Id,
+                                       a.Sale_Date,
+                                       a.Amount,
+                                       a.CS_Number
+                                   });
+
+
+                    var list = new List<object>();
+                    foreach (var item in details)
+                    {
+                        list.Add(item);
+                    }
+
+                    dgvSearchSale.DataSource = list;
+                }
+            }
+            catch 
+            {
+               // MessageBox.Show(err.ToString());
+                //MessageBox.Show("SaleId does not exist try again");
+            }
+
+
 
         }
     }

@@ -5,9 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,70 +13,26 @@ namespace MainSystem.Products
 {
     public partial class FrmAddProductType : Form
     {
-        public FrmAddProductType()
+        string option;
+        public FrmAddProductType(string x)
         {
             InitializeComponent();
+            option = x;
         }
-        public sealed class UserActivityMonitor
+        SPEntities db = new SPEntities();
+        bool correct = false;
+        public bool ValidateIfProductTypeExists(string proddT)
         {
-            /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
-            /// <returns>The time of the last user activity.</returns>
-
-            public DateTime LastActivity => DateTime.Now - this.InactivityPeriod;
-
-            /// <summary>The amount of time for which the user has been inactive (no mouse activity or key press).</summary>
-
-            public TimeSpan InactivityPeriod
+            bool Check = false;
+            foreach (var item in db.Product_Type)
             {
-                get
+                if (item.Product_Type_Name == proddT)
                 {
-                    var lastInputInfo = new LastInputInfo();
-                    lastInputInfo.CbSize = Marshal.SizeOf(lastInputInfo);
-                    GetLastInputInfo(ref lastInputInfo);
-                    uint elapsedMilliseconds = (uint)Environment.TickCount - lastInputInfo.DwTime;
-                    elapsedMilliseconds = Math.Min(elapsedMilliseconds, int.MaxValue);
-                    return TimeSpan.FromMilliseconds(elapsedMilliseconds);
+                    Check = true;
+                    break;
                 }
             }
-
-            public async Task WaitForInactivity(TimeSpan inactivityThreshold, TimeSpan checkInterval, CancellationToken cancel)
-            {
-                while (true)
-                {
-                    await Task.Delay(checkInterval, cancel);
-
-                    if (InactivityPeriod > inactivityThreshold)
-                        return;
-                }
-            }
-
-            // ReSharper disable UnaccessedField.Local
-            /// <summary>Struct used by Windows API function GetLastInputInfo()</summary>
-
-            struct LastInputInfo
-            {
-#pragma warning disable 649
-                public int CbSize;
-                public uint DwTime;
-#pragma warning restore 649
-            }
-
-            // ReSharper restore UnaccessedField.Local
-
-            [DllImport("user32.dll")]
-            [return: MarshalAs(UnmanagedType.Bool)]
-            static extern bool GetLastInputInfo(ref LastInputInfo plii);
-        }
-        readonly UserActivityMonitor _monitor = new UserActivityMonitor();
-
-        protected override async void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
-            MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            frmLogin rs = new frmLogin();
-            rs.ShowDialog();
-            this.Close();
+            return Check;
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -90,9 +44,55 @@ namespace MainSystem.Products
             Process.Start(@".\" + "AddProductType.pdf");
         }
 
-        private void FrmAddProductType_Load(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            try
+            {
+                correct = true;
+                Product_Type prodT = new Product_Type();
+                frmAddProduct frm = new frmAddProduct();
 
+                if (ValidateIfProductTypeExists(rtxtDescription.Text) == true)
+                {
+                    MessageBox.Show("Product Type exists");
+                    correct = false;
+                }
+                if (rtxtDescription.Text == "")
+                {
+                    lblProdDesc.Visible = true;
+
+                    //MessageBox.Show("Please Enter Product type details");
+                    correct = false;
+                }
+
+                if (correct == true)
+                {
+                    prodT.Product_Type_Name = rtxtDescription.Text;
+               
+
+                db.Product_Type.Add(prodT);
+
+                db.SaveChanges();
+
+                int Product_Type_ID = prodT.Product_Type_ID;
+                string ProdT_value = Convert.ToString(prodT);
+                MessageBox.Show("Product Successfully Added");
+                this.Close();
+ }
+
+            }
+            catch 
+            {
+               
+            }
+        }
+
+        private void rtxtDescription_KeyPress(object sender, KeyPressEventArgs Event)
+        {
+            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
+            {
+                Event.Handled = true;
+            }
         }
     }
 }

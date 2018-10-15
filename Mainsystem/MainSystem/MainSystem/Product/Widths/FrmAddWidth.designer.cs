@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Width
+﻿namespace MainSystem.Products.Widths
 {
     partial class FrmAddWidth
     {
@@ -84,9 +84,9 @@
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Location = new System.Drawing.Point(33, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 34);
+            this.label3.Size = new System.Drawing.Size(309, 34);
             this.label3.TabIndex = 60;
-            this.label3.Text = "Add Products Width";
+            this.label3.Text = "Add Products Widths";
             // 
             // lblUnit
             // 
@@ -118,6 +118,7 @@
             this.txtMeasurement.Size = new System.Drawing.Size(82, 22);
             this.txtMeasurement.TabIndex = 59;
             this.txtMeasurement.Text = "";
+            this.txtMeasurement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMeasurement_KeyPress);
             // 
             // label1
             // 
@@ -141,6 +142,7 @@
             this.btnAdd.TabIndex = 57;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -149,9 +151,9 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(62, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 56;
-            this.label2.Text = "Width";
+            this.label2.Text = "Widths";
             // 
             // WidthDescription
             // 
@@ -160,6 +162,7 @@
             this.WidthDescription.Size = new System.Drawing.Size(82, 22);
             this.WidthDescription.TabIndex = 55;
             this.WidthDescription.Text = "";
+            this.WidthDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WidthDescription_KeyPress);
             // 
             // FrmAddWidth
             // 
@@ -180,7 +183,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAddWidth";
             this.Text = "FrmAddWidth";
-            this.Load += new System.EventHandler(this.FrmAddWidth_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -96,7 +96,7 @@ namespace MainSystem
 
         private void searchSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearchSale ab = new frmSearchSale();
+            frmSearchSale ab = new frmSearchSale(0);
             ab.ShowDialog();
             
             this.Show();
@@ -246,12 +246,24 @@ namespace MainSystem
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            
             LoadAccess();
+
+            SmartPacDash Dash = new SmartPacDash(0);
+
+            Dash.TopLevel = false;
+            Dash.AutoScroll = true;
+            this.panel1.Controls.Add(Dash);
+            Dash.BringToFront();
+            Dash.Dock = DockStyle.Fill;
+            Dash.Show();
+
+            label1.Text = "Logged in as: " + frmLogin.setvalue;
         }
 
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Products.FrmSearchProduct qw = new Products.FrmSearchProduct();
+            Products.FrmSearchProduct qw = new Products.FrmSearchProduct("Maintain Product");
             qw.ShowDialog();
             this.Show();
             this.Activate();
@@ -259,7 +271,7 @@ namespace MainSystem
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Products.FrmAddProductType ee = new Products.FrmAddProductType();
+            Products.FrmAddProductType ee = new Products.FrmAddProductType("Maintain Product T");
             ee.ShowDialog();
             this.Show();
             this.Activate();
@@ -409,6 +421,22 @@ namespace MainSystem
         {
             Vehicles.FrmSearchVehicle sv = new Vehicles.FrmSearchVehicle("Maintain Vehicle");
             sv.ShowDialog();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SmartPacDash f = new SmartPacDash(0);
+            f.TopLevel = false;
+            f.AutoScroll = true;
+            this.panel1.Controls.Add(f);
+            f.BringToFront();
+            f.Dock = DockStyle.Fill;
+            f.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

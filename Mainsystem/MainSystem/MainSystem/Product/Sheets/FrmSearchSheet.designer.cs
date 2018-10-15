@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Sheet
+﻿namespace MainSystem.Products.Sheets
 {
     partial class FrmSearchSheet
     {
@@ -71,11 +71,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(72, 9);
+            this.label1.Location = new System.Drawing.Point(29, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 34);
+            this.label1.Size = new System.Drawing.Size(331, 34);
             this.label1.TabIndex = 52;
-            this.label1.Text = "Search Sheet Number";
+            this.label1.Text = "Search Sheets Number";
             // 
             // button5
             // 
@@ -103,7 +103,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(506, 255);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -122,11 +121,11 @@
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl.ForeColor = System.Drawing.Color.Silver;
-            this.lbl.Location = new System.Drawing.Point(70, 18);
+            this.lbl.Location = new System.Drawing.Point(52, 18);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(215, 16);
+            this.lbl.Size = new System.Drawing.Size(223, 16);
             this.lbl.TabIndex = 57;
-            this.lbl.Text = "Please Specify Sheet Number";
+            this.lbl.Text = "Please Specify Sheets Number";
             // 
             // btnSearch
             // 
@@ -139,6 +138,7 @@
             this.btnSearch.TabIndex = 56;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchSheet
             // 
@@ -146,6 +146,7 @@
             this.txtSearchSheet.Name = "txtSearchSheet";
             this.txtSearchSheet.Size = new System.Drawing.Size(69, 27);
             this.txtSearchSheet.TabIndex = 55;
+            this.txtSearchSheet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchSheet_KeyPress);
             // 
             // dgvProductSheet
             // 
@@ -185,6 +186,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSearchSheet";
             this.Text = "FrmSearchSheet";
+            this.Load += new System.EventHandler(this.FrmSearchSheet_Load);
             this.Leave += new System.EventHandler(this.FrmSearchSheet_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

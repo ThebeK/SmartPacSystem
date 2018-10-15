@@ -35,14 +35,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblVAT = new System.Windows.Forms.Label();
-            this.lblIncludVAT = new System.Windows.Forms.Label();
-            this.lblTotalExcludVAT = new System.Windows.Forms.Label();
+            this.lblVATPercentage = new System.Windows.Forms.Label();
+            this.lblSaleIncludVAT = new System.Windows.Forms.Label();
+            this.lblSaleExludedVAT = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnAddSale = new System.Windows.Forms.Button();
             this.txtProdID = new System.Windows.Forms.TextBox();
-            this.cbxProduct = new System.Windows.Forms.ComboBox();
+            this.cbxProductDesc = new System.Windows.Forms.ComboBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtSaleID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,21 +54,24 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvSale = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnDeleteSale = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnPrintInvoice = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.txtCash = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +85,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(905, 49);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -129,9 +134,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblVAT);
-            this.groupBox2.Controls.Add(this.lblIncludVAT);
-            this.groupBox2.Controls.Add(this.lblTotalExcludVAT);
+            this.groupBox2.Controls.Add(this.lblVATPercentage);
+            this.groupBox2.Controls.Add(this.lblSaleIncludVAT);
+            this.groupBox2.Controls.Add(this.lblSaleExludedVAT);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(0, 217);
@@ -141,39 +146,39 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Total Information";
             // 
-            // lblVAT
+            // lblVATPercentage
             // 
-            this.lblVAT.AutoSize = true;
-            this.lblVAT.Location = new System.Drawing.Point(30, 146);
-            this.lblVAT.Name = "lblVAT";
-            this.lblVAT.Size = new System.Drawing.Size(99, 16);
-            this.lblVAT.TabIndex = 2;
-            this.lblVAT.Text = "VAT (15%): R";
+            this.lblVATPercentage.AutoSize = true;
+            this.lblVATPercentage.Location = new System.Drawing.Point(30, 146);
+            this.lblVATPercentage.Name = "lblVATPercentage";
+            this.lblVATPercentage.Size = new System.Drawing.Size(99, 16);
+            this.lblVATPercentage.TabIndex = 2;
+            this.lblVATPercentage.Text = "VAT (15%): R";
             // 
-            // lblIncludVAT
+            // lblSaleIncludVAT
             // 
-            this.lblIncludVAT.AutoSize = true;
-            this.lblIncludVAT.Location = new System.Drawing.Point(21, 101);
-            this.lblIncludVAT.Name = "lblIncludVAT";
-            this.lblIncludVAT.Size = new System.Drawing.Size(181, 16);
-            this.lblIncludVAT.TabIndex = 1;
-            this.lblIncludVAT.Text = "Total (Including VAT) :R";
+            this.lblSaleIncludVAT.AutoSize = true;
+            this.lblSaleIncludVAT.Location = new System.Drawing.Point(21, 101);
+            this.lblSaleIncludVAT.Name = "lblSaleIncludVAT";
+            this.lblSaleIncludVAT.Size = new System.Drawing.Size(181, 16);
+            this.lblSaleIncludVAT.TabIndex = 1;
+            this.lblSaleIncludVAT.Text = "Total (Including VAT) :R";
             // 
-            // lblTotalExcludVAT
+            // lblSaleExludedVAT
             // 
-            this.lblTotalExcludVAT.AutoSize = true;
-            this.lblTotalExcludVAT.Location = new System.Drawing.Point(18, 51);
-            this.lblTotalExcludVAT.Name = "lblTotalExcludVAT";
-            this.lblTotalExcludVAT.Size = new System.Drawing.Size(184, 16);
-            this.lblTotalExcludVAT.TabIndex = 0;
-            this.lblTotalExcludVAT.Text = "Total (excluding VAT) :R";
+            this.lblSaleExludedVAT.AutoSize = true;
+            this.lblSaleExludedVAT.Location = new System.Drawing.Point(18, 51);
+            this.lblSaleExludedVAT.Name = "lblSaleExludedVAT";
+            this.lblSaleExludedVAT.Size = new System.Drawing.Size(184, 16);
+            this.lblSaleExludedVAT.TabIndex = 0;
+            this.lblSaleExludedVAT.Text = "Total (excluding VAT) :R";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtQuantity);
             this.groupBox1.Controls.Add(this.btnAddSale);
             this.groupBox1.Controls.Add(this.txtProdID);
-            this.groupBox1.Controls.Add(this.cbxProduct);
+            this.groupBox1.Controls.Add(this.cbxProductDesc);
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.txtSaleID);
             this.groupBox1.Controls.Add(this.label11);
@@ -207,6 +212,7 @@
             this.btnAddSale.TabIndex = 10;
             this.btnAddSale.Text = "Add";
             this.btnAddSale.UseVisualStyleBackColor = false;
+            this.btnAddSale.Click += new System.EventHandler(this.btnAddSale_Click);
             // 
             // txtProdID
             // 
@@ -215,13 +221,22 @@
             this.txtProdID.Size = new System.Drawing.Size(123, 27);
             this.txtProdID.TabIndex = 8;
             // 
-            // cbxProduct
+            // cbxProductDesc
             // 
-            this.cbxProduct.FormattingEnabled = true;
-            this.cbxProduct.Location = new System.Drawing.Point(159, 59);
-            this.cbxProduct.Name = "cbxProduct";
-            this.cbxProduct.Size = new System.Drawing.Size(192, 24);
-            this.cbxProduct.TabIndex = 7;
+            this.cbxProductDesc.DataSource = this.productBindingSource1;
+            this.cbxProductDesc.DisplayMember = "Product_Description";
+            this.cbxProductDesc.FormattingEnabled = true;
+            this.cbxProductDesc.Location = new System.Drawing.Point(159, 59);
+            this.cbxProductDesc.Name = "cbxProductDesc";
+            this.cbxProductDesc.Size = new System.Drawing.Size(192, 24);
+            this.cbxProductDesc.TabIndex = 7;
+            this.cbxProductDesc.ValueMember = "Product_ID";
+            this.cbxProductDesc.SelectedIndexChanged += new System.EventHandler(this.cbxProductDesc_SelectedIndexChanged);
+            this.cbxProductDesc.TextChanged += new System.EventHandler(this.cbxProductDesc_TextChanged);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(MainSystem.Product);
             // 
             // txtPrice
             // 
@@ -273,7 +288,7 @@
             this.label6.ForeColor = System.Drawing.Color.Silver;
             this.label6.Location = new System.Drawing.Point(30, 59);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 16);
+            this.label6.Size = new System.Drawing.Size(119, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "Select Products";
             // 
@@ -310,7 +325,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnDeleteSale);
+            this.panel4.Controls.Add(this.btnDelete);
             this.panel4.Controls.Add(this.btnPrintInvoice);
             this.panel4.Controls.Add(this.btnConfirm);
             this.panel4.Controls.Add(this.txtCash);
@@ -322,17 +337,18 @@
             this.panel4.Size = new System.Drawing.Size(504, 227);
             this.panel4.TabIndex = 1;
             // 
-            // btnDeleteSale
+            // btnDelete
             // 
-            this.btnDeleteSale.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDeleteSale.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteSale.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDeleteSale.Location = new System.Drawing.Point(41, 181);
-            this.btnDeleteSale.Name = "btnDeleteSale";
-            this.btnDeleteSale.Size = new System.Drawing.Size(111, 34);
-            this.btnDeleteSale.TabIndex = 11;
-            this.btnDeleteSale.Text = "Delete Sale";
-            this.btnDeleteSale.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDelete.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDelete.Location = new System.Drawing.Point(41, 181);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(111, 34);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Delete Item";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDeleteSale_Click);
             // 
             // btnPrintInvoice
             // 
@@ -345,6 +361,7 @@
             this.btnPrintInvoice.TabIndex = 10;
             this.btnPrintInvoice.Text = "Print Invoice";
             this.btnPrintInvoice.UseVisualStyleBackColor = false;
+            this.btnPrintInvoice.Click += new System.EventHandler(this.btnPrintInvoice_Click);
             // 
             // btnConfirm
             // 
@@ -357,6 +374,7 @@
             this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // txtCash
             // 
@@ -365,6 +383,7 @@
             this.txtCash.Size = new System.Drawing.Size(155, 56);
             this.txtCash.TabIndex = 6;
             this.txtCash.Text = "";
+            this.txtCash.TextChanged += new System.EventHandler(this.txtCash_TextChanged);
             // 
             // label10
             // 
@@ -395,6 +414,10 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataSource = typeof(MainSystem.Product);
+            // 
             // frmASale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +429,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmASale";
             this.Text = "frmASale";
+            this.Load += new System.EventHandler(this.frmASale_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -414,10 +438,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,12 +461,12 @@
         private System.Windows.Forms.RichTextBox txtCash;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvSale;
-        private System.Windows.Forms.Button btnDeleteSale;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnPrintInvoice;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnAddSale;
         private System.Windows.Forms.TextBox txtProdID;
-        private System.Windows.Forms.ComboBox cbxProduct;
+        private System.Windows.Forms.ComboBox cbxProductDesc;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtSaleID;
         private System.Windows.Forms.Label label11;
@@ -448,12 +474,18 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblVAT;
-        private System.Windows.Forms.Label lblIncludVAT;
-        private System.Windows.Forms.Label lblTotalExcludVAT;
+        private System.Windows.Forms.Label lblVATPercentage;
+        private System.Windows.Forms.Label lblSaleIncludVAT;
+        private System.Windows.Forms.Label lblSaleExludedVAT;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        //private SPDataSet5 sPDataSet5;
+        //private SPDataSet5TableAdapters.ProductTableAdapter productTableAdapter;
+        //private SPDataSet6 sPDataSet6;
+        //private SPDataSet6TableAdapters.ProductTableAdapter productTableAdapter1;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.BindingSource productBindingSource1;
     }
 }

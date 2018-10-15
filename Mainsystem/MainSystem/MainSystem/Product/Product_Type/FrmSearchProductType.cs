@@ -5,9 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,71 +13,14 @@ namespace MainSystem.Products
 {
     public partial class FrmSearchProductType : Form
     {
-        public FrmSearchProductType()
+        SPEntities db = new SPEntities();
+        string option;
+        public FrmSearchProductType(string x)
         {
             InitializeComponent();
+            option = x;
         }
-        public sealed class UserActivityMonitor
-        {
-            /// <summary>Determines the time of the last user activity (any mouse activity or key press).</summary>
-            /// <returns>The time of the last user activity.</returns>
 
-            public DateTime LastActivity => DateTime.Now - this.InactivityPeriod;
-
-            /// <summary>The amount of time for which the user has been inactive (no mouse activity or key press).</summary>
-
-            public TimeSpan InactivityPeriod
-            {
-                get
-                {
-                    var lastInputInfo = new LastInputInfo();
-                    lastInputInfo.CbSize = Marshal.SizeOf(lastInputInfo);
-                    GetLastInputInfo(ref lastInputInfo);
-                    uint elapsedMilliseconds = (uint)Environment.TickCount - lastInputInfo.DwTime;
-                    elapsedMilliseconds = Math.Min(elapsedMilliseconds, int.MaxValue);
-                    return TimeSpan.FromMilliseconds(elapsedMilliseconds);
-                }
-            }
-
-            public async Task WaitForInactivity(TimeSpan inactivityThreshold, TimeSpan checkInterval, CancellationToken cancel)
-            {
-                while (true)
-                {
-                    await Task.Delay(checkInterval, cancel);
-
-                    if (InactivityPeriod > inactivityThreshold)
-                        return;
-                }
-            }
-
-            // ReSharper disable UnaccessedField.Local
-            /// <summary>Struct used by Windows API function GetLastInputInfo()</summary>
-
-            struct LastInputInfo
-            {
-#pragma warning disable 649
-                public int CbSize;
-                public uint DwTime;
-#pragma warning restore 649
-            }
-
-            // ReSharper restore UnaccessedField.Local
-
-            [DllImport("user32.dll")]
-            [return: MarshalAs(UnmanagedType.Bool)]
-            static extern bool GetLastInputInfo(ref LastInputInfo plii);
-        }
-        readonly UserActivityMonitor _monitor = new UserActivityMonitor();
-
-        protected override async void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            await _monitor.WaitForInactivity(TimeSpan.FromMinutes(2), TimeSpan.FromSeconds(5), CancellationToken.None);
-            MessageBox.Show("You have been inactive for sometime, please Login again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            frmLogin rs = new frmLogin();
-            rs.ShowDialog();
-            this.Close();
-        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -95,10 +36,106 @@ namespace MainSystem.Products
         {
             Process.Start(@".\" + "AddProduct.pdf");
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public List<object> Get()
         {
+            var details = (from a in db.Products
+                           join a1 in db.Product_Brand on a.Product_Brand_ID equals a1.Product_Brand_ID
+                           join a2 in db.Product_Type on a.Product_Type_ID equals a2.Product_Type_ID
+                           join a3 in db.Plies on a.Ply_ID equals a3.Ply_ID
+                           select new
+                           {
+                               a.Product_ID,
+                               a1.Product_Brand_Name
 
+                           }).ToList();
+
+            var retrurn = new List<object>();
+
+            foreach (var item in details)
+            {
+                if (item.Product_ID == Convert.ToInt32(txtSearchSale.Text))
+                {
+                    retrurn.Add(item);
+                }
+            }
+            return retrurn;
+        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearchSale.Text == "")
+            {
+                label3.Visible = true;
+                //MessageBox.Show("Error: No search details entered");
+
+            }
+            else if (txtSearchSale.Text != "")
+            {
+
+                List<Product_Type> Ptype = db.Product_Type.Where(o => o.Product_Type_Name.Contains(txtSearchSale.Text)).ToList();
+
+
+                if (Ptype.Count == 0)
+                {
+                    //groupBox1.Visible = true;
+                    MessageBox.Show("No Product type found");
+
+                }
+
+                else
+                {
+                    foreach (var a in Ptype)
+                    {
+                        dgvClientSearch.DataSource = Ptype.Select(col => new { col.Product_Type_ID, col.Product_Type_Name }).ToList();
+
+                        dgvClientSearch.Columns[0].HeaderText = "Product_Type_ID";
+                        dgvClientSearch.Columns[1].HeaderText = "Product_Type_Description";
+
+
+                        //groupBox1.Visible = true;
+
+                    }
+                }
+            }
+        }
+
+        private void btnMaintain_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int val = Convert.ToInt32(dgvClientSearch.CurrentRow.Cells[0].Value);
+
+                if (option == "Maintain Product T")
+                {
+                    FrmMaintainProductType form1 = new FrmMaintainProductType(val);
+                    form1.ShowDialog();
+
+                    this.Close();
+
+                }
+
+            }
+
+            catch (NullReferenceException)
+            {
+                //MessageBox.Show("Please specify your product type search details first");
+            }
+        }
+
+        private void FrmSearchProductType_Load(object sender, EventArgs e)
+        {
+            dgvClientSearch.DataSource = db.Product_Type.ToList();
+            dgvClientSearch.Columns[2].Visible = false;
+            dgvClientSearch.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvClientSearch.Columns[1].HeaderText = "Product Type Name";
+        }
+
+        private void txtSearchSale_KeyPress(object sender, KeyPressEventArgs Event)
+        {
+            if (!char.IsControl(Event.KeyChar) && char.IsDigit(Event.KeyChar))
+            {
+                Event.Handled = true;
+            }
         }
     }
 }

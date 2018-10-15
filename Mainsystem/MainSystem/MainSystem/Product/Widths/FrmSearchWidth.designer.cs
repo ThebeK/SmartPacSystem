@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Width
+﻿namespace MainSystem.Products.Widths
 {
     partial class FrmSearchWidth
     {
@@ -88,9 +88,9 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(121, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 34);
+            this.label1.Size = new System.Drawing.Size(223, 34);
             this.label1.TabIndex = 53;
-            this.label1.Text = "Search Width ";
+            this.label1.Text = "Search Widths ";
             // 
             // panel2
             // 
@@ -108,9 +108,9 @@
             this.lbl.ForeColor = System.Drawing.Color.Silver;
             this.lbl.Location = new System.Drawing.Point(3, 76);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(156, 16);
+            this.lbl.Size = new System.Drawing.Size(164, 16);
             this.lbl.TabIndex = 59;
-            this.lbl.Text = "Please Specify Width";
+            this.lbl.Text = "Please Specify Widths";
             // 
             // panel3
             // 
@@ -124,7 +124,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(368, 300);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // lblWidth
             // 
@@ -157,6 +156,7 @@
             this.txtSearchWidth.Name = "txtSearchWidth";
             this.txtSearchWidth.Size = new System.Drawing.Size(58, 20);
             this.txtSearchWidth.TabIndex = 56;
+            this.txtSearchWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchWidth_KeyPress);
             // 
             // btnSearch
             // 
@@ -169,6 +169,7 @@
             this.btnSearch.TabIndex = 57;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvWidth
             // 
@@ -194,6 +195,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSearchWidth";
             this.Text = "FrmSearchWidth";
+            this.Load += new System.EventHandler(this.FrmSearchWidth_Load);
             this.Leave += new System.EventHandler(this.FrmSearchWidth_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

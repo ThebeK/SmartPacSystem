@@ -1,4 +1,4 @@
-﻿namespace MainSystem.Products.Pack_Size
+﻿namespace MainSystem.Products.PackSize
 {
     partial class FrmSearchPackSize
     {
@@ -107,7 +107,7 @@
             this.lbl.ForeColor = System.Drawing.Color.Silver;
             this.lbl.Location = new System.Drawing.Point(22, 71);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(242, 16);
+            this.lbl.Size = new System.Drawing.Size(250, 16);
             this.lbl.TabIndex = 51;
             this.lbl.Text = "Please Specify Products Pack Size";
             // 
@@ -116,19 +116,21 @@
             this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnSearch.Location = new System.Drawing.Point(328, 68);
+            this.btnSearch.Location = new System.Drawing.Point(351, 68);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 50;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchPS
             // 
-            this.txtSearchPS.Location = new System.Drawing.Point(270, 70);
+            this.txtSearchPS.Location = new System.Drawing.Point(289, 64);
             this.txtSearchPS.Name = "txtSearchPS";
             this.txtSearchPS.Size = new System.Drawing.Size(56, 32);
             this.txtSearchPS.TabIndex = 49;
+            this.txtSearchPS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchPS_KeyPress);
             // 
             // dgvProductPS
             // 
