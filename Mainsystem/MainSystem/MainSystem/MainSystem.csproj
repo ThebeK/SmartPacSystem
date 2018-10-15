@@ -214,6 +214,12 @@
     <Compile Include="Employee\FrmMaintainCamera.designer.cs">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSearchSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchSO.Designer.cs">
+      <DependentUpon>frmSearchSO.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetAddress_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -321,6 +327,7 @@
     <Compile Include="Sheet.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="SOSummary.cs" />
     <Compile Include="SP.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -828,6 +835,9 @@
     <EmbeddedResource Include="Employee\FrmMaintainCamera.resx">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchSO.resx">
+      <DependentUpon>frmSearchSO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Order\frmPOLine.resx">
       <DependentUpon>frmPOLine.cs</DependentUpon>
     </EmbeddedResource>
@@ -1011,6 +1021,7 @@
     <None Include="Load_Purcase_Order_Line_Result.datasource" />
     <None Include="Load_Purchase_Order_1_Result.datasource" />
     <None Include="Load_Purchase_Order_Result.datasource" />
+    <None Include="Load_Supplier_Order_Result1.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

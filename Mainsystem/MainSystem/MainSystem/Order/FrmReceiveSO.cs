@@ -71,15 +71,15 @@ namespace MainSystem
             };
             db.Backorder_Line.Add(newBOL);
             db.SaveChanges();
-            dataGridView2.DataSource = db.GetBOL(newBO.Supplier_Backorder_Id).ToList();
+            //dataGridView2.DataSource = db.GetBOL(newBO.Supplier_Backorder_Id).ToList();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Order.frmSupplierOrder f = new Order.frmSupplierOrder();
+            frmSearchSO f = new frmSearchSO();
             f.ShowDialog();
-            textBox1.Text = Order.frmSupplierOrder.sonum;
+            textBox1.Text = frmSearchSO.sonum;
             f.Close();
             var q = db.Supplier_Order.Where(so => so.SO_Number == textBox1.Text).FirstOrDefault();
             dataGridView1.DataSource = db.GetSOL(q.Supplier_Order_Id).ToList();
@@ -102,6 +102,7 @@ namespace MainSystem
         private void button1_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
+
             List<SOSummary> mylist = new List<SOSummary>();
             DataGridViewRow row = new DataGridViewRow();
             dataGridView3.Rows.Clear();
@@ -138,7 +139,7 @@ namespace MainSystem
 
                     dataGridView3.Rows.Add(row);
 
-                    dataGridView3.AllowUserToAddRows = false;
+                    //dataGridView3.AllowUserToAddRows = false;
                     dataGridView3.Refresh();
 
                 }
