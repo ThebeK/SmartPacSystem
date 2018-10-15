@@ -250,6 +250,12 @@
     <Compile Include="frmSearchPO.Designer.cs">
       <DependentUpon>frmSearchPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\frmSupplierOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\frmSupplierOrder.Designer.cs">
+      <DependentUpon>frmSupplierOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pack_Size.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -296,6 +302,7 @@
     <Compile Include="Sheet.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="SOSummary.cs" />
     <Compile Include="SP.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -815,6 +822,9 @@
     <EmbeddedResource Include="frmSearchPO.resx">
       <DependentUpon>frmSearchPO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Order\frmSupplierOrder.resx">
+      <DependentUpon>frmSupplierOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartUp\FrmFirstTimeStartup.resx">
       <DependentUpon>FrmFirstTimeStartup.cs</DependentUpon>
     </EmbeddedResource>
@@ -986,11 +996,13 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Client.datasource" />
+    <None Include="GetBOL_Result.datasource" />
     <None Include="Get_Credit_Return_Line_Result.datasource" />
     <None Include="Load_Credit_Return_Result.datasource" />
     <None Include="Load_Purcase_Order_Line_Result.datasource" />
     <None Include="Load_Purchase_Order_1_Result.datasource" />
     <None Include="Load_Purchase_Order_Result.datasource" />
+    <None Include="Load_Supplier_Order_Result.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
