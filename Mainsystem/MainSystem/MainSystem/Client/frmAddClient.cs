@@ -254,58 +254,37 @@ namespace MainSystem
         public static string setvalue = "";
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    using (OpenFileDialog Get_PDF = new OpenFileDialog())
-            //    {
-            //        Get_PDF.InitialDirectory = @"C:\";
-            //        Get_PDF.RestoreDirectory = true;
-            //        Get_PDF.Title = "Employee Documents";
-            //        Get_PDF.Multiselect = false;
-            //        Get_PDF.CheckFileExists = true;
-            //        Get_PDF.CheckPathExists = true;
-            //        Get_PDF.DefaultExt = "pdf";
-            //        Get_PDF.Filter = "PDF File (*.pdf)|*.pdf";
-            //        Get_PDF.FilterIndex = 1;
-            //        if (Get_PDF.ShowDialog() == DialogResult.OK)
-            //        {
-
-            //            FName = Get_PDF.FileName;
-            //            FileData = File.ReadAllBytes(FName);
-            //            File.ReadAllBytes(FName);
-            //            txtFilePath.Text = Get_PDF.FileName;
-            //            MessageBox.Show("Browse was successful");
-            //            setvalue = Get_PDF.FileName;
-            //        }
-            //    }
-
-            //}
-            //catch (Exception)
-            //{
-
-            //    MessageBox.Show("Whoops, something went wrong, please try again");
-            //}
-
-
-            MemoryStream stream;
-
-            OpenFileDialog opendlg = new OpenFileDialog();
-            if (opendlg.ShowDialog() == DialogResult.OK)
+            try
             {
-                Image img = Image.FromFile(opendlg.FileName);
-                stream = new MemoryStream();
-                img.Save(stream, img.RawFormat);
-                // PictureAdded = true;
-                // pbxImage.Image = img;
-                txtFilePath.Text = opendlg.FileName;
+                using (OpenFileDialog Get_PDF = new OpenFileDialog())
+                {
+                    Get_PDF.InitialDirectory = @"C:\";
+                    Get_PDF.RestoreDirectory = true;
+                    Get_PDF.Title = "Employee Documents";
+                    Get_PDF.Multiselect = false;
+                    Get_PDF.CheckFileExists = true;
+                    Get_PDF.CheckPathExists = true;
+                    Get_PDF.DefaultExt = "pdf";
+                    Get_PDF.Filter = "PDF File (*.pdf)|*.pdf";
+                    Get_PDF.FilterIndex = 1;
+                    if (Get_PDF.ShowDialog() == DialogResult.OK)
+                    {
+
+                        FName = Get_PDF.FileName;
+                        FileData = File.ReadAllBytes(FName);
+                        File.ReadAllBytes(FName);
+                        txtFilePath.Text = Get_PDF.FileName;
+                        MessageBox.Show("Browse was successful");
+                        setvalue = Get_PDF.FileName;
+                    }
+                }
+
             }
-            else
+            catch (Exception)
             {
-                //PictureAdded = false;
-                //pbxImage.Image = null;
+
+                MessageBox.Show("Whoops, something went wrong, please try again");
             }
-
-
         }
 
         private void txtFilePath_TextChanged(object sender, EventArgs e)
@@ -340,8 +319,6 @@ namespace MainSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-
             Client NewCllient = new Client();
             Credit_Approval NewCA = new Credit_Approval();
             Credit_Approval Credit_Approval_Form = new Credit_Approval();
@@ -354,81 +331,79 @@ namespace MainSystem
                 MessageBox.Show("Please enter all fields!");
             }
 
-            
-                string path = AppDomain.CurrentDomain.BaseDirectory + "..\\Lopac\\Images\\";
-                try
-                {
+
+            string path = AppDomain.CurrentDomain.BaseDirectory + "..\\Lopac\\Images\\";
+            try
+            {
 
 
-                  //  NewCA.Credit_Approval_Form = Convert.ToString(txtFilePath.Text);
-                    // txtFilePath.Text = Convert.ToBase64String(NewCA.Credit_Approval_Form);
-                  //  NewCA.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
-                    NewCA.Credit_Status_ID = Convert.ToInt32(cbxCreditStatus.SelectedValue);
-                    NewCA.Credit_Approval_Amount = Convert.ToInt32(txtCreditAmount.Text);
-                    NewCA.Date_Of_Commencement = txtDateTimeDateOfCommencement.Value.Date;
-                    db.Credit_Approval.Add(NewCA);
+                //  NewCA.Credit_Approval_Form = Convert.ToString(txtFilePath.Text);
+                // txtFilePath.Text = Convert.ToBase64String(NewCA.Credit_Approval_Form);
+                //  NewCA.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
+                NewCA.Credit_Status_ID = Convert.ToInt32(cbxCreditStatus.SelectedValue);
+                NewCA.Credit_Approval_Amount = Convert.ToInt32(txtCreditAmount.Text);
+                NewCA.Date_Of_Commencement = txtDateTimeDateOfCommencement.Value.Date;
+                db.Credit_Approval.Add(NewCA);
 
 
-                    NewCllient.Client_Name = txtName.Text;
-                    NewCllient.Client_VAT_Reg_Number = txtVatRegNum.Text;
-                    NewCllient.Client_Telephone = "+27" + txtTelephone.Text;
-                    NewCllient.Client_Fax_Number = txtFaxNumber.Text;
-                    NewCllient.Client_Email_Address = txtEmailAdd.Text;
-                    NewCllient.Physical_Address = txtPhysicalAdd.Text;
+                NewCllient.Client_Name = txtName.Text;
+                NewCllient.Client_VAT_Reg_Number = txtVatRegNum.Text;
+                NewCllient.Client_Telephone = "+27" + txtTelephone.Text;
+                NewCllient.Client_Fax_Number = txtFaxNumber.Text;
+                NewCllient.Client_Email_Address = txtEmailAdd.Text;
+                NewCllient.Physical_Address = txtPhysicalAdd.Text;
 
-                    NewCllient.Province_Id = Convert.ToInt32(cbxProvince.SelectedValue.ToString());
-                    NewCllient.City_Id = Convert.ToInt32(cbxCity.SelectedValue);
-                    NewCllient.Account_Status_ID = Convert.ToInt32(cbxAccountStatus.SelectedValue);
+                NewCllient.Province_Id = Convert.ToInt32(cbxProvince.SelectedValue.ToString());
+                NewCllient.City_Id = Convert.ToInt32(cbxCity.SelectedValue);
+                NewCllient.Account_Status_ID = Convert.ToInt32(cbxAccountStatus.SelectedValue);
 
-                    NewCllient.Credit_Approval_ID = Convert.ToInt32(cbxCreditStatus.SelectedValue);
+                NewCllient.Credit_Approval_ID = Convert.ToInt32(cbxCreditStatus.SelectedValue);
 
-                    NewCllient.Credit_Approval_ID = NewCA.Credit_Approval_ID;
+                NewCllient.Credit_Approval_ID = NewCA.Credit_Approval_ID;
 
-                    db.Clients.Add(NewCllient);
-
-
-                    db.SaveChanges();
-
-                    MessageBox.Show("Client Has been Added succesfully");
+                db.Clients.Add(NewCllient);
 
 
-                    //Audit Log
-                    int Client_Id = NewCllient.Client_ID;
-                    string client_Value = Convert.ToString(NewCllient);
+                db.SaveChanges();
 
-                    Audit_Log Current_Audit3 = new Audit_Log();
-                    Current_Audit3.Table_Name = "Client";
-                    // Current_Audit3.Users_Id = Globals.Users_Id;
-                    Current_Audit3.Date_Time = DateTime.Now;
-                    db.Audit_Log.Add(Current_Audit3);
-                    db.SaveChanges();
-                    int Log_ID3 = Current_Audit3.Audit_Log_Id;
+                MessageBox.Show("Client Has been Added succesfully");
 
 
-                    Audit_Create_Delete Current_Create3 = new Audit_Create_Delete();
-                    Current_Create3.Audit_Log_Id = Log_ID3;
-                    Current_Create3.Created = true;
-                    Current_Create3.PK_Row_Effected = Client_Id;
-                    Current_Create3.Value = client_Value;
-                    db.Audit_Create_Delete.Add(Current_Create3);
-                    db.SaveChanges();
-                    this.Close();
-                    this.Hide();
-                    //MessageBox.Show("Are you sure you want to add this client ?", "confirmation", MessageBoxButtons.YesNo);
-                    //MessageBox.Show("Client details have been added successfully");
-                    //MessageBox.Show("Client already exists on the system");
-                    //MessageBox.Show("Please fill in all required fields");
-                    //MessageBox.Show("Please select a client");
-                }
-                catch (Exception ex)
-                {
+                //Audit Log
+                int Client_Id = NewCllient.Client_ID;
+                string client_Value = Convert.ToString(NewCllient);
 
-                    MessageBox.Show("Whoops, Something went wrong. Please try again" + ex);
-                }
+                Audit_Log Current_Audit3 = new Audit_Log();
+                Current_Audit3.Table_Name = "Client";
+                // Current_Audit3.Users_Id = Globals.Users_Id;
+                Current_Audit3.Date_Time = DateTime.Now;
+                db.Audit_Log.Add(Current_Audit3);
+                db.SaveChanges();
+                int Log_ID3 = Current_Audit3.Audit_Log_Id;
+
+
+                Audit_Create_Delete Current_Create3 = new Audit_Create_Delete();
+                Current_Create3.Audit_Log_Id = Log_ID3;
+                Current_Create3.Created = true;
+                Current_Create3.PK_Row_Effected = Client_Id;
+                Current_Create3.Value = client_Value;
+                db.Audit_Create_Delete.Add(Current_Create3);
+                db.SaveChanges();
+                this.Close();
+                this.Hide();
+                //MessageBox.Show("Are you sure you want to add this client ?", "confirmation", MessageBoxButtons.YesNo);
+                //MessageBox.Show("Client details have been added successfully");
+                //MessageBox.Show("Client already exists on the system");
+                //MessageBox.Show("Please fill in all required fields");
+                //MessageBox.Show("Please select a client");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Whoops, Something went wrong. Please try again" + ex);
             }
 
-
-            
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {

@@ -81,6 +81,7 @@
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search Template";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dataGridView1
             // 

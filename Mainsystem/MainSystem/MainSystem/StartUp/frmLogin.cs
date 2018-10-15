@@ -96,8 +96,7 @@ namespace MainSystem
                 MessageBox.Show("Error has occured:" + ex.Message);
 
             }
-            Form1 qq = new Form1();
-            qq.ShowDialog();
+           
            
         }
 

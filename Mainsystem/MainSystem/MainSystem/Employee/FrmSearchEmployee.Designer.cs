@@ -36,15 +36,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnMaintain = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgvClientSearch = new System.Windows.Forms.DataGridView();
+            this.lblEmployeeSearch = new System.Windows.Forms.Label();
+            this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSeachEmployee = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -55,6 +55,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 328);
             this.panel2.TabIndex = 21;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -63,7 +64,7 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(282, 20);
+            this.label2.Size = new System.Drawing.Size(291, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Specify Employees Name";
             // 
@@ -109,7 +110,7 @@
             this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label13.Location = new System.Drawing.Point(323, 7);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(252, 34);
+            this.label13.Size = new System.Drawing.Size(267, 34);
             this.label13.TabIndex = 25;
             this.label13.Text = "Search Employees";
             // 
@@ -126,25 +127,25 @@
             this.btnMaintain.UseVisualStyleBackColor = false;
             this.btnMaintain.Click += new System.EventHandler(this.btnMaintain_Click);
             // 
-            // label3
+            // lblEmployeeSearch
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(352, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(329, 20);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Please specify valid Employees Name";
-            this.label3.Visible = false;
+            this.lblEmployeeSearch.AutoSize = true;
+            this.lblEmployeeSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEmployeeSearch.ForeColor = System.Drawing.Color.Red;
+            this.lblEmployeeSearch.Location = new System.Drawing.Point(352, 112);
+            this.lblEmployeeSearch.Name = "lblEmployeeSearch";
+            this.lblEmployeeSearch.Size = new System.Drawing.Size(338, 20);
+            this.lblEmployeeSearch.TabIndex = 25;
+            this.lblEmployeeSearch.Text = "Please specify valid Employees Name";
+            this.lblEmployeeSearch.Visible = false;
             // 
-            // dgvClientSearch
+            // dgvEmployees
             // 
-            this.dgvClientSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientSearch.Location = new System.Drawing.Point(351, 136);
-            this.dgvClientSearch.Name = "dgvClientSearch";
-            this.dgvClientSearch.Size = new System.Drawing.Size(414, 150);
-            this.dgvClientSearch.TabIndex = 24;
+            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployees.Location = new System.Drawing.Point(351, 136);
+            this.dgvEmployees.Name = "dgvEmployees";
+            this.dgvEmployees.Size = new System.Drawing.Size(414, 150);
+            this.dgvEmployees.TabIndex = 24;
             // 
             // btnSearch
             // 
@@ -157,6 +158,7 @@
             this.btnSearch.TabIndex = 23;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSeachEmployee
             // 
@@ -164,6 +166,7 @@
             this.txtSeachEmployee.Name = "txtSeachEmployee";
             this.txtSeachEmployee.Size = new System.Drawing.Size(387, 20);
             this.txtSeachEmployee.TabIndex = 22;
+            this.txtSeachEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeachEmployee_KeyPress);
             // 
             // toolTip1
             // 
@@ -178,8 +181,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnMaintain);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dgvClientSearch);
+            this.Controls.Add(this.lblEmployeeSearch);
+            this.Controls.Add(this.dgvEmployees);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSeachEmployee);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -192,7 +195,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +210,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnMaintain;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvClientSearch;
+        private System.Windows.Forms.Label lblEmployeeSearch;
+        private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSeachEmployee;
         private System.Windows.Forms.ToolTip toolTip1;

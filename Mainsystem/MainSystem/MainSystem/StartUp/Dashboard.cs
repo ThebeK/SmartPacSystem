@@ -168,7 +168,7 @@ namespace MainSystem
 
         private void addEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employees.FrmAddEmployeeType eew = new Employees.FrmAddEmployeeType();
+            Employees.FrmAddEmployeeType eew = new Employees.FrmAddEmployeeType("");
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -176,7 +176,7 @@ namespace MainSystem
 
         private void maintainEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Employees.FrmSearchEmployeeType eew = new Employees.FrmSearchEmployeeType();
+            Employees.FrmSearchEmployeeType eew = new Employees.FrmSearchEmployeeType("Maintain Employee Type");
             eew.ShowDialog();
             this.Show();
             this.Activate();
@@ -333,10 +333,10 @@ namespace MainSystem
 
         private void generateCreditRetunrToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Order.FrmCreditReturn tgv = new Order.FrmCreditReturn();
-            tgv.ShowDialog();
-            this.Show();
-            this.Activate();
+            Order.frmSearchPO tgv = new Order.frmSearchPO();
+            //tgv.ShowDialog();
+            tgv.Show();
+            //this.Activate();
         }
 
         private void generatePurchaseOrderToolStripMenuItem1_Click(object sender, EventArgs e)

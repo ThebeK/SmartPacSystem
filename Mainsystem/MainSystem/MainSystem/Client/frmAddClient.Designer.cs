@@ -418,9 +418,9 @@
             this.btnViewCreditApproval.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnViewCreditApproval.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewCreditApproval.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnViewCreditApproval.Location = new System.Drawing.Point(913, 461);
+            this.btnViewCreditApproval.Location = new System.Drawing.Point(975, 528);
             this.btnViewCreditApproval.Name = "btnViewCreditApproval";
-            this.btnViewCreditApproval.Size = new System.Drawing.Size(207, 41);
+            this.btnViewCreditApproval.Size = new System.Drawing.Size(207, 46);
             this.btnViewCreditApproval.TabIndex = 17;
             this.btnViewCreditApproval.Text = "View Credit Approval";
             this.btnViewCreditApproval.UseVisualStyleBackColor = false;
@@ -481,7 +481,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.LightGray;
-            this.label15.Location = new System.Drawing.Point(14, 29);
+            this.label15.Location = new System.Drawing.Point(-35, 36);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 16);
             this.label15.TabIndex = 9;
@@ -494,7 +494,7 @@
             this.btnBrowse.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnBrowse.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnBrowse.Location = new System.Drawing.Point(338, 65);
+            this.btnBrowse.Location = new System.Drawing.Point(281, 65);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(99, 27);
             this.btnBrowse.TabIndex = 8;
@@ -505,7 +505,7 @@
             // txtFilePath
             // 
             this.txtFilePath.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtFilePath.Location = new System.Drawing.Point(118, 26);
+            this.txtFilePath.Location = new System.Drawing.Point(61, 31);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(319, 27);
             this.txtFilePath.TabIndex = 7;
@@ -576,9 +576,9 @@
             this.btnAddClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAddClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAddClient.Location = new System.Drawing.Point(732, 461);
+            this.btnAddClient.Location = new System.Drawing.Point(805, 528);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(145, 41);
+            this.btnAddClient.Size = new System.Drawing.Size(145, 49);
             this.btnAddClient.TabIndex = 18;
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.UseVisualStyleBackColor = false;

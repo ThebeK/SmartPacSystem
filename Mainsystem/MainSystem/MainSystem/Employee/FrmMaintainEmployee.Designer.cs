@@ -35,12 +35,15 @@
             this.lblEmailAddress = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblPicture = new System.Windows.Forms.Label();
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.btnUpdateEmployee = new System.Windows.Forms.Button();
-            this.pbxEmployee = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbxTitle = new System.Windows.Forms.ComboBox();
+            this.titleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.cbxEmployeeType = new System.Windows.Forms.ComboBox();
+            this.employeeTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.txtContactNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,17 +69,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pi = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTypeBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pi)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +96,7 @@
             this.btnRetakePic.TabIndex = 39;
             this.btnRetakePic.Text = "Retake Picture";
             this.btnRetakePic.UseVisualStyleBackColor = false;
+            this.btnRetakePic.Click += new System.EventHandler(this.btnRetakePic_Click);
             // 
             // lblTitle
             // 
@@ -113,7 +119,7 @@
             this.lblEmployeetype.Location = new System.Drawing.Point(149, 54);
             this.lblEmployeetype.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployeetype.Name = "lblEmployeetype";
-            this.lblEmployeetype.Size = new System.Drawing.Size(266, 16);
+            this.lblEmployeetype.Size = new System.Drawing.Size(274, 16);
             this.lblEmployeetype.TabIndex = 35;
             this.lblEmployeetype.Text = "Please select a valid Employees Type";
             this.lblEmployeetype.Visible = false;
@@ -146,10 +152,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblPicture);
             this.groupBox2.Controls.Add(this.btnDeleteEmployee);
             this.groupBox2.Controls.Add(this.btnUpdateEmployee);
             this.groupBox2.Controls.Add(this.btnRetakePic);
-            this.groupBox2.Controls.Add(this.pbxEmployee);
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.lblTitle);
             this.groupBox2.Controls.Add(this.lblEmployeetype);
             this.groupBox2.Controls.Add(this.lblEmailAddress);
@@ -173,6 +180,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Employees Information";
             // 
+            // lblPicture
+            // 
+            this.lblPicture.AutoSize = true;
+            this.lblPicture.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPicture.ForeColor = System.Drawing.Color.Red;
+            this.lblPicture.Location = new System.Drawing.Point(27, 439);
+            this.lblPicture.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPicture.Name = "lblPicture";
+            this.lblPicture.Size = new System.Drawing.Size(66, 16);
+            this.lblPicture.TabIndex = 42;
+            this.lblPicture.Text = "Warning";
+            this.lblPicture.Visible = false;
+            // 
             // btnDeleteEmployee
             // 
             this.btnDeleteEmployee.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -183,6 +203,7 @@
             this.btnDeleteEmployee.TabIndex = 41;
             this.btnDeleteEmployee.Text = "Delete Employees";
             this.btnDeleteEmployee.UseVisualStyleBackColor = false;
+            this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
             // 
             // btnUpdateEmployee
             // 
@@ -194,20 +215,23 @@
             this.btnUpdateEmployee.TabIndex = 40;
             this.btnUpdateEmployee.Text = "Update Employees";
             this.btnUpdateEmployee.UseVisualStyleBackColor = false;
+            this.btnUpdateEmployee.Click += new System.EventHandler(this.btnUpdateEmployee_Click);
             // 
-            // pbxEmployee
+            // pictureBox1
             // 
-            this.pbxEmployee.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pbxEmployee.Location = new System.Drawing.Point(192, 280);
-            this.pbxEmployee.Name = "pbxEmployee";
-            this.pbxEmployee.Size = new System.Drawing.Size(184, 156);
-            this.pbxEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxEmployee.TabIndex = 38;
-            this.pbxEmployee.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox1.Location = new System.Drawing.Point(192, 280);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(184, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
             // 
             // cbxTitle
             // 
+            this.cbxTitle.DataSource = this.titleBindingSource;
             this.cbxTitle.DisplayMember = "Title_Description";
+            this.cbxTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbxTitle.FormattingEnabled = true;
             this.cbxTitle.Location = new System.Drawing.Point(143, 215);
             this.cbxTitle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -215,6 +239,10 @@
             this.cbxTitle.Size = new System.Drawing.Size(140, 24);
             this.cbxTitle.TabIndex = 32;
             this.cbxTitle.ValueMember = "Title_Id";
+            // 
+            // titleBindingSource
+            // 
+            this.titleBindingSource.DataSource = typeof(MainSystem.Title);
             // 
             // label9
             // 
@@ -230,7 +258,9 @@
             // 
             // cbxEmployeeType
             // 
-            this.cbxEmployeeType.DisplayMember = "Employees";
+            this.cbxEmployeeType.DataSource = this.employeeTypeBindingSource;
+            this.cbxEmployeeType.DisplayMember = "Employees_Type_Description";
+            this.cbxEmployeeType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbxEmployeeType.FormattingEnabled = true;
             this.cbxEmployeeType.Location = new System.Drawing.Point(140, 27);
             this.cbxEmployeeType.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -239,9 +269,13 @@
             this.cbxEmployeeType.TabIndex = 28;
             this.cbxEmployeeType.ValueMember = "Employee_Type_ID";
             // 
+            // employeeTypeBindingSource
+            // 
+            this.employeeTypeBindingSource.DataSource = typeof(MainSystem.Employee_Type);
+            // 
             // txtEmailAddress
             // 
-            this.txtEmailAddress.ForeColor = System.Drawing.Color.LightGray;
+            this.txtEmailAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtEmailAddress.Location = new System.Drawing.Point(145, 155);
             this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEmailAddress.Name = "txtEmailAddress";
@@ -250,13 +284,14 @@
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.ForeColor = System.Drawing.Color.LightGray;
+            this.txtContactNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtContactNumber.Location = new System.Drawing.Point(143, 98);
             this.txtContactNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtContactNumber.MaxLength = 10;
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(339, 27);
             this.txtContactNumber.TabIndex = 27;
+            this.txtContactNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactNumber_KeyPress);
             // 
             // label8
             // 
@@ -290,7 +325,7 @@
             this.label11.Location = new System.Drawing.Point(17, 27);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 16);
+            this.label11.Size = new System.Drawing.Size(123, 16);
             this.label11.TabIndex = 23;
             this.label11.Text = "Employees Type";
             // 
@@ -386,7 +421,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.ForeColor = System.Drawing.Color.LightGray;
+            this.txtAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAddress.Location = new System.Drawing.Point(150, 144);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAddress.Multiline = true;
@@ -396,13 +431,14 @@
             // 
             // txtTaxumber
             // 
-            this.txtTaxumber.ForeColor = System.Drawing.Color.LightGray;
+            this.txtTaxumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaxumber.Location = new System.Drawing.Point(150, 384);
             this.txtTaxumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTaxumber.MaxLength = 10;
             this.txtTaxumber.Name = "txtTaxumber";
             this.txtTaxumber.Size = new System.Drawing.Size(365, 27);
             this.txtTaxumber.TabIndex = 18;
+            this.txtTaxumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxumber_KeyPress);
             // 
             // label3
             // 
@@ -418,17 +454,18 @@
             // 
             // txtAccountNum
             // 
-            this.txtAccountNum.ForeColor = System.Drawing.Color.LightGray;
+            this.txtAccountNum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAccountNum.Location = new System.Drawing.Point(150, 326);
             this.txtAccountNum.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAccountNum.MaxLength = 13;
             this.txtAccountNum.Name = "txtAccountNum";
             this.txtAccountNum.Size = new System.Drawing.Size(365, 27);
             this.txtAccountNum.TabIndex = 11;
+            this.txtAccountNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccountNum_KeyPress);
             // 
             // txtESurname
             // 
-            this.txtESurname.ForeColor = System.Drawing.Color.LightGray;
+            this.txtESurname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtESurname.Location = new System.Drawing.Point(150, 85);
             this.txtESurname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtESurname.Name = "txtESurname";
@@ -437,13 +474,15 @@
             // 
             // txtID
             // 
-            this.txtID.ForeColor = System.Drawing.Color.LightGray;
+            this.txtID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtID.Location = new System.Drawing.Point(150, 264);
             this.txtID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtID.MaxLength = 13;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(365, 27);
             this.txtID.TabIndex = 9;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // label5
             // 
@@ -522,15 +561,17 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employees Information";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtEName
             // 
-            this.txtEName.ForeColor = System.Drawing.Color.LightGray;
+            this.txtEName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtEName.Location = new System.Drawing.Point(150, 36);
             this.txtEName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEName.Name = "txtEName";
             this.txtEName.Size = new System.Drawing.Size(365, 27);
             this.txtEName.TabIndex = 8;
+            this.txtEName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEName_KeyPress);
             // 
             // panel2
             // 
@@ -541,15 +582,15 @@
             this.panel2.Size = new System.Drawing.Size(555, 560);
             this.panel2.TabIndex = 4;
             // 
-            // pictureBox1
+            // pi
             // 
-            this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox1.Location = new System.Drawing.Point(1128, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 43);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pi.Image = global::MainSystem.Properties.Resources.Close;
+            this.pi.Location = new System.Drawing.Point(1128, 4);
+            this.pi.Name = "pi";
+            this.pi.Size = new System.Drawing.Size(51, 43);
+            this.pi.TabIndex = 13;
+            this.pi.TabStop = false;
+            this.pi.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button5
             // 
@@ -571,7 +612,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Location = new System.Drawing.Point(485, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(280, 34);
+            this.label1.Size = new System.Drawing.Size(295, 34);
             this.label1.TabIndex = 5;
             this.label1.Text = "Maintain Employees";
             // 
@@ -586,7 +627,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pi);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -611,11 +652,13 @@
             this.Load += new System.EventHandler(this.FrmMaintainEmployee_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTypeBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pi)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -632,7 +675,7 @@
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnUpdateEmployee;
-        private System.Windows.Forms.PictureBox pbxEmployee;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbxTitle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxEmployeeType;
@@ -661,12 +704,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtEName;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pi;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDeleteEmployee;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.BindingSource titleBindingSource;
+        private System.Windows.Forms.BindingSource employeeTypeBindingSource;
+        private System.Windows.Forms.Label lblPicture;
     }
 }

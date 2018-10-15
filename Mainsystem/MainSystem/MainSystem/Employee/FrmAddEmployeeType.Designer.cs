@@ -61,7 +61,7 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(274, 31);
+            this.label3.Size = new System.Drawing.Size(289, 31);
             this.label3.TabIndex = 20;
             this.label3.Text = "Add Employees Type";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -71,7 +71,7 @@
             this.button5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.button5.Location = new System.Drawing.Point(283, 3);
+            this.button5.Location = new System.Drawing.Point(298, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(47, 46);
             this.button5.TabIndex = 22;
@@ -82,7 +82,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox1.Location = new System.Drawing.Point(336, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(351, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 43);
             this.pictureBox1.TabIndex = 21;
@@ -112,6 +112,7 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -131,6 +132,7 @@
             this.rtxtDescription.Size = new System.Drawing.Size(313, 52);
             this.rtxtDescription.TabIndex = 19;
             this.rtxtDescription.Text = "";
+            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
             // 
             // FrmAddEmployeeType
             // 

@@ -50,6 +50,7 @@
             this.rtxtDescription.Size = new System.Drawing.Size(313, 52);
             this.rtxtDescription.TabIndex = 24;
             this.rtxtDescription.Text = "";
+            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
             // 
             // label3
             // 
@@ -59,7 +60,7 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(333, 31);
+            this.label3.Size = new System.Drawing.Size(348, 31);
             this.label3.TabIndex = 20;
             this.label3.Text = "Maintain Employees Type";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -85,8 +86,9 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(171, 32);
             this.btnUpdate.TabIndex = 26;
-            this.btnUpdate.Text = "Update Employees";
+            this.btnUpdate.Text = "Update Employee Type";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label2
             // 
@@ -115,7 +117,7 @@
             this.button5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.button5.Location = new System.Drawing.Point(342, 3);
+            this.button5.Location = new System.Drawing.Point(357, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(47, 46);
             this.button5.TabIndex = 22;
@@ -126,7 +128,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MainSystem.Properties.Resources.Close;
-            this.pictureBox1.Location = new System.Drawing.Point(395, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(410, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 43);
             this.pictureBox1.TabIndex = 21;
@@ -142,8 +144,9 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(171, 32);
             this.btnDelete.TabIndex = 28;
-            this.btnDelete.Text = "Delete Employees";
+            this.btnDelete.Text = "Delete Employee Type";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FrmMaintainEmployeeType
             // 

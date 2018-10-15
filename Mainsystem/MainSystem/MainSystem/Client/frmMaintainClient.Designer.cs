@@ -42,7 +42,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtFaxNumber = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnDownload = new System.Windows.Forms.Button();
             this.txtCreditAmount = new System.Windows.Forms.TextBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,6 +56,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnDownload = new System.Windows.Forms.Button();
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -109,7 +109,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(599, 55);
             this.panel1.TabIndex = 19;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox2
             // 
@@ -230,20 +229,6 @@
             this.groupBox5.TabIndex = 21;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Credit Approval Information";
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDownload.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDownload.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownload.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDownload.Location = new System.Drawing.Point(1002, 503);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(238, 27);
-            this.btnDownload.TabIndex = 25;
-            this.btnDownload.Text = "Download credit approval";
-            this.btnDownload.UseVisualStyleBackColor = false;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // txtCreditAmount
             // 
@@ -386,18 +371,33 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "Credit Approval Amount:";
             // 
+            // btnDownload
+            // 
+            this.btnDownload.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDownload.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDownload.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownload.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDownload.Location = new System.Drawing.Point(1006, 518);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(238, 27);
+            this.btnDownload.TabIndex = 25;
+            this.btnDownload.Text = "Download credit approval";
+            this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
             // btnDeleteClient
             // 
             this.btnDeleteClient.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDeleteClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDeleteClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDeleteClient.Location = new System.Drawing.Point(839, 503);
+            this.btnDeleteClient.Location = new System.Drawing.Point(827, 518);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(157, 27);
             this.btnDeleteClient.TabIndex = 17;
             this.btnDeleteClient.Text = "Delete Client";
             this.btnDeleteClient.UseVisualStyleBackColor = false;
+            this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
             // label4
             // 
@@ -624,7 +624,7 @@
             this.btnUpdateClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnUpdateClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnUpdateClient.Location = new System.Drawing.Point(663, 503);
+            this.btnUpdateClient.Location = new System.Drawing.Point(632, 518);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(170, 27);
             this.btnUpdateClient.TabIndex = 22;
