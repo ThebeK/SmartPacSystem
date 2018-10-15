@@ -74,7 +74,11 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -326,6 +330,12 @@
     </Compile>
     <Compile Include="Sheet.cs">
       <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmartPacDash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmartPacDash.designer.cs">
+      <DependentUpon>SmartPacDash.cs</DependentUpon>
     </Compile>
     <Compile Include="SOSummary.cs" />
     <Compile Include="SP.Context.cs">
@@ -843,6 +853,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchPO.resx">
       <DependentUpon>frmSearchPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartPacDash.resx">
+      <DependentUpon>SmartPacDash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartUp\FrmFirstTimeStartup.resx">
       <DependentUpon>FrmFirstTimeStartup.cs</DependentUpon>
