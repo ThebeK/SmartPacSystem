@@ -30,12 +30,24 @@ namespace MainSystem
 
         private void btnAddCty_Click(object sender, EventArgs e)
         {
-            NewCity.City_Name = txtctyName.Text;
-            NewCity.Province_ID = Convert.ToInt32(cbProvince.SelectedValue.ToString());
-            NewCity.City_Id = NewProv.Province_Id;
+            try
+            {
+                NewCity.City_Name = txtctyName.Text;
+                NewCity.Province_ID = Convert.ToInt32(cbProvince.SelectedValue.ToString());
+               
 
-            db.Cities.Add(NewCity);
-            db.SaveChanges();
+                db.Cities.Add(NewCity);
+                db.SaveChanges();
+                MessageBox.Show("City has been added successfully");
+
+            }
+            catch (Exception)
+            {
+
+                
+            }
+           
+
         }
     }
 }
