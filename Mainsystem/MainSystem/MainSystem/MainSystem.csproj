@@ -200,12 +200,6 @@
     <Compile Include="Employee\FrmMaintainEmployee.designer.cs">
       <DependentUpon>FrmMaintainEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee_Logsheet.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employee_Type.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Employee\frmCamera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +217,12 @@
     </Compile>
     <Compile Include="Clients\frmAddCity.Designer.cs">
       <DependentUpon>frmAddCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Logsheet.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="frmASale.cs">
       <SubType>Form</SubType>
@@ -1066,11 +1066,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Province.datasource" />
     <EntityDeploy Include="SP.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SP.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Province.datasource" />
     <None Include="SP.edmx.diagram">
       <DependentUpon>SP.edmx</DependentUpon>
     </None>

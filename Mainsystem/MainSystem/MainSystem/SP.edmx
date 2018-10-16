@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Access_Level">
           <Key>
             <PropertyRef Name="Access_Level_Id" />
@@ -286,6 +286,7 @@
           <Property Name="Order_Price" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Is_Advertised" Type="bit" />
           <Property Name="PR_Number" Type="varchar" MaxLength="10" StoreGeneratedPattern="Computed" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Product_Brand">
           <Key>
@@ -1359,7 +1360,8 @@
             <End Role="Supplier_Order" EntitySet="Supplier_Order" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1696,6 +1698,7 @@
           <Property Name="Order_Price" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Is_Advertised" Type="Boolean" />
           <Property Name="PR_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Client_Purchase_Order_Line" Relationship="Self.FK__Client_Pu__Produ__08B54D69" FromRole="Product" ToRole="Client_Purchase_Order_Line" />
           <NavigationProperty Name="Pack_Size" Relationship="Self.FK__Product__Pack_Si__1332DBDC" FromRole="Product" ToRole="Pack_Size" />
           <NavigationProperty Name="pLength" Relationship="Self.FK__Product__Length___123EB7A3" FromRole="Product" ToRole="pLength" />
@@ -2707,14 +2710,14 @@
             <End Role="Vehicle" EntitySet="Vehicles" />
           </AssociationSet>
           <FunctionImport Name="Get_Credit_Return_Line" ReturnType="Collection(SPModel.Get_Credit_Return_Line_Result)">
-          <Parameter Name="crnum" Mode="In" Type="Int32" />
+            <Parameter Name="crnum" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetAddress" ReturnType="Collection(SPModel.GetAddress_Result)">
             <Parameter Name="cid" Mode="In" Type="Int32" />
             <Parameter Name="pid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetBOL" ReturnType="Collection(SPModel.GetBOL_Result)">
-          <Parameter Name="soid" Mode="In" Type="Int32" />
+            <Parameter Name="soid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetDeliveryVehicle" ReturnType="Collection(String)" />
           <FunctionImport Name="GetDriver" ReturnType="Collection(String)" />
@@ -2723,16 +2726,17 @@
           <FunctionImport Name="GetOrderToLoad" ReturnType="Collection(SPModel.GetOrderToLoad_Result)" />
           <FunctionImport Name="Getpoduct" ReturnType="Collection(SPModel.Getpoduct_Result)" />
           <FunctionImport Name="GetPOL" ReturnType="Collection(SPModel.GetPOL_Result)">
-          <Parameter Name="poid" Mode="In" Type="Int32" />
+            <Parameter Name="poid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetSOL" ReturnType="Collection(SPModel.GetSOL_Result)">
-          <Parameter Name="soid" Mode="In" Type="Int32" />
+            <Parameter Name="soid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetTotalQty" ReturnType="Collection(SPModel.GetTotalQty_Result)" />
           <FunctionImport Name="Load_Client" ReturnType="Collection(SPModel.Load_Client_Result)" />
           <FunctionImport Name="Load_Credit_Return" ReturnType="Collection(SPModel.Load_Credit_Return_Result)" />
           <FunctionImport Name="Load_Purcase_Order_Line" ReturnType="Collection(SPModel.Load_Purcase_Order_Line_Result)" />
           <FunctionImport Name="Load_Purchase_Order" ReturnType="Collection(SPModel.Load_Purchase_Order_Result)" />
+          <FunctionImport Name="Load_Purchase_Order_1" ReturnType="Collection(SPModel.Load_Purchase_Order_1_Result)" />
           <FunctionImport Name="Load_Supplier_Order" ReturnType="Collection(SPModel.Load_Supplier_Order_Result)" />
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -2764,7 +2768,6 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="Load_Purchase_Order_1" ReturnType="Collection(SPModel.Load_Purchase_Order_1_Result)" />
         </EntityContainer>
         <ComplexType Name="Get_Credit_Return_Line_Result">
           <Property Type="Int32" Name="Client_Purchase_Order_Line_ID" Nullable="true" />
@@ -2894,6 +2897,17 @@
           <Property Type="String" Name="Dispatch_Type_Description" Nullable="true" MaxLength="Max" />
           <Property Type="String" Name="DP_Number" Nullable="true" MaxLength="10" />
         </ComplexType>
+        <ComplexType Name="Load_Purchase_Order_1_Result">
+          <Property Type="String" Name="PO_Number" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="Order_Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Gross_Amount" Nullable="true" Precision="15" Scale="2" />
+          <Property Type="String" Name="Payment_Term_Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Purchase_Order_Status_Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="SO_Number" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Client_Name" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Dispatch_Type_Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="DP_Number" Nullable="true" MaxLength="10" />
+        </ComplexType>
         <ComplexType Name="Load_Supplier_Order_Result">
           <Property Type="String" Name="SO_Number" Nullable="true" MaxLength="10" />
           <Property Type="DateTime" Name="Supplier_Order_Date" Nullable="true" Precision="23" />
@@ -2911,17 +2925,6 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Load_Purchase_Order_1_Result">
-          <Property Type="String" Name="PO_Number" Nullable="true" MaxLength="10" />
-          <Property Type="DateTime" Name="Order_Date" Nullable="true" Precision="23" />
-          <Property Type="Decimal" Name="Gross_Amount" Nullable="true" Precision="15" Scale="2" />
-          <Property Type="String" Name="Payment_Term_Description" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Purchase_Order_Status_Description" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="SO_Number" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="Client_Name" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Dispatch_Type_Description" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="DP_Number" Nullable="true" MaxLength="10" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3234,6 +3237,7 @@
                 <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
                 <ScalarProperty Name="Is_Advertised" ColumnName="Is_Advertised" />
                 <ScalarProperty Name="PR_Number" ColumnName="PR_Number" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3628,6 +3632,21 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Load_Purchase_Order_1" FunctionName="SPModel.Store.Load_Purchase_Order_1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SPModel.Load_Purchase_Order_1_Result">
+                <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+                <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+                <ScalarProperty Name="Gross_Amount" ColumnName="Gross_Amount" />
+                <ScalarProperty Name="Payment_Term_Description" ColumnName="Payment_Term_Description" />
+                <ScalarProperty Name="Purchase_Order_Status_Description" ColumnName="Purchase_Order_Status_Description" />
+                <ScalarProperty Name="SO_Number" ColumnName="SO_Number" />
+                <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+                <ScalarProperty Name="Dispatch_Type_Description" ColumnName="Dispatch_Type_Description" />
+                <ScalarProperty Name="DP_Number" ColumnName="DP_Number" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Load_Supplier_Order" FunctionName="SPModel.Store.Load_Supplier_Order">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SPModel.Load_Supplier_Order_Result">
@@ -3663,21 +3682,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SPModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SPModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="Load_Purchase_Order_1" FunctionName="SPModel.Store.Load_Purchase_Order_1">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SPModel.Load_Purchase_Order_1_Result">
-                <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
-                <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
-                <ScalarProperty Name="Gross_Amount" ColumnName="Gross_Amount" />
-                <ScalarProperty Name="Payment_Term_Description" ColumnName="Payment_Term_Description" />
-                <ScalarProperty Name="Purchase_Order_Status_Description" ColumnName="Purchase_Order_Status_Description" />
-                <ScalarProperty Name="SO_Number" ColumnName="SO_Number" />
-                <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
-                <ScalarProperty Name="Dispatch_Type_Description" ColumnName="Dispatch_Type_Description" />
-                <ScalarProperty Name="DP_Number" ColumnName="DP_Number" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

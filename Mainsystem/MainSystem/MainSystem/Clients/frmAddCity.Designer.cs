@@ -60,7 +60,7 @@
             // 
             // provinceBindingSource
             // 
-            this.provinceBindingSource.DataSource = typeof(MainSystem.Province);
+//            this.provinceBindingSource.DataSource = typeof(MainSystem.Province);
             // 
             // btnAddCty
             // 

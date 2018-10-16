@@ -38,6 +38,7 @@ namespace MainSystem
         public Nullable<decimal> Order_Price { get; set; }
         public Nullable<bool> Is_Advertised { get; set; }
         public string PR_Number { get; set; }
+        public string ImagePath { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client_Purchase_Order_Line> Client_Purchase_Order_Line { get; set; }

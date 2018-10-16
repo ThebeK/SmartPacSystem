@@ -22,6 +22,7 @@ namespace MainSystem
         public frmAddClient()
         {
             InitializeComponent();
+            
         }
         public SPEntities db = new SPEntities();
         byte[] FileData;
@@ -233,9 +234,31 @@ namespace MainSystem
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (Convert.ToInt32(cbxAccountStatus.SelectedValue) == 1)
+            {
+                label14.Visible = false;
+                label5.Visible = false;
+                txtDateTimeDateOfCommencement.Visible = false;
+                btnViewCreditApproval.Visible = false;
+                gpfilepath.Visible = false;
+            }
+            else if(Convert.ToInt32(cbxAccountStatus.SelectedValue) == 4)
+            {
+                label14.Visible = false;
+                label5.Visible = false;
+                txtDateTimeDateOfCommencement.Visible = false;
+                btnViewCreditApproval.Visible = false;
+                gpfilepath.Visible = false;
+            }
+            else if (Convert.ToInt32(cbxAccountStatus.SelectedValue) == 3)
+            {
+                label14.Visible = true;
+                label5.Visible = true;
+                txtDateTimeDateOfCommencement.Visible = true;
+                btnViewCreditApproval.Visible = true;
+                gpfilepath.Visible = true;
+            }
         }
-
         private void label16_Click(object sender, EventArgs e)
         {
 
@@ -299,7 +322,8 @@ namespace MainSystem
 
         private void txtCreditSta_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+    
+           
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -319,6 +343,8 @@ namespace MainSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
+           // var q = db.Clients.Where(x => x.Client_Name == txtName.Text).ToList();
+
             Client NewCllient = new Client();
             Credit_Approval NewCA = new Credit_Approval();
             Credit_Approval Credit_Approval_Form = new Credit_Approval();
@@ -330,79 +356,80 @@ namespace MainSystem
             {
                 MessageBox.Show("Please enter all fields!");
             }
-
-
-            string path = AppDomain.CurrentDomain.BaseDirectory + "..\\Lopac\\Images\\";
-            try
+            else if (db.Load_Client().Where(x=> x.VAT_Registration_No_ == txtVatRegNum.Text).ToList() == null)
             {
+                try
+                {
+                    //  NewCA.Credit_Approval_Form = Convert.ToString(txtFilePath.Text);
+                    // txtFilePath.Text = Convert.ToBase64String(NewCA.Credit_Approval_Form);
+                    //  NewCA.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
+                   
+                    NewCA.Credit_Approval_Amount = Convert.ToInt32(txtCreditAmount.Text);
+                    NewCA.Date_Of_Commencement = txtDateTimeDateOfCommencement.Value.Date;
+                    db.Credit_Approval.Add(NewCA);
 
 
-                //  NewCA.Credit_Approval_Form = Convert.ToString(txtFilePath.Text);
-                // txtFilePath.Text = Convert.ToBase64String(NewCA.Credit_Approval_Form);
-                //  NewCA.Credit_Approval_Form = Encoding.ASCII.GetBytes(txtFilePath.Text);
-                NewCA.Credit_Status_ID = Convert.ToInt32(cbxCreditStatus.SelectedValue);
-                NewCA.Credit_Approval_Amount = Convert.ToInt32(txtCreditAmount.Text);
-                NewCA.Date_Of_Commencement = txtDateTimeDateOfCommencement.Value.Date;
-                db.Credit_Approval.Add(NewCA);
+                    NewCllient.Client_Name = txtName.Text;
+                    NewCllient.Client_VAT_Reg_Number = txtVatRegNum.Text;
+                    NewCllient.Client_Telephone = "+27" + txtTelephone.Text;
+                    NewCllient.Client_Fax_Number = txtFaxNumber.Text;
+                    NewCllient.Client_Email_Address = txtEmailAdd.Text;
+                    NewCllient.Physical_Address = txtPhysicalAdd.Text;
+
+                    NewCllient.Province_Id = Convert.ToInt32(cbxProvince.SelectedValue.ToString());
+                    NewCllient.City_Id = Convert.ToInt32(cbxCity.SelectedValue);
+                    NewCllient.Account_Status_ID = Convert.ToInt32(cbxAccountStatus.SelectedValue);
+
+                  
+
+                    NewCllient.Credit_Approval_ID = NewCA.Credit_Approval_ID;
+
+                    db.Clients.Add(NewCllient);
 
 
-                NewCllient.Client_Name = txtName.Text;
-                NewCllient.Client_VAT_Reg_Number = txtVatRegNum.Text;
-                NewCllient.Client_Telephone = "+27" + txtTelephone.Text;
-                NewCllient.Client_Fax_Number = txtFaxNumber.Text;
-                NewCllient.Client_Email_Address = txtEmailAdd.Text;
-                NewCllient.Physical_Address = txtPhysicalAdd.Text;
+                    db.SaveChanges();
 
-                NewCllient.Province_Id = Convert.ToInt32(cbxProvince.SelectedValue.ToString());
-                NewCllient.City_Id = Convert.ToInt32(cbxCity.SelectedValue);
-                NewCllient.Account_Status_ID = Convert.ToInt32(cbxAccountStatus.SelectedValue);
-
-                NewCllient.Credit_Approval_ID = Convert.ToInt32(cbxCreditStatus.SelectedValue);
-
-                NewCllient.Credit_Approval_ID = NewCA.Credit_Approval_ID;
-
-                db.Clients.Add(NewCllient);
+                    MessageBox.Show("Client Has been Added succesfully");
 
 
-                db.SaveChanges();
+                    //Audit Log
+                    int Client_Id = NewCllient.Client_ID;
+                    string client_Value = Convert.ToString(NewCllient);
 
-                MessageBox.Show("Client Has been Added succesfully");
-
-
-                //Audit Log
-                int Client_Id = NewCllient.Client_ID;
-                string client_Value = Convert.ToString(NewCllient);
-
-                Audit_Log Current_Audit3 = new Audit_Log();
-                Current_Audit3.Table_Name = "Client";
-                // Current_Audit3.Users_Id = Globals.Users_Id;
-                Current_Audit3.Date_Time = DateTime.Now;
-                db.Audit_Log.Add(Current_Audit3);
-                db.SaveChanges();
-                int Log_ID3 = Current_Audit3.Audit_Log_Id;
+                    Audit_Log Current_Audit3 = new Audit_Log();
+                    Current_Audit3.Table_Name = "Client";
+                    // Current_Audit3.Users_Id = Globals.Users_Id;
+                    Current_Audit3.Date_Time = DateTime.Now;
+                    db.Audit_Log.Add(Current_Audit3);
+                    db.SaveChanges();
+                    int Log_ID3 = Current_Audit3.Audit_Log_Id;
 
 
-                Audit_Create_Delete Current_Create3 = new Audit_Create_Delete();
-                Current_Create3.Audit_Log_Id = Log_ID3;
-                Current_Create3.Created = true;
-                Current_Create3.PK_Row_Effected = Client_Id;
-                Current_Create3.Value = client_Value;
-                db.Audit_Create_Delete.Add(Current_Create3);
-                db.SaveChanges();
-                this.Close();
-                this.Hide();
-                //MessageBox.Show("Are you sure you want to add this client ?", "confirmation", MessageBoxButtons.YesNo);
-                //MessageBox.Show("Client details have been added successfully");
-                //MessageBox.Show("Client already exists on the system");
-                //MessageBox.Show("Please fill in all required fields");
-                //MessageBox.Show("Please select a client");
+                    Audit_Create_Delete Current_Create3 = new Audit_Create_Delete();
+                    Current_Create3.Audit_Log_Id = Log_ID3;
+                    Current_Create3.Created = true;
+                    Current_Create3.PK_Row_Effected = Client_Id;
+                    Current_Create3.Value = client_Value;
+                    db.Audit_Create_Delete.Add(Current_Create3);
+                    db.SaveChanges();
+                    this.Close();
+                    this.Hide();
+                    //MessageBox.Show("Are you sure you want to add this client ?", "confirmation", MessageBoxButtons.YesNo);
+                    //MessageBox.Show("Client details have been added successfully");
+                    //MessageBox.Show("Client already exists on the system");
+                    //MessageBox.Show("Please fill in all required fields");
+                    //MessageBox.Show("Please select a client");
+                }
+                catch (Exception)
+                {
+
+                    
+                }
             }
-            catch (Exception ex)
+            else
             {
-
-                MessageBox.Show("Whoops, Something went wrong. Please try again" + ex);
+                MessageBox.Show("The Client with the VAT Registration Number: "+txtVatRegNum.Text+" already exists in the database");
             }
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -432,9 +459,7 @@ namespace MainSystem
             toolTip1.SetToolTip(this.cbxProvince, "Select South African Province");
             toolTip1.SetToolTip(this.cbxCity, "Select South African City");
             toolTip1.SetToolTip(this.txtCreditAmount, "Enter credit amount");
-            toolTip1.SetToolTip(this.cbxCreditStatus, "Select valid credit status");
             toolTip1.SetToolTip(this.txtDateTimeDateOfCommencement, "Select date");
-            toolTip1.SetToolTip(this.cbxCreditStatus, "Select valid credit status");
             toolTip1.SetToolTip(this.btnBrowse, "Browse to upload credit approval");
             toolTip1.SetToolTip(this.btnViewCreditApproval, "Click to view credit approval uploaded");
             toolTip1.SetToolTip(this.btnAddClient, "Click to add client");
@@ -445,12 +470,16 @@ namespace MainSystem
                 clientAccountStatusBindingSource.DataSource = db.Client_Account_Status.ToList();
                 creditStatusBindingSource.DataSource = db.Credit_Status.ToList();
             }
-           
+
+            cbxAccountStatus.SelectedValue = -1;
+
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-           
+            //frmMaintainCity f = new frmMaintainCity();
+            //f.ShowDialog();
         }
     }
 }
