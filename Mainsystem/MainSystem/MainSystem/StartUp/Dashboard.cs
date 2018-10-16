@@ -88,17 +88,17 @@ namespace MainSystem
 
         private void makeSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmASale a = new frmASale(0);
-            //a.ShowDialog();
+            frmASale a = new frmASale();
+            a.ShowDialog();
             this.Show();
             this.Activate();
         }
 
         private void searchSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmSearchSale ab = new frmSearchSale(0);
-            //ab.ShowDialog();
-            
+            frmSearchSale ab = new frmSearchSale(0);
+            ab.ShowDialog();
+
             this.Show();
             this.Activate();
 

@@ -218,6 +218,30 @@
     <Compile Include="Employee\FrmMaintainCamera.designer.cs">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmASale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmASale.designer.cs">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRefundSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRefundSale.designer.cs">
+      <DependentUpon>frmRefundSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchSale.designer.cs">
+      <DependentUpon>frmSearchSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchSO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +352,8 @@
     <Compile Include="Sale.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="SaleLine.cs" />
+    <Compile Include="SaleReturn.cs" />
     <Compile Include="Sales_Order_line.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -827,6 +853,18 @@
     <EmbeddedResource Include="Employee\FrmMaintainCamera.resx">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmASale.resx">
+      <DependentUpon>frmASale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRefundSale.resx">
+      <DependentUpon>frmRefundSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchSale.resx">
+      <DependentUpon>frmSearchSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSearchSO.resx">
       <DependentUpon>frmSearchSO.cs</DependentUpon>
     </EmbeddedResource>
@@ -1009,6 +1047,7 @@
     <None Include="Load_Purchase_Order_Result.datasource" />
     <None Include="Load_Supplier_Order_Result1.datasource" />
     <None Include="packages.config" />
+    <None Include="Product1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
