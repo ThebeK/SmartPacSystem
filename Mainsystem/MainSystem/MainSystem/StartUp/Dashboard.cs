@@ -83,90 +83,59 @@ namespace MainSystem
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StartUp.frmHelp GG = new StartUp.frmHelp();
-            GG.TopLevel = false;
-            GG.AutoScroll = true;
-            this.panel1.Controls.Add(GG);
-            GG.BringToFront();
-            GG.Dock = DockStyle.Fill;
-            GG.Show();
+            GG.ShowDialog();
         }
 
         private void makeSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmASale a = new frmASale();
-            a.TopLevel = false;
-            a.AutoScroll = true;
-            this.panel1.Controls.Add(a);
-            a.BringToFront();
-            a.Dock = DockStyle.Fill;
-            a.Show();
+            a.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void searchSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSearchSale ab = new frmSearchSale(0);
-            ab.TopLevel = false;
-            ab.AutoScroll = true;
-            this.panel1.Controls.Add(ab);
-            ab.BringToFront();
-            ab.Dock = DockStyle.Fill;
-            ab.Show();
+            ab.ShowDialog();
+
+            this.Show();
+            this.Activate();
 
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddClient client = new frmAddClient();
-            client.TopLevel = false;
-            client.AutoScroll = true;
-            this.panel1.Controls.Add(client);
-            client.BringToFront();
-            client.Dock = DockStyle.Fill;
-            client.Show();
+            client.ShowDialog();
         }
 
         private void maintainClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSearchClient dd = new frmSearchClient("Maintain Client");
-            dd.TopLevel = false;
-            dd.AutoScroll = true;
-            this.panel1.Controls.Add(dd);
-            dd.BringToFront();
-            dd.Dock = DockStyle.Fill;
-            dd.Show();
+            dd.ShowDialog();
         }
 
         private void addProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddProduct rr = new frmAddProduct();
-            rr.TopLevel = false;
-            rr.AutoScroll = true;
-            this.panel1.Controls.Add(rr);
-            rr.BringToFront();
-            rr.Dock = DockStyle.Fill;
-            rr.Show();
+            rr.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void addAccessLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AccessLevel.FrmAddAccessLevel al = new AccessLevel.FrmAddAccessLevel();
-            al.TopLevel = false;
-            al.AutoScroll = true;
-            this.panel1.Controls.Add(al);
-            al.BringToFront();
-            al.Dock = DockStyle.Fill;
-            al.Show();
+            al.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void searchUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Users.FrmAddUser a2 = new Users.FrmAddUser("Maintain Access Level");
-            a2.TopLevel = false;
-            a2.AutoScroll = true;
-            this.panel1.Controls.Add(a2);
-            a2.BringToFront();
-            a2.Dock = DockStyle.Fill;
-            a2.Show();
+            a2.ShowDialog();
 
 
         }
@@ -174,12 +143,7 @@ namespace MainSystem
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AccessLevel.FrmSearchAccessLevel qw = new AccessLevel.FrmSearchAccessLevel("Maintain Access Level");
-            qw.TopLevel = false;
-            qw.AutoScroll = true;
-            this.panel1.Controls.Add(qw);
-            qw.BringToFront();
-            qw.Dock = DockStyle.Fill;
-            qw.Show();
+            qw.ShowDialog();
 
 
 
@@ -188,57 +152,42 @@ namespace MainSystem
         private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employees.FrmAddEmployee eew = new Employees.FrmAddEmployee();
-            eew.TopLevel = false;
-            eew.AutoScroll = true;
-            this.panel1.Controls.Add(eew);
-            eew.BringToFront();
-            eew.Dock = DockStyle.Fill;
-            eew.Show();
+            eew.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void maintainEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             Employees.FrmSearchEmployee eew = new Employees.FrmSearchEmployee();
-            eew.TopLevel = false;
-            eew.AutoScroll = true;
-            this.panel1.Controls.Add(eew);
-            eew.BringToFront();
-            eew.Dock = DockStyle.Fill;
-            eew.Show();
+            eew.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void addEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employees.FrmAddEmployeeType eew = new Employees.FrmAddEmployeeType("");
-            eew.TopLevel = false;
-            eew.AutoScroll = true;
-            this.panel1.Controls.Add(eew);
-            eew.BringToFront();
-            eew.Dock = DockStyle.Fill;
-            eew.Show();
+            eew.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void maintainEmployeeTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employees.FrmSearchEmployeeType eew = new Employees.FrmSearchEmployeeType("Maintain Employee Type");
-            eew.TopLevel = false;
-            eew.AutoScroll = true;
-            this.panel1.Controls.Add(eew);
-            eew.BringToFront();
-            eew.Dock = DockStyle.Fill;
-            eew.Show();
+            eew.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void employeeLogsheetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employees.FrmEmployeeSignInSignOut eew = new Employees.FrmEmployeeSignInSignOut();
-            eew.TopLevel = false;
-            eew.AutoScroll = true;
-            this.panel1.Controls.Add(eew);
-            eew.BringToFront();
-            eew.Dock = DockStyle.Fill;
-            eew.Show();
+            eew.ShowDialog();
+            this.Show();
+            this.Activate();
         }
         private void LoadAccess()
         {
@@ -315,12 +264,9 @@ namespace MainSystem
         private void maintainClientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Products.FrmSearchProduct qw = new Products.FrmSearchProduct("Maintain Product");
-            qw.TopLevel = false;
-            qw.AutoScroll = true;
-            this.panel1.Controls.Add(qw);
-            qw.BringToFront();
-            qw.Dock = DockStyle.Fill;
-            qw.Show();
+            qw.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
@@ -342,26 +288,17 @@ namespace MainSystem
         private void notificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Admin.FrmSearchNotification ff = new Admin.FrmSearchNotification("Publish Email");
-            ff.TopLevel = false;
-            ff.AutoScroll = true;
-            this.panel1.Controls.Add(ff);
-            ff.BringToFront();
-            ff.Dock = DockStyle.Fill;
-            ff.Show();
+            ff.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void maintainUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             Users.FrmSearchUser su = new Users.FrmSearchUser("Maintain User");
+            su.ShowDialog();
             
-           
-            su.TopLevel = false;
-            su.AutoScroll = true;
-            this.panel1.Controls.Add(su);
-            su.BringToFront();
-            su.Dock = DockStyle.Fill;
-            su.Show();
             //Users.FrmMaintainUser su = new Users.FrmMaintainUser();
             //su.ShowDialog();
             //this.Show();
@@ -383,77 +320,41 @@ namespace MainSystem
         private void packagePurchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Order.FrmPackagePO gg = new Order.FrmPackagePO();
-           
-         
-
-
-            gg.TopLevel = false;
-            gg.AutoScroll = true;
-            this.panel1.Controls.Add(gg);
-            gg.BringToFront();
-            gg.Dock = DockStyle.Fill;
-            gg.Show();
+            gg.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void loadPurchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Order.FrmLoadPO gg = new Order.FrmLoadPO();
-         
-
-
-            gg.TopLevel = false;
-            gg.AutoScroll = true;
-            this.panel1.Controls.Add(gg);
-            gg.BringToFront();
-            gg.Dock = DockStyle.Fill;
-            gg.Show(); 
-           
+            gg.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void generateDeliveryRouteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRoutePlan gg = new frmRoutePlan();
-
-
-
-
-
-            gg.TopLevel = false;
-            gg.AutoScroll = true;
-            this.panel1.Controls.Add(gg);
-            gg.BringToFront();
-            gg.Dock = DockStyle.Fill;
-            gg.Show();
+            gg.ShowDialog();
+            this.Show();
+            this.Activate();
         }
+
         private void confirmDeliveryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConfirmDelivery gg = new frmConfirmDelivery();
-
-           
-
-
-
-            gg.TopLevel = false;
-            gg.AutoScroll = true;
-            this.panel1.Controls.Add(gg);
-            gg.BringToFront();
-            gg.Dock = DockStyle.Fill;
-            gg.Show();
+            gg.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void generateCreditRetunrToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Order.frmSearchPO tgv = new Order.frmSearchPO();
-
-           
-
-
-
-            tgv.AutoScroll = true;
-            this.panel1.Controls.Add(tgv);
-            tgv.BringToFront();
-            tgv.Dock = DockStyle.Fill;
+            //tgv.ShowDialog();
             tgv.Show();
+            //this.Activate();
         }
 
         private void generatePurchaseOrderToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -461,17 +362,9 @@ namespace MainSystem
             try
             {
                 frmReceiveSO f = new frmReceiveSO();
-
-              
-
-
-
-                f.TopLevel = false;
-                f.AutoScroll = true;
-                this.panel1.Controls.Add(f);
-                f.BringToFront();
-                f.Dock = DockStyle.Fill;
-                f.Show();
+                f.ShowDialog();
+                this.Show();
+                this.Activate();
 
             }
             catch (Exception)
@@ -484,43 +377,25 @@ namespace MainSystem
         private void generateSupplierOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSO gg = new frmSO();
-            
-
-
-
-            gg.TopLevel = false;
-            gg.AutoScroll = true;
-            this.panel1.Controls.Add(gg);
-            gg.BringToFront();
-            gg.Dock = DockStyle.Fill;
-            gg.Show();
+            gg.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void databaseSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Admin.FrmBackUp qq = new Admin.FrmBackUp();
-
-          
-
-
-
-            qq.TopLevel = false;
-            qq.AutoScroll = true;
-            this.panel1.Controls.Add(qq);
-            qq.BringToFront();
-            qq.Dock = DockStyle.Fill;
-            qq.Show();
+            qq.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void updateCompanyImformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Admin.FrmUpdateCompanyInformation qq = new Admin.FrmUpdateCompanyInformation();
-            qq.TopLevel = false;
-            qq.AutoScroll = true;
-            this.panel1.Controls.Add(qq);
-            qq.BringToFront();
-            qq.Dock = DockStyle.Fill;
-            qq.Show();
+            qq.ShowDialog();
+            this.Show();
+            this.Activate();
         }
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -544,24 +419,14 @@ namespace MainSystem
         private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vehicles.FrmAddVehicle av = new Vehicles.FrmAddVehicle("Maintain Vehicle");
-            av.TopLevel = false;
-            av.AutoScroll = true;
-            this.panel1.Controls.Add(av);
-            av.BringToFront();
-            av.Dock = DockStyle.Fill;
-            av.Show();
+            av.ShowDialog();
 
         }
 
         private void maintainVehicleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vehicles.FrmSearchVehicle sv = new Vehicles.FrmSearchVehicle("Maintain Vehicle");
-            sv.TopLevel = false;
-            sv.AutoScroll = true;
-            this.panel1.Controls.Add(sv);
-            sv.BringToFront();
-            sv.Dock = DockStyle.Fill;
-            sv.Show();
+            sv.ShowDialog();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
