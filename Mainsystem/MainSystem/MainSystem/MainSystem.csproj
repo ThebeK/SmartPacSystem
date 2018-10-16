@@ -45,10 +45,10 @@
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -150,12 +150,6 @@
     </Compile>
     <Compile Include="Client.cs">
       <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Clients\frmMaintainCity.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Clients\frmMaintainCity.Designer.cs">
-      <DependentUpon>frmMaintainCity.cs</DependentUpon>
     </Compile>
     <Compile Include="Client_Account_Status.cs">
       <DependentUpon>SP.tt</DependentUpon>
@@ -837,9 +831,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\FrmUpdateCompanyInformation.resx">
       <DependentUpon>FrmUpdateCompanyInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clients\frmMaintainCity.resx">
-      <DependentUpon>frmMaintainCity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>

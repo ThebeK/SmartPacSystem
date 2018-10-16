@@ -116,17 +116,7 @@ namespace MainSystem
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in dataGridView1.Rows)
-            {
-                string product = r.Cells[1].Value.ToString();
-                var q = db.Products.Where(x => x.Product_Description == product).First();
-                int w = Convert.ToInt32(q.Available_Quantity);
-
-                q.Available_Quantity += Convert.ToInt32(r.Cells[2].Value);
-                db.SaveChanges();
-
-
-            }
+            
             tabControl1.SelectedIndex = 1;
             List<SOSummary> mylist = new List<SOSummary>();
             DataGridViewRow row = new DataGridViewRow();
@@ -174,7 +164,18 @@ namespace MainSystem
 
 
             }
-            
+            foreach (DataGridViewRow r in dataGridView2.Rows)
+            {
+                string product = r.Cells[1].Value.ToString();
+                var q = db.Getpoduct().Where(x => x.Product_Description == product).First();
+                //int w = Convert.ToInt32(q.Available_Quantity);
+
+                q.Available_Quantity += Convert.ToInt32(r.Cells[2].Value);
+                db.Products.Where(x => x.Product_ID == q.Product_ID).First().Available_Quantity += q.Available_Quantity;
+                db.SaveChanges();
+
+
+            }
 
         }
     }
