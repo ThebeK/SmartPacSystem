@@ -59,6 +59,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnViewCreditApproval = new System.Windows.Forms.Button();
             this.txtCreditAmount = new System.Windows.Forms.TextBox();
             this.cbxAccountStatus = new System.Windows.Forms.ComboBox();
             this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,8 +75,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnViewCreditApproval = new System.Windows.Forms.Button();
-            this.btnAddClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -115,7 +115,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox4.Location = new System.Drawing.Point(12, 203);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(638, 196);
+            this.groupBox4.Size = new System.Drawing.Size(621, 196);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Place Of Business";
@@ -126,7 +126,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(548, 113);
+            this.button4.Location = new System.Drawing.Point(553, 132);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(41, 32);
             this.button4.TabIndex = 20;
@@ -138,9 +138,9 @@
             this.cbxCity.DataSource = this.cityBindingSource;
             this.cbxCity.DisplayMember = "City_Name";
             this.cbxCity.FormattingEnabled = true;
-            this.cbxCity.Location = new System.Drawing.Point(360, 121);
+            this.cbxCity.Location = new System.Drawing.Point(385, 140);
             this.cbxCity.Name = "cbxCity";
-            this.cbxCity.Size = new System.Drawing.Size(174, 21);
+            this.cbxCity.Size = new System.Drawing.Size(162, 21);
             this.cbxCity.TabIndex = 19;
             this.cbxCity.ValueMember = "City_Id";
             this.cbxCity.SelectedIndexChanged += new System.EventHandler(this.txtCity_SelectedIndexChanged);
@@ -150,19 +150,19 @@
             this.cbxProvince.DataSource = this.provinceBindingSource;
             this.cbxProvince.DisplayMember = "Province_Name";
             this.cbxProvince.FormattingEnabled = true;
-            this.cbxProvince.Location = new System.Drawing.Point(91, 121);
+            this.cbxProvince.Location = new System.Drawing.Point(152, 143);
             this.cbxProvince.Name = "cbxProvince";
-            this.cbxProvince.Size = new System.Drawing.Size(174, 21);
+            this.cbxProvince.Size = new System.Drawing.Size(164, 21);
             this.cbxProvince.TabIndex = 17;
             this.cbxProvince.ValueMember = "Province_Id";
             this.cbxProvince.SelectedIndexChanged += new System.EventHandler(this.txtProvince_SelectedIndexChanged);
             // 
             // txtPhysicalAdd
             // 
-            this.txtPhysicalAdd.Location = new System.Drawing.Point(142, 26);
+            this.txtPhysicalAdd.Location = new System.Drawing.Point(152, 26);
             this.txtPhysicalAdd.Multiline = true;
             this.txtPhysicalAdd.Name = "txtPhysicalAdd";
-            this.txtPhysicalAdd.Size = new System.Drawing.Size(447, 85);
+            this.txtPhysicalAdd.Size = new System.Drawing.Size(442, 85);
             this.txtPhysicalAdd.TabIndex = 14;
             this.txtPhysicalAdd.TextChanged += new System.EventHandler(this.txtPhysicalAdd_TextChanged);
             // 
@@ -181,7 +181,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(312, 121);
+            this.label7.Location = new System.Drawing.Point(322, 140);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 16);
             this.label7.TabIndex = 12;
@@ -192,7 +192,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(11, 119);
+            this.label8.Location = new System.Drawing.Point(11, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 16);
             this.label8.TabIndex = 11;
@@ -406,19 +406,47 @@
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox5.ForeColor = System.Drawing.Color.LightGray;
-            this.groupBox5.Location = new System.Drawing.Point(663, 65);
+            this.groupBox5.Location = new System.Drawing.Point(687, 77);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(613, 548);
+            this.groupBox5.Size = new System.Drawing.Size(566, 548);
             this.groupBox5.TabIndex = 16;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Credit Approval Information";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAddClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddClient.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAddClient.Location = new System.Drawing.Point(233, 486);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(124, 50);
+            this.btnAddClient.TabIndex = 18;
+            this.btnAddClient.Text = "Add Client";
+            this.btnAddClient.UseVisualStyleBackColor = false;
+            this.btnAddClient.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnViewCreditApproval
+            // 
+            this.btnViewCreditApproval.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnViewCreditApproval.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnViewCreditApproval.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewCreditApproval.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.btnViewCreditApproval.Location = new System.Drawing.Point(363, 486);
+            this.btnViewCreditApproval.Name = "btnViewCreditApproval";
+            this.btnViewCreditApproval.Size = new System.Drawing.Size(157, 51);
+            this.btnViewCreditApproval.TabIndex = 17;
+            this.btnViewCreditApproval.Text = "View Credit Approval";
+            this.btnViewCreditApproval.UseVisualStyleBackColor = false;
+            this.btnViewCreditApproval.Click += new System.EventHandler(this.btnViewCreditApproval_Click);
+            // 
             // txtCreditAmount
             // 
-            this.txtCreditAmount.Location = new System.Drawing.Point(238, 39);
+            this.txtCreditAmount.Location = new System.Drawing.Point(286, 37);
             this.txtCreditAmount.Name = "txtCreditAmount";
-            this.txtCreditAmount.Size = new System.Drawing.Size(186, 27);
+            this.txtCreditAmount.Size = new System.Drawing.Size(234, 27);
             this.txtCreditAmount.TabIndex = 24;
             this.txtCreditAmount.TextChanged += new System.EventHandler(this.txtCreditAmount_TextChanged);
             // 
@@ -428,9 +456,9 @@
             this.cbxAccountStatus.DataSource = this.clientAccountStatusBindingSource;
             this.cbxAccountStatus.DisplayMember = "Account_Status_Description";
             this.cbxAccountStatus.FormattingEnabled = true;
-            this.cbxAccountStatus.Location = new System.Drawing.Point(238, 170);
+            this.cbxAccountStatus.Location = new System.Drawing.Point(286, 170);
             this.cbxAccountStatus.Name = "cbxAccountStatus";
-            this.cbxAccountStatus.Size = new System.Drawing.Size(196, 24);
+            this.cbxAccountStatus.Size = new System.Drawing.Size(234, 24);
             this.cbxAccountStatus.TabIndex = 23;
             this.cbxAccountStatus.ValueMember = "Account_Status_ID";
             this.cbxAccountStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
@@ -440,7 +468,7 @@
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(45, 170);
+            this.label16.Location = new System.Drawing.Point(22, 178);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(117, 16);
             this.label16.TabIndex = 22;
@@ -455,9 +483,9 @@
             this.groupBox6.Controls.Add(this.txtFilePath);
             this.groupBox6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox6.ForeColor = System.Drawing.Color.LightGray;
-            this.groupBox6.Location = new System.Drawing.Point(31, 230);
+            this.groupBox6.Location = new System.Drawing.Point(25, 228);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(452, 98);
+            this.groupBox6.Size = new System.Drawing.Size(523, 98);
             this.groupBox6.TabIndex = 21;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Upload Credit Approval Form";
@@ -469,7 +497,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.LightGray;
-            this.label15.Location = new System.Drawing.Point(-35, 36);
+            this.label15.Location = new System.Drawing.Point(29, 34);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 16);
             this.label15.TabIndex = 9;
@@ -482,7 +510,7 @@
             this.btnBrowse.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnBrowse.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnBrowse.Location = new System.Drawing.Point(281, 65);
+            this.btnBrowse.Location = new System.Drawing.Point(396, 65);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(99, 27);
             this.btnBrowse.TabIndex = 8;
@@ -493,9 +521,9 @@
             // txtFilePath
             // 
             this.txtFilePath.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtFilePath.Location = new System.Drawing.Point(61, 31);
+            this.txtFilePath.Location = new System.Drawing.Point(132, 31);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(319, 27);
+            this.txtFilePath.Size = new System.Drawing.Size(363, 27);
             this.txtFilePath.TabIndex = 7;
             this.txtFilePath.TextChanged += new System.EventHandler(this.txtFilePath_TextChanged);
             // 
@@ -503,9 +531,9 @@
             // 
             this.txtDateTimeDateOfCommencement.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDateTimeDateOfCommencement.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDateTimeDateOfCommencement.Location = new System.Drawing.Point(238, 119);
+            this.txtDateTimeDateOfCommencement.Location = new System.Drawing.Point(286, 119);
             this.txtDateTimeDateOfCommencement.Name = "txtDateTimeDateOfCommencement";
-            this.txtDateTimeDateOfCommencement.Size = new System.Drawing.Size(186, 27);
+            this.txtDateTimeDateOfCommencement.Size = new System.Drawing.Size(234, 27);
             this.txtDateTimeDateOfCommencement.TabIndex = 19;
             this.txtDateTimeDateOfCommencement.ValueChanged += new System.EventHandler(this.txtDateTimeDateOfCommencement_ValueChanged);
             // 
@@ -515,9 +543,9 @@
             this.cbxCreditStatus.DataSource = this.creditStatusBindingSource;
             this.cbxCreditStatus.DisplayMember = "Credit_Status_Description";
             this.cbxCreditStatus.FormattingEnabled = true;
-            this.cbxCreditStatus.Location = new System.Drawing.Point(238, 72);
+            this.cbxCreditStatus.Location = new System.Drawing.Point(286, 79);
             this.cbxCreditStatus.Name = "cbxCreditStatus";
-            this.cbxCreditStatus.Size = new System.Drawing.Size(186, 24);
+            this.cbxCreditStatus.Size = new System.Drawing.Size(234, 24);
             this.cbxCreditStatus.TabIndex = 18;
             this.cbxCreditStatus.ValueMember = "Credit_Status_ID";
             this.cbxCreditStatus.SelectedIndexChanged += new System.EventHandler(this.txtCreditSta_SelectedIndexChanged);
@@ -527,7 +555,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(45, 119);
+            this.label14.Location = new System.Drawing.Point(22, 119);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(185, 16);
             this.label14.TabIndex = 9;
@@ -539,7 +567,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(45, 72);
+            this.label12.Location = new System.Drawing.Point(22, 79);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 16);
             this.label12.TabIndex = 7;
@@ -551,40 +579,12 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(45, 40);
+            this.label11.Location = new System.Drawing.Point(22, 40);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(187, 16);
             this.label11.TabIndex = 6;
             this.label11.Text = "Credit Approval Amount:";
             this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // btnViewCreditApproval
-            // 
-            this.btnViewCreditApproval.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnViewCreditApproval.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnViewCreditApproval.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewCreditApproval.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnViewCreditApproval.Location = new System.Drawing.Point(337, 470);
-            this.btnViewCreditApproval.Name = "btnViewCreditApproval";
-            this.btnViewCreditApproval.Size = new System.Drawing.Size(207, 46);
-            this.btnViewCreditApproval.TabIndex = 17;
-            this.btnViewCreditApproval.Text = "View Credit Approval";
-            this.btnViewCreditApproval.UseVisualStyleBackColor = false;
-            this.btnViewCreditApproval.Click += new System.EventHandler(this.btnViewCreditApproval_Click);
-            // 
-            // btnAddClient
-            // 
-            this.btnAddClient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAddClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAddClient.Location = new System.Drawing.Point(107, 470);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(145, 46);
-            this.btnAddClient.TabIndex = 18;
-            this.btnAddClient.Text = "Add Client";
-            this.btnAddClient.UseVisualStyleBackColor = false;
-            this.btnAddClient.Click += new System.EventHandler(this.button3_Click);
             // 
             // toolTip1
             // 
