@@ -76,6 +76,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
@@ -88,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -98,13 +100,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(657, 570);
+            this.panel2.Size = new System.Drawing.Size(681, 570);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox4.Controls.Add(this.pictureBox3);
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.cbxCity);
             this.groupBox4.Controls.Add(this.cbxProvince);
@@ -113,9 +116,9 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.ForeColor = System.Drawing.Color.LightGray;
-            this.groupBox4.Location = new System.Drawing.Point(12, 203);
+            this.groupBox4.Location = new System.Drawing.Point(24, 203);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(621, 196);
+            this.groupBox4.Size = new System.Drawing.Size(654, 196);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Place Of Business";
@@ -126,7 +129,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(553, 132);
+            this.button4.Location = new System.Drawing.Point(553, 136);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(41, 32);
             this.button4.TabIndex = 20;
@@ -207,7 +210,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtVatRegNum);
             this.groupBox2.ForeColor = System.Drawing.Color.LightGray;
-            this.groupBox2.Location = new System.Drawing.Point(12, 22);
+            this.groupBox2.Location = new System.Drawing.Point(24, 22);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(638, 55);
             this.groupBox2.TabIndex = 12;
@@ -267,7 +270,7 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.txtEmailAdd);
             this.groupBox3.ForeColor = System.Drawing.Color.LightGray;
-            this.groupBox3.Location = new System.Drawing.Point(12, 83);
+            this.groupBox3.Location = new System.Drawing.Point(24, 83);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(638, 114);
             this.groupBox3.TabIndex = 14;
@@ -590,6 +593,17 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MainSystem.Properties.Resources.Editor;
+            this.pictureBox3.Location = new System.Drawing.Point(600, 134);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 46;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // frmAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,6 +636,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -674,5 +689,6 @@
         private System.Windows.Forms.BindingSource provinceBindingSource;
         private System.Windows.Forms.BindingSource clientAccountStatusBindingSource;
         private System.Windows.Forms.BindingSource creditStatusBindingSource;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

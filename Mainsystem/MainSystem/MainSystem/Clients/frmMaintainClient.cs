@@ -443,5 +443,11 @@ namespace MainSystem {
             frmAddCity f = new frmAddCity();
             f.ShowDialog(); 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            frmMaintainCity f = new frmMaintainCity();
+            f.ShowDialog();
+        }
     }
 }

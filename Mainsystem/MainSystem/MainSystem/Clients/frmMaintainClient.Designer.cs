@@ -60,6 +60,7 @@
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.cbxCity = new System.Windows.Forms.ComboBox();
             this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -81,7 +82,6 @@
             this.txtEmailAdd = new System.Windows.Forms.TextBox();
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,13 +90,13 @@
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -430,6 +430,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Place Of Business";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MainSystem.Properties.Resources.Editor;
+            this.pictureBox3.Location = new System.Drawing.Point(587, 117);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 45;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -459,6 +470,8 @@
             // 
             // cbxProvince
             // 
+            this.cbxProvince.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxProvince.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.cbxProvince.DataSource = this.provinceBindingSource;
             this.cbxProvince.DisplayMember = "Province_Name";
             this.cbxProvince.FormattingEnabled = true;
@@ -636,16 +649,6 @@
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MainSystem.Properties.Resources.Editor;
-            this.pictureBox3.Location = new System.Drawing.Point(587, 117);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 45;
-            this.pictureBox3.TabStop = false;
-            // 
             // frmMaintainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,6 +677,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -683,7 +687,6 @@
             this.panel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
