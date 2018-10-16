@@ -165,7 +165,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(164, 34);
             this.label9.TabIndex = 23;
-            this.label9.Text = "Add Client";
+            this.label9.Text = "Add Clients";
             // 
             // label1
             // 
@@ -397,7 +397,7 @@
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(157, 27);
             this.btnDeleteClient.TabIndex = 17;
-            this.btnDeleteClient.Text = "Delete Client";
+            this.btnDeleteClient.Text = "Delete Clients";
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
@@ -594,7 +594,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(229, 34);
             this.label13.TabIndex = 24;
-            this.label13.Text = "Maintain Client";
+            this.label13.Text = "Maintain Clients";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // groupBox3
@@ -632,7 +632,7 @@
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(170, 27);
             this.btnUpdateClient.TabIndex = 22;
-            this.btnUpdateClient.Text = "Update Client";
+            this.btnUpdateClient.Text = "Update Clients";
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.button2_Click);
             // 

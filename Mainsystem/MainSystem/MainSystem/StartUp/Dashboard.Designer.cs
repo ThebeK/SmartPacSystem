@@ -291,7 +291,7 @@
             this.clientToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
             this.clientToolStripMenuItem.Size = new System.Drawing.Size(191, 52);
-            this.clientToolStripMenuItem.Text = "Client";
+            this.clientToolStripMenuItem.Text = "Clients";
             this.clientToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clientToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
@@ -302,7 +302,7 @@
             this.addClientToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
             this.addClientToolStripMenuItem.Size = new System.Drawing.Size(278, 32);
-            this.addClientToolStripMenuItem.Text = "Add Client";
+            this.addClientToolStripMenuItem.Text = "Add Clients";
             this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
             // maintainClientToolStripMenuItem
@@ -312,7 +312,7 @@
             this.maintainClientToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainClientToolStripMenuItem.Name = "maintainClientToolStripMenuItem";
             this.maintainClientToolStripMenuItem.Size = new System.Drawing.Size(278, 32);
-            this.maintainClientToolStripMenuItem.Text = "Maintain Client";
+            this.maintainClientToolStripMenuItem.Text = "Maintain Clients";
             this.maintainClientToolStripMenuItem.Click += new System.EventHandler(this.maintainClientToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem

@@ -297,7 +297,7 @@
             this.groupBox2.Size = new System.Drawing.Size(304, 159);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Add Client Purchase Order Products";
+            this.groupBox2.Text = "Add Clients Purchase Order Products";
             // 
             // button4
             // 

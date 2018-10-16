@@ -54,7 +54,7 @@
             System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Generate Supplier Order");
             System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Search Supplier Order");
             System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Receive Supplier Order");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Package Client Purchase Order");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Package Clients Purchase Order");
             System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Generate QR Code");
             System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Load Purchase Orders for Delivery");
             System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Generate Delivery Route Plan");
@@ -85,11 +85,11 @@
             treeNode27,
             treeNode28,
             treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Add New Client");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Search Client");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Maintain Client");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Add New Clients");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Search Clients");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Maintain Clients");
             System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Upload Credit Approval Form");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Client", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Clients", new System.Windows.Forms.TreeNode[] {
             treeNode31,
             treeNode32,
             treeNode33,
@@ -222,7 +222,7 @@
             treeNode16.Name = "Node16";
             treeNode16.Text = "Receive Supplier Order";
             treeNode17.Name = "Node17";
-            treeNode17.Text = "Package Client Purchase Order";
+            treeNode17.Text = "Package Clients Purchase Order";
             treeNode18.Name = "Node18";
             treeNode18.Text = "Generate QR Code";
             treeNode19.Name = "Node19";
@@ -250,15 +250,15 @@
             treeNode30.Name = "Node23";
             treeNode30.Text = "Products";
             treeNode31.Name = "Node31";
-            treeNode31.Text = "Add New Client";
+            treeNode31.Text = "Add New Clients";
             treeNode32.Name = "Node32";
-            treeNode32.Text = "Search Client";
+            treeNode32.Text = "Search Clients";
             treeNode33.Name = "Node33";
-            treeNode33.Text = "Maintain Client";
+            treeNode33.Text = "Maintain Clients";
             treeNode34.Name = "Node34";
             treeNode34.Text = "Upload Credit Approval Form";
             treeNode35.Name = "Node30";
-            treeNode35.Text = "Client";
+            treeNode35.Text = "Clients";
             treeNode36.Name = "Node36";
             treeNode36.Text = "Add New Employees";
             treeNode37.Name = "Node37";

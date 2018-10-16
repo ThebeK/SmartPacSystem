@@ -265,7 +265,7 @@
             // 
             this.clientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name";
-            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Client Name";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Clients Name";
             this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
             // 
             // orderDateDataGridViewTextBoxColumn
@@ -311,7 +311,7 @@
             // 
             this.clientNameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clientNameDataGridViewTextBoxColumn1.DataPropertyName = "Client_Name";
-            this.clientNameDataGridViewTextBoxColumn1.HeaderText = "Client Name";
+            this.clientNameDataGridViewTextBoxColumn1.HeaderText = "Clients Name";
             this.clientNameDataGridViewTextBoxColumn1.Name = "clientNameDataGridViewTextBoxColumn1";
             // 
             // orderDateDataGridViewTextBoxColumn1

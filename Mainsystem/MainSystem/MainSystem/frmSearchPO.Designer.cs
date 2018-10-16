@@ -177,7 +177,7 @@
             // 
             this.clientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name";
-            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Client Name";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Clients Name";
             this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
             // 
             // dispatchTypeDescriptionDataGridViewTextBoxColumn

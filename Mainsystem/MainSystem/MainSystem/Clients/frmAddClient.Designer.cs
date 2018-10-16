@@ -353,7 +353,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(164, 34);
             this.label9.TabIndex = 23;
-            this.label9.Text = "Add Client";
+            this.label9.Text = "Add Clients";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel1
@@ -424,7 +424,7 @@
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(124, 50);
             this.btnAddClient.TabIndex = 18;
-            this.btnAddClient.Text = "Add Client";
+            this.btnAddClient.Text = "Add Clients";
             this.btnAddClient.UseVisualStyleBackColor = false;
             this.btnAddClient.Click += new System.EventHandler(this.button3_Click);
             // 

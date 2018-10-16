@@ -119,7 +119,7 @@
             this.cbxClient.Name = "cbxClient";
             this.cbxClient.Size = new System.Drawing.Size(70, 20);
             this.cbxClient.TabIndex = 32;
-            this.cbxClient.Text = "Client";
+            this.cbxClient.Text = "Clients";
             this.cbxClient.UseVisualStyleBackColor = true;
             // 
             // cbWebsite

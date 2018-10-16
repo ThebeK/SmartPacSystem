@@ -105,7 +105,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(201, 34);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Search Client";
+            this.label13.Text = "Search Clients";
             // 
             // panel2
             // 
@@ -126,7 +126,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 14);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Please Specify Client Name";
+            this.label2.Text = "Please Specify Clients Name";
             // 
             // dgvClientSearch
             // 
@@ -237,7 +237,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(297, 20);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Please specify valid Client Name";
+            this.label3.Text = "Please specify valid Clients Name";
             this.label3.Visible = false;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 

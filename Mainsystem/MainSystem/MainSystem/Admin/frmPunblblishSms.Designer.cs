@@ -161,22 +161,22 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // Client
+            // Clients
             // 
             this.Client.DataPropertyName = "Client_ID";
-            this.Client.HeaderText = "Client ID";
-            this.Client.Name = "Client";
+            this.Client.HeaderText = "Clients ID";
+            this.Client.Name = "Clients";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Client_Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Client Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Clients Name";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Client_Telephone";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Client Telephone";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Clients Telephone";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // clientBindingSource1
@@ -186,19 +186,19 @@
             // clientIDDataGridViewTextBoxColumn
             // 
             this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "Client_ID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Client ID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Clients ID";
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
             // 
             // clientNameDataGridViewTextBoxColumn
             // 
             this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name";
-            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Client Name";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Clients Name";
             this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
             // 
             // clientTelephoneDataGridViewTextBoxColumn
             // 
             this.clientTelephoneDataGridViewTextBoxColumn.DataPropertyName = "Client_Telephone";
-            this.clientTelephoneDataGridViewTextBoxColumn.HeaderText = "Client Telephone";
+            this.clientTelephoneDataGridViewTextBoxColumn.HeaderText = "Clients Telephone";
             this.clientTelephoneDataGridViewTextBoxColumn.Name = "clientTelephoneDataGridViewTextBoxColumn";
             // 
             // clientBindingSource

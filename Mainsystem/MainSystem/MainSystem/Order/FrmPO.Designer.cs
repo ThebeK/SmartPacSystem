@@ -407,7 +407,7 @@
             this.groupBox4.Size = new System.Drawing.Size(289, 218);
             this.groupBox4.TabIndex = 16;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Client Information: ";
+            this.groupBox4.Text = "Clients Information: ";
             // 
             // txtCreditBalance
             // 
@@ -495,7 +495,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Client Name:";
+            this.label5.Text = "Clients Name:";
             // 
             // panel3
             // 
