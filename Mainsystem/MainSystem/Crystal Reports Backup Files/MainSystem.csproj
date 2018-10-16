@@ -151,12 +151,6 @@
     <Compile Include="Client.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Clients\frmMaintainCity.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Clients\frmMaintainCity.Designer.cs">
-      <DependentUpon>frmMaintainCity.cs</DependentUpon>
-    </Compile>
     <Compile Include="Client_Account_Status.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -206,12 +200,6 @@
     <Compile Include="Employee\FrmMaintainEmployee.designer.cs">
       <DependentUpon>FrmMaintainEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee_Logsheet.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employee_Type.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Employee\frmCamera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +217,12 @@
     </Compile>
     <Compile Include="Clients\frmAddCity.Designer.cs">
       <DependentUpon>frmAddCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Logsheet.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="frmASale.cs">
       <SubType>Form</SubType>
@@ -838,9 +832,6 @@
     <EmbeddedResource Include="Admin\FrmUpdateCompanyInformation.resx">
       <DependentUpon>FrmUpdateCompanyInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clients\frmMaintainCity.resx">
-      <DependentUpon>frmMaintainCity.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Employee\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -1075,6 +1066,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Province.datasource" />
     <EntityDeploy Include="SP.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SP.Designer.cs</LastGenOutput>

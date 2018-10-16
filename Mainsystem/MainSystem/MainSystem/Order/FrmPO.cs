@@ -161,6 +161,7 @@ namespace MainSystem.Order
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (newPO != null)
@@ -285,7 +286,7 @@ namespace MainSystem.Order
 
                 MessageBox.Show("Something went wrong!,Please try again " + ex.ToString());
             }
-
+            groupBox3.Enabled = true;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -320,6 +321,7 @@ namespace MainSystem.Order
 
 
                 }
+                
             }
         }
 
@@ -354,6 +356,7 @@ namespace MainSystem.Order
 
 
             }
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -436,6 +439,11 @@ namespace MainSystem.Order
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -36,6 +37,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purhcaseOrderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loadPurcaseOrderLineResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtVAT = new System.Windows.Forms.TextBox();
@@ -78,6 +86,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPurcaseOrderLineResultBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -161,9 +170,26 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.productDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.unitPriceDataGridViewTextBoxColumn,
+            this.purhcaseOrderNumberDataGridViewTextBoxColumn,
+            this.subtotalDataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridView1.DataSource = this.loadPurcaseOrderLineResultBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonShadow;
@@ -172,6 +198,53 @@
             this.dataGridView1.Size = new System.Drawing.Size(999, 498);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "Unit_Price";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit_Price";
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            // 
+            // purhcaseOrderNumberDataGridViewTextBoxColumn
+            // 
+            this.purhcaseOrderNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.purhcaseOrderNumberDataGridViewTextBoxColumn.DataPropertyName = "Purhcase_Order_Number";
+            this.purhcaseOrderNumberDataGridViewTextBoxColumn.HeaderText = "Purhcase_Order_Number";
+            this.purhcaseOrderNumberDataGridViewTextBoxColumn.Name = "purhcaseOrderNumberDataGridViewTextBoxColumn";
+            // 
+            // subtotalDataGridViewTextBoxColumn
+            // 
+            this.subtotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.subtotalDataGridViewTextBoxColumn.DataPropertyName = "Subtotal";
+            this.subtotalDataGridViewTextBoxColumn.HeaderText = "Subtotal";
+            this.subtotalDataGridViewTextBoxColumn.Name = "subtotalDataGridViewTextBoxColumn";
+            // 
+            // loadPurcaseOrderLineResultBindingSource
+            // 
+            this.loadPurcaseOrderLineResultBindingSource.DataSource = typeof(MainSystem.Load_Purcase_Order_Line_Result);
             // 
             // panel2
             // 
@@ -598,6 +671,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPurcaseOrderLineResultBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -662,5 +736,12 @@
         private System.Windows.Forms.BindingSource clientBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purhcaseOrderNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource loadPurcaseOrderLineResultBindingSource;
     }
 }

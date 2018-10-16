@@ -390,20 +390,7 @@ namespace MainSystem
         DataTable dtb = new DataTable();
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            dtb.Columns.Add("ProductID", typeof(Int32));
-            dtb.Columns.Add("Product Name", typeof(string));
-            dtb.Columns.Add("Product Quantity", typeof(Int32));
-            dtb.Columns.Add("Product Price", typeof(double));
-            dtb.Columns.Add("Total Price", typeof(double));
-
-            foreach (DataGridViewRow dgv in dgvSale.Rows)
-            {
-                dtb.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value);
-            }
-
-            ds.Tables.Add(dtb);
-            ds.WriteXmlSchema("Invoice.xml");
-            btnDelete.Enabled = false;
+           
             try
             {
                 if (txtCash.Text != "")
@@ -421,13 +408,13 @@ namespace MainSystem
                             if (QuantityOnHand(item.ProductID) >= item.Quantity)
                             {
                                 Sales_Order_line sale = new Sales_Order_line();
-                                sale.Product_ID = Convert.ToInt32(txtProdID.Text);
+                                sale.Product_ID = Convert.ToInt32(dgvSale.CurrentRow.Cells[0].Value);
                                 //sale.Sale_Id = Convert.ToInt32(txtSaleID.Text);
 
 
-                                decimal SalesPrice = Convert.ToDecimal(txtPrice.Text);
-                                var details1 = db.Products.Where(y => y.Product_ID == SalesPrice).FirstOrDefault();
-                                sale.Product_ID = details1.Product_ID;
+                                decimal SalesPrice = Convert.ToDecimal(dgvSale.CurrentRow.Cells[3].Value);
+                                //var details1 = db.Products.Where(y => y.Product_ID == sale.Product_ID).FirstOrDefault();
+                                //sale.Product_ID =  details1.Product_ID;
 
                                 sale.Product_Quantity = Convert.ToInt32(dgvSale.CurrentRow.Cells[2].Value);
                                 double change = 0;
@@ -436,7 +423,21 @@ namespace MainSystem
                                 //db.SaveChanges();
                                 change = Convert.ToDouble(txtCash.Text) - total;
                                 MessageBox.Show("Sale has been succesfully, " + "" + "  Your change is R:" + " " + change);
-                                
+
+                                dtb.Columns.Add("ProductID", typeof(Int32));
+                                dtb.Columns.Add("Product Name", typeof(string));
+                                dtb.Columns.Add("Product Quantity", typeof(Int32));
+                                dtb.Columns.Add("Product Price", typeof(double));
+                                dtb.Columns.Add("Total Price", typeof(double));
+
+                                foreach (DataGridViewRow dgv in dgvSale.Rows)
+                                {
+                                    dtb.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value);
+                                }
+
+                                ds.Tables.Add(dtb);
+                                ds.WriteXmlSchema("Invoice.xml");
+                                btnDelete.Enabled = false;
                             }
                             else
                             {
