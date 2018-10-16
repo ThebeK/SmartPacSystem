@@ -425,7 +425,7 @@ namespace MainSystem.Order
 
         private void FrmPO_Leave(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void PurchaseOrderCrystalReport21_InitReport(object sender, EventArgs e)
@@ -433,6 +433,9 @@ namespace MainSystem.Order
 
         }
 
-        
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

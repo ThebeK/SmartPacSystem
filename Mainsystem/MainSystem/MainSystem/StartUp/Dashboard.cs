@@ -272,9 +272,12 @@ namespace MainSystem
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Products.FrmAddProductType ee = new Products.FrmAddProductType("Maintain Product T");
-            ee.ShowDialog();
-            this.Show();
-            this.Activate();
+            ee.TopLevel = false;
+            ee.AutoScroll = true;
+            this.panel1.Controls.Add(ee);
+            ee.BringToFront();
+            ee.Dock = DockStyle.Fill;
+            ee.Show();
         }
 
         private void maintainProductTypeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -305,9 +308,12 @@ namespace MainSystem
         private void generatePurchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Order.FrmPO gf = new Order.FrmPO();
-            gf.ShowDialog();
-            this.Show();
-            this.Activate();
+            gf.TopLevel = false;
+            gf.AutoScroll = true;
+            this.panel1.Controls.Add(gf);
+            gf.BringToFront();
+            gf.Dock = DockStyle.Fill;
+            gf.Show();
 
         }
 
@@ -435,6 +441,11 @@ namespace MainSystem
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
