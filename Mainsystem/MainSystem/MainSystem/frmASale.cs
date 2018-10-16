@@ -387,21 +387,21 @@ namespace MainSystem
         }
         string saleID;
         DataSet ds = new DataSet();
-        DataTable dt = new DataTable();
+        DataTable dtb = new DataTable();
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            dt.Columns.Add("ProductID", typeof(Int32));
-            dt.Columns.Add("Product Name", typeof(string));
-            dt.Columns.Add("Product Quantity", typeof(Int32));
-            dt.Columns.Add("Product Price", typeof(double));
-            dt.Columns.Add("Total Price", typeof(double));
+            dtb.Columns.Add("ProductID", typeof(Int32));
+            dtb.Columns.Add("Product Name", typeof(string));
+            dtb.Columns.Add("Product Quantity", typeof(Int32));
+            dtb.Columns.Add("Product Price", typeof(double));
+            dtb.Columns.Add("Total Price", typeof(double));
 
             foreach (DataGridViewRow dgv in dgvSale.Rows)
             {
-                dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value);
+                dtb.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value);
             }
 
-            ds.Tables.Add(dt);
+            ds.Tables.Add(dtb);
             ds.WriteXmlSchema("Invoice.xml");
             btnDelete.Enabled = false;
             try
@@ -465,7 +465,7 @@ namespace MainSystem
 
         private void btnPrintInvoice_Click(object sender, EventArgs e)
         {
-            Sales.frmReport r = new Sales.frmReport(dt, ds, saleID);
+            Sales.frmReport r = new Sales.frmReport(dtb, ds, saleID);
             r.ShowDialog();
         }
 
