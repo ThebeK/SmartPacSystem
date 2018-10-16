@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace MainSystem
-{
+
+namespace MainSystem { 
     public partial class frmMaintainClient : Form
     {
         int ClientID;
@@ -436,6 +436,12 @@ namespace MainSystem
 
                 MessageBox.Show("Whoops, something went wrong, please try again");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmAddCity f = new frmAddCity();
+            f.ShowDialog(); 
         }
     }
 }

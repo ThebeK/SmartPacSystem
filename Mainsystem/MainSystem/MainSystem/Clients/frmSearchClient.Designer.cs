@@ -226,7 +226,7 @@
             // 
             // loadClientResultBindingSource
             // 
-            this.loadClientResultBindingSource.DataSource = typeof(MainSystem.Load_Client_Result);
+//            this.loadClientResultBindingSource.DataSource = typeof(MainSystem.Load_Client_Result);
             // 
             // label3
             // 

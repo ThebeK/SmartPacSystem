@@ -81,6 +81,7 @@
             this.txtEmailAdd = new System.Windows.Forms.TextBox();
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,6 +96,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -412,6 +414,7 @@
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox4.Controls.Add(this.pictureBox3);
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.cbxCity);
             this.groupBox4.Controls.Add(this.cbxProvince);
@@ -432,11 +435,12 @@
             this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(548, 113);
+            this.button4.Location = new System.Drawing.Point(540, 115);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(41, 32);
             this.button4.TabIndex = 20;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // cbxCity
             // 
@@ -632,6 +636,16 @@
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MainSystem.Properties.Resources.Editor;
+            this.pictureBox3.Location = new System.Drawing.Point(587, 117);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 45;
+            this.pictureBox3.TabStop = false;
+            // 
             // frmMaintainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,6 +683,7 @@
             this.panel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -726,5 +741,6 @@
         private System.Windows.Forms.BindingSource creditStatusBindingSource;
         private System.Windows.Forms.BindingSource cityBindingSource;
         private System.Windows.Forms.BindingSource provinceBindingSource;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
