@@ -407,7 +407,8 @@ namespace MainSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            frmAddCity f = new frmAddCity();
+            f.ShowDialog();
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
@@ -445,6 +446,12 @@ namespace MainSystem
                 creditStatusBindingSource.DataSource = db.Credit_Status.ToList();
             }
            
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            frmMaintainCity f = new frmMaintainCity();
+            f.ShowDialog();
         }
     }
 }
