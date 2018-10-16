@@ -391,12 +391,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SP.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
     <Compile Include="StartUp\FrmFirstTimeStartup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -731,9 +725,6 @@
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Supplier_Order_Status.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Title.cs">
