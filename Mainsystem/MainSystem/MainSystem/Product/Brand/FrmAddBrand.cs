@@ -99,10 +99,5 @@ namespace MainSystem.Products.Brand
                 Event.Handled = true;
             }
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
