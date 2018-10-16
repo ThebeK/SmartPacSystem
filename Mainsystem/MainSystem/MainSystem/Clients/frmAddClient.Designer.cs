@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddClient));
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.cbxCity = new System.Windows.Forms.ComboBox();
             this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,20 +66,18 @@
             this.cbxAccountStatus = new System.Windows.Forms.ComboBox();
             this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label16 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gpfilepath = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.txtDateTimeDateOfCommencement = new System.Windows.Forms.DateTimePicker();
-            this.cbxCreditStatus = new System.Windows.Forms.ComboBox();
             this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,9 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
-            this.groupBox6.SuspendLayout();
+            this.gpfilepath.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -116,13 +114,24 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.ForeColor = System.Drawing.Color.LightGray;
-            this.groupBox4.Location = new System.Drawing.Point(24, 203);
+            this.groupBox4.Location = new System.Drawing.Point(24, 250);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(654, 196);
+            this.groupBox4.Size = new System.Drawing.Size(637, 178);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Place Of Business";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MainSystem.Properties.Resources.Editor;
+            this.pictureBox3.Location = new System.Drawing.Point(600, 134);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 46;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // button4
             // 
@@ -162,10 +171,10 @@
             // 
             // txtPhysicalAdd
             // 
-            this.txtPhysicalAdd.Location = new System.Drawing.Point(152, 26);
+            this.txtPhysicalAdd.Location = new System.Drawing.Point(147, 41);
             this.txtPhysicalAdd.Multiline = true;
             this.txtPhysicalAdd.Name = "txtPhysicalAdd";
-            this.txtPhysicalAdd.Size = new System.Drawing.Size(442, 85);
+            this.txtPhysicalAdd.Size = new System.Drawing.Size(442, 65);
             this.txtPhysicalAdd.TabIndex = 14;
             this.txtPhysicalAdd.TextChanged += new System.EventHandler(this.txtPhysicalAdd_TextChanged);
             // 
@@ -173,7 +182,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(11, 27);
+            this.label10.Location = new System.Drawing.Point(6, 31);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(135, 16);
             this.label10.TabIndex = 13;
@@ -212,7 +221,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox2.Location = new System.Drawing.Point(24, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(638, 55);
+            this.groupBox2.Size = new System.Drawing.Size(654, 55);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Company Information";
@@ -242,7 +251,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(255, 21);
+            this.label3.Location = new System.Drawing.Point(255, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 16);
             this.label3.TabIndex = 6;
@@ -251,7 +260,7 @@
             // 
             // txtVatRegNum
             // 
-            this.txtVatRegNum.Location = new System.Drawing.Point(447, 21);
+            this.txtVatRegNum.Location = new System.Drawing.Point(457, 20);
             this.txtVatRegNum.MaxLength = 10;
             this.txtVatRegNum.Name = "txtVatRegNum";
             this.txtVatRegNum.Size = new System.Drawing.Size(174, 20);
@@ -272,7 +281,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox3.Location = new System.Drawing.Point(24, 83);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(638, 114);
+            this.groupBox3.Size = new System.Drawing.Size(637, 151);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contact Information";
@@ -341,7 +350,7 @@
             // 
             // txtEmailAdd
             // 
-            this.txtEmailAdd.Location = new System.Drawing.Point(127, 65);
+            this.txtEmailAdd.Location = new System.Drawing.Point(142, 65);
             this.txtEmailAdd.Name = "txtEmailAdd";
             this.txtEmailAdd.Size = new System.Drawing.Size(174, 20);
             this.txtEmailAdd.TabIndex = 4;
@@ -354,7 +363,7 @@
             this.label9.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label9.Location = new System.Drawing.Point(600, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 34);
+            this.label9.Size = new System.Drawing.Size(179, 34);
             this.label9.TabIndex = 23;
             this.label9.Text = "Add Clients";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -396,22 +405,19 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnAddClient);
-            this.groupBox5.Controls.Add(this.btnViewCreditApproval);
-            this.groupBox5.Controls.Add(this.txtCreditAmount);
             this.groupBox5.Controls.Add(this.cbxAccountStatus);
             this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.txtCreditAmount);
+            this.groupBox5.Controls.Add(this.gpfilepath);
             this.groupBox5.Controls.Add(this.txtDateTimeDateOfCommencement);
-            this.groupBox5.Controls.Add(this.cbxCreditStatus);
+            this.groupBox5.Controls.Add(this.btnViewCreditApproval);
             this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox5.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox5.Location = new System.Drawing.Point(687, 77);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(566, 548);
+            this.groupBox5.Size = new System.Drawing.Size(566, 340);
             this.groupBox5.TabIndex = 16;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Credit Approval Information";
@@ -423,9 +429,9 @@
             this.btnAddClient.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAddClient.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAddClient.Location = new System.Drawing.Point(233, 486);
+            this.btnAddClient.Location = new System.Drawing.Point(1088, 542);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(124, 50);
+            this.btnAddClient.Size = new System.Drawing.Size(124, 40);
             this.btnAddClient.TabIndex = 18;
             this.btnAddClient.Text = "Add Clients";
             this.btnAddClient.UseVisualStyleBackColor = false;
@@ -437,7 +443,7 @@
             this.btnViewCreditApproval.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnViewCreditApproval.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewCreditApproval.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnViewCreditApproval.Location = new System.Drawing.Point(363, 486);
+            this.btnViewCreditApproval.Location = new System.Drawing.Point(368, 283);
             this.btnViewCreditApproval.Name = "btnViewCreditApproval";
             this.btnViewCreditApproval.Size = new System.Drawing.Size(157, 51);
             this.btnViewCreditApproval.TabIndex = 17;
@@ -459,7 +465,7 @@
             this.cbxAccountStatus.DataSource = this.clientAccountStatusBindingSource;
             this.cbxAccountStatus.DisplayMember = "Account_Status_Description";
             this.cbxAccountStatus.FormattingEnabled = true;
-            this.cbxAccountStatus.Location = new System.Drawing.Point(286, 170);
+            this.cbxAccountStatus.Location = new System.Drawing.Point(286, 81);
             this.cbxAccountStatus.Name = "cbxAccountStatus";
             this.cbxAccountStatus.Size = new System.Drawing.Size(234, 24);
             this.cbxAccountStatus.TabIndex = 23;
@@ -471,28 +477,28 @@
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(22, 178);
+            this.label16.Location = new System.Drawing.Point(27, 81);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(117, 16);
             this.label16.TabIndex = 22;
             this.label16.Text = "Account Status";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
-            // groupBox6
+            // gpfilepath
             // 
-            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.btnBrowse);
-            this.groupBox6.Controls.Add(this.txtFilePath);
-            this.groupBox6.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox6.ForeColor = System.Drawing.Color.LightGray;
-            this.groupBox6.Location = new System.Drawing.Point(25, 228);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(523, 98);
-            this.groupBox6.TabIndex = 21;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Upload Credit Approval Form";
-            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            this.gpfilepath.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gpfilepath.Controls.Add(this.label15);
+            this.gpfilepath.Controls.Add(this.btnBrowse);
+            this.gpfilepath.Controls.Add(this.txtFilePath);
+            this.gpfilepath.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gpfilepath.ForeColor = System.Drawing.Color.LightGray;
+            this.gpfilepath.Location = new System.Drawing.Point(25, 172);
+            this.gpfilepath.Name = "gpfilepath";
+            this.gpfilepath.Size = new System.Drawing.Size(523, 103);
+            this.gpfilepath.TabIndex = 21;
+            this.gpfilepath.TabStop = false;
+            this.gpfilepath.Text = "Upload Credit Approval Form";
+            this.gpfilepath.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // label15
             // 
@@ -540,19 +546,6 @@
             this.txtDateTimeDateOfCommencement.TabIndex = 19;
             this.txtDateTimeDateOfCommencement.ValueChanged += new System.EventHandler(this.txtDateTimeDateOfCommencement_ValueChanged);
             // 
-            // cbxCreditStatus
-            // 
-            this.cbxCreditStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbxCreditStatus.DataSource = this.creditStatusBindingSource;
-            this.cbxCreditStatus.DisplayMember = "Credit_Status_Description";
-            this.cbxCreditStatus.FormattingEnabled = true;
-            this.cbxCreditStatus.Location = new System.Drawing.Point(286, 79);
-            this.cbxCreditStatus.Name = "cbxCreditStatus";
-            this.cbxCreditStatus.Size = new System.Drawing.Size(234, 24);
-            this.cbxCreditStatus.TabIndex = 18;
-            this.cbxCreditStatus.ValueMember = "Credit_Status_ID";
-            this.cbxCreditStatus.SelectedIndexChanged += new System.EventHandler(this.txtCreditSta_SelectedIndexChanged);
-            // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -564,18 +557,6 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "Date of Commencement:";
             this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(22, 79);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(107, 16);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Credit Status:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label11
             // 
@@ -593,17 +574,6 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MainSystem.Properties.Resources.Editor;
-            this.pictureBox3.Location = new System.Drawing.Point(600, 134);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 46;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // frmAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,6 +581,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1276, 625);
             this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -621,6 +592,7 @@
             this.panel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -633,10 +605,9 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.gpfilepath.ResumeLayout(false);
+            this.gpfilepath.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -671,14 +642,12 @@
         private System.Windows.Forms.TextBox txtCreditAmount;
         private System.Windows.Forms.ComboBox cbxAccountStatus;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gpfilepath;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.DateTimePicker txtDateTimeDateOfCommencement;
-        private System.Windows.Forms.ComboBox cbxCreditStatus;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;

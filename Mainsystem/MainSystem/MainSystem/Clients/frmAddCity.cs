@@ -39,6 +39,7 @@ namespace MainSystem
                 db.Cities.Add(NewCity);
                 db.SaveChanges();
                 MessageBox.Show("City has been added successfully");
+                this.Close();
 
             }
             catch (Exception)

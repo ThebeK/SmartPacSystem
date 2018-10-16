@@ -180,6 +180,11 @@ namespace MainSystem
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Purchase_Order_Result>("Load_Purchase_Order");
         }
     
+        public virtual ObjectResult<Load_Purchase_Order_1_Result> Load_Purchase_Order_1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Purchase_Order_1_Result>("Load_Purchase_Order_1");
+        }
+    
         public virtual ObjectResult<Load_Supplier_Order_Result> Load_Supplier_Order()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Supplier_Order_Result>("Load_Supplier_Order");
@@ -286,11 +291,6 @@ namespace MainSystem
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual ObjectResult<Load_Purchase_Order_1_Result> Load_Purchase_Order_1()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Purchase_Order_1_Result>("Load_Purchase_Order_1");
         }
     }
 }
