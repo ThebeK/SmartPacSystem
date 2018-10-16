@@ -151,6 +151,12 @@
     <Compile Include="Client.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clients\frmMaintainCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\frmMaintainCity.Designer.cs">
+      <DependentUpon>frmMaintainCity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client_Account_Status.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -217,6 +223,12 @@
     </Compile>
     <Compile Include="Employee\FrmMaintainCamera.designer.cs">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\frmAddCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\frmAddCity.Designer.cs">
+      <DependentUpon>frmAddCity.cs</DependentUpon>
     </Compile>
     <Compile Include="frmASale.cs">
       <SubType>Form</SubType>
@@ -482,10 +494,10 @@
     <Compile Include="StartUp\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client\frmAddClient.cs">
+    <Compile Include="Clients\frmAddClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client\frmAddClient.Designer.cs">
+    <Compile Include="Clients\frmAddClient.Designer.cs">
       <DependentUpon>frmAddClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\frmConfirmDelivery.cs">
@@ -530,16 +542,16 @@
     <Compile Include="Product\frmAddProduct.Designer.cs">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client\frmMaintainClient.cs">
+    <Compile Include="Clients\frmMaintainClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client\frmMaintainClient.Designer.cs">
+    <Compile Include="Clients\frmMaintainClient.Designer.cs">
       <DependentUpon>frmMaintainClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client\frmSearchClient.cs">
+    <Compile Include="Clients\frmSearchClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client\frmSearchClient.Designer.cs">
+    <Compile Include="Clients\frmSearchClient.Designer.cs">
       <DependentUpon>frmSearchClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\FrmCreditReturn.cs">
@@ -826,6 +838,9 @@
     <EmbeddedResource Include="Admin\FrmUpdateCompanyInformation.resx">
       <DependentUpon>FrmUpdateCompanyInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Clients\frmMaintainCity.resx">
+      <DependentUpon>frmMaintainCity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -852,6 +867,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\FrmMaintainCamera.resx">
       <DependentUpon>FrmMaintainCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\frmAddCity.resx">
+      <DependentUpon>frmAddCity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmASale.resx">
       <DependentUpon>frmASale.cs</DependentUpon>
@@ -889,7 +907,7 @@
     <EmbeddedResource Include="StartUp\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\frmAddClient.resx">
+    <EmbeddedResource Include="Clients\frmAddClient.resx">
       <DependentUpon>frmAddClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\frmConfirmDelivery.resx">
@@ -943,10 +961,10 @@
     <EmbeddedResource Include="Product\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\frmMaintainClient.resx">
+    <EmbeddedResource Include="Clients\frmMaintainClient.resx">
       <DependentUpon>frmMaintainClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\frmSearchClient.resx">
+    <EmbeddedResource Include="Clients\frmSearchClient.resx">
       <DependentUpon>frmSearchClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product\Product_Type\FrmAddProductType.resx">
