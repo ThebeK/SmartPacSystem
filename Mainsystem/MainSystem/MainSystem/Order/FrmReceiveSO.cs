@@ -176,6 +176,13 @@ namespace MainSystem
 
 
             }
+            if (dataGridView2.RowCount==dataGridView1.RowCount)
+            {
+                var q1 = db.Supplier_Order.Where(x => x.SO_Number == textBox1.Text).First();
+                q1.Supplier_Order_Status_ID = 2;
+                db.SaveChanges();
+            }
+            
 
         }
     }

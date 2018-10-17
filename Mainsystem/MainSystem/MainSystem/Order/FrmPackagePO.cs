@@ -154,7 +154,14 @@ namespace MainSystem.Order
             scan.ShowDialog();
             var q = db.Client_Purchase_Order.Where(po => po.PO_Number == scan.DecodeID).First();
             q.Purchase_Order_Status_ID = 2;
+            var q2 = db.Load_Purcase_Order_Line().Where(x => x.Purhcase_Order_Number == q.PO_Number).First();
+            
+            var q3 = db.Getpoduct().Where(x => x.Product_Description == q2.Product).First();
+            //int w = Convert.ToInt32(q.Available_Quantity);
 
+            //q3.Available_Quantity +;
+            db.Products.Where(x => x.Product_ID == q3.Product_ID).First().Available_Quantity -= q2.Quantity;
+            
             db.SaveChanges();
             frmPOLine f = new frmPOLine(scan.DecodeID);
             var q1 = db.Purchase_Order_Status.Where(pos => pos.Purchase_Order_Status_ID == q.Purchase_Order_Status_ID).First();

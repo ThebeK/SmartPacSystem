@@ -53,5 +53,13 @@ namespace MainSystem
 
             
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //string address = listBox1.Text;
+            //address1 = address.Replace(" ", "+");
+            //address2 
+            //webBrowser1.Navigate(new Uri("http://www.google.com/maps/place/" + address + "/"+ address2));
+        }
     }
 }
