@@ -114,6 +114,15 @@ namespace MainSystem.Order
             toolTip1.SetToolTip(this.button2, "Click to Add");
             toolTip1.SetToolTip(this.btnConfirm, "Click to Confirm");
 
+            DataTable t = new DataTable();
+            t.Columns.Add("ID", typeof(Int32));
+            t.Columns.Add("Product", typeof(string));
+            t.Columns.Add("Quantity", typeof(Int32));
+            t.Columns.Add("Unit Price", typeof(decimal));
+            t.Columns.Add("Purchase Order Number", typeof(string));
+            t.Columns.Add("Subtotal", typeof(decimal));
+
+            dataGridView1.DataSource = t;
 
 
         }
@@ -325,6 +334,9 @@ namespace MainSystem.Order
             }
         }
 
+        DataSet ds = new DataSet();
+        DataTable dt = new DataTable();
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             try
@@ -342,13 +354,28 @@ namespace MainSystem.Order
                     newPO.Purchase_Order_Status_ID = 1;
                     newPO.Dispatch_Type_Id = 2;
                 }
+                dt.Columns.Add("ID", typeof(Int32));
+                dt.Columns.Add("Product", typeof(string));
+                dt.Columns.Add("Quantity", typeof(Int32));
+                dt.Columns.Add("Unit Price", typeof(decimal));
+                dt.Columns.Add("Purchase Order Number", typeof(string));
+                dt.Columns.Add("Subtotal", typeof(decimal));
+
+                foreach(DataGridViewRow dgv in dataGridView1.Rows)
+                {
+                    dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value, dgv.Cells[5].Value);
+                }
+                ds.Tables.Add(dt);
+                ds.WriteXmlSchema("POInvoice.xml");
+
                 db.SaveChanges();
+
                 tabControl1.SelectedIndex = 1;
-                repdoc.Load(AppDomain.CurrentDomain.BaseDirectory + "\\rpts\\PurchaseOrderInvoiceCrystalReport1.rpt");
+                //repdoc.Load(AppDomain.CurrentDomain.BaseDirectory + "\\rpts\\PurchaseOrderInvoiceCrystalReport1.rpt");
                 
-                repdoc.SetParameterValue( newPO.Client_Purchase_Id,"@poid");
-                crystalReportViewer1.ReportSource = repdoc;
-                crystalReportViewer1.Refresh();
+                //repdoc.SetParameterValue( newPO.Client_Purchase_Id,"@poid");
+                //crystalReportViewer1.ReportSource = repdoc;
+                //crystalReportViewer1.Refresh();
 
             }
             catch (Exception)
@@ -444,6 +471,18 @@ namespace MainSystem.Order
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            POInvoiceCrystalReport1Latest po = new POInvoiceCrystalReport1Latest();
+            po.SetDataSource(ds);
+            crystalReportViewer1.ReportSource = po; 
         }
     }
 }

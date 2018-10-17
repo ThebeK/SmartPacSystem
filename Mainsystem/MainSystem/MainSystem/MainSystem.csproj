@@ -327,6 +327,12 @@
     <Compile Include="Ply.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Order\POInvoiceCrystalReport1Latest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POInvoiceCrystalReport1Latest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -874,6 +880,10 @@
     <EmbeddedResource Include="frmSearchPO.resx">
       <DependentUpon>frmSearchPO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Order\POInvoiceCrystalReport1Latest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POInvoiceCrystalReport1Latest.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product\Brand\FrmAddBrand.resx">
       <DependentUpon>FrmAddBrand.cs</DependentUpon>
     </EmbeddedResource>
@@ -1108,6 +1118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AcroPDFLib">
