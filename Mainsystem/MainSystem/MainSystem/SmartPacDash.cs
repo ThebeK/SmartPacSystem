@@ -404,5 +404,10 @@ namespace MainSystem
         {
 
         }
+
+        private void chart1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -301,7 +301,7 @@
             this.addClientToolStripMenuItem.Font = new System.Drawing.Font("Lucida Sans Unicode", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addClientToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
-            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(278, 32);
+            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(291, 32);
             this.addClientToolStripMenuItem.Text = "Add Clients";
             this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
@@ -311,7 +311,7 @@
             this.maintainClientToolStripMenuItem.Font = new System.Drawing.Font("Lucida Sans Unicode", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maintainClientToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.maintainClientToolStripMenuItem.Name = "maintainClientToolStripMenuItem";
-            this.maintainClientToolStripMenuItem.Size = new System.Drawing.Size(278, 32);
+            this.maintainClientToolStripMenuItem.Size = new System.Drawing.Size(291, 32);
             this.maintainClientToolStripMenuItem.Text = "Maintain Clients";
             this.maintainClientToolStripMenuItem.Click += new System.EventHandler(this.maintainClientToolStripMenuItem_Click);
             // 
